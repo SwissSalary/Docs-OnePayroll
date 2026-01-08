@@ -15,7 +15,9 @@
       {
         "files": [
           "images/**",
-          "**/media/**"
+          "**/media/**",
+          "favicon.ico",
+          "logo.svg"
         ]
       }
     ],
@@ -27,6 +29,7 @@
     "globalMetadata": {
       "_appName": "OnePayroll Learn",
       "_appTitle": "OnePayroll Learn",
+      "_appLogoPath": "logo.svg",
       "_enableSearch": true,
       "pdf": false
     }
