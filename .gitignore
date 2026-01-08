@@ -1,0 +1,60 @@
+# DocFX generated files
+_site/
+_site_pdf/
+obj/
+.manifest
+.publish
+
+# Build artifacts
+*.cache
+*.zip
+
+# Log files
+*.log
+log.txt
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Node modules (if using custom templates with npm)
+node_modules/
+package-lock.json
+
+# Python (if using Python tools)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Backup files
+*.bak
+*.backup
