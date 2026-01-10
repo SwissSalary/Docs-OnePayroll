@@ -23,20 +23,20 @@ To set up a new benefit program in OnePayroll:
    - **Code**: A unique identifier for the benefit type
    - **Description**: A clear description of the benefit category
    - **Base Pay Type**: The hypothetical pay type used for calculations
-3. Configure which pay types are liable for this benefit type (see below).
 
 ### To configure pay type liabilities
 
-Pay Type Liabilities determine which pay types (earnings) are subject to a benefit. This controls which earnings are included when calculating benefit amounts and contributions.
+Pay Type Liabilities determine which pay types are subject to a benefit. This controls which earnings are included when calculating benefit amounts and contributions.
 
-1. From the **Benefit Types** page, select a benefit type.
-2. In the **Liable Benefit Types** section, add the pay types that should be liable for this benefit:
-   - Choose each pay type that represents earnings subject to this benefit
+You configure liabilities from the **Pay Type** page, where you specify which benefit types a pay type is liable for:
+
+1. Choose the ![Lightbulb that opens the Tell Me feature 1.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Types**, and then choose the related link.
+2. Select a pay type and open the **Liable Benefit Types** section.
+3. Add the benefit types that this pay type should be liable for:
+   - This configuration applies to all types of pay types: Earnings, Deductions, Employer Contributions, and Hypothetical
+   - However, hypothetical pay types are typically not considered for benefit liabilities
    - Common liable pay types include regular wages, overtime, bonuses, and commissions
    - Exclude pay types like reimbursements, allowances, or other non-taxable compensation as appropriate
-
-> [!NOTE]
-> You can also configure liabilities from the Pay Type side. On the **Pay Type** page, use the **Liable Benefit Types** section to specify which benefit types apply to that pay type.
 
 > [!TIP]
 > Review your benefit plan documents and regulatory requirements to determine which types of earnings should be included in benefit calculations.
