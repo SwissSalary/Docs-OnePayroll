@@ -1,12 +1,12 @@
 ---
 title: Set Up Benefits
 description: Learn how to set up benefit types, coverage options, rates, limits, and contracts in OnePayroll.
-author: myGitHubHandle
+author: zeande
 
-ms.service: dynamics365-business-central
-ms.topic: article
-ms.date: 01/08/2026
-ms.author: MyMSFTAlias (if I work for Microsoft; otherwise edupont)
+sws.service: dynamics365-business-central
+sws.topic: article
+sws.date: 01/08/2026
+sws.author: zeande
 ---
 # Set Up Benefits in OnePayroll
 
