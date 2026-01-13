@@ -26,7 +26,7 @@ To set up a new benefit program in OnePayroll:
 
 ### To configure pay type liabilities
 
-Pay Type Liabilities determine which pay types are subject to a benefit type. This controls which earnings and other compensation are included when calculating benefit amounts and contributions.
+Pay Type Liabilities determine which pay types should contribute to benefit calculations for a specific benefit type. This controls which earnings and other compensation are included when calculating benefit amounts and contributions.
 
 You configure pay type liabilities from the **Pay Type** page, where you specify which Benefit Types a pay type is liable for:
 
@@ -34,8 +34,7 @@ You configure pay type liabilities from the **Pay Type** page, where you specify
 2. Select the pay type you want to configure.
 3. In the **Liable Benefit Types** section, add the benefit types that this pay type should be liable for:
    - Choose each benefit type that should include this pay type in its calculations
-   - This can apply to all types of pay types: Earnings, Deductions, Employer Contributions, and Hypothetical
-   - However, hypothetical pay types are typically not considered for benefit liabilities
+   - While this configuration is technically available for all types of pay types (Earnings, Deductions, Employer Contributions, and Hypothetical), hypothetical pay types are typically not configured for benefit liabilities
 
 > [!TIP]
 > Common configurations include making regular wages, overtime, bonuses, and commissions liable for health insurance and retirement benefits, while excluding reimbursements, allowances, or other non-taxable compensation. Review your benefit plan documents and regulatory requirements to determine which types of pay should be included in benefit calculations.
