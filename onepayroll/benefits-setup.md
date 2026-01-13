@@ -38,10 +38,7 @@ You configure pay type liabilities from the **Pay Type** page, where you specify
    - However, hypothetical pay types are typically not considered for benefit liabilities
 
 > [!TIP]
-> Common configurations include making regular wages, overtime, bonuses, and commissions liable for health insurance and retirement benefits, while excluding reimbursements, allowances, or other non-taxable compensation.
-
-> [!TIP]
-> Review your benefit plan documents and regulatory requirements to determine which types of pay should be included in benefit calculations.
+> Common configurations include making regular wages, overtime, bonuses, and commissions liable for health insurance and retirement benefits, while excluding reimbursements, allowances, or other non-taxable compensation. Review your benefit plan documents and regulatory requirements to determine which types of pay should be included in benefit calculations.
 
 ### To configure coverage types
 
