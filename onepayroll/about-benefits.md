@@ -22,9 +22,8 @@ Benefit Types serve as categories that group related benefits together. Each Ben
 
 - A **Base Pay Type** (hypothetical) that defines how the benefit is calculated in the payroll system
 - A **Calculation Order** that determines when benefits are processed relative to other benefits
-- **Pay Type Liabilities** that specify which pay types are subject to (liable for) this benefit type
 
-Pay Type Liabilities establish the relationship between earnings (pay types) and benefits. For example, a health insurance benefit type might be liable for regular wages, overtime, and bonuses, but not for reimbursements or certain allowances. This controls which earnings are included when calculating benefit amounts.
+**Pay Type Liabilities** establish the relationship between pay types and benefit types. You configure these liabilities from the Pay Type page, where you specify which Benefit Types a pay type is liable for. This configuration can apply to all types of pay types (Earnings, Deductions, Employer Contributions, and Hypothetical), though hypothetical pay types are typically not considered for benefit liabilities. For example, you might configure regular wages, overtime, and bonuses to be liable for health insurance and retirement benefit types, while excluding reimbursements or certain allowances. This controls which compensation is included when calculating benefit amounts.
 
 > [!TIP]
 > Use the **Move Up** and **Move Down** actions on the Benefit Types page to adjust the calculation order. Benefits are always calculated in this order during payroll processing.
