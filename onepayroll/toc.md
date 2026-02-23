@@ -1,7 +1,3 @@
----
-ms.service: dynamics-365-business-central
----
-
 # [OnePayroll documentation](../index.md)
 # [Welcome to OnePayroll](introduction.md)
 
