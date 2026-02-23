@@ -55,134 +55,135 @@ Create Direct Deposit payment method(s) (see [Payment methods setup](payment-met
 Assign payment method to employees:
 1. Open employee
 2. Payment Method = Direct Deposit method
-3. Save
 
 ## Processing direct deposit payroll
 
-**Step 1: Process payroll normally**
+**Step 1: Prepare payroll**
 - Create payroll run
 - Calculate wages, deductions, taxes
-- Review and approve
-- Post to GL
+- Review payroll entries
+- Approve the payroll run
 
-**Step 2: Generate ACH file**
-- In Payroll Run, select **Generate ACH File**
-- OnePayroll creates ACH file with:
-  - Employee bank details
-  - Deposit amounts
-  - Company information
-  - Settlement date
+**Step 2: Generate payment file**
+- Open the payroll run (can be done before or after posting)
+- Select **Pay**
+- Select **Electronic Payment** as the payment type
+- Select **OK**
+- OnePayroll generates a payment export file using the "US EFT PAYROLL" data exchange definition
 
-**Step 3: Review ACH file**
-- Download ACH file
-- Verify:
-  - All employees present
-  - Correct amounts
-  - Correct bank accounts
-  - No errors
+**Step 3: Download and review file**
+- You'll be prompted to download the payment file
+- Verify the download (download dialog appears with file details)
+- Review file details:
+  - Employee count matches payroll
+  - Total amount is correct
+  - Check bank account information is present
+- The file is also automatically attached to the payroll run for audit trail purposes
 
-**Step 4: Transmit to bank**
-- Log into bank's secure portal
-- Upload ACH file
-- Confirm transmission
-- Note transaction ID
+> [!WARNING]
+> The payment file contains sensitive employee payment and bank information. You must handle the file securely and delete it after successful transmission to your bank. Do not store the file in unsecured locations. Always use secure transmission methods to your bank.
 
-**Step 5: Reconcile**
-- Bank confirms processing (typically next day)
+**Step 4: Post payroll to GL (if not already posted)**
+- If you haven't yet posted the payroll run, select **Post**
+- This creates the GL entries and payroll records
+- Posting can occur before or after generating the payment file
+
+**Step 5: Transmit to bank**
+- Log into your bank's secure portal (ACH/payment file upload area)
+- Upload the payment file using secure transmission
+- Confirm transmission with the bank
+- Note transaction ID or confirmation number from bank
+
+**Step 6: Delete file and reconcile**
+- After successful transmission to bank, delete the payment file from your computer
+- Do not retain the file longer than necessary
+- Bank confirms processing (timing varies by bank and submission time)
 - Verify deposits post to employees' accounts (1-3 business days)
-- Track any failures/rejections
-- Reconcile GL cash account
+- Track any failures or rejections reported by bank
+- Reconcile GL payroll liability account to actual deposits made
 
-## ACH file details
+## Payment file details
 
-**ACH file contains:**
-- Company/payroll originator information
-- Employee names and bank information
-- Deposit amounts per employee
-- Settlement date
-- Batch information
+**Payment export file contains:**
+- Employee bank account information
+- Payment amounts per employee
+- Payroll run information
+- Company payment details
 
-**File format**: Standard ACH format (NACHA rules)
+**File format**: Payment files are generated in a format suitable for bank upload. The specific format depends on your bank's requirements (ACH, SEPA, or proprietary formats).
 
-**Transmission**: Secure method to bank:
-- Secure online portal
-- SFTP
-- Specialized payroll processor
+**File location**: Files are attached to the payroll run and can be downloaded from the attachments area.
 
-## Multiple deposits per employee
+## Multiple deposits per employee (Split deposits)
 
-For split deposits (e.g., Checking + Savings):
+OnePayroll supports directing an employee's pay to multiple bank accounts:
 
-1. Create separate payment methods for each account
-2. Assign both to employee with positions:
-   - Position 1: $2,000 to Checking
-   - Position 2: Remainder to Savings
-3. OnePayroll generates ACH entries for both accounts
-4. Bank processes both deposits
+1. Create payment methods for each account
+2. Assign payment methods to employee with sequence order:
+   - First payment method: Primary account
+   - Second payment method: Secondary account (fixed amount or percentage)
+3. Payment export includes entries for each account
+4. Bank processes deposits to all assigned accounts
 
-## Failed deposits
+See [Payment methods setup](payment-methods-setup.md) for instructions on configuring split deposits.
 
-If an ACH deposit fails (wrong account, closed account, etc.):
+## Failed payments
 
-1. **Identify failure** - Bank notifies of rejection
-2. **Determine cause** - Wrong account? Closed account? Incorrect routing?
-3. **Correct employee record** - Update bank account information
-4. **Reprocess** - Create adjustment payroll run or contact bank about resubmission
-5. **Notify employee** - Inform employee of issue and resolution
+If a payment deposit fails (invalid account, closed account, etc.):
 
-## Timing and deadlines
+1. **Identify failure** - Bank typically notifies of rejection
+2. **Determine cause** - Work with bank and employee to identify issue
+3. **Correct employee record** - Update employee bank account information
+4. **Reprocess** - Create fresh payment export with corrected information or request resubmission from bank
 
-**ACH processing timeline:**
-- Payroll processed Friday → ACH submitted Friday evening
-- Settlement date Monday → Funds in accounts Monday-Wednesday
-- Standard: 1-3 business days
+## Processing timeline and deadlines
 
-**Plan ahead:**
-- Submit ACH file day before payment date
-- Account for bank processing time
-- Earlier submission = earlier deposits (typically)
+**Payment processing:** Timing varies based on:
+- Payment type (electronic vs. check)
+- Bank processing time (typically 1-3 business days for electronic)
+- Your bank's submission cut-off times
+- Weekend/holiday schedule
 
-## Setup validation
+**Planning recommendations:**
+- Process and export payments well before actual payment date
+- Account for bank processing delays
+- Coordinate with bank on submission timelines
+- Have check printing as backup option for electronic payment failures
 
-Before processing production direct deposit:
+## Before going live
 
-1. Test with small group of employees
-2. Verify deposits process correctly
-3. Check employee accounts receive funds
-4. Confirm GL cash account updated
-5. Reconcile totals
+Test your direct deposit setup:
+
+1. Create small test payroll with 1-2 employees
+2. Process complete workflow (create, calculate, approve, post)
+3. Use realistic bank account information from test accounts
+4. Review generated payment file for accuracy
+5. Submit to bank (or use test environment if available)
+6. Confirm test payments process
+7. Verify GL cash account is updated
 
 ## Troubleshooting
 
-**"Invalid bank account" error**
-- Verify routing and account numbers
-- Check account number length/format
-- Confirm with employee/bank
+**Payment file export fails**
+- Verify all employees have valid payment methods assigned
+- Check that bank account information is complete
+- Ensure all required employee tax/payment information is set up
 
-**"ACH transmission failed"**
-- Check file format (must meet NACHA standards)
-- Verify bank credentials/permissions
-- Contact bank support
+**"No payments to export" message**
+- Verify payment entries exist for the payroll run
+- Check that payment methods are assigned to employees
+- Verify payment method settings are correct
 
-**Deposits not appearing**
-- Check settlement date (allow 1-3 business days)
-- Verify bank received transmission
-- Contact bank to trace deposit
+**Bank cannot process payment file**
+- Confirm file format is correct for your bank
+- Contact bank to verify file structure assumptions
+- May need to use a specialist payroll processor if direct export not supported
 
-**Wrong amount deposited**
-- Verify payroll amounts (were they correct?)
-- Check ACH file amounts
-- Contact bank if discrepancy found
+## Resources
 
-## Best practices
-
-- **Verify all accounts** - Test new accounts before processing
-- **Plan timing** - Submit ACH with adequate lead time
-- **Monitor processing** - Track deposits to employee accounts
-- **Maintain records** - Keep ACH transmission confirmations
-- **Have backup** - Keep check printing as backup if direct deposit fails
-- **Secure transmission** - Use bank's secure method always
-- **Reconcile** - Match GL cash to deposits processed
+- [Employee bank accounts setup](employee-bank-accounts.md) - Configure employee payment accounts
+- [Payment methods setup](payment-methods-setup.md) - Create payment method configurations
+- [Payment export and processing](payment-export.md) - Overview of all payment types
 
 ## What's next
 

@@ -160,7 +160,7 @@ If your company operates on multiple calendars (e.g., fiscal year vs. calendar y
 
 Learn how to work with payroll runs:
 
-- **[Set up payroll runs](payroll-runs-setup.md)** - Configure GL accounts and payroll settings
+- **[Configure payroll settings](payroll-setup.md)** - Set up GL accounts and payroll configuration
 - **[Process payroll runs](payroll-runs-process.md)** - Create, calculate, and post payroll
 - **[About pay types](pay-types-overview.md)** - Define earnings and deductions
 - **[About pay cycles](pay-cycles-overview.md)** - Set up pay frequencies and periods

@@ -1,6 +1,6 @@
 ---
 title: Set up GL posting for payroll
-description: Learn how to configure general ledger accounts for payroll posting.
+description: Learn how to configure general ledger accounts and posting rules for payroll in OnePayroll.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: how-to
@@ -9,243 +9,235 @@ ms.date: 02/23/2026
 
 # Set up GL posting for payroll
 
-Configure general ledger accounts where payroll transactions will post.
+OnePayroll posts payroll transactions to the General Ledger based on pay type assignments and GL posting settings.
 
-## GL account setup overview
+## Overview of GL posting in OnePayroll
 
-**Required accounts:**
-1. **Expense accounts** - Where wages/costs post
-2. **Payable accounts** - Where tax and deduction liabilities post
-3. **Cash account** - Where net pay comes from
-4. **Employer tax accounts** - Where employer cost matches post (optional)
+When a payroll run is posted in OnePayroll:
 
-## Setting up expense accounts
+1. Payroll entries (wages, taxes, deductions) are created
+2. Based on your **General Ledger Posting** setting in Payroll Setup, entries are either:
+   - **No Transfer**: Payroll remains in payroll system only, no GL posting
+   - **Manual Posting**: Converted to General Journal Lines for you to post manually
+   - **Automatic Posting**: Automatically posted to the General Ledger
+   - **Always Ask**: You choose each time whether to auto-post or manual-post
 
-### Main salary/wage accounts
+## Required GL accounts
 
-**To configure wage accounts:**
+OnePayroll requires GL accounts for:
 
-1. Search for **Chart of Accounts**
-2. Find or create accounts:
-   - **6100** - Salaries and Wages
-   - **6110** - Hourly Wages
-   - **6120** - Commission Wages
-   - **6130** - Bonus Compensation
-3. Mark accounts:
-   - **Account Type** = Expense
-   - **Income/Balance** = Income Statement
-4. Save
+### Expense accounts
+- Regular salary
+- Hourly wages
+- Overtime compensation
+- Bonuses and commissions
+- Any other earnings pay types
 
-### Department-specific accounts (optional)
+### Payable/Liability accounts
+- Federal income tax payable
+- FICA (Social Security and Medicare) payable
+- State/local income tax payable
+- Other withholdings payable
+- Health insurance payable (if employee-funded)
+- Retirement plan payable (if employee-funded)
+- Other deductions payable
+- Garnishment payable
 
-For department cost tracking:
+### Employer expense accounts (if applicable)
+- Employer FICA matching
+- Unemployment insurance
+- Employer-funded benefits
+- Other employer taxes
 
-1. Create sub-accounts by department:
-   - **6100.10** - Sales Salaries
-   - **6100.20** - Operations Salaries
-   - **6100.30** - Admin Salaries
-2. Configure in **Department Setup** (if used)
-3. Assign employees to departments
-4. OnePayroll automatically charges salaries to department account
+## Creating GL accounts for payroll
 
-### Pay type accounts
-
-For detailed pay type tracking:
-
-1. Create accounts by pay type:
-   - **6200** - Regular Wages
-   - **6210** - Overtime Wages
-   - **6220** - Shift Differential
-   - **6230** - Bonuses
-2. Link pay type to GL account in pay type setup
-3. OnePayroll posts each pay type separately
-
-## Setting up payable accounts
-
-### Tax payable accounts
-
-**To create tax liability accounts:**
+**To create necessary GL accounts:**
 
 1. Search for **Chart of Accounts**
-2. Create accounts (Income Statement → Liability section):
-   - **2100** - Federal Income Tax Payable
-   - **2110** - FICA/Social Security Payable
-   - **2120** - Medicare Tax Payable
-   - **2130** - State Income Tax Payable
-   - **2140** - Local Income Tax Payable
-3. Mark:
-   - **Account Type** = Liability
-   - **Income/Balance** = Balance Sheet
+2. Create accounts by category:
+   - **6000-6099** for salary/wage expenses (typically)
+   - **2100-2199** for payroll liabilities/payables (typically)
+3. For each account:
+   - Set **Account Type** to Expense or Liability as appropriate
+   - Set posting accounts only (not summary accounts)
+   - Enable **Direct Posting**
 4. Save
 
-### Employee deduction payable
+## Assigning GL accounts to pay types
 
-**For employee-funded deductions:**
-
-1. Create accounts:
-   - **2200** - Health Insurance Payable
-   - **2210** - Retirement Plan Payable
-   - **2220** - FSA/HSA Payable
-   - **2230** - Garnishment Payable
-   - **2240** - Other Deductions Payable
-2. Mark as Liability accounts
-3. Save
-
-## Setting up cash accounts
-
-### Worker net pay account
-
-**For net pay distribution:**
-
-1. Navigate to **Chart of Accounts**
-2. Locate **1000** - Cash account (or Bank-specific like 1010, 1020)
-3. When payroll posts:
-   - Expense accounts (6100) debited (payroll cost)
-   - Liability accounts (2100-2240) credited (taxes/deductions)
-   - Cash (1000) credited (net pay to employees)
-
-### Multiple bank accounts
-
-If distributing direct deposit to multiple accounts:
-- Use primary cash account for main bank
-- Secondary accounts optional (if split payments tracking needed)
-
-## Linking accounts in payroll setup
-
-### Payroll Setup GL configuration
-
-1. Search for **Payroll Setup**
-2. On **GL Posting** tab, configure:
-   - **Default Salary Expense Account** = 6100 (or specific)
-   - **Default FICA Payable Account** = 2110
-   - **Default Federal Tax Payable** = 2100
-   - **Default State Tax Payable** = 2130
-   - **Default Cash Account** = 1000
-3. These serve as defaults for all payroll postings
-
-### Pay type account mapping
+Each pay type must be assigned GL accounts (Account No. and optionally Balance Account No.). When that pay type is posted, its amounts are posted to these accounts.
 
 **To assign GL accounts to pay types:**
 
-1. Open **Pay Types** list
-2. Select pay type (e.g., "Regular Wages")
-3. Configure:
-   - **GL Account** = Specific expense account (e.g., 6200)
-   - **Employer Tax Account** = If different from default
-4. Save
+1. Search for **Pay Types**
+2. Open or create a pay type
+3. Go to the **Posting** tab
+4. Set **Account No.** to the primary GL account for this pay type
+5. Optionally set **Balance Account No.** for balancing/offset posting (usually left blank)
 
-When payroll processes:
-- Regular wages post to 6200 (not 6100)
-- Specific account identified by pay type
+**Example mappings:**
 
-### Benefit posting
+- Pay Type "Regular Pay" → Account No.: 6100 (Salary Expense)
+- Pay Type "Federal Tax" → Account No.: 2100 (FIT Payable)
+- Pay Type "Health Insurance" → Account No.: 2120 (Benefits Payable)
 
-**For benefit liabilities:**
+> [!IMPORTANT]
+> All pay types must have GL accounts assigned. Note: This is only critical if **General Ledger Posting** is set to anything other than "No Transfer" in Payroll Setup.
 
-1. Open **Benefit Types**
-2. Select benefit type (e.g., "Health Insurance")
-3. Configure:
-   - **Payable GL Account** = 2200 (Health Insurance Payable)
-   - **Expense Account** (if employer-funded) = 6300 (Benefits Expense)
-4. Save
+## GL posting workflow
 
-When payroll posts:
-- Employee health deduction → 2200 (liability)
-- Employer health cost → 6300 (expense)
+### Step 1: Create and calculate payroll (no GL interaction)
+- Create payroll run
+- Calculate payroll entries
+- Entries created in payroll system only
+- No GL impact yet
+
+### Step 2: Approve payroll (no GL interaction)
+- Review and approve payroll entries
+- Still exists only in payroll system
+- No GL posting yet
+
+### Step 3: Post payroll (GL posting occurs based on setting)
+
+When you select **Post** in a payroll run:
+
+**If "No Transfer":**
+- Payroll is marked as "Posted" in payroll system
+- No GL transfer occurs
+- No General Journal Lines created
+
+**If "Manual Posting":**
+- General Journal Lines are created with payroll entries
+- Lines appear in the General Journal (not posted)
+- You must manually post the journal lines
+- Once posted, GL entries are permanent
+
+**If "Automatic Posting":**
+- General Journal Lines are created from payroll entries
+- Lines are immediately posted to GL
+- Payroll GL posting is permanent
+- No further GL action needed
+
+**If "Always Ask":**
+- You are prompted to choose manual or automatic posting
+- Select based on your current need
+- Different payrols can use different approaches
+
+### Step 4: Verify GL postings
+- Review GL accounts to confirm posting
+- Payroll entries should aggregate by pay type GL account
+- Total debits should equal total credits
+
+## Understanding GL aggregation
+
+When payroll posts to GL:
+
+- Multiple payroll entries for the same pay type are aggregated by GL account
+- One General Journal Line is created per GL account
+- Example: 20 employees with "Regular Pay" → 1 journal line to GL Account 6100 (total of all 20)
+
+**GL posting example:**
+
+```
+Payroll Entries:
+  Employee 001 Regular Pay: $1,000 → GL 6100
+  Employee 002 Regular Pay: $1,200 → GL 6100
+  Employee 001 FIT: ($120) → GL 2100
+  Employee 002 FIT: ($145) → GL 2100
+
+GL General Journal Lines Posted:
+  GL 6100 Salary (Debit): $2,200
+  GL 2100 FIT Payable (Credit): $265
+```
+
+## GL account numbering strategy
+
+**Recommended numbering by function:**
+
+- **6000-6099**: Salary and wage expenses
+- **6100-6199**: Overtime and special pay
+- **6200-6299**: Benefits expenses
+- **2100-2199**: Payroll liability accounts
+- **1000-1099**: Cash/bank accounts
+
+Benefits:
+- Easy to identify payroll GL activity
+- Simplifies reconciliation
+- Groups related accounts together
 
 ## Testing GL posting
 
-**Before production payroll:**
+**Before processing production payroll:**
 
-1. **Create test payroll** with sample data
-2. **Review GL entries** generated (don't post to GL yet)
-3. **Verify accounts:**
-   - Salary expense to correct account
-   - Taxes post to payable accounts
-   - Cash reduced by net pay
-4. **Check amounts:**
-   - Total debits = total credits
-   - Account balances reasonable
-5. **Post and reconcile** if all correct
+1. Create a test payroll with sample data
+2. Approve the test payroll
+3. Based on your GL Posting setting:
+   - **Manual Posting**: Review General Journal Lines before posting
+   - **Automatic Posting**: Review GL accounts after posting
+4. Verify:
+   - Entries posted to correct GL accounts
+   - Amounts seem reasonable (total pay, tax amounts, etc.)
+   - Debits = Credits
+5. Delete or reverse the test payroll
+6. Adjust GL accounts or pay type mappings if needed
+7. Process production payroll with confidence
 
-## Department-based allocation
+## GL posting timing and period
 
-### Setting up department posting
+Each payroll posts using:
+- **Posting Date**: Date specified in payroll run
+- **Period**: GL posting period (month/year) based on posting date
+- **Document No.**: Formatted per Payroll Setup settings
 
-1. Ensure employees assigned to departments
-2. Create department-specific GL accounts (optional)
-3. In **Payroll Setup**, enable **Post by Department**
-4. OnePayroll allocates salary expense by department code
+> [!TIP]
+> Ensure payroll is posted within the GL period it covers. For example, payroll covering Feb 1-15 should post in February, not March.
 
-**Example:**
-```
-Employee 001 (Sales dept): $3,000 → 6100.10 (Sales Salaries)
-Employee 002 (Ops dept): $2,500 → 6100.20 (Operations Salaries)
-```
+## Troubleshooting GL posting
 
-## Validation
+**"GL account not found" error**
+- Verify all pay types have GL accounts assigned
+- Confirm GL accounts exist in Chart of Accounts
+- Check that GL accounts haven't been closed
+- Ensure accounts are marked as posting (not summary)
 
-**Before first production payroll:**
+**GL postings don't appear**
+- Verify GL Posting setting in Payroll Setup (not "No Transfer")
+- If manual posting, check that journal lines were manually posted
+- Review GL accounts using GL account filter for payroll dates
 
-Confirm:
-- [ ] All required GL accounts exist in chart of accounts
-- [ ] Accounts configured as correct type (Expense, Liability, Asset)
-- [ ] Default accounts set in Payroll Setup
-- [ ] Pay type accounts linked (if using)
-- [ ] Benefit GL accounts configured (if applicable)
-- [ ] Test payroll GL entries reviewed and reasonable
-- [ ] Department allocation working (if using)
+**Amounts don't match GL**
+- Verify all employees were included in payroll
+- Confirm payroll status is "Posted" (not just "Approved")
+- Check GL account aggregation (multiple entries per account may aggregate)
+- Review payroll GL posting detail in payroll run
 
-## GL posting timing
+**GL entries in wrong period**
+- Verify posting date on payroll run matches intended period
+- Adjust posting date if needed, post payroll again
+- Review GL account period settings
 
-### When GL entries are created
+## Year-end GL reconciliation
 
-- GL entries created when payroll **approved**
-- Entries can be reviewed before posting to GL
-- GL posting (final step) makes entries permanent
+**At year-end:**
 
-### GL closing and year-end
-
-**Month-end close:**
-- All payroll GL entries should post before closing month
-- Review payroll payable accounts (taxes, deductions)
-- Verify deduction/tax liabilities will be paid
-
-**Year-end close:**
-- All payroll for year completed and posted
-- W-2 payroll total = GL salary expense total
-- Tax GL payable accounts cleared by tax deposits
-
-## Troubleshooting
-
-**"GL account not found"**
-- Verify account number in Payroll Setup is correct
-- Check account exists in Chart of Accounts
-- Confirm account hasn't been deleted
-- Update to valid account
-
-**"Salary posting to wrong account"**
-- Check pay type GL account assignment
-- Verify default account in Payroll Setup
-- Review specific pay type has account linked
-- Regenerate GL entries if incorrect
-
-**"Liability accounts not balanced"**
-- Verify deduction/tax setup is complete
-- Ensure employees have correct tax/deduction config
-- Check GL liability accounts created
+1. Post all remaining payroll for the year
+2. Verify GL payroll liability accounts (what's still owed)
+3. Compare GL salary expense total to W-2 totals
+4. Reconcile tax payable accounts (should be paid out or accrued)
+5. Archive posted payroll for records
 
 ## Best practices
 
-- **Separate accounts by type** - Use different GL accounts for salary vs. hourly vs. commission
-- **Track by department** - Allocate to departments for cost analysis
-- **Year-end reconciliation** - Verify GL totals match W-2s and tax filings
-- **Archive GL entries** - Keep records of all payroll GL postings
-- **Regular review** - Monitor GL accounts monthly for errors
-- **Maintain chart of accounts** - Keep account descriptions current
+- **Always assign GL accounts to pay types** - Required for posting
+- **Test before production** - Run test payroll to validate GL posting
+- **Monthly GL reconciliation** - Review payroll GL transactions monthly
+- **Clear GL posting setting** - Decide on manual vs. automatic and stay consistent
+- **Maintain chart of accounts** - Keep descriptions current for clarity
+- **Document exceptions** - Note any unusual GL postings or adjustments
+- **Keep audit trail** - Retain payroll GL posting details for compliance
 
 ## What's next
 
-- **[GL integration overview](gl-integration-overview.md)** - GL integration concepts
-- **[Payroll journal](payroll-journal.md)** - GL journal entry review
-- **[Pay type setup](pay-types-setup.md)** - Pay type configuration
+- **[Payroll setup](payroll-setup.md)** - Complete payroll configuration
+- **[Pay types overview](pay-types-overview.md)** - Understanding pay types
+- **[Process payroll runs](payroll-runs-process.md)** - How to create and post payroll

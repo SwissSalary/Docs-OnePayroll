@@ -13,7 +13,7 @@ ms.service: dynamics-365-business-central
 ## Core payroll processing
 ### Payroll runs
 #### [About payroll runs](payroll-runs-overview.md)
-#### [Set up payroll runs](payroll-runs-setup.md)
+#### [Configure payroll settings](payroll-setup.md)
 #### [Process payroll runs](payroll-runs-process.md)
 
 ### Pay types

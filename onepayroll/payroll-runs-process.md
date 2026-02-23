@@ -55,7 +55,6 @@ By default, OnePayroll calculates period dates from your pay cycle. If you need 
 
 1. In the **Payroll Run** list, open the payroll run
 2. Edit **Start Date** and **End Date** as needed
-3. Save
 
 > [!IMPORTANT]
 > Changing period dates changes which transactions are included in the payroll. Use caution—ensure adjustments reflect your business intent.
@@ -159,25 +158,20 @@ Net Pay                  $792.00      (Employee Payable)
 
 ## Step 5: Make corrections (if needed)
 
-If you find errors during review, you have two options:
+If you find errors during review:
 
-### Option A: Revert and recalculate
-If the error is in setup (GL accounts, pay types, etc.):
-
-1. Select **Revert to Open**
-2. Fix the underlying issue (adjust pay types, GL accounts, etc.)
+1. Select **Revert to Open** to unlock the payroll
+2. Fix the underlying issue:
+   - Adjust employee pay types or GL accounts
+   - Correct pay period dates
+   - Update employee payment methods or bank accounts
+   - Modify deductions or garnishments
 3. Select **Calculate** again
-4. Repeat Step 4 (Review)
-
-### Option B: Manually adjust entries
-For minor adjustments:
-
-1. In the Payroll Entries, select **Edit**
-2. Manually change the amount if needed
-3. Confirm the change and recalculate if necessary
+4. Repeat Step 4 (Review payroll entries)
+5. Re-approve when satisfied
 
 > [!IMPORTANT]
-> Manual adjustments should be rare. If considering a manual adjustment, first verify the underlying data is correct. Document why the adjustment was made for audit purposes.
+> Only revert if the error is in setup data (GL accounts, pay types, employee records, etc.). Do not attempt to manually adjust individual payroll entries. Always trace the error back to its source and fix the root cause before recalculating.
 
 ## Step 6: Mark as approved
 
@@ -191,31 +185,31 @@ The payroll run is now locked. No further edits are allowed until posting or rev
 
 ## Step 7: Post to general ledger
 
-Posting creates GL journal entries and updates your financial records.
+Posting transfers payroll entries to the general journal and optionally posts them automatically.
 
 **To post a payroll run:**
 
 1. Open the Approved payroll run
 2. Select **Post**
 3. Confirm the posting action
-4.Wait for posting to complete
+4. Wait for posting to complete
 5. Status changes to "Posted"
 
 **What happens during posting:**
-- Payroll entries are converted to GL journal entries
-- GL accounts are debited/credited based on entry amounts
-- Journal is posted to the GL
-- Payroll run is marked final (cannot be modified)
-- Posted date and user are recorded
 
-### Automatic GL posting details
+The posting process depends on your **General Ledger Posting** setting in Payroll Setup:
 
-OnePayroll automatically:
-- Aggregates entries by GL account
-- Balances debits and credits
-- Posts to correct period/date
-- Maintains source document reference
-- Creates audit trail
+- **No Transfer**: Payroll entries are recorded but NOT transferred to General Journal (no GL posting occurs)
+- **Manual Posting**: Payroll entries are converted to GL journal entries; you must manually post the journal lines in the General Journal
+- **Automatic Posting**: Payroll entries are converted to GL journal lines and automatically posted to the General Ledger
+- **Always Ask**: Each time you post, you are prompted to choose whether to post the journal immediately or manually
+
+Regardless of posting type:
+- Payroll entries are aggregated by GL account
+- Debits and credits are balanced
+- Entries are posted to the correct accounting period
+- Source document reference is maintained
+- Payroll run is marked as "Posted" (entries cannot be modified)
 
 ## Step 8: Verify GL postings
 

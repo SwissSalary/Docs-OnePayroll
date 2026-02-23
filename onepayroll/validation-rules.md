@@ -226,5 +226,5 @@ Organize related rules:
 
 ## What's next
 
-- **[Payroll setup](payroll-runs-setup.md)** - Payroll configuration
+- **[Payroll setup](payroll-setup.md)** - Payroll configuration
 - **[Employee setup](employee-setup.md)** - Employee configuration
