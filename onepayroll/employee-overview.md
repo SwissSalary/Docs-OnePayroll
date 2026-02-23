@@ -227,5 +227,5 @@ Learn how to work with employees:
 - **[Set up employees](employee-setup.md)** - Create and configure employee records
 - **[Employee pay units](employee-pay-units.md)** - Compensation rate setup
 - **[Departments and work locations](departments-work-locations.md)** - Organizational hierarchy
-- **[Employee bank accounts](employee-bank-accounts.md)** - Direct deposit setup
+- **[Employee bank account information](employee-bank-accounts.md)** - Bank details on payment methods
 - **[Garnishments](garnishments.md)** - Wage garnishment configuration

@@ -98,8 +98,8 @@ A pay type that increases an employee's gross pay, such as salary, wages, overti
 **Effective Date**
 The date that a change (to pay type, pay group, benefit enrollment, etc.) becomes active.
 
-**Employee Bank Account**
-A record of an employee's bank account used for direct deposit payments. Bank accounts can be reused across multiple payment methods.
+**Employee Payment Method**
+A record that defines how an employee's net pay is allocated and where it is deposited. Each Employee Payment Method stores allocation settings (Primary, Fixed Amount, or Percentage) and bank details (Bank Account No., Bank Identifier Code) directly on the same record.
 
 **Employee Snapshot**
 A historical record of an employee's key payroll information (pay group, pay types, tax settings) captured at a point in time for audit and historical reference.
@@ -308,8 +308,8 @@ The rules that determine when a pay period ends and the next one begins.
 **FICA**
 See [FICA](#f).
 
-**Position**
-An ordering of payment allocations or deductions (Position 1 = Primary).
+**Priority**
+An ordering of Employee Payment Methods. Each method has a unique priority per employee that determines the processing order.
 
 **Posted**
 A transaction that has been recorded in the general ledger and is final.
@@ -376,14 +376,14 @@ Performance issues that occur when payroll history grows large.
 
 ## T
 
-**Tax Calculation Engine**
-The software component responsible for calculating tax withholdings:
-- **Vertex** - Third-party tax calculation provider
-- **Symmetry** - Alternative third-party tax provider
-- **Mock** - Built-in mock calculator for testing
+**Tax Calculation Method**
+The calculation approach configured on each Income Tax Jurisdiction. Available methods:
+- **Standard** — Full W-4 calculation with annualization, deductions, brackets, credits, and allowances
+- **Simplified** — Bracket-based lookup using annualized wages
+- **None** — No income tax calculation
 
 **Tax Calculation Setup**
-Configuration of the tax engine, tax jurisdictions, and withholding rules.
+Configuration of Income Tax Jurisdictions, rates, and withholding rules.
 
 **Tax Filing Due Date**
 The government deadline for submitting tax forms and payments.
@@ -439,9 +439,6 @@ A custom field added to a table by implementing partners to extend OnePayroll fu
 
 **Validation Rule**
 A configurable business rule that validates payroll data. Validation rules can be applied at the field level during data entry.
-
-**Vertex**
-A third-party tax calculation provider integrated with OnePayroll.
 
 **Vision Insurance**
 Employee health insurance covering vision care (eye exams, glasses, contacts).

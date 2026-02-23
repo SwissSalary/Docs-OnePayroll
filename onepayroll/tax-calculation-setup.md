@@ -1,6 +1,6 @@
 ---
 title: Set up tax calculations
-description: Learn how to configure tax calculation providers and settings in OnePayroll.
+description: Learn how to configure Income Tax Jurisdictions, calculation methods, and tax rates in OnePayroll.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: how-to
@@ -9,179 +9,138 @@ ms.date: 02/23/2026
 
 # Set up tax calculations
 
-Configure OnePayroll to calculate accurate federal, state, and local taxes for your employees.
+Configure Income Tax Jurisdictions to define how OnePayroll calculates federal, state, and local income tax withholding.
 
-## Select tax calculation provider
+## Set up Income Tax Jurisdictions
 
-**To configure your tax provider:**
+Income Tax Jurisdictions define the taxing authorities and their calculation rules. Each jurisdiction has a level (National, Regional, or Local), a calculation method, and a linked pay type for posting withholding entries.
 
-1. Search for **Payroll Setup**
-2. On **Tax Calculation** tab, select **Tax Provider:**
-   - **Built-in (Mock)** - For testing (calculates basic federal only)
-   - **Vertex** - Professional tax service (federal, state, local)
-   - **Symmetry** - Alternative professional service
-3. Save
+**To create or edit jurisdictions:**
 
-### Tax provider comparison
+1. Search for **Income Tax Jurisdictions** to open the list page.
+2. Select a jurisdiction or choose **New** to create one.
+3. On the **General** group, fill in:
+   - **Code** — identifier for the jurisdiction (for example, `US` for federal, `CA` for California)
+   - **Description** — display name
+   - **Level** — National, Regional, or Local
+   - **Report-to Jurisdiction** — the parent jurisdiction (for example, states report to the federal jurisdiction)
+   - **Withholding Definition** — controls which W-4 fields appear and how values propagate (US)
+   - **Form Name** — the tax form used (for example, `W-4` for federal, `DE-4` for California) (US)
+4. On the **Calculation** group, fill in:
+   - **Calculation Method** — Standard, Simplified, or None
+   - **Pay Type No.** — the pay type used to create withholding entries
+   - **Rounding Method** — how to round calculated amounts
+5. Close the page.
 
-| Feature | Built-in | Vertex | Symmetry |
-|---------|----------|--------|----------|
-| Federal income tax | Yes | Yes | Yes |
-| State income tax | Limited | Yes | Yes |
-| Local income tax | No | Yes | Yes |
-| FICA (SS/Medicare) | Yes | Yes | Yes |
-| Multi-state | Limited | Yes | Yes |
-| Real-time updates | No | Yes | Yes |
-| Setup complexity | Low | Medium | Medium |
+### Calculation methods
 
-**Recommendation:**
-- **Testing:** Use Built-in
-- **Production:** Use Vertex or Symmetry
+| Method | Description | Typical use |
+|--------|-------------|-------------|
+| **Standard** | Full W-4 calculation with annualization, deductions, bracket tax, credits, and allowances | Federal (W-4), states with their own forms |
+| **Simplified** | Bracket-based lookup using annualized wages | States that inherit from federal and use simple rate tables |
+| **None** | No tax calculation | Jurisdictions without income tax |
 
-## Configure tax calculation settings
+### Withholding definitions (US)
 
-### Federal tax setup
+The **Withholding Definition** field controls which W-4 fields the employee sees and whether values propagate from a parent jurisdiction:
 
-1. Search for **Payroll Setup**
-2. On **Tax Calculation** tab:
-   - **Method** = Method 1 (Percentage) or Method 2 (Wage Bracket)
-   - **Tax Year** = 2024 (or current year)
-   - **Standard Deduction** = Current standard deduction amount
-3. Save
+| Definition | Behavior |
+|------------|----------|
+| **Standard form** | Employee fills in all applicable fields (Filing Status, Credits, Deductions, etc.) independently |
+| **Standard form with inherited filing status** | Same as Standard form, but Filing Status is inherited from the parent (federal) jurisdiction |
+| **Inherited from parent** | All withholding values are inherited from the parent jurisdiction; employee doesn't enter separate state W-4 data |
 
-**For external providers:**
-- Provider automatically uses current tax tables
-- No manual configuration needed
-- Service updates tables quarterly
+### Example jurisdiction setup
 
-### State tax configuration
+A typical US configuration includes:
 
-If using Vertex or Symmetry:
+| Code | Level | Calculation Method | Withholding Definition | Form |
+|------|-------|--------------------|------------------------|------|
+| US | National | Standard | Standard form | W-4 |
+| CA | Regional | Standard | Standard form | DE-4 |
+| ND | Regional | Simplified | Inherited from parent | — |
 
-1. Set up employee residence states
-2. Configure any reciprocal tax states
-3. Enter any state-specific information
+## Set up Income Tax Rates
 
-**States with no income tax:**
-- FL, TX, WA, WY, SD, NV, TN, AK, NH (dividends/interest only)
-- Override to skip withholding: Set employee state to "No Tax"
+Tax rate brackets determine how withholding amounts are calculated for each jurisdiction and filing profile.
 
-### Local tax setup
+**To configure tax rates:**
 
-For employees with local tax obligation:
+1. Search for **Income Tax Rates** to open the list page.
+2. Create entries with:
+   - **Tax Year** — the calendar year
+   - **Jurisdiction ID** — the jurisdiction these rates apply to
+   - **Income Tax Profile** — the filing profile (matches employee filing status)
+   - **Income From** — the lower bound of the bracket
+   - **Tax Rate** — the marginal rate for income in this bracket
+   - **Base Tax Amount** — the cumulative tax from lower brackets
+3. Close the page.
 
-1. Identify applicable local jurisdictions
-2. Set on employee record
-3. Provider calculates if configured
+Rates are typically configured per tax year, per jurisdiction, and per Income Tax Profile. The Standard and Simplified calculators both use these rate tables.
 
-## W-4 and tax information setup
+## Set up Income Tax Setup
 
-**To set employee tax information:**
+Income Tax Setup stores supplementary calculation parameters per jurisdiction and filing profile.
 
-1. Open employee
-2. On **Tax** tab, enter:
-   - **W-4 Status** = Filing status (Single, Married, Head of Household)
-   - **W-4 Allowances** = Number of exemptions (older form)
-   - **W-4 Credits** = Tax credits (2024 form)
-   - **State W-4** = If applicable
-   - **Additional Withholding** = Extra per-check withholding
-3. Save
+**To configure:**
 
-### Federal W-4 information (2024)
-```
-Line 1: Full name, address, SSN
-Line 2: Filing status (Single, Married, Head of Household)
-Line 3: Tax credits (children, CDCC, etc.)
-Line 4a: Other income (spouse job, investment, etc.)
-Line 4b: Deductions (not standard deduction)
-Line 4c: Extra withholding per pay period
-```
+1. Search for **Income Tax Setup** to open the list page.
+2. Create entries with:
+   - **Tax Year** — the calendar year
+   - **Jurisdiction ID** — the jurisdiction
+   - **Income Tax Profile** — the filing profile
+   - **Standard Deduction** — the annual standard deduction amount
+   - **Per-Allowance Amount** — the reduction per allowance claimed
+3. Close the page.
 
-### State W-4 example (New York)
-```
-Line 1: Filing status
-Line 2: Allowances/credits
-Line 3: Additional withholding
-```
+The Standard calculator uses these values during the calculation sequence (gross → subtract Standard Deduction → bracket tax → subtract credits → subtract per-allowance reductions → add additional withholding).
 
-## Multiple job handling
+## Set up Pay Type W-2 mapping
 
-For employees with multiple jobs:
+Each pay type can be mapped to a W-2 box so that earnings, deductions, and taxes are correctly reported on the Employee W-2 Statement.
 
-1. Ensure W-4s account for all income
-2. Employee should maximize withholding on primary job
-3. On secondary job: Indicate "Married with Multiple Jobs"
-4. Higher federal withholding automatically applied
+**To assign W-2 boxes:**
 
-**Or in OnePayroll:**
-- Set employee **Multiple Jobs Flag** = Yes
-- Increase withholding on secondary job
+1. Open a **Pay Type** card.
+2. In the **Tax Statement** group, set:
+   - **W-2 Box** — the W-2 box this pay type maps to (for example, *1 - Wages Tips Other Compensation*, *2 - Federal Income Tax Withheld*)
+   - **W-2 Box Code** — additional code for boxes that require one (Box 12 Codes and Box 14 Other)
+3. Save.
 
-## Tax table management
+For the full list of W-2 box options, see [Tax statements and reporting](tax-statements.md).
 
-### For Vertex/Symmetry
-- Authentication: Set up account credentials in Payroll Setup
-- Automatic updates: Tables update quarterly (April, July, Oct, Jan)
-- No manual intervention needed
+## Verify the setup
 
-### For Built-in provider
-- Tax tables: Hardcoded (limited, for testing only)
-- No updates: Use only for testing/demo environments
+Before processing payroll with income tax withholding:
 
-## Testing tax setup
-
-**Before processing production payroll:**
-
-1. **Create sample employee (federal only)**
-   - Single, filing status 1
-   - Federal W-4 only
-   - Test paycheck calculation
-
-2. **Verify federal tax**
-   - Calculate expected federal tax manually
-   - Compare to OnePayroll calculation
-   - Should match IRS tables
-
-3. **Test state calculation (if applicable)**
-   - Add state residence
-   - Verify state withholding appears
-   - Compare to state tax tables
-
-4. **Test multi-state (if applicable)**
-   - Create employee with multiple states
-   - Verify correct apportionment
+1. Confirm each jurisdiction has the correct **Calculation Method** and **Pay Type No.** assigned.
+2. Verify that **Income Tax Rates** and **Income Tax Setup** entries exist for the current tax year and all applicable filing profiles.
+3. Open an employee's **Withholding Information** to confirm that withholding records were created for the expected jurisdictions.
+4. Process a sample payroll run to verify that the withholding amounts are reasonable.
 
 ## Troubleshooting
 
-**"Tax provider not responding"**
-- Verify internet connection
-- Check provider credentials in Payroll Setup
-- Verify account is active with provider
-- Contact provider support if persists
+### No income tax calculated
 
-**"Tax calculation seems low"**
-- Verify W-4 information correct
-- Check employee tax status
-- Confirm tax year is current
-- Review for W-4 adjustments (credits, extra withholding)
+- Verify the jurisdiction's **Calculation Method** is not set to **None**.
+- Confirm the jurisdiction has a **Pay Type No.** assigned.
+- Check that **Income Tax Rates** exist for the current tax year and the employee's resolved Income Tax Profile.
+- Open the employee's **Withholding Information** and confirm the record is not marked as exempt.
 
-**"FICA doesn't match expected"**
-- Social Security: $168,600 wage base (2024) - stops at limit
-- Medicare: No limit
-- Additional Medicare: 0.9% over $200k (single)
-- Verify employee wages haven't exceeded limits
+### Withholding amount seems incorrect
 
-## Best practices
+- Review the employee's Filing Status, Withholding Credits, Other Income, and Deductions on the Withholding Information page.
+- Confirm the correct **Standard Deduction** and **Per-Allowance Amount** are configured in Income Tax Setup.
+- Verify that the correct tax brackets are entered in Income Tax Rates.
 
-- **Annual W-4 review** - Ask employees to confirm W-4 annually or after life changes
-- **Test before production** - Always test tax setup with sample employees
-- **Update tables** - For external providers, confirm quarterly updates happen
-- **Monitor withholding** - Quarterly review of tax deposits matches calculated withholding
-- **Year-end reconciliation** - Verify W-2 taxes match actual deposits made
-- **Multi-state documentation** - Keep state assignment rules documented
+### State withholding not appearing
 
-## What's next
+- Confirm the state jurisdiction exists with Calculation Method set to Standard or Simplified.
+- Verify the employee's work location or home state is correctly assigned.
+- One of these must differ from `None` for the jurisdiction to be assigned automatically.
 
-- **[Income tax setup](income-tax-setup.md)** - Employee tax information details
-- **[Tax statements](tax-statements.md)** - W-2 reporting and preparation
-- **[About tax calculations](tax-calculation-overview.md)** - Tax concepts overview
+## Next steps
+
+- [Set up income tax withholding](income-tax-setup.md) — employee W-4 and filing information
+- [Tax statements and reporting](tax-statements.md) — W-2 preparation
+- [About tax calculations](tax-calculation-overview.md) — tax calculation concepts

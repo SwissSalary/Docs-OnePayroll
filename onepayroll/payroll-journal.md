@@ -1,269 +1,114 @@
 ---
-title: Manage payroll journal entries
-description: Learn how to review and manage general ledger journal entries from payroll posting.
+title: Payroll journal entries
+description: Learn how OnePayroll creates and posts General Journal Lines from payroll entries.
 author: SwissSalary
 ms.service: dynamics-365-business-central
-ms.topic: how-to
+ms.topic: concept
 ms.date: 02/23/2026
 ---
 
-# Manage payroll journal entries
+# Payroll journal entries
 
-Review and manage general ledger journal entries created by payroll before final posting.
+When you post a payroll run, OnePayroll creates General Journal Lines based on payroll entries and user-configured GL accounts. This article explains how journal lines are created, consolidated, and posted.
 
-## GL entry creation
+## When General Journal Lines are created
 
-### When entries are created
+General Journal Lines are created when you select **Post** on a payroll run — not during creation or approval. The behavior depends on the **General Ledger Posting** setting in Payroll Setup:
 
-GL journal entries are created when payroll is **approved**:
+| Setting | General Journal Lines created? | Automatically posted? |
+|---|---|---|
+| No Transfer | No | N/A |
+| Manual Posting | Yes | No — you must post manually |
+| Automatic Posting | Yes | Yes |
+| Always Ask | Yes | You choose each time |
 
-1. Payroll Run created and calculated > Pay types, deductions, taxes computed
-2. Payroll approved by manager > GL entries generated automatically
-3. Entries appear in GL batches (not posted yet)
-4. Accountant reviews entries
-5. Entries posted to GL (permanent)
+## How journal lines are generated
 
-### Types of entries generated
+### 1. Buffering
 
-**For a typical weekly payroll:**
+All payroll entries for the payroll run are collected. Each entry's GL account (Account No.), balance account (Balance Account No.), date, amount, and dimension set are recorded into a posting buffer.
 
-**Expense entries:**
-- Salary Expense (debit) = Gross wages to all employees
+### 2. Line creation
 
-**Tax entries:**
-- Federal Tax Payable (credit) = Withholding + employer match
-- FICA Payable (credit) = Social Security + Medicare withholding/match
-- State Tax Payable (credit) = State withholding
+From the buffer, General Journal Lines are created in the journal template and batch configured on the **pay group**:
 
-**Deduction entries:**
-- Benefits Payable (credit) = Employee deductions
-- Garnishment Payable (credit) = Wage garnishments
+- One line for the **Account No.** with the entry amount
+- One line for the **Balance Account No.** with the inverse amount (if a balance account is specified)
 
-**Cash entry:**
-- Bank Account (credit) = Net pay distributed to employees
+Each line includes:
+- **Document No.** — Formatted using the **G/L Document No. Format** from Payroll Setup (with placeholders replaced from the payroll run)
+- **Description** — Formatted using the **G/L Description Format** from Payroll Setup
+- **Source Code** — Set from the **SwS Payroll** source code in Source Code Setup (if configured)
+- **Reason Code** — Inherited from the journal batch
+- **Posting Date** and **Document Date** — Set to the entry date
+- **Dimension Set ID** — Carried from the payroll entry dimensions
 
-## Reviewing GL entries
+### 3. Consolidation
 
-### Accessing GL entries
+After initial creation, journal lines are consolidated:
 
-**To review payroll GL entries:**
+- Lines with the **same Account No. and same Dimension Set ID** are combined into a single line with the summed amount
+- Lines with a **zero amount** after consolidation are removed
 
-1. Search for **General Journal** or **GL Registers**
-2. Filter by date range (payroll period)
-3. Look for entries with source "Payroll"
-4. Review entries before posting
+This means a payroll with 50 employees posting to the same salary expense account (with the same dimensions) results in a single consolidated journal line for that account.
 
-### Entry details to verify
+### 4. Posting
 
-**For each entry, check:**
+- **Manual Posting**: The journal lines remain in the General Journal for you to review and post
+- **Automatic Posting**: The standard BC **Gen. Jnl.-Post** codeunit runs immediately to post the lines  
+- **Always Ask**: The posting confirmation dialog is shown; if confirmed, lines are posted
 
-1. **Account number** - Is it the expected GL account?
-2. **Description** - Shows payroll run number and period
-3. **Amount** - Matches calculated payroll total
-4. **Debit/Credit** - Correct side of entry (expenses debit, liabilities credit)
-5. **Date** - Correct posting date
-6. **Department** - Correct if allocated by department
+## Reviewing journal lines
 
-### Sample entry review
+### Before posting (Manual Posting mode)
 
-```
-GL Entry for Weekly Payroll (12/15/2025):
-Line 1: Debit 6100 Salary Expense     $15,000
-Line 2: Credit 2100 Fed Tax Payable    $1,500
-Line 3: Credit 2110 FICA Payable       $1,700
-Line 4: Credit 2200 Benefits Payable     $500
-Line 5: Credit 1000 Cash              $11,300
-----------------------------------------
-Total Debits = Credits (entry balanced)
-```
+If using Manual Posting, review the lines in the General Journal:
 
-## Correcting GL entries
-
-### Before posting
-
-**If entry is incorrect before posting:**
-
-1. Identify error in GL entry
-2. Option A: **Reverse entry** - Delete and regenerate
-   - Delete incorrect GL entry
-   - Correct payroll issue
-   - Re-approve payroll to generate correct entry
-3. Option B: **Manual correction** (if minor)
-   - Edit GL entry amount
-   - Update description to note correction
-   - Continue with posting
+1. Open the **General Journal**
+2. Select the journal template and batch configured on the pay group
+3. Review each line:
+   - **Account No.** — Correct GL account?
+   - **Amount** — Expected consolidated amount?
+   - **Posting Date** — Correct period?
+   - **Dimension Set ID** — Correct dimensions?
+4. Post the journal when satisfied
 
 ### After posting
 
-**If error discovered after posting:**
+To review posted entries:
 
-1. **Do not delete** - Will break audit trail
-2. **Create reversing entry:**
-   - Create GL journal entry to reverse
-   - Example: If wrong amount posted, reverse and repost correct amount
-3. **Update payroll records:**
-   - Note correction in payroll run
-   - Update employee records if needed
-4. **Document correction:**
-   - Keep copies of both entries
-   - Note reason for reversal/reposting
+1. In **Payroll Runs**, select the posted payroll run
+2. Select **General Ledger Log** (in Reporting actions)
 
-## Posting entries to GL
+Or search for **General Ledger Entries** and filter by document number and posting date.
 
-### Final GL posting process
+## Journal batch requirements
 
-**To post GL entries:**
+Before posting, OnePayroll checks that the configured journal batch is empty (no existing unposted lines with non-zero amounts). If unposted lines exist, an error is raised with a **Show Journal** action that lets you navigate directly to the journal to resolve the issue.
 
-1. Review all GL entries are correct
-2. Verify total debits = total credits
-3. Search for **General Journal Batches**
-4. Find payroll batch (usually "PAYROLL" batch)
-5. Select **Post** to finalize entries
-
-**After posting:**
-- Entries become permanent in GL
-- Bank account reflects net pay
-- Payable accounts reflect liabilities
-- Expenses reflect payroll cost
-
-### Timing recommendations
-
-**Pre-posting checklist:**
-- [ ] All payroll runs for period processed
-- [ ] All GL entries reviewed for accuracy
-- [ ] Amounts reconcile to payroll totals
-- [ ] No duplicate entries
-- [ ] Accounts are correct (not debit/credit reversed)
-
-**Post immediately after:**
-- Accounting period clearly reflects payroll posting
-- GL reconciliation easier (less backlog)
-- Year-end close preparation starts
-
-## Reconciling to payroll
-
-### Payroll-to-GL reconciliation
-
-**Monthly payroll reconciliation:**
-
-1. **Get payroll summary:**
-   - Total gross wages (all employees)
-   - Total federal withholding
-   - Total FICA withholding
-   - Total other deductions
-   - Total net pay
-
-2. **Match to GL entries:**
-   - GL Salary Expense = Total gross wages
-   - GL Fed Tax Payable = Total federal withholding
-   - GL FICA Payable = Total FICA withholding
-   - GL Cash = Total net pay
-
-3. **Investigate discrepancies:**
-   - Missing employees?
-   - Duplicate entries?
-   - Incorrect account assignment?
-
-**Example reconciliation:**
-```
-Payroll Summary:
-  Total Gross: $15,000
-  Total Fed Tax: $1,500
-  Total FICA: $1,700
-  Total Net: $11,800
-
-GL Entry Check:
-  6100 Salary Exp: $15,000 ✓
-  2100 Fed Tax: $1,500 ✓
-  2110 FICA: $1,700 ✓
-  1000 Cash: $11,800 ✓
-```
-
-## Liability reconciliation
-
-### Tax liabilities
-
-**Tracking tax payables:**
-
-1. GL tax payable account = taxes withheld + employer match
-2. When tax deposit made, reduce payable:
-   - Debit: Tax Payable (2100, 2110, etc.)
-   - Credit: Cash
-3. Account should near zero after deposits made
-
-**Monthly check:**
-- Tax deposits = taxes withheld
-- Payable account reduced accordingly
-- No balance remains if current
-
-### Deduction liabilities
-
-**Benefits deductions:**
-
-1. GL benefits payable = employee deductions withheld
-2. When paid to benefits provider:
-   - Debit: Benefits Payable (2200)
-   - Credit: Cash
-3. Balance should match unpaid deductions
-
-## Period-end GL review
-
-### Month-end closing
-
-**Before closing month:**
-
-1. **Verify all payroll posted**
-   - All pay periods in month processed
-   - All GL entries reviewed and posted
-   - No pending payroll
-
-2. **Review account balances**
-   - Payable accounts = current liabilities (will be paid)
-   - Expense accounts = month's payroll cost
-   - Cash = net pay distributed
-
-3. **Reconcile payables**
-   - Tax payable = deposit amounts + current withheld
-   - Benefits payable = unpaid deductions
-   - Garnishment payable = unpaid garnishments
-
-4. **Close month**
-   - Finalize all GL postings
-   - Run month-end reports
-   - Archive GL entries
+This prevents accidentally mixing payroll entries from different runs in the same journal batch.
 
 ## Troubleshooting
 
-**"GL entry doesn't balance"**
-- Verify all lines included (expenses, taxes, deductions, cash)
-- Check debit/credit sides correct
-- Recalculate total (should equal)
-- If still not balanced, delete and regenerate
+### "Unposted general journal lines" error
 
-**"Amounts don't match payroll summary"**
-- Verify correct payroll period
-- Check for multiple payroll runs in period
-- Spot-check employee amounts
-- Confirm no reversed/voided entries
+The journal batch still has lines from a previous payroll posting. Open the journal (use the link in the error) and either post or delete the existing lines before retrying.
 
-**"Can't find GL entry"**
-- Confirm payroll was approved (not just created)
-- Check GL entry date (may be different from payroll date)
-- Filter GL by payroll run number
-- Verify batch hasn't been deleted
+### Journal lines don't appear
 
-## Best practices
+- Verify **General Ledger Posting** is not set to **No Transfer**
+- Confirm the pay group has **Gen. Journal Template** and **Gen. Journal Batch** configured
+- Check that pay types have GL accounts assigned (Account No.)
 
-- **Post promptly** - Post GL entries within few days of payroll approval
-- **Review before posting** - Never post without reviewing GL entries
-- **Reconcile monthly** - Monthly payroll-to-GL reconciliation standard
-- **Archive entries** - Keep GL entry documentation with payroll records
-- **Document reversals** - If reversing entries, document reason and approval
-- **Segregate duties** - Different person calculates vs. posts payroll
-- **Year-end snap shot** - End of year, reconcile all GL payroll accounts
+### Amounts don't match expected totals
 
-## What's next
+- Remember that lines are consolidated by Account No. and Dimension Set ID
+- If different employees have different dimensions, their entries won't be consolidated together
+- Check if any pay types are missing GL account assignments
 
-- **[GL integration overview](gl-integration-overview.md)** - GL integration concepts
-- **[GL posting setup](gl-posting-setup.md)** - GL account configuration
-- **[Process payroll runs](payroll-runs-process.md)** - Payroll processing steps
+## Related information
+
+- [Set up GL posting for payroll](gl-posting-setup.md)
+- [Configure payroll settings](payroll-setup.md)
+- [Process payroll runs](payroll-runs-process.md)
+- [GL integration overview](gl-integration-overview.md)

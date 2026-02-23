@@ -1,6 +1,6 @@
 ---
 title: Process payroll runs
-description: Learn how to create, calculate, review, and post payroll runs in OnePayroll.
+description: Learn how to create, review, and post payroll runs in OnePayroll.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: how-to
@@ -9,233 +9,173 @@ ms.date: 02/23/2026
 
 # Process payroll runs
 
-This guide walks you through the payroll processing workflow: creating a payroll run, calculating pay, reviewing results, and posting to the general ledger.
+This guide walks you through the payroll processing workflow: creating a payroll run, reviewing results, and posting to the general ledger.
 
 ## Payroll processing workflow overview
 
 ```
-1. Create Payroll Run
+1. Create Payroll Run (calculation happens automatically)
    ↓
-2. Review Period Details (Start Date, End Date, Payment Date)
+2. Review Payroll Entries
    ↓
-3. Calculate Payroll
+3. (Optional) Approve (if approvals are required)
    ↓
-4. Review Payroll Entries
+4. Post to General Ledger
    ↓
-5. (Optional) Make Corrections
+5. Pay (generate payment files or print checks)
    ↓
-6. Mark as Approved
-   ↓
-7. Post to General Ledger
-   ↓
-8. Verify GL Postings
+6. Verify GL Postings
 ```
 
+> [!NOTE]
+> OnePayroll automatically calculates payroll during creation. There is no separate **Calculate** step. When you create a new payroll run, wages, deductions, taxes, and net pay are all computed immediately.
+
 ## Step 1: Create a payroll run
+
+Creating a payroll run also calculates all pay for the selected employees.
 
 **To create a new payroll run:**
 
 1. Search for **Payroll Runs**
-2. Select **New**
-3. In the **Payroll Run** form:
-   - **No.** - Auto-generated or enter manually (system uses next sequential number)
-   - **Pay Group** - Select the pay group to process (e.g., "Biweekly Employees")
-   - **Payment Date** - Enter when employees will be paid
-4. Select **OK** to create
+2. Select **New** to open the New Payroll request page
+3. Set the required parameters:
+   - **Pay Group** - Select the pay group to process (for example, "Biweekly Employees")
+   - **Start Date** - The start date of the pay period
+4. Select **OK** to create and calculate
 
 **What happens automatically:**
-- Period start and end dates are calculated based on your pay cycle
-- Period number is assigned based on the payment date
-- All active employees in the selected pay group are identified
-- Status is set to "Open"
 
-### Adjusting period dates
-
-By default, OnePayroll calculates period dates from your pay cycle. If you need different dates:
-
-1. In the **Payroll Run** list, open the payroll run
-2. Edit **Start Date** and **End Date** as needed
-
-> [!IMPORTANT]
-> Changing period dates changes which transactions are included in the payroll. Use caution—ensure adjustments reflect your business intent.
-
-## Step 2: Review payroll run details
-
-Before calculating, verify payroll run details are correct.
-
-**To view payroll run details:**
-
-1. Open the payroll run
-2. Review:
-   - **Pay Group** - Correct employee group?
-   - **Start Date** / **End Date** - Correct period?
-   - **Payment Date** - When will employees be paid?
-   - **Period Number** - Sequential period for the year?
-3. Verify the number of employees shown matches expected count
-
-If details are incorrect, edit them before proceeding.
-
-## Step 3: Calculate payroll
-
-Calculating performs the actual wage and deduction computations.
-
-**To calculate a payroll run:**
-
-1. Open the payroll run (Status = "Open")
-2. Select **Calculate**
-3. Confirm the calculation by selecting **Yes** in the confirmation dialog
-4. Wait for the calculation to complete
-
-**What happens during calculation:**
+- Period start and end dates are calculated from the pay cycle schedule
+- Payment date is set based on your pay cycle configuration
+- All active employees in the pay group are included
 - Gross pay is calculated for each employee (salary, hourly, etc.)
 - All earnings pay types are applied
 - All deductions are applied (taxes, benefits, garnishments)
 - Net pay is calculated (Gross - Deductions)
-- Tax withholdings are calculated based on employee tax settings
-- GL accounts are assigned for posting
-- Status automatically changes to "Approved"
+- GL accounts are assigned based on pay type configuration
+- Status is set to **Open**
 
-### Calculation performance
+> [!IMPORTANT]
+> The payroll run is fully calculated when creation completes. Review the results before proceeding.
 
-For large employee populations, calculation may take several minutes. You'll see progress as the system processes employees.
+## Step 2: Review payroll entries
 
-> [!TIP]
-> Process payroll during off-hours if you have many employees to avoid system slowdowns.
+Before posting, review calculated entries to ensure accuracy.
 
-## Step 4: Review payroll entries
+### View payroll entries
 
-Before posting, always review calculated entries to ensure accuracy.
+**To review entries:**
 
-### View payroll entries by employee
-
-**To review individual employee pay:**
-
-1. In the Payroll Run, select **Payroll Entries**
-2. Filter by Employee if needed
+1. In the **Payroll Runs** list, select the payroll run
+2. Select **Payroll Entries** from the navigation actions
 3. Review entries:
    - **Pay Type** - All expected pay types present?
    - **Amount** - Calculations look reasonable?
    - **GL Account** - Posting to correct account?
-4. Check totals at bottom:
-   - Gross pay = All earnings summed
-   - Deductions = All deductions summed
-   - Net pay = Gross - Deductions
 
-**Example payroll review for John Smith:**
-```
-Pay Type                    Amount      GL Account
-─────────────────────────────────────────────────
-Regular Pay              $1,000.00     6000 (Salary Exp)
-Overtime Pay               $150.00     6010 (OT Exp)
-─────────────────────────────────────────────────
-Gross Pay              $1,150.00
-─────────────────────────────────────────────────
-Federal Income Tax       ($120.00)    2100 (FIT Payable)
-FICA                      ($88.00)    2120 (FICA Payable)
-Health Insurance         ($150.00)    2110 (Ins Payable)
-─────────────────────────────────────────────────
-Net Pay                  $792.00      (Employee Payable)
-```
+### Preview paychecks
 
-### View payroll summary
+**To preview individual paychecks:**
 
-**To view overall payroll summary:**
+1. In the **Payroll Runs** list, select the payroll run
+2. Select **Paycheck** (in Paycheck Actions)
+3. Review paycheck details for each employee:
+   - Employee name and information
+   - Gross pay amount
+   - All deductions (taxes, benefits, etc.)
+   - Net pay amount
+4. Print or save as PDF
 
-1. In the Payroll Run, select **Payroll Summary**
-2. Review by GL account:
-   - Total debits to expense accounts
-   - Total credits to liability accounts
-   - Net impact on payroll liability
+### View payroll register
 
-**To view paycheck details:**
+**To view the overall payroll register:**
 
-1. In the Payroll Run, select **Paychecks**
-2. Review individual paychecks:
-   - Gross pay
-   - Deductions
-   - Net pay
-   - Payment method (check, direct deposit, etc.)
+1. In the **Payroll Runs** list, select the payroll run
+2. Select **Payroll Register** (in Reporting actions)
+3. Review the summary report
 
-## Step 5: Make corrections (if needed)
+## Step 3: Approve (if required)
 
-If you find errors during review:
+If **Require Approvals** is enabled in Payroll Setup, an authorized user must approve the payroll before it can be posted or paid.
 
-1. Select **Revert to Open** to unlock the payroll
-2. Fix the underlying issue:
-   - Adjust employee pay types or GL accounts
-   - Correct pay period dates
-   - Update employee payment methods or bank accounts
-   - Modify deductions or garnishments
-3. Select **Calculate** again
-4. Repeat Step 4 (Review payroll entries)
-5. Re-approve when satisfied
+**To approve a payroll run:**
 
-> [!IMPORTANT]
-> Only revert if the error is in setup data (GL accounts, pay types, employee records, etc.). Do not attempt to manually adjust individual payroll entries. Always trace the error back to its source and fix the root cause before recalculating.
+1. Open the payroll run (Status = **Open**)
+2. Select **Approve**
+3. Confirm the approval
+4. Status changes to **Approved**
 
-## Step 6: Mark as approved
+> [!NOTE]
+> The **Approve** action is only visible when approvals are required in Payroll Setup. If approvals aren't required, you can post and pay directly from the **Open** status. Approval checks the user's payroll approval limit in **User Setup**—if the payroll total exceeds the user's limit, approval is denied.
 
-Once all entries are verified:
+## Step 4: Post to general ledger
 
-1. In the Payroll Run, select **Approve**
-2. Confirm the approval
-3. Status changes to "Approved"
-
-The payroll run is now locked. No further edits are allowed until posting or reverting.
-
-## Step 7: Post to general ledger
-
-Posting transfers payroll entries to the general journal and optionally posts them automatically.
+Posting transfers payroll entries to the general journal and optionally posts them to the general ledger automatically.
 
 **To post a payroll run:**
 
-1. Open the Approved payroll run
+1. Open the payroll run
 2. Select **Post**
 3. Confirm the posting action
 4. Wait for posting to complete
-5. Status changes to "Posted"
+5. Status changes to **Posted**
 
 **What happens during posting:**
 
-The posting process depends on your **General Ledger Posting** setting in Payroll Setup:
+The posting behavior depends on the **General Ledger Posting** setting in Payroll Setup:
 
-- **No Transfer**: Payroll entries are recorded but NOT transferred to General Journal (no GL posting occurs)
-- **Manual Posting**: Payroll entries are converted to GL journal entries; you must manually post the journal lines in the General Journal
-- **Automatic Posting**: Payroll entries are converted to GL journal lines and automatically posted to the General Ledger
-- **Always Ask**: Each time you post, you are prompted to choose whether to post the journal immediately or manually
+- **No Transfer**: Payroll is marked as Posted in the payroll system, but no General Journal Lines are created. No GL posting occurs.
+- **Manual Posting**: Payroll entries are transferred to General Journal Lines in the journal template and batch configured on the pay group. You must manually post these journal lines in the General Journal.
+- **Automatic Posting**: Payroll entries are transferred to General Journal Lines and immediately posted to the General Ledger.
+- **Always Ask**: You are prompted each time whether to post the journal automatically or leave it for manual posting.
 
-Regardless of posting type:
-- Payroll entries are aggregated by GL account
-- Debits and credits are balanced
-- Entries are posted to the correct accounting period
-- Source document reference is maintained
-- Payroll run is marked as "Posted" (entries cannot be modified)
+**How GL entries are created:**
 
-## Step 8: Verify GL postings
+1. Payroll entries are collected and buffered with their GL accounts and dimensions
+2. For each entry, two General Journal Lines are created—one for the Account No. (debit) and one for the Balance Account No. (credit)
+3. Journal lines are then consolidated: entries with the same GL account and dimension set are combined into a single line
+4. Zero-amount lines are removed
+5. The journal template and batch are taken from the pay group configuration
+
+> [!IMPORTANT]
+> The pay group must have **Gen. Journal Template** and **Gen. Journal Batch** configured for GL posting to work. If existing unposted journal lines are found in the batch, an error is raised with an option to view the journal.
+
+## Step 5: Pay (generate payment files or print checks)
+
+After posting (or after approval, if posting is not needed), generate payment files or print checks.
+
+**To create payments:**
+
+1. In the **Payroll Runs** list, select the payroll run
+2. Select **Pay**
+3. In the **Create Payroll Payments** request page, select the **Payment Type**:
+   - **Electronic Payment** - Generates a payment file for direct deposit
+   - **Computer Check** - Prints checks for check-payment employees
+4. Select **OK**
+
+See [Direct deposit setup](direct-deposit-setup.md) and [Check printing](check-printing.md) for detailed payment workflows.
+
+> [!NOTE]
+> The **Pay** action is available when the payroll run is Approved or Posted (or Open when approvals aren't required). You can generate payment files before or after posting to the GL.
+
+## Step 6: Verify GL postings
 
 After posting, verify the general ledger was updated correctly.
 
-**To verify GL postings:**
+**To review GL postings for a payroll run:**
 
-1. Search for **General Ledger**
-2. Open GL accounts affected by payroll (salary, payroll tax, etc.)
+1. In the **Payroll Runs** list, select the posted payroll run
+2. Select **General Ledger Log** (in Reporting actions)
+3. Review entries by GL account
+
+**To verify GL accounts directly:**
+
+1. Search for **Chart of Accounts** or **General Ledger Entries**
+2. Filter by the payroll posting date and document number
 3. Verify:
    - Correct amounts posted
    - Posted to correct period
    - Debits = Credits (balance)
-   - No posting errors or reversals
-
-**To review payroll's GL impact:**
-
-1. In the Payroll Run, select **GL Posting Detail**
-2. Review entries by GL account:
-   - Account number and description
-   - Debit and credit amounts
-   - Journal reference number
-3. Verify totals:
-   - Total debits (expense accounts)
-   - Total credits (liability accounts)
-   - Net payroll cost
 
 ### Reconciliation check
 
@@ -249,68 +189,84 @@ Employee & Employer Payables (Credits)
     + Net Employee Pay Due (Credit)
 ```
 
-## Processing special scenarios
+## Additional actions
 
-### Bonus or off-cycle payroll
+### Save paychecks to employee dossiers
 
-Process the same way as regular payroll, but:
-1. Create a payroll run for a special pay group or period
-2. Manually add bonus pay entries (if not calculated automatically)
-3. Follow normal review and posting steps
+To create PDF copies of paychecks for employee records:
 
-### Correcting a posted payroll
+1. In the **Payroll Runs** list, select the payroll run
+2. Select **Save in Dossier** (in Paycheck Actions)
+3. Paychecks are saved as PDFs to each employee's dossier
+
+### Cancel a payroll run
+
+If a payroll run has errors and needs to be redone:
+
+1. Select the payroll run (must not be **Posted**)
+2. Select **Cancel**
+3. Confirm the cancellation
+
+> [!WARNING]
+> Canceling permanently deletes the payroll run and all its entries, including payroll headers, benefit assignment entries, and document attachments. This action cannot be undone. To correct a payroll, cancel it and create a new one with the correct parameters.
+
+### Reverse a posted paycheck
 
 If an error is discovered after posting:
 
-1. In Payroll History, open the posted payroll run
-2. Select **Create Reversal**
-3. Confirm reversal
-4. OnePayroll creates offsetting GL entries
-5. Create a new corrected payroll run with proper amounts
-6. Post the corrected payroll
+1. In **Payroll Runs**, select the posted payroll run
+2. Select **Reverse Paycheck**
+3. Follow the reversal report to create offsetting entries
+4. If needed, create a new corrected payroll run
 
-### Year-end payroll adjustments
+To cancel a pending reversal, use the **Cancel Reversal** action.
 
-Before year-end:
-1. Create final payroll run for the year
-2. Include any vacation payout, bonuses, or adjustments
-3. Verify GL accounts impact (e.g., accrued vacation payable)
-4. Post and reconcile
+## Payroll run statuses
 
-## Troubleshooting payroll processing
+| Status | Description |
+|--------|-------------|
+| **Open** | Payroll has been created and calculated. Can be posted (if no approvals required), paid, or canceled. |
+| **Approved** | Payroll has been approved. Can be posted, paid, or canceled. |
+| **Posted** | Payroll has been posted to the GL. Can still generate payments. Cannot be canceled—use Reverse Paycheck instead. |
 
-### "Calculation failed" error
-- Verify all employees have required tax and pay data
-- Check that all pay types have GL accounts assigned
-- Ensure tax calculation is configured
-
-### "GL account not found" error
-- Verify all pay types have GL accounts assigned
-- Confirm GL accounts still exist and aren't closed
-- Check employee-level GL overrides
-
-### Unbalanced GL posting
-- Verify pay type GL accounts are correct
-- Check that earnings post to debit accounts and deductions to credit accounts
-- Review GL posting rule configuration
+## Troubleshooting
 
 ### Employee missing from payroll
+
 - Verify employee is assigned to the correct pay group
 - Check employee status (active vs. inactive)
 - Confirm employee record has required data
 
+### "GL Account not found" error
+
+- Verify all pay types have GL accounts assigned
+- Confirm GL accounts exist and are active in Chart of Accounts
+- Check that GL accounts haven't been closed
+
+### Unposted journal lines error
+
+- The General Journal batch already has unposted lines from a previous payroll
+- Open the General Journal (use the action link in the error message)
+- Post or delete the existing lines before posting the new payroll
+
+### "No payment entries to export" error
+
+- Verify payment entries exist for the payroll run (check **Payment Entries** in Navigation)
+- Check that payment methods are correctly assigned to employees
+- Ensure employees have valid bank accounts for direct deposit
+
 ## Best practices
 
-- **Always review before posting** - Check calculations, amounts, and GL accounts
-- **Document corrections** - Note why manual adjustments were made
+- **Always review before posting** - Check paycheck details using the **Paycheck** action
+- **Document corrections** - Note why payroll runs were canceled and recreated
 - **Process on schedule** - Consistent timing prevents missed employees
-- **Archive completed payroll** - Keep historical records for audit
-- **Test changes first** - Test payroll configuration changes before processing production payroll
-- **Reconcile GL** - Verify GL posting accuracy after each payroll
+- **Archive paychecks** - Use **Save in Dossier** to keep PDF records
+- **Reconcile GL** - Use the **General Ledger Log** to verify posting accuracy after each payroll
 
-## What's next
+## Related information
 
-- **[Employee setup](employee-setup.md)** - How to add and configure employees
-- **[Pay types overview](pay-types-overview.md)** - Understanding earnings and deductions
-- **[Payment methods](payment-methods-overview.md)** - Configuring direct deposit and checks
-- **[Payroll reports](payroll-reports.md)** - Analyzing payroll data
+- [Configure payroll settings](payroll-setup.md)
+- [Pay types overview](pay-types-overview.md)
+- [Payment methods overview](payment-methods-overview.md)
+- [Set up direct deposit](direct-deposit-setup.md)
+- [Check printing and management](check-printing.md)

@@ -146,8 +146,8 @@ Before processing your first production payroll, validate all settings:
 - Check that GL accounts haven't been closed
 
 **"Approval required" message**
-- Check if Approve Approvals is enabled in Payroll Setup
-- Verify your user is granted approval authority
+- Check if **Require Approvals** is enabled in Payroll Setup
+- Verify your user is granted approval authority in **User Setup**
 - Ask your approver to approve the payroll
 
 **GL postings not balanced**

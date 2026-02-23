@@ -1,6 +1,6 @@
 ---
 title: Set up income tax withholding
-description: Learn how to configure employee income tax withholding information (W-4s, federal, state, local).
+description: Learn how to configure employee income tax withholding information in OnePayroll, including federal W-4, state, and local tax data.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: how-to
@@ -9,307 +9,131 @@ ms.date: 02/23/2026
 
 # Set up income tax withholding
 
-Configure employee tax information including W-4s and state/local tax data for accurate withholding.
-
-## Federal income tax W-4 setup
+Configure employee withholding information so OnePayroll can calculate the correct income tax for each pay period. Employee withholding records are managed through the **Withholding Information** page, which is accessed from the Employee Card.
 
-### 2024 Form W-4 information
-
-**To enter federal W-4 information:**
-
-1. Open employee
-2. On **Tax** tab, enter **Federal W-4:**
-   - **Filing Status** = Single, Married Filing Jointly, Married Filing Separately, Head of Household, or Qualifying Widow(er)
-   - **W-4 Version** = 2024 (or current year)
-3. Enter Form W-4 Line items:
-   - **Line 3: Tax Credits** = Dollar amount from form (children, CDCC, etc.)
-   - **Line 4a: Other Income** = Total non-wage income
-   - **Line 4b: Deductions** = Total itemized deductions (if > standard)
-   - **Line 4c: Extra Withholding** = Additional per-check withholding
-4. Save
-
-### Filing status options
-
-**Single**
-- Single, divorced, or legally separated
-- Standard federal withholding rates apply
-
-**Married Filing Jointly**
-- Married, both file joint return
-- Typically lowest withholding
-
-**Married Filing Separately**
-- Married, file separate returns
-- Higher withholding rates
-- Less common
-
-**Head of Household**
-- Unmarried, supports dependent
-- Favorable tax brackets
-- Provide documentation if claimed
-
-**Qualifying Widow(er)**
-- Surviving spouse (2 years after spouse death)
-- Married rate applies
-
-### Calculating tax credits (Line 3)
-
-**Common credits to report:**
-- **Child Tax Credit** = $2,000 per child under 17
-- **Credit for other dependents** = $500 per dependent
-- **Child and Dependent Care Credit** = Up to $2,400 (varies by situation)
-
-**Example:**
-```
-Employee has 2 children: 2 × $2,000 = $4,000
-Employee enters: Line 3 = $4,000
-OnePayroll reduces withholding accordingly
-```
-
-### Other income (Line 4a)
-
-**If employee has:**
-- Spouse's job income
-- Business income (self-employed)
-- Investment income
-- Rental income
-- Retirement distributions
-
-**Action:**
-- Employee estimates total for year
-- Enters on Line 4a
-- OnePayroll increases federal withholding
-
-### Deductions (Line 4b)
-
-**IF employee claims more than standard deduction:**
-- Estimate itemized deductions
-- Subtract standard deduction
-- Enter difference on Line 4b
-- OnePayroll adjusts withholding
-
-**Standard deductions (2024):**
-- Single: $14,600
-- Married Filing Jointly: $29,200
-- Head of Household: $21,900
-
-### Extra withholding (Line 4c)
-
-**To withhold additional amount:**
-- Employee specifies amount per check
-- Example: "Withhold additional $50 per paycheck"
-- Useful if W-4 alone insufficient
-- Ensures proper withholding for complex situations
-
-## State income tax W-4 setup
-
-### States with income tax
-
-**Standard states requiring W-4:**
-- NY, CA, IL, PA, MA, VA, NC, GA, OH, MI, WI, and others
-- Use state-specific W-4 form
-
-**To enter state W-4:**
-
-1. Open employee **Tax** tab
-2. Select **State** = Residence state
-3. Enter **State W-4:**
-   - **Filing Status** = State filing status
-   - **Withholding** = State-specific items (varies by state)
-4. Provide **State W-4 Document** (if required)
-5. Save
+## How withholding records work
 
-### State-specific examples
+OnePayroll automatically creates and maintains employee withholding records based on the employee's location:
 
-**New York (NY-4):**
-```
-Line 1: Filing status
-Line 2: Allowances/credits
-Line 3: Other income
-Line 4: Extra withholding
-```
+- **Federal** — created when the employee has a country/region code
+- **Work state** — created based on the employee's work location
+- **Home state** — created only when the home state differs from the work state
 
-**California (DE 9):**
-```
-Line 1: Name, SSN, address  
-Line 1a: Filing status
-Line 2: Withholding
-Line 3: Multiple jobs
-```
+When you change an employee's country/region, state, or work location, OnePayroll refreshes the applicable jurisdictions automatically. New withholding records are created for newly applicable jurisdictions, and records for jurisdictions that no longer apply are deactivated.
 
-**No state income tax states:**
-- Alaska (AK)
-- Florida (FL)
-- Nevada (NV)
-- South Dakota (SD)
-- Tennessee (TN)
-- Texas (TX)
-- Washington (WA)
-- Wyoming (WY)
+## Open withholding information
 
-**For these states:**
-- Skip state W-4 entry
-- Or set "No Tax" if system requires
-- No state withholding calculated
+**To access an employee's withholding records:**
 
-### Moving to different state
+1. Open the **Employee Card**.
+2. Choose the **Withholding Information** action.
 
-If employee relocates:
+The Withholding Information page shows up to three sections:
 
-1. Update **State** to new residence state
-2. Obtain new state W-4 form
-3. Employee completes new W-4
-4. Enter new state tax information
-5. Change takes effect next pay period
+- **Federal Withholding** (the national jurisdiction, such as W-4)
+- **Work State Withholding** (the regional jurisdiction for the work location)
+- **Home State Withholding** (only visible when the home state differs from the work state)
 
-## Local income tax setup
+You can also select the **Federal Filing Status** field on the Employee Card to open the Withholding Information page directly.
 
-### Cities/counties with local tax
+## Enter federal W-4 information
 
-**Examples of local income tax:**
-- New York City (EmpWthld Form)
-- Pennsylvania municipalities (some)
-- Ohio municipalities (some)
-- Maryland municipalities (limited)
+On the **Federal Withholding** section (labeled with the form name, such as *Federal Withholding (W-4)*), fill in the following fields based on the employee's Form W-4:
 
-**To set up local tax:**
+| Field | W-4 reference | Description |
+|-------|---------------|-------------|
+| **Filing Status** | Step 1(c) | Single, Married Filing Jointly, Married Filing Separately, Head of Household, or Qualifying Surviving Spouse |
+| **Multiple Jobs** | Step 2(c) | Turn on if the employee has multiple jobs or a working spouse |
+| **Withholding Credits** | Step 3 | Dollar amount for tax credits (child tax credit, dependent care, etc.) |
+| **Other Income** | Step 4(a) | Estimated annual non-wage income |
+| **Deductions** | Step 4(b) | Itemized deductions exceeding the standard deduction |
+| **Additional Withholding** | Step 4(c) | Extra dollar amount to withhold each pay period |
 
-1. Open employee **Tax** tab
-2. If applicable, enter **Local/City:**
-   - **City/Municipality** = Where employee works
-   - **Withholding** = Local W-4 information (if different)
-3. Save
+### Filing Status options
 
-### Local withholding determination
+| Status | Description |
+|--------|-------------|
+| Single | Single, divorced, or legally separated |
+| Married Filing Jointly | Married couple filing a joint return |
+| Married Filing Separately | Married couple filing separate returns |
+| Head of Household | Unmarried and supporting a dependent |
+| Qualifying Surviving Spouse | Surviving spouse within two years of spouse's death |
 
-OnePayroll calculates if:
-- **Work location** = City with income tax
-- **Residence** = Inside or outside tax jurisdiction
-- Rules vary: Some tax all earned in city, others only residents
+### Exempt from Withholding
 
-## Multiple job considerations
+To mark an employee as exempt from federal withholding:
 
-### Employee with multiple jobs
+1. Turn on **Exempt from Withholding** (the Inactive field).
+2. Set the **Exemption Expiration Date** if applicable.
 
-**Required for proper withholding:**
+When the exemption expires, the employee's withholding record becomes active again The system uses the regular withholding values.
 
-1. Enter each job's income on W-4
-2. Make notation in employee record: "Multiple Jobs Flag"
-3. On primary job: Standard withholding
-4. On secondary job: Employee may request higher withholding
+## Enter state withholding information
 
-**In OnePayroll:**
-- Set **Multiple Jobs Flag** = Yes
-- Increases federal withholding on current job to compensate
-- Or employee requests extra withholding (Line 4c)
+State withholding fields appear on the **Work State Withholding** and **Home State Withholding** sections. The fields that appear depend on the jurisdiction's **Withholding Definition**:
 
-### Spouse's income
+### Standard form
 
-If spouse works:
+States with their own W-4 form (for example, California with form DE-4) show all applicable fields independently:
 
-1. Employee enters spouse's income on Line 4a (Other Income)
-2. OnePayroll increases federal withholding
-3. Spouse also enters in their W-4
-4. Avoids both underpaying and over-withholding
+- Filing Status
+- Allowances
+- Withholding Credits
+- Other Income
+- Deductions
+- Additional Withholding
 
-## Dependent and allowance updates
+The employee fills in the state-specific form, and you enter the values separately from the federal W-4.
 
-### Annual review
+### Standard form with inherited filing status
 
-**Best practice:** Review W-4 annually
+Same as Standard form, but the Filing Status is automatically inherited from the federal (national) jurisdiction. The employee enters other state-specific values independently.
 
-**If employee status changes:**
-- Birth of child → Reduce withholding (new credit)
-- Marriage → May reduce withholding (married status)
-- Divorce → May increase withholding (single status)
-- Dependent reaches 17 → Lose credit
-- Major life event → May require W-4 adjustment
+### Inherited from parent
 
-### Estimated tax payments
+All withholding values are inherited from the parent (federal) jurisdiction. No separate state W-4 entry is needed. When the federal withholding record changes, values automatically propagate to these state jurisdictions.
 
-For employees with:
-- Self-employment income
-- Investment income
-- Other non-wage income
+## Income Tax Profiles
 
-**May need quarterly estimated tax payments** instead of relying on withholding.
+When you save a withholding record, OnePayroll automatically resolves the **Income Tax Profile** based on the employee's filing attributes (such as filing status). The profile determines which standard deduction, per-allowance amount, and tax rate brackets apply during calculation.
 
-## Non-resident alien employees
+The resolved profile appears on the withholding record. If no matching profile is found, verify that the Income Tax Jurisdiction has profiles configured for the employee's filing status combination.
 
-### Special W-4 requirements
+## W-2 information
 
-If employee is non-resident alien:
+The Employee Card provides access to W-2-related fields through the **W-2 Information** action (US). These fields map to W-2 Box 13 and Box 14:
 
-1. Different tax rules apply (FICA exemption possible)
-2. Form 8233 may be required (treaty benefits)
-3. Consult tax professional before setup
-4. Special withholding applicable
+| Field | W-2 Box |
+|-------|---------|
+| Third-Party Sick Pay | Box 13 |
+| Statutory Employee | Box 13 |
+| Retirement Plan | Box 13 |
+| Box 14a Miscellaneous | Box 14 |
+| Tipped Occupation Code 1 | Box 14 |
+| Tipped Occupation Code 2 | Box 14 |
 
-## Verifying setup
-
-**Before processing payroll with new employee:**
-
-1. **W-4 on file** - Confirm current W-4 received
-2. **Filing status entered** - Verify in system
-3. **Tax credits accurate** - Confirm amounts
-4. **State assigned** - Verify residence/work state
-5. **Test calculation** - Run sample paycheck to verify tax
-
-## Updating W-4 information
-
-### During-year W-4 change
-
-If employee submits new W-4:
-
-1. Note **Effective Date** (usually next pay period)
-2. Update employee tax information:
-   - New filing status (if changed)
-   - New credits/deductions (if changed)
-   - New withholding (if changed)
-3. Save effective immediately or on specified date
-4. Affects next paycheck
-
-### Retroactive changes
-
-If error in W-4 discovered mid-year:
-
-1. Correct employee record
-2. Identify affected payrolls
-3. Process adjustment payroll
-4. Catch employees up on withholding difference
-5. File Form 941-X (quarterly if needed) at year-end
+These fields are entered once per employee and apply to all W-2 statements generated for that employee.
 
 ## Troubleshooting
 
-**"Federal tax calculation too high"**
-- Verify filing status correct
-- Confirm W-4 credits entered
-- Check for multiple jobs flag
-- Review other income/deductions
+### Withholding record not created for a state
 
-**"State withholding blank"**
-- Verify state assigned
-- Confirm state has income tax
-- Check state W-4 entered
-- Regenerate/test calculation
+- Verify the employee's work location or home state (County field) is correctly assigned.
+- Confirm that an Income Tax Jurisdiction exists for that state with a Calculation Method other than None.
+- Open **Withholding Information** — this triggers an automatic refresh of applicable jurisdictions.
 
-**"Tax different after W-4 change"**
-- Verify new W-4 effective date
-- Confirm all values updated
-- Check past vs. present withholding
-- May be temporary until catch-up
+### Filing Status not editable on state withholding
 
-## Best practices
+The state jurisdiction likely uses the **Standard form with inherited filing status** or **Inherited from parent** withholding definition. The Filing Status is inherited from the federal record. Update the federal W-4 Filing Status instead.
 
-- **Obtain latest W-4** - Get current form each hire/change
-- **Review annually** - Ask employees in December/January
-- **Document changes** - Keep copies of all W-4s on file
-- **Verify accuracy** - Review unusual withholding amounts
-- **Multi-job coordination** - Ensure combined withholding adequate
-- **State-specific care** - Verify each state's current rules
+### Income Tax Profile not resolving
 
-## What's next
+- Verify that Income Tax Profiles exist for the jurisdiction.
+- Confirm that the profile's rule matches the employee's current filing attributes.
+- Check the Rules engine setup for the profiles.
 
-- **[Tax calculations setup](tax-calculation-setup.md)** - Tax provider configuration
-- **[About tax calculations](tax-calculation-overview.md)** - Tax concepts
-- **[Employee setup](employee-setup.md)** - Employee configuration overview
+## Next steps
+
+- [Set up tax calculations](tax-calculation-setup.md) — jurisdiction and rate configuration
+- [About tax calculations](tax-calculation-overview.md) — tax calculation concepts
+- [Employee setup](employee-setup.md) — employee configuration overview

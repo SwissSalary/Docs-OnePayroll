@@ -39,7 +39,7 @@ Use this checklist to track your setup progress:
 
 ### Payment Setup (Week 3)
 - [ ] **Configure Payment Methods** - Set up direct deposit and/or check payment options
-- [ ] **Add Employee Bank Accounts** - Record bank account information for direct deposit
+- [ ] **Set up Employee Payment Methods** - Add bank account details for direct deposit on Employee Payment Methods
 - [ ] **Set Withholding Rules** - Configure tax withholding and deduction settings
 - [ ] **Optional: Set up Benefits** - If using benefits, create benefit types and set up enrollment
 
@@ -176,19 +176,19 @@ Configure how employees will be paid.
 
 **For direct deposit:**
 
-1. Add employee **Bank Accounts** (see step 6)
-2. Search for **Payment Methods**
-3. Create a payment method with type "Direct Deposit"
-4. Set allocation type (Primary, Fixed Amount, Percentage)
-5. Link to employee bank accounts
-6. Save
+1. Open the **Employee Card** and select the **Payment Methods** action
+2. Create a new Employee Payment Method
+3. Set the Allocation Type (Primary, Fixed Amount, or Percentage)
+4. Fill in Bank Account No. and Bank Identifier Code in the Transfer group
+5. Select a Business Central Payment Method code
+6. Close the card
 
 **For check payment:**
 
-1. Search for **Payment Methods**
-2. Create a payment method with type "Check"
-3. Configure check numbering and printing options
-4. Save
+1. Open the **Employee Card** and select the **Payment Methods** action
+2. Create a new Employee Payment Method with a Payment Method code
+3. When running Create Payroll Payments, select **Computer Check** as the Payment Type
+4. Print checks through the standard Business Central check-printing process
 
 ### 9. Configure tax settings
 
@@ -196,10 +196,10 @@ Set up tax calculation and withholding.
 
 **To configure tax:**
 
-1. Search for **Tax Calculation Setup**
-2. Select your tax calculation provider (Vertex, Symmetry, or Mock)
-3. Configure tax jurisdictions and rules
-4. Assign tax withholding rules to employees
+1. Search for **Income Tax Jurisdictions**
+2. Set up jurisdictions for federal, state, and local levels
+3. Configure the **Calculation Method** (Standard or Simplified) for each jurisdiction
+4. Set up **Income Tax Rates** and **Income Tax Setup** for each tax year
 5. Save
 
 ### 10. Process your first payroll
@@ -264,7 +264,7 @@ OnePayroll provides role-based permissions:
 ### Data quality
 - Ensure each employee is assigned to a pay group
 - Verify pay types are correctly linked to GL accounts
-- Keep employee bank account information current
+- Keep Employee Payment Method bank details current
 - Review and validate tax withholding settings before first payroll
 
 ### Process discipline
@@ -276,7 +276,7 @@ OnePayroll provides role-based permissions:
 ### Regular maintenance
 - Update pay types and deductions as business needs change
 - Review and adjust tax withholding annually (or as tax laws change)
-- Maintain employee bank account records
+- Maintain Employee Payment Method records
 - Keep backup copies of completed payroll data
 
 ---

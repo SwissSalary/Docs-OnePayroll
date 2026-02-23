@@ -1,6 +1,6 @@
 ---
 title: About tax calculations
-description: Learn how OnePayroll calculates federal, state, and local income taxes and other tax withholdings.
+description: Learn how OnePayroll calculates federal, state, and local income taxes using the Income Tax Jurisdiction and Employee Withholding system.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: overview
@@ -9,137 +9,90 @@ ms.date: 02/23/2026
 
 # About tax calculations
 
-OnePayroll calculates accurate federal, state, and local income taxes based on employee withholding information and current tax tables.
+OnePayroll calculates income tax withholding at federal, state, and local levels using a jurisdiction-based architecture. Each jurisdiction defines its own calculation method, and employee withholding records are automatically maintained based on the employee's location.
 
-## Tax calculation overview
+## How income tax calculation works
 
-**OnePayroll determines:**
-- Federal income tax withholding
-- Social Security/FICA withholding
-- Medicare withholding
-- State income tax withholding
-- Local income/wage tax withholding
+Income tax calculation in OnePayroll is built on three components:
 
-**Calculation method:**
-- Employee W-4 withholding (federal) or equivalent
-- Current IRS tax tables
-- Gross wages and deductions
-- Multiple jobs (if applicable)
-- Tax credits and adjustments
+1. **Income Tax Jurisdictions** define the tax rules (calculation method, tax rates, rounding)
+2. **Employee Withholding** records store each employee's W-4 information per jurisdiction
+3. **Tax Calculation Methods** implement the actual withholding formulas
 
-## Tax calculation types
+During payroll processing, OnePayroll iterates each employee's active withholding records, dispatches to the jurisdiction's configured calculator, and produces tax withholding entries that flow into the payroll results.
 
-### Federal income tax
-- Based on W-4 (Form W-4, 2024 or later version)
-- Standard deduction applied
-- Tax brackets calculated using IRS Method 1 or 2
-- Subject to both employee and employer deposit requirements
+## Income Tax Jurisdictions
 
-### FICA taxes
-**Social Security:**
-- 6.2% employee rate on wages (up to annual wage base)
-- 6.2% employer match
-- Resets frequency (calendar year)
+Jurisdictions represent taxing authorities at three levels:
 
-**Medicare:**
-- 1.45% employee rate on all wages
-- 1.45% employer match
-- Additional Medicare Tax: 0.9% on wages over threshold ($200k single, $250k married filing jointly)
-- Employer match on Additional Medicare: 0.9%
+| Level | Description | Example |
+|-------|-------------|---------|
+| **National** | Federal tax | US (W-4) |
+| **Regional** | State tax | CA (DE-4), ND |
+| **Local** | City or county tax | (Varies by jurisdiction) |
 
-### State income tax
-- Varies by state
-- Different W-4 forms (NY-4, CA-4, etc.)
-- Some states have no income tax (FL, TX, WA, etc.)
-- Multiple jobs and tax credits affect calculation
+Each jurisdiction stores:
 
-### Local income tax
-- City or county tax (varies by jurisdiction)
-- Less common than state tax
-- Similar to state withholding
+- **Calculation Method** — which calculator to use (None, Standard, or Simplified)
+- **Pay Type No.** — the pay type used for withholding entries
+- **Rounding Method** — how to round calculated amounts
+- **Report-to Jurisdiction** — parent jurisdiction (states report to federal)
+- **Withholding Definition** — controls which W-4 fields appear and how values propagate
 
-## Multi-provider architecture
+Regional jurisdictions can use their own state-specific forms (for example, California uses DE-4) or inherit withholding values from the federal jurisdiction.
 
-OnePayroll supports multiple tax calculation engines:
+## Calculation methods
 
-**Providers available:**
-- **Built-in** (Mock provider) - For testing and basic scenarios
-- **Vertex** - Professional tax software integration
-- **Symmetry** - Alternative professional tax service
+### Standard
 
-**Provider features:**
-- Real-time tax table updates
-- Jurisdiction-specific rules
-- Multi-state support
-- Semi-monthly/bi-weekly/weekly calculations
-- Handles complex scenarios
+The Standard method performs a detailed W-4-style calculation:
 
-## Tax withholding methods
+1. Annualizes the employee's gross wages for the pay period
+2. Applies Other Income and Deductions adjustments from the W-4
+3. Subtracts the Standard Deduction (configured per jurisdiction/profile)
+4. Looks up the applicable tax bracket and calculates bracket-based tax
+5. Applies Withholding Credits
+6. Reduces by Per-Allowance amounts (for jurisdictions that support allowances)
+7. Adds any Additional Withholding amount
+8. Converts back to the per-period amount
 
-### Method 1: IRS Percentage Method
-- Uses IRS tax tables
-- Calculates per pay period
-- Accounts for W-4 entries
-- Simplest method
+### Simplified
 
-### Method 2: IRS Wage Bracket Method
-- Uses IRS wage bracket tables
-- More precise for some situations
-- Handles Form W-4 adjustments
-- Accounts for filing status
+The Simplified method performs a streamlined bracket lookup:
 
-## Common scenarios
+1. Annualizes the employee's gross wages
+2. Looks up the tax bracket
+3. Calculates bracket-based tax
+4. Converts back to the per-period amount
 
-### Single state employee
-```
-Federal income tax: Based on federal W-4
-State income tax: Based on state W-4
-FICA: Standard rates (6.2% SS, 1.45% Medicare)
-Local: If applicable
-```
+This method is for jurisdictions that inherit all withholding inputs from a parent jurisdiction and use simplified rate tables.
 
-### Multi-state employee (works in multiple states)
-- Resident state: Full withholding
-- Non-resident state: Reciprocal rates (if applicable)
-- Home state prevails typically
+### None
 
-### Employee with additional Medicare Tax
-```
-Wages × 0.9% on amounts over:
-- $200,000 (single)
-- $250,000 (married filing jointly)
-- $125,000 (married filing separately)
-```
+No tax calculation is performed. This is the default for jurisdictions that don't have income tax withholding.
 
-### Tax credits and adjustments
-- Child Tax Credit: On 2024 Form W-4 Line 3
-- Child and Dependent Care: On Line 3
-- Other Income Adjustments: On Form W-4 Line 4a
-- Extra withholding: On Form W-4 Line 4c
+## Employee Withholding
 
-## Tax remittance
+Each employee has withholding records that are **automatically created** when the employee's address or work location changes. OnePayroll determines applicable jurisdictions based on:
 
-Once taxes are withheld:
-- **Federal:** Deposit with EFTPS or through payroll provider (timeline varies)
-- **State:** Deposit per state requirements (monthly/quarterly)
-- **Local:** Deposit per local jurisdiction rules
-- **FICA:** Deposit with federal tax (monthly/quarterly)
+- **Federal** — based on the employee's country/region code
+- **Work state** — based on the employee's work location
+- **Home state** — based on the employee's state/county (only if different from the work state)
 
-## Quarterly and annual reconciliation
+Withholding records store the employee's tax filing information per jurisdiction, including filing status, allowances, withholding credits, and additional withholding amounts.
 
-**Quarterly:**
-- File Form 941 (federal payroll taxes)
-- File state equivalent (varies)
-- Reconcile amounts withheld to deposits made
+For more information, see [Set up income tax withholding](income-tax-setup.md).
 
-**Annual:**
-- File W-2s (federal); due Jan 31
-- File W-3 transmittal form
-- State and local year-end reporting
-- Reconcile total withholdings
+## Income Tax Profiles
+
+Income Tax Profiles use the Rules engine to match tax rate tables to employee withholding records based on attributes like filing status. When an employee's withholding record is created or modified, OnePayroll automatically resolves the correct profile, which determines which Standard Deduction, Per-Allowance Amount, and tax rate brackets apply.
+
+## W-2 box mapping
+
+Each pay type can be mapped to a W-2 box through the **W-2 Box** and **W-2 Box Code** fields. This mapping controls how earnings, deductions, and taxes appear on the Employee W-2 Statement. For the full list of supported W-2 boxes, see [Tax statements and reporting](tax-statements.md).
 
 ## Next steps
 
-- **[Set up tax calculations](tax-calculation-setup.md)** - Configure tax calculation provider
-- **[Income tax setup](income-tax-setup.md)** - Employee withholding information
-- **[Tax statements](tax-statements.md)** - W-2 reporting and tax forms
+- [Set up tax calculations](tax-calculation-setup.md) — configure jurisdictions, calculation methods, and tax rates
+- [Set up income tax withholding](income-tax-setup.md) — employee W-4 and withholding information
+- [Tax statements and reporting](tax-statements.md) — W-2 preparation and reporting

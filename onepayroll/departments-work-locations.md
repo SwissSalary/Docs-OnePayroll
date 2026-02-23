@@ -270,5 +270,5 @@ OnePayroll tracks:
 ##What's next
 
 - **[Employee setup](employee-setup.md)** - Overall employee configuration
-- **[Employee bank accounts](employee-bank-accounts.md)** - Direct deposit setup
+- **[Employee bank account information](employee-bank-accounts.md)** - Bank details on payment methods
 - **[Process payroll runs](payroll-runs-process.md)** - Processing payroll with employees

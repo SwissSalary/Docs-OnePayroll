@@ -1,6 +1,6 @@
 ---
 title: Check printing and management
-description: Learn how to configure, print, and manage employee paychecks in OnePayroll.
+description: Learn how to print employee paychecks using the Computer Check payment type in OnePayroll.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: how-to
@@ -9,312 +9,84 @@ ms.date: 02/23/2026
 
 # Check printing and management
 
-OnePayroll integrates with Business Central's check printing capabilities for employee paychecks.
+OnePayroll prints employee paychecks by creating General Journal Lines and delegating to the standard Business Central check printing process. You select **Computer Check** as the payment type when running the **Pay** action on a payroll run.
 
-## Check payment overview
+## Check payment workflow
 
-**Check payments include:**
-- Employee paycheck report with earnings, deductions, taxes
-- Paycheck date and period covered
-- Employee net pay amount
-- Company information
-- Payment method and check reference information
+1. Create, review, and (optionally) post a payroll run.
+2. Select **Pay** on the payroll run.
+3. On the **Create Payroll Payments** request page, set **Payment Type** to **Computer Check**.
+4. OnePayroll creates General Journal Lines and runs the BC check printing process.
+5. Distribute printed checks to employees.
 
-**Supported check types:**
-- Physical checks (printed and mailed to employees)
-- Electronic distribution of check report (PDF)
+## Prerequisites
 
-## Setting up check payments
+### Employee payment methods
 
-### 1. Configure payment method for checks
+Each employee who should receive a check needs an Employee Payment Method record. Open the Employee Card and select the **Payment Methods** action to manage the employee's payment methods.
 
-Create a payment method designated for check payments:
+On the Employee Payment Method card:
 
-1. Search for **Payment Methods** in Business Central
-2. Create new payment method or edit existing one
-3. Set the **Default Bank Payment Type** to an appropriate type for checks
+- **Name** — identifies this payment method
+- **Priority** — determines the ordering when the employee has multiple payment methods
+- **Allocation Type** — Primary, Fixed Amount, or Percentage
+- **Allocation** — the allocation amount (for Fixed Amount or Percentage types)
+- **Payment Method** — a reference to a standard BC Payment Method code
 
-See [Payment methods setup](payment-methods-setup.md) for complete instructions.
+The **Communication** group on the card contains address fields (Address, City, Post Code, County, Country/Region Code) for the payee.
 
-### 2. Assign payment method to employees
+For check payments, bank account fields (Bank Account No. and Bank Identifier Code) are typically left blank. The check is printed to the name and address specified on the Employee Payment Method.
 
-1. Open employee record
-2. In the **Payment** section, set **Payment Method** to your check payment method
+### Pay group configuration
 
-## Processing check payroll
+The pay group must have a **Gen. Journal Template** and **Gen. Journal Batch** configured. OnePayroll uses these to create the General Journal Lines that drive the check printing process.
 
-**Step 1: Prepare payroll**
-- Create payroll run
-- Calculate wages, deductions, taxes
-- Review payroll entries to verify accuracy
-- Approve the payroll run
+## Print checks
 
-**Step 2: Post to general ledger**
-- In Payroll Run, select **Post**
-- Verify posting completes successfully
+### Step 1: Post the payroll
 
-**Step 3: Preview/Print paychecks**
-- In the Posted payroll run, select **Paycheck**
-- Opens paycheck report
-- Review paycheck details:
-  - Employee name and information
-  - Gross pay amount
-  - All deductions (taxes, benefits, etc.)
-  - Net pay amount
-- Print paychecks on check stock
+1. Create a payroll run for the pay group.
+2. Review payroll entries.
+3. Approve (if required) and post the payroll.
 
-**Step 4: Export payment information**
-- In Published payroll run, select **Pay**
-- Select **Computer Check** as the payment type
-- OnePayroll prepares payment information
-- This creates journal entries for the bank account reconciliation
+### Step 2: Run Pay with Computer Check
 
-**Step 5: Distribute checks**
-- Deliver printed checks to employees
-- Or mail if using remote distribution
-- Obtain signed receipts if required for your process
+1. On the **Payroll Runs** page, select the posted payroll run.
+2. Select **Pay**.
+3. On the **Create Payroll Payments** request page, set **Payment Type** to **Computer Check**.
+4. Select **OK**.
 
-## Check processing considerations
+OnePayroll creates General Journal Lines for each employee's check payment and runs the Business Central check printing process. Checks print to the configured printer or generate PDF output.
 
-### Payment method selection
+### Step 3: Preview paychecks
 
-OnePayroll determines whether to use check printing based on:
-- Employee's assigned payment method
-- Payment method's bank payment type setting
-- Your selection when exporting payments (Computer Check option)
+To review paycheck details before or after printing:
 
-### Preview before printing
+1. On the **Payroll Runs** page, select the payroll run.
+2. Select **Paycheck** to preview paycheck details for each employee.
 
-Always preview paychecks using the **Paycheck** action before printing:
-- Verify all earnings and deductions
-- Check calculations are correct
-- Ensure employee information is accurate
-- Review GL account assignments for posting
+### Step 4: Archive paychecks (optional)
 
-### Printing options
+To save PDF copies to employee dossiers:
 
-OnePayroll integrates with Business Central's printing infrastructure:
-- Print to paper (using standard printer with check stock)
-- Print to PDF (for archival or electronic distribution)
-- Print preview (before committing to paper)
-
-### Verification
-
-After printing paychecks:
-- Visually verify check printing quality
-- Confirm alignment on check stock
-- Verify amounts are legible
-- Review check references
-
-## Managing check issues
-
-### Lost or damaged checks
-
-If a check is lost, damaged, or given in error:
-
-1. Identify the check/employee affected
-2. Create correction entry or reversal if needed
-3. Reissue payment via new payroll or manual adjustment
-4. Update records to reflect correction
-
-### Voiding checks
-
-If you must void a check after issuance:
-
-1. Physically void the check (mark as VOID)
-2. Adjust employee payment records if needed
-3. Create reversal entry if already posted to GL
-4. Reconcile GL cash account for the voided amount
-
-See [Process payroll runs - Corrections](payroll-runs-process.md#step-5-make-corrections-if-needed) for details on adjusting posted payroll.
-
-## GL account reconciliation
-
-Check payments are posted to GL accounts during the payroll posting process:
-
-**GL reconciliation workflow:**
-1. Post payroll run (creates GL entries)
-2. Create payment using Pay action with Computer Check option
-3. Payment creates journal entries for bank account
-4. Match GL payroll liability accounts to employees paid
-5. Reconcile bank account to check clearing
-
-**Typical GL flow:**
-```
-Salary Expense (Debit)
-    → Payroll Liability (Credit)
-    → Individual GL accounts for tax/deduction liabilities
-Payable → Bank Account (via payment journal)
-```
-
-## Paycheck archival
-
-### Saving paychecks to employee records
-
-To create PDF copies of paychecks for employee records:
-
-1. In the Posted payroll run, select **Save in Dossier**
-2. Paychecks are converted to PDF and saved to employee dossiers
-3. Documents are available in employee record for future reference
-4. Set availability date if needed for document retention policies
-
-### Managing paycheck records
-
-Saved paychecks can be:
-- Retrieved from employee dossier
-- Downloaded for employee distribution
-- Retained for audit/compliance purposes
-- Used for employee self-service portal review
-
-## Best practices
-
-- **Always preview** - Use Paycheck action to preview before printing
-- **Test setup** - Perform test payroll with check printing before live processing
-- **Secure handling** - Protect blank checks and printed paychecks
-- **Separate duties** - Ideally, someone other than payroll preparer approves checks
-- **Reconcile** - Match GL postings to checks distributed
-- **Archive copies** - Save PDFs of paychecks for historical records
-- **Verify delivery** - Track which employees received checks
+1. On the **Payroll Runs** page, select the payroll run.
+2. Select **Save in Dossier**.
 
 ## Troubleshooting
 
-**Paycheck report doesn't show expected data**
-- Verify payroll entries exist for employees
-- Check that payroll was calculated (not just created)
-- Confirm employee information is complete
+### No payment entries for Computer Check
 
-**Cannot export as Computer Check**
-- Verify employee has payment method assigned
-- Check payment method configuration
-- Ensure bank payment type setting is appropriate
+- Verify employees have payment methods assigned (Employee Card → **Payment Methods** action).
+- Ensure payment entries exist for the payroll run (check **Payment Entries** in the navigation actions).
 
-**Printing position/alignment incorrect**
-- Verify paper size matches report settings
-- Adjust printer settings for check position
-- Test with sample paper first
+### Printing alignment issues
 
-**GL account reconciliation doesn't match**
-- Verify all payroll runs were posted
-- Confirm no manual GL entries for payroll
-- Check for any reversed or adjusted payroll runs**If check must be voided:**
+- Verify paper size matches the report layout settings.
+- Adjust printer settings for check alignment.
+- Test with sample paper before production printing.
 
-1. Mark check as **Voided** in payroll
-2. Don't reissue that check number
-3. Create corrected payroll entry
-4. Issue replacement check with next number
+## Related information
 
-**GL impact:**
-- Original check: Debit (expense), Credit (bank)
-- Void: Reverse entries
-- New check: Credit (bank) with new check number
-
-### Stopping payment
-
-If employee loses/doesn't deposit check:
-
-1. Contact bank to stop payment
-2. Reissue check with new number
-3. Update payroll records
-4. Note in employee record
-
-### Check reconciliation
-
-When reconciling bank account:
-- Match issued checks to bank clearance
-- Identify outstanding checks
-- Reconcile check amounts
-- Update cash in GL
-
-## Check stock and printing supplies
-
-**Check stock:**
-- Physical blank checks from bank or third-party supplier
-- Format: Standard business check
-- Quantity: Order enough for payroll frequency
-
-**Printer:**
-- MICR printer (reads check routing/account numbers)
-- If using Business Central check printing, ensure compatible printer
-- Test alignment before production use
-
-**Supplies:**
-- Check stock
-- Envelopes (if mailing)
-- Ink cartridges
-- Backup supplies
-
-## Split payments (checks + direct deposit)
-
-If employee receives part by check, part by direct deposit:
-
-1. Create two payment methods:
-   - Check method (Position 1): $500
-   - Direct Deposit method (Position 2): Remainder
-2. Assign both to employee
-3. OnePayroll:
-   - Creates check for $500
-   - Creates ACH deposit for remainder
-
-## Electronic checks
-
-Alternative to physical checks:
-
-**E-check features:**
-- Funds transfer via ACH
-- Employee's bank receives like check
-- Faster than physical mail
-- Requires employee's bank info (like direct deposit)
-
-**Processing:**
-- Similar to direct deposit setup
-- Generate e-check file
-- Transmit to bank
-- Employee sees as check deposit
-
-## Compliance and audit trail
-
-**Check controls:**
-- Sequential numbering ensures accountability
-- Recorded in GL with check reference
-- Payroll entries linked to specific checks
-- Audit trail for all check transactions
-
-**Internal controls:**
-- Dual approval for large checks (if policy)
-- Segregation: one person calculates, another signs
-- Monthly reconciliation of check register
-- Review voided/duplicate checks
-
-## Troubleshooting
-
-### Check printing alignment issues
-- Verify check stock is proper size
-- Test alignment with sample check
-- Adjust margins in printing setup
-- Consult printer manual if needed
-
-### Check numbers don't match GL
-- Verify check sequence started at correct number
-- Confirm all checks in payroll have numbers assigned
-- Reconcile payroll to bank statement
-
-### Employee reports missing check
-- Verify check was issued (check number in payroll)
-- Confirm delivery (if mailed)
-- Contact bank to trace if deposited
-- Reissue if necessary
-
-## Best practices
-
-- **Sequential numbering** - Maintain check sequence for audit
-- **Regular reconciliation** - Monthly bank reconciliation of checks
-- **Timely distribution** - Issue checks on promised payment date
-- **Secure handling** - Protect blank check stock and printed checks
-- **Documentation** - Keep records of issued, voided, outstanding checks
-- **Backup plan** - Have contingency if printer fails on payroll day
-
-## What's next
-
-- **[Payment methods](payment-methods-overview.md)** - Payment configuration overview
-- **[Process payroll runs](payroll-runs-process.md)** - Payroll processing with checks
-- **[Direct deposit](direct-deposit-setup.md)** - Alternative payment method
+- [Process payroll runs](payroll-runs-process.md)
+- [Payment methods setup](payment-methods-setup.md)
+- [Set up direct deposit](direct-deposit-setup.md)

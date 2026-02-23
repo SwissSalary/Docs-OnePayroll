@@ -93,20 +93,6 @@ Explanations and solutions for common OnePayroll errors.
 
 ## Tax and withholding errors
 
-### "Tax provider not responding"
-
-**When:** Tax calculation fails to connect to external provider (Vertex, Symmetry)
-
-**Why:** Network issue, provider account inactive, or timeout
-
-**Solution:**
-1. Verify **internet connection** working
-2. Check **provider account** is active
-3. Verify **credentials** in Payroll Setup are correct
-4. Test provider connectivity (if available)
-5. Contact provider support if persists
-6. Temporarily switch to Built-in provider to proceed
-
 ### "W-4 information missing"
 
 **When:** Federal tax calculation cannot complete
@@ -137,19 +123,17 @@ Explanations and solutions for common OnePayroll errors.
 
 ### "Bank account required for direct deposit"
 
-**When:** Processing direct deposit without valid bank account
+**When:** Processing direct deposit without valid bank details
 
-**Why:** Direct deposit payment method requires valid bank account on file
+**Why:** Employee Payment Method is missing Bank Account No. or Bank Identifier Code
 
 **Solution:**
-1. Open employee
-2. Add or verify **bank account**:
-   - Account number
-   - Routing number
-   - Account type (Checking/Savings)
-3. Specify if **primary** account
-4. Verify bank account is active
-5. Retry payment processing
+1. Open the **Employee Card** and select **Payment Methods**
+2. Verify the Employee Payment Method has:
+   - **Bank Account No.** filled in
+   - **Bank Identifier Code** filled in
+3. Verify the payment method has Allocation Type set (Primary, Fixed Amount, or Percentage)
+4. Retry payment processing
 
 ### "Invalid bank routing number"
 
@@ -160,7 +144,7 @@ Explanations and solutions for common OnePayroll errors.
 **Solution:**
 1. Verify **routing number** correct (format: 9 digits)
 2. Confirm with employee/bank
-3. Update employee bank account record
+3. Update the Employee Payment Method record (Bank Account No. and Bank Identifier Code fields)
 4. Regenerate ACH file
 5. Resubmit to bank
 

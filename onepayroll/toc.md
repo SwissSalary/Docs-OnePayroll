@@ -29,7 +29,7 @@ ms.service: dynamics-365-business-central
 ### [Set up employees](employee-setup.md)
 ### [Employee pay units](employee-pay-units.md)
 ### [Departments and work locations](departments-work-locations.md)
-### [Employee bank accounts](employee-bank-accounts.md)
+### [Employee bank account information](employee-bank-accounts.md)
 ### [Garnishments](garnishments.md)
 
 ## Benefits management

@@ -1,6 +1,6 @@
 ---
 title: Set up payment methods
-description: Learn how to configure payment methods for direct deposit and check payment delivery.
+description: Learn how to create and configure Employee Payment Methods for direct deposit and check payments in OnePayroll.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: how-to
@@ -9,87 +9,81 @@ ms.date: 02/23/2026
 
 # Set up payment methods
 
-Payment methods determine how employees are paid. Configure direct deposit, checks, or a combination.
+Employee Payment Methods control how each employee's net pay is allocated and where it is deposited. You create them on the Employee Card via the **Payment Methods** action.
 
-## Create a payment method
+## Prerequisites
 
-**To create a payment method:**
+Before creating Employee Payment Methods:
 
-1. Search for **Payment Methods**
-2. Select **New**
-3. Enter payment method details:
-   - **Code** - Identifier (e.g., "DD1", "CHECK1")
-   - **Description** - Name (e.g., "Direct Deposit - Checking")
-   - **Payment Type** - Direct Deposit or Check
-4. Configure allocation:
-   - **Allocation Type** - Primary, Fixed Amount, or Percentage
-   - **Bank Account** (for Direct Deposit) - Select employee's account
-   - **Position** - Ordering (1 = first, 2 = second, etc.)
-5. Save
+- An employee record exists.
+- At least one standard Business Central **Payment Method** code is configured (for example, a code linked to a bank account for electronic payments).
 
-### Direct Deposit setup
+## Create an Employee Payment Method
 
-**To set up direct deposit:**
+1. Open the **Employee Card** for the employee.
+2. Select the **Payment Methods** action.
+3. On the **Employee Payment Methods** list, select **New** to open the card.
+4. Fill in the **General** group:
+   - **Name** — a descriptive label (for example, "Main Checking" or "Savings").
+   - **Priority** — the processing order. Each employee's payment methods must have unique priorities.
+   - **Allocation Type** — choose **Primary**, **Fixed Amount**, or **Percentage**.
+   - **Allocation** — enter the dollar amount or percentage (required for Fixed Amount and Percentage types).
+5. Fill in the **Transfer** group:
+   - **Payment Method** — select a Business Central payment method code.
+   - **Bank Account No.** — the employee's bank account number.
+   - **Bank Identifier Code** — the routing number (ABA) or SWIFT code.
+6. Optionally fill in the **Communication** group with address details.
+7. Close the card.
 
-1. Create Payment Method with:
-   - **Payment Type** = Direct Deposit
-   - **Bank Account** = Employee's bank account
-   - **Allocation Type** = Primary (for single account) or Fixed/Percentage (for splits)
-2. Save
+The first Employee Payment Method created for an employee is automatically set to **Primary** allocation type.
 
-### Check payment setup
+## Set up a single direct deposit
 
-**To set up check payment:**
+For an employee paid entirely to one bank account:
 
-1. Create Payment Method with:
-   - **Payment Type** = Check
-   - **Check Delivery** = Physical or Electronic
-   - **Allocation Type** = Primary (check receives full pay or portion)
-2. Configure check printing settings (see [Check printing](check-printing.md))
-3. Save
+1. Open the **Employee Card** and select **Payment Methods**.
+2. Create one Employee Payment Method with:
+   - **Allocation Type** = Primary
+   - **Bank Account No.** and **Bank Identifier Code** filled in
 
-### Multiple allocations
+All net pay goes to this account.
 
-For employees receiving pay across multiple accounts/methods:
+## Set up split direct deposit
 
-1. Create first Payment Method (Position 1)
-   - Example: $500 by check
-2. Create second Payment Method (Position 2)
-   - Example: Remainder by direct deposit to Checking
-3. OnePayroll processes by position order
+To split pay across multiple accounts, create multiple Employee Payment Methods:
 
-## Assigning payment methods to employees
+1. **Primary method** (Priority 1):
+   - Allocation Type = Primary
+   - Bank Account No. = main checking account
+   - This method receives the remainder after other allocations
 
-**To assign payment method to employee:**
+2. **Additional method** (Priority 2):
+   - Allocation Type = Fixed Amount, Allocation = 500.00 (or Percentage, Allocation = 20)
+   - Bank Account No. = savings account
 
-1. Search for **Employees**
-2. Open employee
-3. On **OnePayroll** tab: **Payment Method** = Select configured method
-4. Save
+Fixed and percentage amounts are applied first. The primary method receives whatever is left.
 
-Employee now receives pay using that method.
+## Modify an Employee Payment Method
 
-## Modifying payment methods
+1. Open the **Employee Card** and select **Payment Methods**.
+2. Open the payment method to edit.
+3. Update the fields (bank details, allocation, priority).
+4. Close the card.
 
-**To change how employee is paid:**
+To deactivate a payment method without deleting it, set an **End Date**.
 
-1. Open employee
-2. Change **Payment Method** to new method
-3. Set **Effective Date** (when change takes effect)
-4. Save
+## Validate setup before payroll
 
-Change takes effect on specified date.
+Before processing payroll:
 
-## Validating setup
+- Every active employee has at least one Employee Payment Method.
+- Exactly one method per employee has Allocation Type = Primary.
+- **Bank Account No.** and **Bank Identifier Code** are filled in for all direct deposit methods.
+- Priority values are unique per employee.
 
-Before payroll processing:
-- All active employees have payment method assigned
-- Direct Deposit: Bank accounts are valid
-- Check: Check printing configured (if using checks)
-- Allocation: Multiple methods ordered correctly (position 1, 2, etc.)
+## Related information
 
-## Next steps
-
-- **[Set up direct deposit](direct-deposit-setup.md)** - Details on ACH processing
-- **[Check printing](check-printing.md)** - Check configuration and printing
-- **[Employees](employee-setup.md)** - Employee configuration
+- [About payment methods](payment-methods-overview.md)
+- [Set up direct deposit](direct-deposit-setup.md)
+- [Check printing](check-printing.md)
+- [Employee setup](employee-setup.md)

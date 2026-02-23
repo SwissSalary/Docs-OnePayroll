@@ -25,9 +25,9 @@ US-specific OnePayroll features, requirements, and compliance information.
   - Extra withholding requests
 
 **OnePayroll handles:**
-- IRS Method 1 (Percentage) and Method 2 (Wage Bracket) calculation
-- Automatic withholding per current tax tables
-- Integration with external providers (Vertex, Symmetry)
+- Standard calculation method (full W-4 calculation with brackets, deductions, and credits)
+- Simplified calculation method (bracket-based lookup)
+- Automatic withholding per configured tax rate tables
 
 ### FICA rules
 

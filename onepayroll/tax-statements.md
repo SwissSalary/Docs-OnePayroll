@@ -1,6 +1,6 @@
 ---
 title: Tax statements and W-2 reporting
-description: Learn how to prepare and file W-2 tax statements and year-end tax reporting in OnePayroll.
+description: Learn how to configure W-2 box mappings and generate Employee W-2 Statements in OnePayroll.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: how-to
@@ -9,242 +9,119 @@ ms.date: 02/23/2026
 
 # Tax statements and W-2 reporting
 
-OnePayroll handles W-2 preparation and year-end tax reporting for federal and state compliance.
+OnePayroll generates Employee W-2 Statements from payroll entry data. The W-2 report uses the W-2 Box mapping on pay types and employee-level W-2 fields to produce the standard IRS Form W-2 output.
 
-## W-2 overview
+## W-2 box mapping on pay types
 
-**Form W-2 reports:**
-- Employee wages (boxes 1, 5, 3, 5a, etc.)
-- Federal/state/local income tax withheld
-- Social Security and Medicare wages/taxes
-- Other compensation
-- Employer information
+Each pay type can be assigned to a W-2 box that determines where its amounts appear on the W-2 statement. This mapping is configured in the **Tax Statement** group on the Pay Type card.
 
-**Who needs W-2s:**
-- All current and former employees who received wages
-- Any employee with > $0 in taxable wages
-- Even if no taxes withheld (must still report)
+### Supported W-2 boxes
 
-**Filing requirements:**
-- **Employees:** W-2 copies 1&B, 2, and B due Jan 31
-- **IRS:** Form W-3 (transmittal) and W-2s due Jan 31
-- **States:** State copies due per state (typically Jan 31)
+| W-2 Box | Caption |
+|---------|---------|
+| 1 | Wages Tips Other Compensation |
+| 2 | Federal Income Tax Withheld |
+| 3 | Social Security Wages |
+| 4 | Social Security Tax Withheld |
+| 5 | Medicare Wages and Tips |
+| 6 | Medicare Tax Withheld |
+| 7 | Social Security Tips |
+| 8 | Allocated Tips |
+| 9 | Advanced Earned Income Credit Payments |
+| 10 | Dependent Care Benefits |
+| 11 | Nonqualified Plans |
+| 12 | Codes (requires a W-2 Box Code) |
+| 14 | Other (requires a W-2 Box Code) |
+| 14 | Treasury Tipped Occupation Code (requires a W-2 Box Code) |
+| 15 | State |
+| 16 | State Wages Tips Etc |
+| 17 | State Income Tax |
+| 18 | Local Wages Tips Etc |
+| 19 | Local Income Tax |
+| 20 | Locality Name |
 
-## Preparing W-2s in OnePayroll
+Boxes 12, 14, and 14 (Treasury Tipped Occupation Code) require a **W-2 Box Code** to further identify the specific code or description within the box. W-2 Box Codes are managed through the **W-2 Box Codes** page (accessible from the Tax Statement Code table).
 
-### Step 1: Verify year-end data
+### To assign W-2 boxes
 
-Before generating W-2s:
+1. Open a **Pay Type** card.
+2. In the **Tax Statement** group, set:
+   - **W-2 Box** — select the appropriate box from the list above
+   - **W-2 Box Code** — required for Box 12 Codes, Box 14 Other, and Box 14 Treasury Tipped Occupation Code
+3. Save.
 
-1. Confirm all payroll processed for year
-2. Verify employee information:
-   - Name spelling
-   - SSN (last 4 digits)
-   - Address
-   - Employment status (active/terminated)
-3. Review compensation:
-   - All wages recorded
-   - Correct pay types allocated
-   - Benefits/deductions classified correctly
+Repeat for each pay type that should appear on the W-2.
 
-### Step 2: Generate W-2 report
+## Employee W-2 fields
 
-**To generate W-2s:**
+Additional W-2 information is stored at the employee level. Access these fields through the **W-2 Information** action on the Employee Card.
 
-1. Search for **W-2 Report** (or Tax Year Closing)
-2. Set **Tax Year** = Calendar year
-3. Select **Generate W-2s**
-4. OnePayroll calculates:
-   - Box 1: Wages subject to federal tax
-   - Box 2: Federal income tax withheld
-   - Box 3: Wages subject to FICA (Social Security)
-   - Box 4: Social Security tax withheld
-   - Box 5: Medicare wages
-   - Box 6: Medicare tax withheld
-   - Boxes 18-20: State/local wages and taxes
-   - Other boxes as applicable
+| Field | W-2 Box | Description |
+|-------|---------|-------------|
+| Third-Party Sick Pay | Box 13 | Indicates third-party sick pay was reported |
+| Statutory Employee | Box 13 | Indicates the employee is a statutory employee |
+| Retirement Plan | Box 13 | Indicates the employee participates in a retirement plan |
+| Box 14a Miscellaneous | Box 14 | Free-text code for box 14 miscellaneous items |
+| Tipped Occupation Code 1 | Box 14 | First tipped occupation code |
+| Tipped Occupation Code 2 | Box 14 | Second tipped occupation code |
 
-### Step 3: Review W-2 data
+## Generate the Employee W-2 Statement
 
-**Before filing, verify:**
+The Employee W-2 Statement report calculates W-2 box amounts from payroll entries and produces the W-2 output.
 
-1. **Employee information:**
-   - Name matches last known name
-   - SSN accurate
-   - Address current or last known
+**To run the report:**
 
-2. **Wage amounts:**
-   - Box 1 total reasonableness
-   - FICA wages (should equal or exceed Box 1)
-   - Box 5 (Medicare) typically equals Box 3
+1. Open the **Employee Card** for the employee.
+2. Choose the **W-2 Statement** action.
+3. The **Employee W-2 Statement** report runs and generates the W-2 form.
 
-3. **Tax amounts:**
-   - Federal withholding (Box 2) matches deposits made
-   - FICA taxes match (4.0% + employer 6.2% for SS)
-   - State/local accurate
-   - Reconcile to annual T-1040 report
+The report produces four copies per employee:
 
-4. **Special situations:**
-   - Terminated employees (check final pay included)
-   - New hires (verify start date and first pay)
-   - Multi-state employees (state boxes assigned correctly)
+| Copy | Purpose |
+|------|---------|
+| Copy 1 | State, City, or Local Tax Department |
+| Copy B | Employee's federal tax return filing |
+| Copy C | Employee's records |
+| Copy 2 | Employee's state, city, or local tax return filing |
 
-### Step 4: Correct errors
+### How W-2 amounts are calculated
 
-If W-2 contains errors:
+The W-2 Calculation codeunit aggregates payroll entry amounts by pay type. Each pay type's W-2 Box assignment determines which W-2 box receives the amount. The calculation:
 
-**Minor corrections (before filing):**
-- Regenerate W-2
-- Make correction and reprocess
-- No filing needed
+1. Reads all payroll entries for the employee and tax year.
+2. Groups amounts by the pay type's W-2 Box mapping.
+3. Populates the corresponding W-2 boxes with the totals.
 
-**After filing (W-2c):**
-- File Form W-2c (corrected W-2)
-- Due within same timeframe as original
-- Explains what was corrected
+## Before generating W-2s
 
-## Filing W-2s
+Before running the Employee W-2 Statement, verify the following:
 
-### Federal filing
-
-**To file federal W-2s:**
-
-1. Prepare W-3 (transmittal):
-   - Total wages (sum of all W-2 Box 1)
-   - Total federal withheld (sum of all W-2 Box 2)
-   - Total FICA wages and taxes
-   - Employer information
-
-2. Submit to IRS:
-   - **Paper filing:** Mail W-3 and W-2s (Copy A)
-   - **Electronic filing:** File through WOTC or approved processor
-   - **Deadline:** January 31
-
-3. Keep copies:
-   - Copy 1 (employee)
-   - Copy 2 (employee for state)
-   - Copy C (employer record)
-
-### State filing
-
-**Steps vary by state:**
-
-1. File state W-2 equivalent (if required)
-   - Most states use federal W-2
-   - Some require state-specific form
-   - Deadlines typically Jan 31 (some may differ)
-
-2. Submit with:
-   - State cover sheet/transmittal
-   - W-2s with state information (Boxes 18-20)
-   - Reconciliation of state withheld vs. deposits
-
-### Employee distribution
-
-**To deliver W-2s to employees:**
-
-1. Print W-2s (Copies B and 2):
-   - Copy B: Employee for federal return
-   - Copy 2: Employee for state return
-2. Distribute by Jan 31
-3. Keep delivery list/confirmation
-4. Send replacement if requested
-
-## Quarter-end tax compliance
-
-### Form 941 (Quarterly)
-
-**File quarterly:**
-- Report payroll for quarter
-- Report federal withholding and FICA
-- Reconcile to deposits made
-- Deadlines: Apr 30, Jul 31, Oct 31, Jan 31 (following year)
-
-**OnePayroll support:**
-- Generates 941 report
-- Calculates totals by quarter
-
-### Form 940 (Annual)
-
-**File annually for FUTA (Federal Unemployment Tax):**
-- Wage base: $7,000 per employee
-- Rate: 0.6% (after state unemployment credit)
-- Due: Jan 31 following year
-- Reconciles to quarterly 941 filings
-
-## Multi-state W-2 considerations
-
-For employees in multiple states:
-
-**Wage apportionment:**
-- Wages allocated to state where work performed
-- OnePayroll tracks by state
-- W-2 Boxes 18-20 show state allocation
-
-**Example:**
-```
-Employee works 80% in NY, 20% in NJ
-Total wages: $50,000
-NY wages: $40,000
-NJ wages: $10,000
-State withholds calculated per state
-```
-
-**Multi-location employees:**
-- Assign primary home state
-- Note work locations
-- Ensure tax calculation accounts for all states
-
-## 1095-B Reporting (Health Insurance)
-
-If providing health insurance:
-
-**Report benefits:**
-- Form 1095-B shows coverage offered
-- Due: March 31 (copies to employees by Jan 31)
-- Names, coverage months, employer info
-- File with IRS through WOTC or processor
-
-## Year-end closing
-
-**After W-2 filing:**
-
-1. Archive all W-2 documentation
-2. Reconcile 941 deposits to annual W-2 totals
-3. Close payroll year in system
-4. Begin new tax year setup
-5. Review for any adjustments needed
+1. **All payroll runs for the year are posted** — unposted payroll runs are not included in the calculation.
+2. **Pay types have correct W-2 Box assignments** — review each pay type's Tax Statement group.
+3. **Employee information is current** — name, address, and Social Security number must be accurate.
+4. **Employee W-2 fields are set** — verify Box 13 and Box 14 fields through the W-2 Information action.
+5. **Review amounts** — compare the W-2 output against payroll register totals.
 
 ## Troubleshooting
 
-**"W-2 Box 1 doesn't match expected"**
-- Verify all pay periods processed
-- Check for adjustments/reversals
-- Confirm pay types classified correctly
-- Review bonuses/special compensation
+### W-2 box shows an unexpected amount
 
-**"State W-2 info blank"**
-- Verify employee state assignment
-- Confirm state setup in system
-- Regenerate if data missing
+- Review the pay types mapped to that W-2 box and verify the mapping is correct.
+- Check for payroll adjustments or reversals that may have affected the totals.
+- Confirm all payroll runs for the year are posted.
 
-**"FICA calculation seems off"**
-- Social Security: Check wage base limit ($168,600 in 2024)
-- Medicare: No limit, should equal or exceed SS wages
-- Additional Medicare: 0.9% on wages over threshold
-- Employer match: Match withholding amounts
+### A pay type's amount doesn't appear on the W-2
 
-## Best practices
+- Open the Pay Type card and verify a W-2 Box is assigned in the Tax Statement group.
+- If the box requires a W-2 Box Code (Box 12, Box 14), confirm the code is set.
 
-- **Verify W-4s** - Confirm periodically throughout year
-- **Regular reconciliation** - Monthly match payroll to tax deposits
-- **Timely filing** - File before Jan 31 deadline
-- **Archive copies** - Keep W-2 copies minimum 7 years
-- **Employee communication** - Distribute W-2s promptly
-- **Year-end review** - Reconcile all tax accounts before closing year
+### State boxes are empty
 
-## What's next
+- Verify that state income tax pay types have W-2 Box assignments for boxes 15–20.
+- Confirm the employee has state withholding records in the Withholding Information page.
 
-- **[Income tax setup](income-tax-setup.md)** - Employee tax information
-- **[Tax calculations setup](tax-calculation-setup.md)** - Tax configuration
-- **[Payroll processing](payroll-runs-process.md)** - Payroll run details
+## Next steps
+
+- [Set up income tax withholding](income-tax-setup.md) — employee W-4 and filing information
+- [Set up tax calculations](tax-calculation-setup.md) — jurisdiction and rate configuration
+- [Payroll processing](payroll-runs-process.md) — payroll run workflow

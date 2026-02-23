@@ -75,8 +75,8 @@ Gross pay minus legally required deductions (used for garnishment limits).
 **Effective Date**
 Date when a change (pay rate, tax status, etc.) takes effect in payroll.
 
-**Employee Bank Account**
-Bank details for employee's direct deposit (separate from employee record).
+**Employee Payment Method**
+A record on the Employee Card that stores allocation settings and bank details for direct deposit. There is no separate bank account entity — bank information is stored directly on the payment method.
 
 **Employee Snapshot**
 Point-in-time record of employee data on a specific date; captures historical information.
@@ -231,13 +231,13 @@ Configuration of garnishment/deduction payee details (address, account, etc.).
 Individual transaction in payroll (one pay type for one employee).
 
 **Payroll Journal**
-GL journal entries generated from payroll posting.
+General Journal Lines generated from payroll posting.
 
 **Payroll Run**
 Payroll processing batch covering specific period; groups employees for single payroll.
 
 **Payroll Setup**
-Main configuration for OnePayroll (GL accounts, pay cycles, tax provider, etc.).
+Main configuration for OnePayroll (GL posting, phone formatting, pay unit, headline settings, etc.).
 
 ## Q
 

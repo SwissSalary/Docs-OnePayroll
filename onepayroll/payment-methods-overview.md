@@ -1,6 +1,6 @@
 ---
 title: About payment methods
-description: Learn how to configure employee payment distribution methods (direct deposit and check payments) in OnePayroll.
+description: Learn how Employee Payment Methods control pay allocation and bank details for direct deposit and check payments in OnePayroll.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: overview
@@ -9,88 +9,85 @@ ms.date: 02/23/2026
 
 # About payment methods
 
-Payment methods define how employees receive their wages: direct deposit to bank accounts or physical/electronic checks.
+Employee Payment Methods define how an employee's net pay is allocated across one or more payment destinations. Each record stores both the allocation rule and the bank details for that destination.
 
-## Payment method overview
+## How payment methods work
 
-A **payment method** specifies:
-- **Payment Type** - Direct Deposit or Check
-- **Allocation Method** - How pay is split across accounts
-- **Position/Priority** - Order of allocation
+An **Employee Payment Method** record contains:
 
-### Payment types
+- **Name** — a descriptive label for the payment destination
+- **Priority** — the processing order (unique per employee)
+- **Allocation Type** — Primary, Fixed Amount, or Percentage
+- **Allocation** — the dollar amount or percentage (for fixed or percentage types)
+- **Payment Method** — a reference to a standard Business Central payment method code
+- **Bank Account No.** — the employee's bank account number
+- **Bank Identifier Code** — the routing number or SWIFT code
 
-**Direct Deposit (ACH)**
-- Electronic funds transfer to bank account
-- Funds reach employee's bank 1-3 business days
-- Fastest, most common method
-- Requires valid bank account information
+Payment methods are accessed from the **Employee Card** by selecting the **Payment Methods** action.
 
-**Check**
-- Physical or electronic check
-- Employee deposits at bank
-- Processing time: 1-5 business days (physical), immediate (electronic)
-- Requires payroll GL account setup
+> [!NOTE]
+> The payment type (Computer Check or Electronic Payment) is **not** stored on the Employee Payment Method. Instead, you select it on the **Create Payroll Payments** report dialog when generating payments for a completed payroll run.
 
-### Allocation methods
+## Allocation types
 
-When an employee has multiple bank accounts, allocation determines how net pay is distributed:
+When an employee has multiple payment methods, the allocation type controls how net pay is distributed.
 
-**Primary**
-- All pay to primary account
-- Simplest scenario (single bank account)
-- No split needed
+### Primary
 
-**Fixed Amount**
-- Specific dollar amount to each account
-- Example: $2,000 to Checking, remainder to Savings
-- Useful for automatic savings plans
+One payment method per employee must be set as **Primary**. The primary method receives whatever net pay remains after all fixed and percentage allocations are applied. The first payment method created for an employee is automatically set to Primary.
 
-**Percentage**
-- Percentage of net pay to each account
-- Example: 80% to Checking, 20% to Savings
-- Adjusts automatically with pay changes
+### Fixed Amount
 
-### Position-based ordering
+A specific dollar amount is allocated to this payment method each pay period. For example, $500 to a savings account.
 
-When multiple allocations exist, position determines order:
-- Position 1 = Primary (processes first)
-- Position 2 = Secondary (processes second)
-- Position 3+ = Additional (if any)
+### Percentage
+
+A percentage of net pay is allocated to this payment method. For example, 20% to a savings account.
+
+## Priority
+
+Each Employee Payment Method has a unique **Priority** value per employee. Priority determines the order in which allocations are processed. Fixed and percentage allocations are applied first, and the primary method receives the remainder.
 
 ## Common scenarios
 
-**Scenario 1: Single direct deposit**
-```
-Payment Method: Direct Deposit
-Account: Checking (Primary)
-Allocation: 100% of net pay
-```
+**Single account (direct deposit)**
 
-**Scenario 2: Split direct deposit**
-```
-Payment Method: Direct Deposit
-Account 1: Checking (Primary) - $2,000
-Account 2: Savings (Secondary) - Remainder
-Allocation: Fixed amount to Checking, rest to Savings
-```
+| Priority | Name | Allocation Type | Bank Account No. |
+|----------|------|-----------------|-------------------|
+| 1 | Main Checking | Primary | 123456789 |
 
-**Scenario 3: Check payment**
-```
-Payment Method: Check
-Delivery: Physical check or electronic
-Frequency: With regular payroll
-```
+All net pay goes to the single account.
 
-**Scenario 4: Mixed (checks + direct deposit)**
-```
-Payment Method 1: Check (Position 1) - $500
-Payment Method 2: Direct Deposit (Position 2) - Remainder to Checking
-Allocation: $500 by check, rest by direct deposit
-```
+**Split direct deposit (fixed amount to savings)**
 
-## Next steps
+| Priority | Name | Allocation Type | Allocation | Bank Account No. |
+|----------|------|-----------------|------------|-------------------|
+| 1 | Main Checking | Primary | — | 123456789 |
+| 2 | Savings | Fixed Amount | 500.00 | 987654321 |
 
-- **[Set up payment methods](payment-methods-setup.md)** - Configure payment delivery
-- **[Set up direct deposit](direct-deposit-setup.md)** - Direct deposit processing
-- **[Check printing](check-printing.md)** - Check payment configuration
+$500 goes to savings; the remainder goes to checking.
+
+**Split direct deposit (percentage to savings)**
+
+| Priority | Name | Allocation Type | Allocation | Bank Account No. |
+|----------|------|-----------------|------------|-------------------|
+| 1 | Main Checking | Primary | — | 123456789 |
+| 2 | Savings | Percentage | 20% | 987654321 |
+
+20% of net pay goes to savings; the remainder goes to checking.
+
+## Payment type at pay time
+
+When you run the **Create Payroll Payments** report after a payroll is calculated and posted, the report dialog asks you to select a **Payment Type**:
+
+- **Computer Check** — generates check documents using the standard Business Central check-printing process
+- **Electronic Payment** — generates a payment file for direct deposit (ACH)
+
+This selection applies to the entire payment run, not to individual employee payment methods.
+
+## Related information
+
+- [Set up payment methods](payment-methods-setup.md)
+- [Set up direct deposit](direct-deposit-setup.md)
+- [Check printing](check-printing.md)
+- [Employee bank account information](employee-bank-accounts.md)

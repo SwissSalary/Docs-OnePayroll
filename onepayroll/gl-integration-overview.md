@@ -138,9 +138,9 @@ Every GL entry from payroll includes:
 
 1. **Payroll Calculation** → Individual pay entries created
 2. **Payroll Approval** → Management reviews and approves
-3. **GL Posting** → OnePayroll creates GL journal entries
-4. **GL Review** → Accountant reviews before final posting
-5. **GL Finalization** → Entries posted to official GL
+3. **GL Posting** → OnePayroll creates General Journal Lines
+4. **GL Review** → Accountant reviews journal lines (if using Manual Posting)
+5. **GL Finalization** → Journal lines posted to General Ledger
 
 ## Reconciliation
 
@@ -163,4 +163,4 @@ Monthly payroll GL reconciliation:
 
 - **[GL posting setup](gl-posting-setup.md)** - Configure GL accounts for payroll
 - **[Chart of accounts](gl-posting-setup.md)** - GL account structure
-- **[Payroll journal](payroll-journal.md)** - GL journal entries and posting
+- **[Payroll journal](payroll-journal.md)** - General Journal Lines from payroll posting

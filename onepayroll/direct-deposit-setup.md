@@ -1,6 +1,6 @@
 ---
 title: Set up direct deposit
-description: Learn how to configure and process direct deposit (ACH) payments in OnePayroll.
+description: Learn how to configure and process electronic payments (direct deposit) in OnePayroll.
 author: SwissSalary
 ms.service: dynamics-365-business-central
 ms.topic: how-to
@@ -9,184 +9,120 @@ ms.date: 02/23/2026
 
 # Set up direct deposit
 
-Direct deposit electronically transfers employee pay to bank accounts. This guide covers setup and processing.
+Direct deposit electronically transfers employee pay to their bank accounts. In OnePayroll, direct deposit is processed by selecting **Electronic Payment** as the payment type when running the **Pay** action on a posted payroll run.
 
-## Direct deposit overview
+## How it works
 
-**How it works:**
-1. OnePayroll calculates payroll (wages, deductions, taxes)
-2. Creates ACH (Automated Clearing House) file with employee bank details
-3. You transmit file to your bank
-4. Bank processes deposits to employees' accounts (1-3 business days)
-5. Employees see funds in their accounts
+1. Each employee has one or more Employee Payment Method records with bank details.
+2. You post a payroll run and select **Pay**.
+3. On the **Create Payroll Payments** request page, you set **Payment Type** to **Electronic Payment**.
+4. OnePayroll generates a payment file and attaches it to the payroll run.
+5. You download the file and transmit it to your bank.
 
-**Requirements:**
-- Employee bank account information (account number, routing)
-- Valid bank relationship with ACH capability
-- ACH origination number from bank
-- Secure transmission method to bank
+## Set up Employee Payment Methods
 
-## Configuration steps
+Bank account information is stored directly on the Employee Payment Method record. There is no separate bank account table — each payment method holds the bank details for that payment destination.
 
-### 1. Bank setup
+**To set up a direct deposit payment method:**
 
-Coordinate with your bank:
-- Confirm ACH capability
-- Obtain ACH origination ID (identifies your company)
-- Review ACH file format requirements
-- Establish transmission method (secure upload, SFTP, etc.)
+1. Open the **Employee Card**.
+2. Select the **Payment Methods** action to open the **Employee Payment Methods** list.
+3. Create a new record and fill in the following fields:
 
-### 2. Employee bank accounts
+**General group:**
 
-Ensure employees have bank accounts set up (see [Employee bank accounts](employee-bank-accounts.md)):
-- Account number
-- Routing number
-- Account type (Checking/Savings)
-- Primary vs. secondary designation
+| Field | Description |
+|-------|-------------|
+| **Name** | A descriptive name for this payment method |
+| **Priority** | Determines ordering when the employee has multiple payment methods (lower numbers = higher priority) |
+| **Allocation Type** | Primary (receives the remainder), Fixed Amount, or Percentage |
+| **Allocation** | The allocation amount (for Fixed Amount or Percentage types; not editable for Primary) |
+| **Start Date** | When to start using this payment method (not editable for Primary) |
+| **End Date** | When to stop using this payment method (not editable for Primary) |
 
-### 3. Payment methods
+**Transfer group:**
 
-Create Direct Deposit payment method(s) (see [Payment methods setup](payment-methods-setup.md)):
-- Payment Type: Direct Deposit
-- Allocation: Primary, Fixed Amount, or Percentage
+| Field | Description |
+|-------|-------------|
+| **Payment Method** | A reference to a standard BC Payment Method code |
+| **Bank Account No.** | The employee's bank account number |
+| **Bank Identifier Code** | The routing number (ABA, SWIFT, or transit number) |
 
-### 4. Assign to employees
+**Communication group:**
 
-Assign payment method to employees:
-1. Open employee
-2. Payment Method = Direct Deposit method
+| Field | Description |
+|-------|-------------|
+| **Address** | Payee address |
+| **City**, **Post Code**, **County**, **Country/Region Code** | Address details |
 
-## Processing direct deposit payroll
+The first payment method created for an employee is automatically set to **Primary** allocation type.
 
-**Step 1: Prepare payroll**
-- Create payroll run
-- Calculate wages, deductions, taxes
-- Review payroll entries
-- Approve the payroll run
+## Split payments (multiple deposits)
 
-**Step 2: Generate payment file**
-- Open the payroll run (can be done before or after posting)
-- Select **Pay**
-- Select **Electronic Payment** as the payment type
-- Select **OK**
-- OnePayroll generates a payment export file using the "US EFT PAYROLL" data exchange definition
+To direct an employee's pay to multiple bank accounts:
 
-**Step 3: Download and review file**
-- You'll be prompted to download the payment file
-- Verify the download (download dialog appears with file details)
-- Review file details:
-  - Employee count matches payroll
-  - Total amount is correct
-  - Check bank account information is present
-- The file is also automatically attached to the payroll run for audit trail purposes
+1. Open the employee's **Payment Methods**.
+2. Create multiple records, for example:
+   - **Priority 1**: Allocation Type = Primary, Bank Account No. = checking account (receives the remainder)
+   - **Priority 2**: Allocation Type = Fixed Amount, Allocation = 500.00, Bank Account No. = savings account
+3. During payment processing, the fixed and percentage allocations are applied first, and the primary method receives whatever remains.
+
+## Configure payment export (US localization)
+
+For US-based payroll, the payment export uses a NACHA/ACH file format. The US demo data includes a preconfigured data exchange definition ("US EFT PAYROLL"). For production environments, confirm with your bank that the file format meets their requirements.
+
+## Process direct deposit
+
+### Step 1: Post the payroll
+
+1. Create a payroll run for the pay group.
+2. Review payroll entries.
+3. Approve (if required) and post the payroll.
+
+### Step 2: Generate payment file
+
+1. On the **Payroll Runs** page, select the posted payroll run.
+2. Select **Pay**.
+3. On the **Create Payroll Payments** request page, set **Payment Type** to **Electronic Payment**.
+4. Select **OK**.
+
+OnePayroll generates a payment file through the configured payment export interface. The file is automatically attached to the payroll run as a document attachment, visible in the **Payment Files** FactBox on the Payroll Runs page. You are also prompted to download the file.
+
+If a payment file has already been generated for this payroll run, you are prompted to confirm before generating another one.
+
+### Step 3: Transmit to bank
+
+1. Download the payment file (from the download prompt or the Payment Files FactBox).
+2. Log into your bank's secure portal and upload the file.
+3. Note any confirmation number from the bank.
 
 > [!WARNING]
-> The payment file contains sensitive employee payment and bank information. You must handle the file securely and delete it after successful transmission to your bank. Do not store the file in unsecured locations. Always use secure transmission methods to your bank.
+> The payment file contains sensitive employee bank account and payment information. Delete the file from your computer after successful transmission. Always use secure transmission methods.
 
-**Step 4: Post payroll to GL (if not already posted)**
-- If you haven't yet posted the payroll run, select **Post**
-- This creates the GL entries and payroll records
-- Posting can occur before or after generating the payment file
+### Step 4: Reconcile
 
-**Step 5: Transmit to bank**
-- Log into your bank's secure portal (ACH/payment file upload area)
-- Upload the payment file using secure transmission
-- Confirm transmission with the bank
-- Note transaction ID or confirmation number from bank
-
-**Step 6: Delete file and reconcile**
-- After successful transmission to bank, delete the payment file from your computer
-- Do not retain the file longer than necessary
-- Bank confirms processing (timing varies by bank and submission time)
-- Verify deposits post to employees' accounts (1-3 business days)
-- Track any failures or rejections reported by bank
-- Reconcile GL payroll liability account to actual deposits made
-
-## Payment file details
-
-**Payment export file contains:**
-- Employee bank account information
-- Payment amounts per employee
-- Payroll run information
-- Company payment details
-
-**File format**: Payment files are generated in a format suitable for bank upload. The specific format depends on your bank's requirements (ACH, SEPA, or proprietary formats).
-
-**File location**: Files are attached to the payroll run and can be downloaded from the attachments area.
-
-## Multiple deposits per employee (Split deposits)
-
-OnePayroll supports directing an employee's pay to multiple bank accounts:
-
-1. Create payment methods for each account
-2. Assign payment methods to employee with sequence order:
-   - First payment method: Primary account
-   - Second payment method: Secondary account (fixed amount or percentage)
-3. Payment export includes entries for each account
-4. Bank processes deposits to all assigned accounts
-
-See [Payment methods setup](payment-methods-setup.md) for instructions on configuring split deposits.
-
-## Failed payments
-
-If a payment deposit fails (invalid account, closed account, etc.):
-
-1. **Identify failure** - Bank typically notifies of rejection
-2. **Determine cause** - Work with bank and employee to identify issue
-3. **Correct employee record** - Update employee bank account information
-4. **Reprocess** - Create fresh payment export with corrected information or request resubmission from bank
-
-## Processing timeline and deadlines
-
-**Payment processing:** Timing varies based on:
-- Payment type (electronic vs. check)
-- Bank processing time (typically 1-3 business days for electronic)
-- Your bank's submission cut-off times
-- Weekend/holiday schedule
-
-**Planning recommendations:**
-- Process and export payments well before actual payment date
-- Account for bank processing delays
-- Coordinate with bank on submission timelines
-- Have check printing as backup option for electronic payment failures
-
-## Before going live
-
-Test your direct deposit setup:
-
-1. Create small test payroll with 1-2 employees
-2. Process complete workflow (create, calculate, approve, post)
-3. Use realistic bank account information from test accounts
-4. Review generated payment file for accuracy
-5. Submit to bank (or use test environment if available)
-6. Confirm test payments process
-7. Verify GL cash account is updated
+After the bank confirms processing, verify deposits posted to employees' accounts and reconcile GL payroll liability accounts to actual deposits made.
 
 ## Troubleshooting
 
-**Payment file export fails**
-- Verify all employees have valid payment methods assigned
-- Check that bank account information is complete
-- Ensure all required employee tax/payment information is set up
+### "No payment entries to export" error
 
-**"No payments to export" message**
-- Verify payment entries exist for the payroll run
-- Check that payment methods are assigned to employees
-- Verify payment method settings are correct
+- Verify payment entries exist for the payroll run (check **Payment Entries** in the navigation actions).
+- Confirm employees have Employee Payment Method records with bank details (Bank Account No. and Bank Identifier Code).
 
-**Bank cannot process payment file**
-- Confirm file format is correct for your bank
-- Contact bank to verify file structure assumptions
-- May need to use a specialist payroll processor if direct export not supported
+### Payment file export fails
 
-## Resources
+- Verify the payment export interface is configured correctly.
+- Check that all employees have valid bank details on their Employee Payment Method records.
 
-- [Employee bank accounts setup](employee-bank-accounts.md) - Configure employee payment accounts
-- [Payment methods setup](payment-methods-setup.md) - Create payment method configurations
-- [Payment export and processing](payment-export.md) - Overview of all payment types
+### Bank rejects payment file
 
-## What's next
+- Confirm the file format matches your bank's requirements.
+- Contact your bank to verify file structure expectations.
 
-- **[Payment methods](payment-methods-overview.md)** - Payment configuration overview
-- **[Employee bank accounts](employee-bank-accounts.md)** - Bank account setup
-- **[Process payroll runs](payroll-runs-process.md)** - Payroll processing with direct deposit
+## Related information
+
+- [Payment methods setup](payment-methods-setup.md)
+- [Payment methods overview](payment-methods-overview.md)
+- [Process payroll runs](payroll-runs-process.md)
+- [Check printing and management](check-printing.md)

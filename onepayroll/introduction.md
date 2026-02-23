@@ -23,7 +23,7 @@ OnePayroll is a comprehensive payroll management extension for Microsoft Dynamic
 - Multiple pay types: earnings, deductions, and garnishments
 - Benefits administration and enrollment
 - Automatic tax withholding calculations
-- Employee bank account management and direct deposit
+- Employee payment method management and direct deposit
 - Check printing and payment processing
 - Year-end tax form generation (W-2, 1099, and regional forms)
 - General ledger integration and automatic journal posting
@@ -50,16 +50,16 @@ Pay types represent different components of employee compensation: earnings (bas
 Pay cycles define how often employees are paid and when payroll periods occur. Common schedules include weekly, biweekly, semi-monthly, and monthly. OnePayroll automatically calculates period dates and handles period-end cutoffs.
 
 ### Employees
-Employees in OnePayroll extend the standard Business Central employee record with payroll-specific information: pay group assignment, employee type, bank accounts for direct deposit, and garnishment details.
+Employees in OnePayroll extend the standard Business Central employee record with payroll-specific information: pay group assignment, employee type, payment methods with bank details for direct deposit, and garnishment details.
 
 ### Benefits
 Benefits are company-sponsored programs (health insurance, retirement plans, wellness programs) that employees can enroll in. OnePayroll tracks employee coverage, calculates employer liabilities, and integrates benefits deductions into payroll.
 
 ### Payment Methods
-Payment methods define how employees receive their wages: direct deposit to bank accounts or check printing. Flexible allocation options support primary/secondary bank accounts and mixed payment scenarios.
+Employee Payment Methods define how employees receive their wages. Each record stores allocation rules (Primary, Fixed Amount, or Percentage) and bank details (Bank Account No., Bank Identifier Code). The payment type (Computer Check or Electronic Payment) is selected at pay time on the Create Payroll Payments report.
 
 ### Tax Calculations
-OnePayroll integrates with multiple tax calculation engines (Vertex, Symmetry, or mock) to automatically calculate federal, state, and local tax withholdings based on employee and employer data.
+OnePayroll calculates federal, state, and local income tax withholding using a jurisdiction-based architecture. Each Income Tax Jurisdiction defines its own calculation method (Standard or Simplified), and employee withholding records are automatically maintained based on the employee's location.
 
 ## Getting started
 
@@ -70,7 +70,7 @@ OnePayroll integrates with multiple tax calculation engines (Vertex, Symmetry, o
 3. **Set up your foundation** - Configure pay groups, pay types, and pay cycles
 4. **Add employees** - Create employees and assign them to pay groups
 5. **Configure benefits** - Set up benefit types and enrollment options (if using benefits)
-6. **Set up payments** - Configure payment methods and employee bank accounts
+6. **Set up payments** - Configure Employee Payment Methods with bank details
 7. **Initialize tax settings** - Configure tax calculation and withholding rules
 8. **Process your first payroll** - Create and process a payroll run
 

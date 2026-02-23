@@ -135,30 +135,30 @@ The SSN is critical for:
 > [!IMPORTANT]
 > SSNs are sensitive data. Ensure your OnePayroll system has data security configured.
 
-## Add bank accounts (for direct deposit)
+## Add payment methods (for direct deposit)
 
-**To add employee bank account:**
+**To add an Employee Payment Method:**
 
-1. Open the employee
-2. On the **OnePayroll** tab, select **Bank Accounts**
-3. Select **New**
-4. Enter:
-   - **Account Number** - Bank account number (or last 4 digits)
-   - **Bank Name** - Bank institution name
-   - **Account Type** - Checking or Savings
-   - **Routing Number** - Bank routing number
-5. Indicate if this is:
-   - **Primary account** - Main account for direct deposit
-   - **Secondary account** - Spillover account (if multiple accounts)
-6. Save
+1. Open the **Employee Card**.
+2. Select the **Payment Methods** action.
+3. On the **Employee Payment Methods** list, select **New**.
+4. Enter details on the card:
+   - **Name** — a descriptive label (for example, "Main Checking")
+   - **Priority** — the processing order
+   - **Allocation Type** — Primary, Fixed Amount, or Percentage
+   - **Payment Method** — select a Business Central payment method code
+   - **Bank Account No.** — bank account number
+   - **Bank Identifier Code** — routing number (ABA) or SWIFT code
+5. Close the card.
 
-Bank account information is used for:
-- Setting up direct deposit
-- Electronic payment processing
-- ACH file generation
-- Bank reconciliation
+The first payment method created is automatically set to Primary allocation type.
 
-See [Employee bank accounts](employee-bank-accounts.md) for more details.
+Payment method information is used for:
+- Direct deposit processing
+- Check payment generation
+- Pay allocation across multiple accounts
+
+See [About payment methods](payment-methods-overview.md) for more details.
 
 ## Configure department and manager
 
@@ -274,9 +274,9 @@ See your administrator for import templates and procedures.
 - Check employee type matches calculation method
 - Review tax withholding settings
 
-### Bank account not validating
-- Verify bank routing number is correct
-- Confirm account number format is correct
+### Bank details not validating
+- Verify **Bank Identifier Code** (routing number) is correct on the Employee Payment Method
+- Confirm **Bank Account No.** format is correct
 - Check with bank if necessary
 
 ## Best practices
@@ -292,6 +292,6 @@ See your administrator for import templates and procedures.
 ## What's next
 
 - **[Employee pay units](employee-pay-units.md)** - Configure compensation rates
-- **[Employee bank accounts](employee-bank-accounts.md)** - Direct deposit setup
+- **[Employee bank account information](employee-bank-accounts.md)** - Bank details on payment methods
 - **[Garnishments](garnishments.md)** - Wage garnishment configuration
 - **[Process payroll runs](payroll-runs-process.md)** - Process payroll with your employees
