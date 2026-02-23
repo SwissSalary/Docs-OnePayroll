@@ -1,103 +1,93 @@
 ---
-title: About payroll reports and analytics
-description: Learn about available payroll reports and analytics in OnePayroll.
+title: About payroll reports
+description: Learn about the reports available in OnePayroll for payroll analysis, compliance, and management.
 author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026
 ---
 
-# About payroll reports and analytics
+# About payroll reports
 
-OnePayroll provides comprehensive reports for payroll analysis, compliance, and management.
+OnePayroll includes reports for analyzing payroll data, reviewing payroll runs, and managing employee compensation. Reports are available from the **Payroll Manager** Role Center, from the **Payroll Runs** page, and through the Business Central search.
 
-## Report categories
+## Available reports
 
-### Payroll operations reports
-- **Payroll Summary** - Overview of payroll run (gross, taxes, net)
-- **Paycheck Register** - All paychecks in period (amounts, method)
-- **Payroll Entry Detail** - Individual pay types/deductions by employee
-- **Payroll Analysis by Department** - Payroll cost by department
+### Employee-facing reports
 
-### Tax and compliance reports
-- **W-2** - Year-end wage and tax statement
-- **Quarterly Wage Report** - Quarterly summary for quarterly filings
-- **Tax Deposit Report** - Actual tax deposits vs. calculated withholding
-- **Multi-State Report** - Wages/taxes by state (for multi-state employees)
+| Report | Output | Description |
+|--------|--------|-------------|
+| **Paycheck** | Word/PDF | Individual pay stub showing earnings, deductions, taxes, net pay, and YTD amounts. Includes payment distribution details. |
+| **Employee W-2 Statement** | Word/PDF | Annual IRS W-2 tax statement with all standard boxes. Available in the US localization layer. |
 
-### Deduction and garnishment reports
-- **Benefits Deduction Summary** - Employee health insurance and benefits costs
-- **Garnishment Report** - Active garnishments and payment status
-- **Cafeteria Plan Report** - FSA/HSA contributions and claims
+### Payroll analysis reports
 
-### Employee reports
-- **Employee Master List** - All employees with key details (hire date, pay group, etc.)
-- **Employee Compensation Report** - YTD earnings, taxes, benefits by employee
-- **Timesheet Report** - Hours worked (if time tracking integrated)
-- **Turnover Report** - Hired, terminated, changes in period
+| Report | Output | Description |
+|--------|--------|-------------|
+| **Payroll Register** | Excel | Detailed register of all payroll entries for a payroll run, grouped by employee, showing earnings, employee deductions, and employer contributions. |
+| **Payroll Register Difference** | Excel | Compares two payroll runs side by side, showing amount differences and percentage changes per pay type and employee. Useful for identifying unexpected variances between periods. |
+| **Cost of Labor** | Excel | Analyzes labor costs by employee, department, and pay type over a date range. |
+| **Benefit Summary** | Excel | Benefit analysis showing employee and employer contributions, limits, and remaining amounts for a date range. |
+| **Pay Type List** | Excel | Cross-employee comparison of up to five selected pay types, showing amounts and quantities. |
 
-## Report access
+### Operational reports
 
-**To run payroll reports:**
+| Report | Output | Description |
+|--------|--------|-------------|
+| **General Ledger Log** | Word/PDF | Preview of debit and credit GL entries for a payroll run before or after posting. Must be run for exactly one payroll run. |
 
-1. Search for **Reports**
-2. Filter category: Payroll
-3. Select desired report
-4. Set parameters (date range, employee, department, etc.)
-5. Generate and view/print/export
+### Processing reports (no output)
 
-## Report customization
+These reports perform actions rather than producing printable output:
 
-### Parameter options
+| Report | Description |
+|--------|-------------|
+| **New Payroll** | Creates and calculates a new payroll run |
+| **Paycheck Reversal** | Reverses a posted paycheck by creating offsetting entries |
+| **Create Payroll Payments** | Generates payment journal entries for direct deposit or check printing |
+| **Save to Dossier** | Saves generated report output as PDF documents in employee dossiers |
 
-Most reports allow filtering by:
-- **Date Range** - From/To dates
-- **Employee** - Single employee or all
-- **Department** - Single department or all
-- **Pay Group** - Specific pay group or all
-- **Employee Type** - Salary/Hourly/Commission/etc.
+## Running reports
 
-### Output formats
+### From the Payroll Runs page
 
-- **Screen** - View in OnePayroll (quick review)
-- **Print** - Send to printer (for distribution)
-- **Excel** - Export to spreadsheet (for analysis)
-- **PDF** - Generate PDF (for archiving)
+Most reports are available as actions on the **Payroll Runs** page:
 
-## Analytics and insights
+- **Paycheck** — in the Paycheck Actions group
+- **Save in Dossier** — in the Paycheck Actions group
+- **Payroll Register** — in the Reporting group
+- **General Ledger Log** — in the Reporting group
+- **Reverse Paycheck** — in the process actions
 
-### Dashboard views
+### From the Role Center
 
-**Key metrics available:**
-- YTD Payroll Cost
-- Average Employees
-- Turnover Rate
-- Tax Withholding Trends
-- Deduction Participation Rate
+The following reports are available from the **Payroll Manager** Role Center under the Reports section:
 
-### Data export
+- Payroll Register
+- Payroll Register Difference
+- Cost of Labor
+- Benefit Summary
+- Pay Type List
 
-Export payroll data for analysis:
-- GL account balances (payroll-related)
-- Historical payroll data
-- Employee records
-- Benefit enrollment
+### From search
 
-**Use for:**
-- Budgeting and forecasting
-- Trend analysis
-- Compliance reporting
-- Union negotiations (if applicable)
+Search for any report by name using the Business Central search (Tell Me).
 
-## Common report uses
+## Output formats
 
-### For Management
+Reports support standard Business Central output options:
 
-- **Payroll Summary Report** - Budget tracking, cost control
-- **Department Report** - Department cost allocation
-- **Turnover Report** - HR metrics and headcount tracking
+- **Preview** — view on screen
+- **Print** — send to a printer
+- **Excel** — export to Excel (for reports with Excel layout)
+- **PDF** — save as PDF
+- **Word** — save as Word document (for reports with Word layout)
 
-### For Accounting
+## For more information
+
+- [Payroll reports](payroll-reports.md) — detailed guide for each report
+- [Tax statements and W-2 reporting](tax-statements.md) — generating W-2 statements
+- [Process payroll runs](payroll-runs-process.md) — running payroll
 
 - **GL Reconciliation Report** - Verify GL posting
 - **Tax Deposit Report** - Confirm deposits made match calculations
@@ -107,33 +97,4 @@ Export payroll data for analysis:
 
 - **W-2 Report** - Tax filing and employee distribution
 - **Quarterly Wage Report** - Quarterly filing support
-- **Multi-State Report** - State tax filing support
-- **Tax Deposit Tracking** - Ensure timely deposits
 
-### For Employees
-
-- **Paycheck Stubs** - Individual earnings and deductions
-- **YTD Summary** - Year-to-date compensation summary
-
-## Scheduling reports
-
-### Recurring reports
-
-Schedule reports to run automatically:
-1. Example: "Payroll Summary Report" weekly after payroll
-2. Route to email or file location
-3. Useful for regular monitoring and compliance tracking
-
-## Report retention
-
-**Suggested retention:**
-- **Payroll Registers**: Minimum 7 years (US requirement)
-- **W-2/Tax Forms**: Minimum 7 years
-- **Supporting Payroll**: Minimum 7 years
-- **GL Reports**: Permanent (part of GL records)
-
-## What's next
-
-- **[Payroll reports](payroll-reports.md)** - Standard payroll operation reports
-- **[Tax reports](tax-reports.md)** - Tax and compliance reporting
-- **[Process payroll runs](payroll-runs-process.md)** - Payroll processing details

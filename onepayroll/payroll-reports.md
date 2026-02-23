@@ -1,258 +1,180 @@
 ---
-title: Payroll operation reports
-description: Learn how to run payroll operation reports for analysis and management.
+title: Payroll reports
+description: Learn how to run payroll analysis and operational reports in OnePayroll.
 author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---
 
-# Payroll operation reports
+# Payroll reports
 
-Run payroll operation reports to analyze payroll costs and distributions.
+This article describes each payroll report in OnePayroll, including what it shows and when to use it.
 
-## Payroll Summary Report
+## Paycheck
 
-**Purpose:** Overview of payroll run costs
+**Purpose:** Employee pay stub showing all earnings, deductions, taxes, and net pay for a payroll period.
+
+**Output:** Word/PDF
 
 **To run:**
-1. Search for **Payroll Summary Report**
-2. Enter date range or select payroll run
-3. Select employees (or all)
-4. Generate
+
+1. On the **Payroll Runs** page, select a payroll run
+2. Select **Paycheck** from the Paycheck Actions group
+3. On the request page, optionally filter by employee
+4. Preview or print
 
 **Shows:**
-- Total gross wages by employee/department
-- Total deductions (benefits, garnishments, etc.)
-- Total taxes (federal, FICA, state, local)
-- Total net pay
-- Total employer taxes (if included)
 
-**Use for:**
-- Budget vs. actual comparison
-- Payroll cost trending
-- Variance analysis
-- Management reporting
+- Company and employee information
+- Earnings section by pay type (description, hours/units, rate, amount)
+- Deductions section (benefits, garnishments, taxes)
+- Net pay amount
+- Year-to-date totals
+- Payment distribution showing how net pay is split across payment methods
 
-## Paycheck Register
+**Use for:** Distributing pay stubs to employees, verifying individual paycheck details, archiving pay records.
 
-**Purpose:** List of all issued paychecks
+> [!TIP]
+> Use the **Save in Dossier** action to batch-save paychecks as PDF documents directly into employee dossiers.
 
-**To run:**
-1. Search for **Paycheck Register**
-2. Select pay period
-3. Choose payment method filter (Direct Deposit, Check, Both)
-4. Generate
+## Payroll Register
 
-**Shows:**
-- Employee name and ID
-- Check or ACH number
-- Gross amount
-- Deductions
-- Net amount
-- Payment date
-- Method (DD, Check)
+**Purpose:** Comprehensive register of all payroll entries for a payroll run.
 
-**Use for:**
-- Verify all employees paid
-- Check for duplicate paychecks
-- Reconcile to bank account
-- Review before distribution
-
-## Payroll Entry Detail Report
-
-**Purpose:** Individual pay type transactions
+**Output:** Excel
 
 **To run:**
-1. Search for **Payroll Entry Detail**
-2. Select date range
-3. Filter by:
-   - Employee (optional)
-   - Department (optional)
-   - Pay Type (optional)
-4. Generate
+
+1. On the **Payroll Runs** page, select a payroll run
+2. Select **Payroll Register** from the Reporting group
+3. Preview or export to Excel
 
 **Shows per employee:**
-- Each pay type line (Regular Wages, Overtime, Bonus, etc.)
-- Amount for each
-- Hours (if hourly)
-- Each deduction line
-- Each tax line
 
-**Use for:**
-- Detailed transaction review
-- Reconcile specific pay type
-- Investigate discrepancy
-- Audit trail for specific transactions
+- All earnings entries with amounts
+- Employee deduction amounts (taxes, benefits, garnishments)
+- Employer contribution amounts
+- Subtotals by category
 
-## Department Payroll Report
+**Use for:** Detailed payroll review, reconciliation, audit support, verifying that all pay types and employees are correctly included.
 
-**Purpose:** Payroll costs by department
+## Payroll Register Difference
+
+**Purpose:** Compares two payroll runs to identify changes between them.
+
+**Output:** Excel
 
 **To run:**
-1. Search for **Department Payroll Report**
-2. Enter period
-3. Select departments (or all)
-4. Generate
+
+1. Search for **Payroll Register Difference** or select it from the Role Center Reports section
+2. On the request page, select:
+   - **Payroll 1** — the first payroll run to compare
+   - **Payroll 2** — the second payroll run to compare
+3. Optionally filter by employee
+4. Preview or export to Excel
+
+**Shows per employee and pay type:**
+
+- Amount in Payroll 1
+- Amount in Payroll 2
+- Difference (amount)
+- Percentage change
+
+**Use for:** Identifying pay variances between periods, spotting unusual changes, verifying that expected adjustments (such as raises or new deductions) are reflected correctly.
+
+## Cost of Labor
+
+**Purpose:** Labor cost analysis across employees, departments, and pay types.
+
+**Output:** Excel
+
+**To run:**
+
+1. Search for **Cost of Labor** or select it from the Role Center Reports section
+2. On the request page, set:
+   - **Date From** and **Date To** — the analysis period
+   - Optionally filter by pay type or employee
+3. Preview or export to Excel
 
 **Shows:**
-- Department name
-- Number of employees
-- Total gross wages
-- Total deductions
-- Total net pay
-- Department-specific employer costs
 
-**Use for:**
-- Departmental cost accounting
-- Budget allocation
-- Cross-department comparison
-- Profitability analysis (by department)
+- Labor costs broken down by employee
+- Department allocation
+- Pay type breakdown
+- Totals for the selected period
 
-## YTD (Year-to-Date) Earnings Report
+**Use for:** Budgeting, department cost allocation, headcount cost analysis, management reporting.
 
-**Purpose:** Cumulative employee earnings
+## Benefit Summary
+
+**Purpose:** Analysis of benefit costs, contributions, and limits.
+
+**Output:** Excel
 
 **To run:**
-1. Search for **YTD Earnings Report**
-2. Select employees (or all)
-3. By date (shows YTD through selected date)
-4. Generate
 
-**Shows per employee:**
-- YTD gross wages (all pay types)
-- YTD taxes withheld (federal, FICA, state)
-- YTD deductions
-- YTD net (total paid)
+1. Search for **Benefit Summary** or select it from the Role Center Reports section
+2. On the request page, set:
+   - **Date From** and **Date To** — the analysis period
+   - Optionally filter by benefit type or employee
+3. Preview or export to Excel
 
-**Use for:**
-- Verify individual earnings
-- Reconcile to W-2 (year-end)
-- Identify high earners (bonus eligibility, etc.)
-- Employee compensation verification
+**Shows per employee and benefit type:**
 
-## Employee Compensation Report
+- Employee contribution amounts
+- Employer contribution amounts
+- Benefit limits
+- Remaining amounts (limit minus contributions)
 
-**Purpose:** Detailed employee-level analysis
+**Use for:** Benefits cost analysis, tracking contribution limits (such as 401(k) annual maximums), benefits reconciliation.
+
+## Pay Type List
+
+**Purpose:** Cross-employee comparison of pay type amounts.
+
+**Output:** Excel
 
 **To run:**
-1. Search for **Employee Compensation Report**
-2. Select employee(s)
-3. Choose period
-4. Include comparisons (YTD, prior year, etc.)
-5. Generate
+
+1. Search for **Pay Type List** or select it from the Role Center Reports section
+2. On the request page, select up to five pay types to compare, with output type options for each
+3. Optionally filter by employee
+4. Preview or export to Excel
 
 **Shows:**
-- Salary vs. overtime mix
-- Bonus/commission portions
-- Total benefits value (employer-funded)
-- Effective tax rate
-- Turnover/tenure data
 
-**Use for:**
-- Management compensation review
-- Salary benchmarking
-- Benefits value communication to employees
-- Executive reporting
+- Selected pay type amounts across all employees
+- Side-by-side comparison of up to five pay types
 
-## Verification reports
+**Use for:** Comparing specific compensation elements across the workforce, bonus analysis, overtime tracking.
 
-### Duplicate Payment Check
+## General Ledger Log
 
-**Purpose:** Identify duplicate paychecks
+**Purpose:** Preview of GL debit and credit entries for a payroll run.
+
+**Output:** Word/PDF
 
 **To run:**
-1. Search for **Duplicate Payment Report**
-2. Select date range
-3. Generate
+
+1. On the **Payroll Runs** page, select a payroll run
+2. Select **General Ledger Log** from the Reporting group
+3. Preview or print
+
+> [!IMPORTANT]
+> The General Ledger Log must be run for exactly one payroll run.
 
 **Shows:**
-- Possible duplicates (same employee, amount, date)
-- Allows selective reversal if needed
 
-### Payment Method Verification
+- GL account entries that were (or will be) created during posting
+- Debit and credit amounts
+- Account descriptions
 
-**Purpose:** Verify payroll payments by method
+**Use for:** Reviewing GL entries before posting, verifying correct account assignments, reconciling posted payroll to the general ledger.
 
-**To run:**
-1. Search for **Payment Method Report**
-2. Period and payment method filter
-3. Generate
+## Related information
 
-**Shows:**
-- Checks: Check numbers, amounts, names
-- Direct Deposit: Employee, bank, amount
-- Counts and totals by method
-
-## Export reports for analysis
-
-### Excel export
-
-**To export payroll data:**
-
-1. Run any report
-2. After generating, select **Export to Excel**
-3. Opens in spreadsheet
-4. Can manipulate data further (pivot tables, charts, etc.)
-
-**Useful for:**
-- Multi-period trend analysis
-- Department comparisons
-- Salary range analysis
-- Benefits cost breakdown
-
-### Archiving reports
-
-**Best practice:** Archive regularly
-
-1. Run report at period end
-2. Export to PDF (preserves formatting)
-3. File by period (month, year)
-4. Keep minimum 7 years
-
-## Custom reports
-
-### Creating custom reports
-
-If standard reports insufficient:
-
-1. Work with IT/consultant to create custom report
-2. Could include:
-   - Specific metrics for your business
-   - Connected to other data (projects, customers, etc.)
-   - Scheduled/automated distribution
-
-## Troubleshooting reports
-
-**"Report shows no data"**
-- Verify date range includes payroll
-- Check filters aren't too restrictive
-- Confirm payroll posted to GL
-- Try expanding date range
-
-**"Amount doesn't match payroll run"**
-- Verify report period
-- Check filters (department, employee, pay type)
-- Confirm payroll approved and posted
-- Reconcile manually if needed
-
-**"Employee missing from report"**
-- Verify employee in payroll period
-- Check if filtered out (department, employee type)
-- Confirm employee has pay entries
-- Check employee status (active/inactive)
-
-## Best practices
-
-- **Run regularly** - Weekly/monthly reports for oversight
-- **Archive reports** - Keep records for compliance
-- **Reconcile reports** - Match GL and payroll totals
-- **Review details** - Don't just look at totals; verify details
-- **Follow-up** - Investigate unusual amounts
-- **Document** - Note any corrections or adjustments
-
-## What's next
-
-- **[Tax reports](tax-reports.md)** - Tax and compliance reporting
-- **[Process payroll runs](payroll-runs-process.md)** - Payroll processing overview
-- **[GL integration](gl-integration-overview.md)** - GL posting and reconciliation
+- [About payroll reports](reports-overview.md)
+- [Tax statements and W-2 reporting](tax-statements.md)
+- [Process payroll runs](payroll-runs-process.md)
+- [About GL integration](gl-integration-overview.md)

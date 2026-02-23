@@ -388,9 +388,8 @@ When you change an employee's employee type:
 
 ## See Also
 
-[Work with Pay Units](about-pay-units.md)  
-[Set Up Pay Units](pay-units-setup.md)  
+[Work with pay units](employee-pay-units.md)  
 [Convert Between Pay Units](pay-units-conversions.md)  
-[Set Up Employee Types](setup-employee-types.md)  
+[Set up employee types](pay-units-employee-types.md)  
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

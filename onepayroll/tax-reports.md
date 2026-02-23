@@ -1,294 +1,77 @@
 ---
-title: Tax and compliance reporting
-description: Learn how to prepare tax reports and ensure payroll compliance.
+title: Tax compliance
+description: Learn how OnePayroll supports tax reporting and compliance, including W-2 generation and payroll data for tax filings.
 author: zeande
 ms.service: dynamics-365-business-central
-ms.topic: how-to
+ms.topic: concept
 ms.date: 02/23/2026
 ---
 
-# Tax and compliance reporting
+# Tax compliance
 
-Prepare tax reports and ensure payroll compliance with federal and state requirements.
+OnePayroll calculates tax withholding during payroll processing and provides data you need for tax compliance. This article describes what OnePayroll provides for tax reporting and how to use payroll data for your tax filing obligations.
 
-## Quarterly tax reporting
+## What OnePayroll provides
 
-### Form 941 (Federal Payroll Tax Return)
+### Employee W-2 Statements
 
-**Purpose:** Report federal income tax and FICA for quarter
+OnePayroll generates **Employee W-2 Statements** for annual employee tax reporting. The W-2 report produces the standard IRS form output with all required boxes populated from payroll entry data.
 
-**File quarterly by:**
-- April 30 (Q1: Jan-Mar)
-- July 31 (Q2: Apr-Jun)
-- October 31 (Q3: Jul-Sep)
-- January 31 (Q4: Oct-Dec)
+See [Tax statements and W-2 reporting](tax-statements.md) for details on configuring W-2 box mappings and generating W-2 statements.
 
-**To prepare Form 941:**
+### Payroll data for tax filings
 
-1. Run **Quarterly Wage Report** in OnePayroll
-2. Reports:
-   - Number of employees paid
-   - Total wages paid
-   - Total federal withholding
-   - Total FICA (SS + Medicare)
-   - Total employer match
-3. Cross-check to GL tax payable accounts
-4. File with IRS (paper or electronically)
+OnePayroll maintains detailed payroll entry records that contain the data needed for tax compliance:
 
-**OnePayroll support:**
-- Calculates totals by quarter
-- Generates summary report
-- Exports to tax preparation software
+- **Federal income tax withheld** — tracked per employee per pay period
+- **Social Security and Medicare (FICA)** — employee and employer portions tracked separately
+- **State and local income tax** — tracked per jurisdiction when applicable
+- **Gross wages** — broken down by pay type
 
-### 941-X (Amended Quarterly Return)
+You can extract this data using the **Payroll Register** and **Cost of Labor** reports, or by viewing payroll entries directly.
 
-**If error found in filed 941:**
+## Tax filing responsibilities
 
-1. File 941-X to correct
-2. Show corrected amounts vs. original
-3. Due same timing as original
-4. OnePayroll can flag discrepancies for correction
+OnePayroll calculates and tracks tax withholding amounts, but **does not file tax returns with government agencies**. Your organization is responsible for:
 
-## Annual tax reporting
+### Quarterly filings
 
-### W-2 and W-3 (Federal)
+- **IRS Form 941** (Employer's Quarterly Federal Tax Return) — report federal income tax, Social Security, and Medicare taxes. Use OnePayroll's payroll entry data to populate the form.
+- **State quarterly returns** — requirements vary by state. Filter payroll data by state jurisdiction as needed.
 
-**Purpose:** Report annual wages and tax withholding by employee
+### Annual filings
 
-**Due:** January 31
+- **W-2 / W-3** — OnePayroll generates W-2 statements. The W-3 transmittal summarizes all W-2s for filing with the SSA.
+- **IRS Form 940** (FUTA) — report federal unemployment tax. Use payroll wage data filtered by the FUTA wage base.
+- **State unemployment** — requirements vary by state.
 
-**To prepare:**
+### Tax deposits
 
-1. Run **W-2 Report** for calendar year
-2. OnePayroll generates:
-   - Box 1: Wages subject to federal tax
-   - Box 2: Federal income tax withheld
-   - Box 3: Wages subject Social Security
-   - Box 4: Social Security tax withheld
-   - Box 5: Wages subject Medicare
-   - Box 6: Medicare tax withheld
-3. Verify data accuracy
-4. Generate W-3 (transmittal form)
-5. File with IRS and provide to employees
+- Make federal tax deposits on schedule (semi-weekly or monthly depending on your deposit schedule) using EFTPS or your bank
+- Make state tax deposits per state requirements
 
-### State tax reporting
+## Using payroll data for tax filings
 
-**Each state has own requirements:**
+### To gather quarterly totals
 
-| State | Form | Due Date | What's Reported |
-|-------|------|----------|-----------------|
-| New York | NYS-45 | Jan 31 | Wages, NY tax withheld |
-| California | 1099 (or DE 9) | Jan 31 | Wages, CA tax withheld |
-| Other states | Varies | Typically Jan 31 | Similar to federal |
+1. Run the **Payroll Register** report filtered to the quarter's date range
+2. Review totals by tax-related pay types:
+   - Total wages subject to federal income tax
+   - Total federal income tax withheld
+   - Total Social Security wages and tax
+   - Total Medicare wages and tax
+3. Use these totals to populate Form 941 or equivalent state forms
 
-**To prepare state reports:**
+### To reconcile year-end data
 
-1. Filter W-2 data by state
-2. Verify state-specific boxes
-3. Run state-specific report (if available)
-4. File per state instructions
+1. Run the **Payroll Register** report for the full calendar year
+2. Compare totals to W-2 amounts
+3. Verify that the sum of quarterly 941 totals matches annual W-2 totals
+4. Investigate and resolve any discrepancies before filing W-2s
 
-### Federal Unemployment (FUTA)
+## Related information
 
-**Form 940 - Annual Federal Unemployment Tax**
-
-**Purpose:** Report FUTA tax exposure
-
-**Due:** January 31
-
-**To prepare:**
-
-1. Calculate FUTA base ($7,000 per employee, 2024)
-2. Report by state (varies by state unemployment credit)
-3. OnePayroll can generate summary
-4. Calculate amount owed (typically 0.6% federal after state credit)
-
-## Multi-state compliance
-
-### Multi-state employee reporting
-
-**For employees working in multiple states:**
-
-1. **Wage apportionment:**
-   - Allocate wages by state where work performed
-   - OnePayroll tracks by state
-
-2. **State tax reporting:**
-   - Each state gets employee's wages allocated to that state
-   - File separate state returns or consolidated with apportionment detail
-
-3. **Local tax reporting:**
-   - Some cities/counties require separate reports
-   - Track by location worked
-
-### Reciprocal state agreements
-
-**Some states have reciprocal agreements:**
-- Employee works in state A but lives in state B
-- May file only in home state
-- Must verify agreement applies
-- OnePayroll can flag for review
-
-## Compliance checklist
-
-### Monthly compliance
-
-- [ ] Payroll GL entries posted
-- [ ] Tax deposits made (or scheduled)
-- [ ] Payable accounts reconciled
-- [ ] No payroll liabilities overdue
-
-### Quarterly compliance (by March 31, June 30, Sept 30, Dec 31)
-
-- [ ] Form 941 filed
-- [ ] All tax deposits current
-- [ ] State quarterly reports filed (if required)
-- [ ] Garnishment payments made
-- [ ] Verify no over/under withholding
-
-### Annual compliance (by January 31)
-
-- [ ] W-2s issued to employees
-- [ ] W-3 filed with federal government
-- [ ] State W-2 equivalents filed
-- [ ] Form 940 filed
-- [ ] 1095-B (health insurance) filed (if applicable)
-- [ ] All payroll adjustments complete
-
-## Multi-location compliance
-
-For companies with multiple locations/states:
-
-**Additional requirements:**
-- **State employer registration** - Register in each state
-- **Tax registration** - Separate tax accounts by state
-- **Workers comp** - May be separate per state
-- **Unemployment insurance** - May be separate per state
-
-## Wage garnishment compliance
-
-### Garnishment reporting
-
-**If employees have wage garnishments:**
-
-1. Track garnishments by type:
-   - Child support
-   - Alimony
-   - Court judgments
-   - Tax levies
-
-2. Report compliance:
-   - Amount withheld matches court order
-   - Paid timely to court/payee
-   - Documentation filed
-   - Employee notified
-
-3. OnePayroll tracks:
-   - Garnishment amounts
-   - Payment dates
-   - Payee information
-   - Legal order copies
-
-## Benefit plan compliance (if applicable)
-
-### 1095-B (Health Insurance)
-
-**If offering health insurance:**
-
-1. Determine who receives offer
-2. Generate 1095-B form
-3. Distribute to employees by Jan 31
-4. File with IRS by March 31
-
-**OnePayroll can track:**
-- Employees with coverage
-- Coverage months
-- Employer contribution amounts
-
-### 5500 or 8889 (Retirement/HSA plans)
-
-**If offering plans:**
-- Dependent on plan type
-- Different filing requirements
-- Coordinate with plan administrator/provider
-
-## Backup withholding
-
-### When 941-V (payment voucher) required
-
-If making tax deposits:
-
-1. Print Form 941-V with payment
-2. Pay via:
-   - EFTPS (Electronic Federal Tax Payment System)
-   - Bank ACH
-   - Mail with 941-V voucher
-3. OnePayroll helps track deposits
-
-## Electronic filing
-
-### IRS e-Services
-
-**Electronic filing options:**
-
-1. **File directly with IRS:**
-   - Create IRS account
-   - Submit W-2s electronically
-   - Submit Form 941 electronically
-
-2. **Use approved payroll provider:**
-   - Provider files on your behalf
-   - Less work, more reliable
-   - Verify provider credentials
-
-3. **Use tax software:**
-   - Prepare in software
-   - Software files with IRS
-   - Automatic validation
-
-OnePayroll can integrate with major tax software for submission.
-
-## Year-end closing
-
-**After all payroll for year processed:**
-
-1. Verify all W-2 data complete
-2. Reconcile GL to W-2s totals
-3. Ensure all deposits made match calculations
-4. Archive all payroll/tax records
-5. Run year-end tax analysis
-6. File all outstanding tax forms
-7. Close payroll year in system
-
-## Troubleshooting
-
-**"W-2 total doesn't match GL"**
-- Check for adjustments/reversals not in GL
-- Verify payroll period (calendar vs. business year)
-- Reconcile GL entries line by line
-
-**"Tax deposits don't match quarterly totals"**
-- Verify deposit dates (may be in different quarter)
-- Check for timing differences
-- Reconcile to bank statements
-
-**"Form filing deadline passed"**
-- File immediately
-- May incur penalties
-- Consider filing amended form
-- Contact IRS if payment due
-
-## Best practices
-
-- **Calendar reminders** - Set reminders for quarterly and annual deadlines
-- **Automation** - Use OnePayroll tax reporting features
-- **Early filing** - File early rather than waiting until deadline
-- **Professional review** - Have CPA review tax reports annually
-- **Document retention** - Keep all tax records minimum 7 years
-- **System reconciliation** - Monthly reconcile to GL
-
-## What's next
-
-- **[Payroll reports](payroll-reports.md)** - Operation reporting
-- **[Tax statements](tax-statements.md)** - W-2 preparation
-- **[Payroll processing](payroll-runs-process.md)** - Step-by-step payroll
+- [Tax statements and W-2 reporting](tax-statements.md)
+- [About tax calculations](tax-calculation-overview.md)
+- [Set up tax calculations](tax-calculation-setup.md)
+- [Payroll reports](payroll-reports.md)

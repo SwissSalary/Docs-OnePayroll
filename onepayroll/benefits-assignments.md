@@ -44,7 +44,7 @@ Benefit Assignments link benefits to employees, pay groups, or employee template
 
 ## See Also
 
-[Work with Benefits](about-benefits.md)  
+[About benefits](benefits-overview.md)  
 [Set Up Benefits](benefits-setup.md)  
 [Work with Benefit Hierarchies](benefits-hierarchies.md)  
 [Understand Benefit Limits](benefits-limits.md)  

@@ -472,9 +472,8 @@ When working with pay unit conversions:
 
 ## See Also
 
-[Work with Pay Units](about-pay-units.md)  
-[Set Up Pay Units](pay-units-setup.md)  
+[Work with pay units](employee-pay-units.md)  
 [Assign Pay Units to Employee Types](pay-units-employee-types.md)  
-[Process Payroll](process-payroll.md)  
+[Process payroll](payroll-runs-process.md)  
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

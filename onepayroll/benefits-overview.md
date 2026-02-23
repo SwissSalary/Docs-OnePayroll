@@ -102,8 +102,8 @@ When working with benefits in OnePayroll:
 
 [Understand Benefit Limits](benefits-limits.md)  
 
-[Set Up Pay Types](setup-pay-types.md)  
+[Set up pay types](pay-types-setup.md)  
 
-[Process Payroll](process-payroll.md)  
+[Process payroll](payroll-runs-process.md)  
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]
