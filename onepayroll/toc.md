@@ -1,6 +1,4 @@
-# [OnePayroll documentation](../index.md)
-# [Welcome to OnePayroll](introduction.md)
-
+# Welcome to OnePayroll
 ## Get started
 ### [Introduction](introduction.md)
 ### [Getting started](getting-started.md)
