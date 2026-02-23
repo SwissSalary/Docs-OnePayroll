@@ -4,6 +4,7 @@
 ### Benefits
 #### [About benefits](about-benefits.md)
 #### [Set up benefits](benefits-setup.md)
+##### [401(k) Setup](benefits-401k.md)
 #### [Assign benefits to employees](benefits-assignments.md)
 #### [Work with benefit hierarchies](benefits-hierarchies.md)
 #### [Understand benefit limits](benefits-limits.md)
