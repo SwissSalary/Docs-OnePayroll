@@ -52,6 +52,7 @@ Pay Type Liabilities determine which pay types (earnings) are subject to a benef
    - **Description**: What this coverage level represents
    - **Covered by Employee**: Whether the employee pays for this coverage
    - **Covered by Employer**: Whether the employer contributes to this coverage
+4. Make sure to select a **good** coverage type
 
 > [!TIP]
 > You can create coverage types that inherit from existing types using the **Create Inherited Type** action. This is useful when you have benefits with the same coverage options but different cost-sharing arrangements.
