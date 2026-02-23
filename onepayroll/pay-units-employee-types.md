@@ -1,52 +1,302 @@
 ---
-title: Assign Pay Units to Employee Types
-description: Learn how to assign pay units to employee types and how employees inherit their pay unit from their employee type.
-author: myGitHubHandle
-
-ms.service: dynamics365-business-central
-ms.topic: article
-ms.date: 01/08/2026
-ms.author: MyMSFTAlias (if I work for Microsoft; otherwise edupont)
+title: Employee types and pay units integration
+description: Learn how employee types determine compensation structure and pay unit configuration.
+author: SwissSalary
+ms.service: dynamics-365-business-central
+ms.topic: overview
+ms.date: 02/23/2026
 ---
-# Assign Pay Units to Employee Types
 
-Pay Units are assigned to employees indirectly through **Employee Types**. This design allows you to classify employees by how they're compensated and automatically assign the correct pay unit based on their type.
+# Employee types and pay units integration
 
-## Understanding Employee Types and Pay Units
+Employee types define compensation classification and how pay units apply to different employee categories.
 
-Employee Types serve as templates that define common characteristics for groups of employees. The pay unit is a key component of an employee type because it determines how compensation rates are expressed for that type of employee.
+## Employee type overview
 
-### Benefits of Using Employee Types
+**What is an employee type?**
+A classification that determines:
+- How compensation is structured
+- What pay units apply
+- Which pay types are available
+- Overtime eligibility
+- Tax treatment (sometimes)
+- Reporting categories
 
-- **Consistency**: All employees of the same type use the same pay unit
-- **Efficiency**: Set up the pay unit once on the employee type rather than on each employee
-- **Clarity**: Employee types make it clear how different groups of employees are compensated
-- **Maintenance**: Changes to an employee type's pay unit can affect all employees of that type
+**Standard employee types:**
+- Salaried (annual compensation, no overtime)
+- Hourly (paid per hour, eligible for overtime)
+- Commissioned (base + commission/performance pay)
+- Daily (contract/temporary, paid per day)
 
-## Assigning Pay Units to Employee Types
+## Salaried employees
 
-### To assign a pay unit to an employee type
+### Characteristics
 
-1. Choose the ![Lightbulb that opens the Tell Me feature 1.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employee Types**, and then choose the related link.
-2. Select an employee type or create a new one.
-3. In the **Pay Unit** field, select the appropriate pay unit for this employee type.
+- **Pay unit:** Annual
+- **Compensation structure:** Fixed annual salary
+- **Overtime:** Generally not eligible (exempt vs. non-exempt rules apply)
+- **Frequency:** Paid per payroll period (typically biweekly or semi-monthly)
+- **Consistency:** Same amount each period
 
-   > [!NOTE]
-   > The Pay Unit field is required on employee types. You cannot save an employee type without specifying a pay unit.
+### Salaried pay setup
 
-4. The **Pay Factor** field automatically displays the conversion factor from the selected pay unit.
+**Typical pay types:**
+- Regular Salary (main compensation)
+- Bonus (discretionary)
+- Shift Differential (if applicable)
+- Other special compensation
 
-## Common Employee Type Configurations
+**No overtime calculation needed** (unless non-exempt status applies)
 
-### Example Employee Types with Pay Units
+### Example
 
-|Employee Type Code|Description|Pay Unit|Use Case|
-|------------------|-----------|--------|--------|
-|HOURLY|Hourly Employee|HOURLY|Non-exempt hourly workers|
-|SALARY|Salaried Employee|YEARLY|Exempt salaried staff|
-|CONTRACT|Contractor|HOURLY|Independent contractors paid hourly|
-|EXEC|Executive|YEARLY|Executive compensation|
-|PART-TIME|Part-Time Employee|HOURLY|Part-time staff paid hourly|
+```
+Employee: John (Salaried)
+Annual salary: $50,000
+Biweekly: $1,923.08
+Structure: Same amount every biweekly period
+```
+
+## Hourly employees
+
+### Characteristics
+
+- **Pay unit:** Hourly rate
+- **Compensation structure:** Variable based on hours worked
+- **Overtime:** Eligible for overtime calculation (typically 1.5x after 40 hours/week)
+- **Frequency:** Paid per payroll period based on hours worked
+- **Variability:** Amount varies with hours
+
+### Hourly pay setup
+
+**Typical pay types:**
+- Regular Wages (base rate for hours worked)
+- Overtime (1.5x rate for qualifying hours)
+- Double Time (2x rate, if applicable)
+- Holiday Pay (if holiday hours count)
+- Sick/Vacation (paid time off hours)
+
+**Overtime calculation:**
+- Hours worked > 40/week → paid at 1.5x (statutory minimum)
+- Some employers pay more (2x for over 50 hours, etc.)
+
+### Example
+
+```
+Employee: Jane (Hourly)
+Hourly rate: $25/hour
+Regular hours: 40 hours
+Overtime hours: 5 hours
+Gross:
+  Regular: 40 × $25 = $1,000
+  Overtime: 5 × $25 × 1.5 = $187.50
+  Total: $1,187.50
+```
+
+## Commissioned employees
+
+### Characteristics
+
+- **Pay unit:** Mixed (base salary + commission)
+- **Compensation structure:** Fixed base + variable commission
+- **Commission basis:** Sales, profit, or performance metrics
+- **Commission frequency:** Often paid with next regular paycheck
+- **Variability:** Commission portion varies; base consistent
+
+### Commissioned pay setup
+
+**Typical pay types:**
+- Base Salary (fixed amount)
+- Commission (variable based on sales/performance)
+- Commission Override (if supervising other sales)
+- Bonus (discretionary or eligible bonus)
+- Draw (advance on expected commission)
+
+**Commission calculation (examples):**
+
+```
+Example 1: Percentage of sales
+Sales: $50,000
+Commission rate: 5%
+Commission: $2,500
+
+Example 2: Tiered commission
+Sales: $100,000
+  0-50k: 3% = $1,500
+  50k-100k: 5% = $2,500
+Commission: $4,000
+```
+
+### Example
+
+```
+Employee: Mike (Commissioned)
+Base salary (biweekly): $1,500
+Commission on $50,000 sales at 5%: $2,500
+Deductions and taxes: Calculated on total ($4,000)
+```
+
+## Daily/Contract employees
+
+### Characteristics
+
+- **Pay unit:** Daily rate
+- **Compensation structure:** Fixed daily rate × days worked
+- **Frequency:** Paid per days worked in period
+- **Variability:** Amount varies with days worked
+- **Benefits:** Often limited (no benefits, no paid time off)
+
+### Daily employee pay setup
+
+**Typical pay types:**
+- Daily Wages (base rate × days)
+- Overtime (if applicable, 1.5x daily rate)
+- Premiums (for specific work conditions)
+- Bonuses (if project-based)
+
+### Example
+
+```
+Employee: Alex (Daily/Contract)
+Daily rate: $200/day
+Days worked: 15 days in period
+Gross: 15 × $200 = $3,000
+```
+
+## Integration with payroll
+
+### Pay unit determination
+
+**System determines pay unit from employee type:**
+
+| Employee Type | Default Pay Unit | Override Possible |
+|------|----------|----------|
+| Salaried | Annual | No |
+| Hourly | Hourly | Rare |
+| Commissioned | Mixed (Annual base + Commission) | Yes |
+| Daily | Daily | Rare |
+
+### Pay type eligibility
+
+**Pay types available by employee type:**
+
+```
+Salaried:
+  ✓ Regular Salary
+  ✓ Bonus
+  ✓ Shift Differential
+  ✗ Overtime (unless non-exempt)
+
+Hourly:
+  ✓ Regular Wages
+  ✓ Overtime
+  ✓ Double Time
+  ✗ Regular Salary (contradiction)
+
+Commissioned:
+  ✓ Base Salary
+  ✓ Commission
+  ✓ Bonus
+  ✗ Overtime (typically)
+
+Daily:
+  ✓ Daily Wages
+  ✓ Overtime (if eligible)
+  ✗ Regular Salary
+```
+
+## Changing employee type
+
+If employee changes classification:
+
+1. **Salaried → Hourly:** 
+   - Change employee type
+   - Switch from annual to hourly pay unit
+   - Configure hourly rate
+   - Enable overtime tracking
+
+2. **Hourly → Salaried:**
+   - Change employee type
+   - Switch from hourly to annual pay unit
+   - Set annual salary
+   - Disable overtime calculation
+
+3. **Effective date:** Changes take effect on specified date
+4. **Snapshot:** New snapshot created for audit trail
+
+## Overtime rules by type
+
+### Salaried employees
+
+- **Exempt:** No overtime (salary covers all hours)
+- **Non-exempt:** Overtime applies (federal requirement)
+- **Verify classification:** Ensure complies with DOL rules
+
+### Hourly employees
+
+- **Overtime standard:** 1.5x after 40 hours/week
+- **Double time:** 2x (if policy or union)
+- **Tracking:** Hours must be tracked (timesheets)
+- **Calculation:** Automatic in OnePayroll
+
+### Commissioned employees
+
+- **Typically exempt:** No overtime (unless non-exempt classification)
+- **Base salary:** May reduce overtime since includes compensation
+- **Verify:** Check wage/hour laws for applicability
+
+### Daily employees
+
+- **Depends on total hours:** If hours exceed 40/week, overtime may apply
+- **Calculation:** Convert to hourly equivalent, apply overtime
+- **Tracking:** May require detailed hour tracking
+
+## Benefits by employee type
+
+**Benefits eligibility often tied to employee type:**
+
+```
+Salaried:
+  ✓ Health insurance (typical)
+  ✓ 401k/Pension
+  ✓ Paid time off
+  ✓ Disability insurance
+
+Hourly:
+  ✓ Health insurance (if eligible)
+  ✓ 401k (if offered)
+  ✓ Paid time off (varies)
+  
+Commissioned:
+  ~ Benefits vary by policy
+  
+Daily/Contract:
+  ✗ No benefits (typically)
+```
+
+## Reporting by employee type
+
+**Reports often segmented by type:**
+- Salaried headcount and costs
+- Hourly headcount and overtime hours
+- Commissioned earnings breakdown
+- Daily/Contract workforce
+
+## Best practices
+
+- **Classify correctly** - Ensure employee type matches actual classification
+- **Verify exempt/non-exempt** - Salaried status doesn't guarantee exempt (wage/hour law)
+- **Document changes** - Track when employee type changes
+- **Test transitions** - When changing types, test payroll before live
+- **Review overtime** - Regularly ensure overtime calculated correctly
+- **Policy alignment** - Ensure pay structure matches company policy
+- **Compliance monitoring** - Monitor wage/hour compliance per type
+
+## What's next
+
+- **[Pay units and conversions](pay-units-conversions.md)** - Pay unit details
+- **[Employee setup](employee-setup.md)** - Employee configuration
+- **[Pay type setup](pay-types-setup.md)** - Pay type configuration
 
 ### Choosing the Right Pay Unit
 

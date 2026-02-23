@@ -1,53 +1,305 @@
 ---
-title: Convert Between Pay Units
-description: Understand how OnePayroll converts compensation rates between different pay units using conversion factors.
-author: myGitHubHandle
-
-ms.service: dynamics365-business-central
-ms.topic: article
-ms.date: 01/08/2026
-ms.author: MyMSFTAlias (if I work for Microsoft; otherwise edupont)
+title: Pay units and conversions
+description: Learn how to configure pay units and conversion factors for different pay frequencies.
+author: SwissSalary
+ms.service: dynamics-365-business-central
+ms.topic: how-to
+ms.date: 02/23/2026
 ---
-# Convert Between Pay Units
 
-OnePayroll automatically converts compensation rates between different pay units using the conversion factors defined on each pay unit. Understanding how these conversions work helps ensure accurate payroll calculations and reporting.
+# Pay units and conversions
 
-## How Conversions Work
+Pay units define compensation measurements and enable conversion between different pay frequencies.
 
-### Conversion Formula
+## Pay units overview
 
-OnePayroll converts between pay units using the following formula:
+**What is a pay unit?**
+A unit of compensation measurement:
+- Annual salary ($50,000/year)
+- Hourly rate ($25/hour)
+- Daily rate ($200/day)
+- Piece rate ($10/unit)
 
+**Why conversion matters:**
+- Employees may be paid annually but work hourly
+- When converting salary to hourly, need precise factors
+- Ensures consistent compensation regardless of logic  
+- Supports benefits calculations (sometimes based on annual equivalent)
+
+## Standard pay units
+
+### Annual pay units
+
+**Annual salary:**
+- Measurement: Full year compensation
+- Used for: Salary employees
+- Example: $50,000/year
+- Converted to: Period pay by dividing by pay frequency
+
+### Hourly pay units
+
+**Hourly rate:**
+- Measurement: Per-hour compensation
+- Used for: Hourly employees
+- Example: $25/hour
+- Converted to: Period pay by multiplying by hours worked
+
+### Per-period pay units
+
+**Fixed per-period:**
+- Measurement: Per payroll period
+- Used for: Employees paid fixed amount per period
+- Example: $1,923.08 per biweekly payroll
+- No conversion needed
+
+### Daily pay units
+
+**Daily rate:**
+- Measurement: Per-day compensation
+- Used for: Daily or contract workers
+- Example: $200/day
+- Converted to: Period pay based on days worked
+
+## Conversion factors
+
+### Annual to other units
+
+**From annual salary to:**
+
+**Hourly:**
 ```
-Target Amount = Source Amount × Target Conversion Factor ÷ Source Conversion Factor
+Annual ÷ (Weeks per year × Hours per week)
+$50,000 ÷ (52 × 40) = $24.04/hour
 ```
 
-This formula takes the amount in the source pay unit and converts it to the target pay unit based on their respective conversion factors.
-
-### Conversion Through the Base Unit
-
-With the recommended setup (Daily = 1 as the base), all conversions work through the base unit:
-
-1. Convert source amount to base unit (Daily)
-2. Convert base unit amount to target unit
-
-This ensures consistency and accuracy across all conversions.
-
-## Example Conversions
-
-The following examples use the recommended conversion factors based on 260 working days per year:
-
-### Hourly to Yearly
-
-Converting $25.00 per hour to yearly:
-
+**Biweekly:**
 ```
-Source: $25.00 per HOURLY (factor = 0.125)
-Target: YEARLY (factor = 260)
+Annual ÷ 26 pay periods
+$50,000 ÷ 26 = $1,923.08/biweekly
+```
 
-Yearly Amount = $25.00 × 260 ÷ 0.125
-              = $25.00 × 2,080
-              = $52,000
+**Weekly:**
+```
+Annual ÷ 52 pay periods
+$50,000 ÷ 52 = $961.54/week
+```
+
+**Semi-monthly:**
+```
+Annual ÷ 24 pay periods
+$50,000 ÷ 24 = $2,083.33/semi-monthly
+```
+
+### Hourly to other units
+
+**From hourly rate to:**
+
+**Annual (assumes 40 hrs/week, 52 weeks):**
+```
+Hourly × Hours per week × Weeks per year
+$25 × 40 × 52 = $52,000/year
+```
+
+**Biweekly (assumes 40 hrs/week):**
+```
+Hourly × 40 × 2
+$25 × 40 × 2 = $2,000/biweekly
+```
+
+### Daily to other units
+
+**From daily rate to:**
+
+**Annual (assumes 5-day weeks, 52 weeks):**
+```
+Daily × 5 × 52
+$200 × 5 × 52 = $52,000/year
+```
+
+**Biweekly (assumes 5-day work weeks):**
+```
+Daily × 10
+$200 × 10 = $2,000/biweekly
+```
+
+## Configuring pay units
+
+### Setting up standard conversions
+
+In **Payroll Setup**:
+
+1. Set **Standard Hours Per Week** = 40 (or your standard)
+2. Set **Weeks Per Year** = 52 (or 52.14 for paid days calculation)
+3. These used for all conversions
+
+### Creating pay unit conversions
+
+For non-standard situations:
+
+1. Search for **Pay Unit Conversions**
+2. Create conversion by:
+   - **From Unit** = Source (e.g., Annual)
+   - **To Unit** = Target (e.g., Hourly)
+   - **Conversion Factor** = Multiplier (e.g., 0.024038 to convert annual to hourly)
+3. OnePayroll uses for all conversions in system
+
+### Example configurations
+
+**Standard US:**
+- Standard hours: 40/week
+- Weeks: 52/year
+- Conversions auto-calculated
+
+**Compressed schedule:**
+- Standard hours: 37.5/week
+- Weeks: 52/year
+- Higher per-hour rate reflects fewer hours
+
+**Shift work:**
+- Standard hours: 8/day
+- Days/week: 5
+- Conversions account for shift patterns
+
+## Using pay units
+
+### Employee compensation setup
+
+When setting employee pay rate:
+
+1. Specify **Pay Unit** = How it's expressed
+2. Configure **Rate** = Amount
+3. OnePayroll converts as needed
+
+**Example:**
+```
+Employee A: Annual, $50,000
+  System calculates: $24.04/hour, $2,000/2-week period
+
+Employee B: Hourly, $25/hour
+  System calculates: $52,000/year, $2,000/2-week period
+```
+
+### Benefits calculations
+
+Some benefits calculated on annual equivalent:
+
+**Example:** Health insurance premium
+- Employer contribution: 10% of annual salary
+- Employee: $50,000 annual
+- Insurance cost: $5,000/year ($192.31/paycheck if biweekly)
+
+OnePayroll uses pay unit conversion to ensure accuracy.
+
+### Overtime calculations
+
+Overtime compensation:
+
+**For hourly employees:**
+- Fixed rate × hours × multiplier (e.g., 1.5 for time-and-a-half)
+
+**For salaried employees:**
+- Convert annual to hourly (using pay unit conversion)
+- Calculate overtime based on hourly equivalent
+- Ensures consistent treatment
+
+## Effective dating
+
+### Pay unit changes
+
+If employee's compensation structure changes:
+
+1. Old pay unit: Annual $50,000 (hourly equivalent $24.04)
+2. Change date: 1/1/2025
+3. New pay unit: Hourly $26/hour
+4. Both rates valid for historical tracking
+
+### Snapshot system
+
+Snapshots capture pay units effective for each period:
+- Ensures payroll calculated with correct conversions
+- Historical record of pay unit changes
+- Supports wage/hour audits
+
+## Verification and testing
+
+### Before processing payroll
+
+1. **Verify conversions** - Test manual calculation vs. system
+2. **Check rates** - Ensure hourly equivalent reasonable
+3. **Review benefits** - Ensure benefits calculated correctly
+4. **Test overtime** - Verify overtime calculations accurate
+
+**Example verification:**
+```
+Employee: $50,000 annual
+Expected hourly: $50,000 ÷ 2,080 hours = $24.04/hour
+System shows: $24.04/hour ✓
+
+Biweekly: $50,000 ÷ 26 = $1,923.08
+System shows: $1,923.08 ✓
+```
+
+## Common scenarios
+
+### Salary to hourly conversion
+
+When job changes from salary to hourly:
+1. Annual salary: $50,000
+2. Convert to hourly: $24.04/hour
+3. Ensure overtime policy applies (if hourly)
+4. Payroll calculated using new pay unit
+
+### Hourly reclassification
+
+If hourly employee becomes salaried:
+1. Hourly: $25/hour
+2. Convert to annual: $52,000
+3. Remove overtime tracking (if salaried)
+4. Calculate as annual going forward
+
+### Multi-period pay types
+
+Some pay types use different units:
+- Salary: Annual
+- Overtime: Hourly (1.5x)
+- Bonus: Percentage of annual
+
+OnePayroll tracks each separately using appropriate units
+
+## Troubleshooting
+
+**"Paycheck amount seems wrong"**
+- Verify pay unit assigned to employee
+- Check conversion factor used
+- Confirm hours worked/biweekly period
+- Recalculate manually to compare
+
+**"Overtime calculation incorrect"**
+- Verify pay unit (must be hourly-based for overtime)
+- Check hours worked
+- Confirm overtime multiplier (1.5, 2.0, etc.)
+- Review against salary conversion if salaried employee
+
+**"Benefits deduction doesn't match estimate"**
+- Verify annual salary calculation
+- Check benefits percentage applied
+- Confirm adjustment for partial-year employees
+- Review pay frequency impact
+
+## Best practices
+
+- **Document assumptions** - Keep record of hours/week, weeks/year
+- **Standard conversions** - Use consistent factors across organization
+- **Test implementations** - Verify conversions before going live
+- **Monitor conversions** - Spot-check sample employees regularly
+- **Archive rates** - Keep history of pay unit conversions
+- **Review annually** - Verify standard hours/weeks still valid
+
+## What's next
+
+- **[Employee setup](employee-setup.md)** - Employee configuration
+- **[Employee types and pay units](pay-units-employee-types.md)** - Integration with employee types
+- **[Pay type setup](pay-types-setup.md)** - Pay type configuration
 ```
 
 **Explanation**: The employee works 2,080 hours per year (260 days × 8 hours).
