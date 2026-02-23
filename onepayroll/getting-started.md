@@ -25,25 +25,25 @@ Before you begin, ensure you have:
 
 Use this checklist to track your setup progress:
 
-### Foundation (Week 1)
+### Foundation
 - [ ] **Install OnePayroll** - Ensure OnePayroll Core and your regional extension are installed
 - [ ] **Review OnePayroll Workspace** - Familiarize yourself with the OnePayroll role center and available features
 - [ ] **Configure GL Accounts** - Set up general ledger accounts for payroll expenses and liabilities
 - [ ] **Set up Pay Groups** - Create pay groups to organize employees by pay frequency
 
-### Configuration (Week 2)
+### Configuration
 - [ ] **Define Pay Types** - Create earnings and deductions (salary, overtime, taxes, insurance)
 - [ ] **Configure Pay Cycles** - Set up pay schedules (weekly, biweekly, monthly, etc.)
 - [ ] **Create Employees** - Add employee records with payroll-specific settings
 - [ ] **Assign Pay Groups** - Link employees to their appropriate pay groups
 
-### Payment Setup (Week 3)
+### Payment setup
 - [ ] **Configure Payment Methods** - Set up direct deposit and/or check payment options
 - [ ] **Set up Employee Payment Methods** - Add bank account details for direct deposit on Employee Payment Methods
 - [ ] **Set Withholding Rules** - Configure tax withholding and deduction settings
 - [ ] **Optional: Set up Benefits** - If using benefits, create benefit types and set up enrollment
 
-### Validation (Week 4)
+### Validation
 - [ ] **Run test payroll** - Create a payroll run for a small group to verify configuration
 - [ ] **Review payroll entries** - Check that pay types, deductions, and calculations are correct
 - [ ] **Verify GL posting** - Ensure payroll entries post correctly to your general ledger
