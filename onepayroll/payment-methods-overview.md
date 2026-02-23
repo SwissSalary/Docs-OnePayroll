@@ -1,7 +1,7 @@
 ---
 title: About payment methods
 description: Learn how Employee Payment Methods control pay allocation and bank details for direct deposit and check payments in OnePayroll.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026

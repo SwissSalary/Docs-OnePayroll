@@ -1,7 +1,7 @@
 ---
 title: About employees in payroll
 description: Learn about employee records in OnePayroll, payroll-specific extensions, employee types, and status management.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026

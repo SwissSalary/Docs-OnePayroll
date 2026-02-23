@@ -1,7 +1,7 @@
 ---
 title: US localization and compliance
 description: Learn about US-specific OnePayroll features, tax treatment, and compliance requirements.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: reference
 ms.date: 02/23/2026

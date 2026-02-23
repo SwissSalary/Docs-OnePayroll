@@ -1,7 +1,7 @@
 ---
 title: Check printing and management
 description: Learn how to print employee paychecks using the Computer Check payment type in OnePayroll.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026

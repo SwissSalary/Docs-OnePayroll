@@ -1,7 +1,7 @@
 ---
 title: Key concepts and terminology
 description: A comprehensive glossary of OnePayroll terms and concepts.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: reference
 ms.date: 02/23/2026

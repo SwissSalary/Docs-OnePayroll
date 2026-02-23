@@ -1,7 +1,7 @@
 ---
 title: Set up pay types
 description: Learn how to create pay type categories, define individual pay types, and configure their calculation methods and GL posting.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026

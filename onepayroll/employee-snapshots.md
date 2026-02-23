@@ -1,7 +1,7 @@
 ---
 title: Employee snapshots and historical tracking
 description: Learn how to track historical employee data changes using OnePayroll's snapshot system.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026

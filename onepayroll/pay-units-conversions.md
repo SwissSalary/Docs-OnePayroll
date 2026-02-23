@@ -1,7 +1,7 @@
 ---
 title: Pay units and conversions
 description: Learn how to configure pay units and conversion factors for different pay frequencies.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026

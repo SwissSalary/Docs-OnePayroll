@@ -1,7 +1,7 @@
 ---
 title: Employee pay units
 description: Learn how to set up and manage pay units for employees, including conversions between different compensation units.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026

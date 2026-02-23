@@ -1,7 +1,7 @@
 ---
 title: Set up pay cycles
 description: Learn how to define pay cycle frequencies, configure pay groups, and set up payroll period dates.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026

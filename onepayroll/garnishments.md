@@ -1,7 +1,7 @@
 ---
 title: Garnishments
 description: Learn how to set up and manage wage garnishments in OnePayroll.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026

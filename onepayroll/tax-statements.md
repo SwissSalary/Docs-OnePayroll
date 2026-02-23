@@ -1,7 +1,7 @@
 ---
 title: Tax statements and W-2 reporting
 description: Learn how to configure W-2 box mappings and generate Employee W-2 Statements in OnePayroll.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026

@@ -1,7 +1,7 @@
 ---
 title: Payroll operation reports
 description: Learn how to run payroll operation reports for analysis and management.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026

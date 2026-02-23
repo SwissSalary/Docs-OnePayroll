@@ -1,7 +1,7 @@
 ---
 title: Error messages and troubleshooting
 description: Find solutions to common OnePayroll error messages and issues.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: troubleshooting
 ms.date: 02/23/2026

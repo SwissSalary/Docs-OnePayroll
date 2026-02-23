@@ -1,7 +1,7 @@
 ---
 title: Getting started with OnePayroll
 description: Learn how to set up OnePayroll, from initial configuration to processing your first payroll run.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: quickstart
 ms.date: 02/23/2026

@@ -1,7 +1,7 @@
 ---
 title: OnePayroll API reference
 description: Learn how to integrate OnePayroll with external systems using REST APIs.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: reference
 ms.date: 02/23/2026

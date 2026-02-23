@@ -1,7 +1,7 @@
 ---
 title: About pay cycles
 description: Learn how pay cycles define when and how often employees are paid, and how OnePayroll calculates payroll periods.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026

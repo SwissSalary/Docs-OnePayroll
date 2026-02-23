@@ -1,7 +1,7 @@
 ---
 title: Set up employees
 description: Learn how to create employee records and configure payroll-specific settings.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026

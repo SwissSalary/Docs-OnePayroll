@@ -1,7 +1,7 @@
 ---
 title: Validation rules and business rule engine
 description: Learn how to configure validation rules and business rules in OnePayroll.
-author: SwissSalary
+author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026
