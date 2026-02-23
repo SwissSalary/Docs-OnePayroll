@@ -1,13 +1,14 @@
 ---
 title: Work with Benefits
 description: Learn about the benefits module in OnePayroll and how to configure, assign, and manage employee benefits such as health insurance, retirement plans, and other compensation packages.
-author: myGitHubHandle
+author: myGitHubHandle2
 
 ms.service: dynamics365-business-central
 ms.topic: article
 ms.date: 01/08/2026
 ms.author: MyMSFTAlias (if I work for Microsoft; otherwise edupont)
 ---
+
 # Work with Benefits in OnePayroll
 
 The Benefits module in OnePayroll allows you to configure and manage employee benefit programs such as health insurance, retirement plans, and other supplemental compensation. Benefits can have complex calculation methods, coverage options, and hierarchical relationships that allow you to efficiently manage similar benefits across your organization.
@@ -27,6 +28,7 @@ Benefit Types serve as categories that group related benefits together. Each Ben
 Pay Type Liabilities establish the relationship between earnings (pay types) and benefits. For example, a health insurance benefit type might be liable for regular wages, overtime, and bonuses, but not for reimbursements or certain allowances. This controls which earnings are included when calculating benefit amounts.
 
 > [!TIP]
+>
 > Use the **Move Up** and **Move Down** actions on the Benefit Types page to adjust the calculation order. Benefits are always calculated in this order during payroll processing.
 
 ### Benefits
@@ -93,10 +95,15 @@ When working with benefits in OnePayroll:
 ## See Also
 
 [Set Up Benefits](benefits-setup.md)  
+
 [Assign Benefits to Employees](benefits-assignments.md)  
+
 [Work with Benefit Hierarchies](benefits-hierarchies.md)  
+
 [Understand Benefit Limits](benefits-limits.md)  
+
 [Set Up Pay Types](setup-pay-types.md)  
+
 [Process Payroll](process-payroll.md)  
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]
