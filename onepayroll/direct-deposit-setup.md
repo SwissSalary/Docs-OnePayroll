@@ -67,6 +67,17 @@ To direct an employee's pay to multiple bank accounts:
    - **Priority 2**: Allocation Type = Fixed Amount, Allocation = 500.00, Bank Account No. = savings account
 3. During payment processing, the fixed and percentage allocations are applied first, and the primary method receives whatever remains.
 
+## Standard BC Payment Method and employer bank account
+
+The **Payment Method** code assigned to each Employee Payment Method determines which **employer bank account** the funds are drawn from. The Payment Method code's **Bal. Account No.** field specifies this bank account.
+
+For direct deposit, ensure the Payment Method code has:
+
+- **Bal. Account No.** — set to the employer bank account.
+- **Default Bank Payment Type** — set to **Electronic Payment**.
+
+If employees are paid from different employer bank accounts, create a separate Payment Method code for each bank account. OnePayroll generates a **separate payment file for each employer bank account**, so each bank receives only the transactions relevant to its account.
+
 ## Configure payment export (US localization)
 
 For US-based payroll, the payment export uses a NACHA/ACH file format. The US demo data includes a preconfigured data exchange definition ("US EFT PAYROLL"). For production environments, confirm with your bank that the file format meets their requirements.

@@ -76,6 +76,39 @@ $500 goes to savings; the remainder goes to checking.
 
 20% of net pay goes to savings; the remainder goes to checking.
 
+## Standard BC Payment Methods and employer bank accounts
+
+The **Payment Method** field on the Employee Payment Method references a standard Business Central **Payment Method** record. This BC Payment Method is important because its **Bal. Account No.** field determines which **employer bank account** is used when processing payments.
+
+This means:
+
+- If all employees are paid the same way and from the same employer bank account, you need one Payment Method code (for example, `ELEC-PMT` for electronic payments).
+- If employees are paid from **different employer bank accounts**, you must create a separate Payment Method code for each bank account and assign the appropriate one to each Employee Payment Method record.
+
+### Recommended Payment Method codes
+
+Set up Payment Method codes to cover the payment types you use:
+
+| Code | Description | Bal. Account Type | Bal. Account No. | Default Bank Payment Type |
+|------|-------------|-------------------|-------------------|---------------------------|
+| `ELEC-PMT` | Electronic Payment - Main Bank | Bank Account | `BANK-MAIN` | Electronic Payment |
+| `CHECK` | Computer Check - Main Bank | Bank Account | `BANK-MAIN` | Computer Check |
+| `MANUAL` | Manual Check | Bank Account | `BANK-MAIN` | Manual Check |
+
+If you have a second employer bank account (for example, a separate account for a subsidiary), create additional codes:
+
+| Code | Description | Bal. Account Type | Bal. Account No. | Default Bank Payment Type |
+|------|-------------|-------------------|-------------------|---------------------------|
+| `ELEC-PMT2` | Electronic Payment - Branch Bank | Bank Account | `BANK-BRANCH` | Electronic Payment |
+| `CHECK2` | Computer Check - Branch Bank | Bank Account | `BANK-BRANCH` | Computer Check |
+
+The **Default Bank Payment Type** field is added by OnePayroll and determines how this Payment Method is used during payment processing. Set it to **Electronic Payment** for direct deposit methods and **Computer Check** for check methods.
+
+### Impact on payment processing
+
+- **Electronic payments (ACH)**: OnePayroll generates a **separate payment file for each employer bank account**. If some employees reference a Payment Method with `BANK-MAIN` and others reference one with `BANK-BRANCH`, two separate NACHA/ACH files are created.
+- **Computer checks**: The standard BC check printing process prompts you to select the employer bank account. The `Bal. Account No.` on the Payment Method determines which bank account's check stock is used.
+
 ## Payment type at pay time
 
 When you run the **Create Payroll Payments** report after a payroll is calculated and posted, the report dialog asks you to select a **Payment Type**:
@@ -83,7 +116,7 @@ When you run the **Create Payroll Payments** report after a payroll is calculate
 - **Computer Check** — generates check documents using the standard Business Central check-printing process
 - **Electronic Payment** — generates a payment file for direct deposit (ACH)
 
-This selection applies to the entire payment run, not to individual employee payment methods.
+This selection applies to the entire payment run, not to individual employee payment methods. OnePayroll filters Employee Payment Methods by matching their Payment Method code's **Default Bank Payment Type** against the selected payment type, so only relevant payments are processed.
 
 ## Related information
 

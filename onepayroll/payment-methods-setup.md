@@ -16,7 +16,7 @@ Employee Payment Methods control how each employee's net pay is allocated and wh
 Before creating Employee Payment Methods:
 
 - An employee record exists.
-- At least one standard Business Central **Payment Method** code is configured (for example, a code linked to a bank account for electronic payments).
+- Standard Business Central **Payment Method** codes are configured with the correct employer bank account and default payment type (see [Set up standard BC Payment Methods](#set-up-standard-bc-payment-methods) below).
 
 ## Create an Employee Payment Method
 
@@ -72,6 +72,44 @@ Fixed and percentage amounts are applied first. The primary method receives what
 
 To deactivate a payment method without deleting it, set an **End Date**.
 
+## Set up standard BC Payment Methods
+
+Each Employee Payment Method references a standard Business Central **Payment Method** code. The Payment Method code determines the **employer bank account** used for payment processing.
+
+### Create Payment Method codes
+
+1. Search for **Payment Methods** (the standard BC page, not the Employee Payment Methods list).
+2. Select **New** to create a code.
+3. Fill in the fields:
+   - **Code** — a short identifier (for example, `ELEC-PMT`).
+   - **Description** — a descriptive name (for example, "Electronic Payment - Main Bank").
+   - **Bal. Account Type** — select **Bank Account**.
+   - **Bal. Account No.** — select the employer bank account that payments will be drawn from.
+   - **Default Bank Payment Type** — select the appropriate type:
+     - **Electronic Payment** — for direct deposit / ACH
+     - **Computer Check** — for printed checks
+     - **Manual Check** — for manually written checks
+4. Repeat for each combination of payment type and employer bank account you need.
+
+### When to create multiple codes
+
+Create separate Payment Method codes when:
+
+- You pay employees by **different methods** (electronic payment vs. check) — each needs its own code.
+- You pay employees from **different employer bank accounts** — each bank account needs its own code per payment type.
+
+For example, if you have two employer bank accounts and use both electronic payments and checks:
+
+| Code | Description | Bal. Account No. | Default Bank Payment Type |
+|------|-------------|-------------------|---------------------------|
+| `ELEC-MAIN` | Electronic - Main Bank | `BANK-MAIN` | Electronic Payment |
+| `CHECK-MAIN` | Check - Main Bank | `BANK-MAIN` | Computer Check |
+| `ELEC-BRANCH` | Electronic - Branch Bank | `BANK-BRANCH` | Electronic Payment |
+| `CHECK-BRANCH` | Check - Branch Bank | `BANK-BRANCH` | Computer Check |
+
+> [!IMPORTANT]
+> The employer bank account on the Payment Method code determines which bank account is debited when payments are processed. Employees assigned to different Payment Method codes with different bank accounts will have their payments drawn from the respective employer bank accounts. For electronic payments, a **separate payment file is generated for each employer bank account**.
+
 ## Validate setup before payroll
 
 Before processing payroll:
@@ -80,6 +118,7 @@ Before processing payroll:
 - Exactly one method per employee has Allocation Type = Primary.
 - **Bank Account No.** and **Bank Identifier Code** are filled in for all direct deposit methods.
 - Priority values are unique per employee.
+- Each Employee Payment Method references a **Payment Method** code with the correct Bal. Account No. and Default Bank Payment Type.
 
 ## Related information
 

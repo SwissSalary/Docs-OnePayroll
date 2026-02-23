@@ -37,6 +37,15 @@ The **Communication** group on the card contains address fields (Address, City, 
 
 For check payments, bank account fields (Bank Account No. and Bank Identifier Code) are typically left blank. The check is printed to the name and address specified on the Employee Payment Method.
 
+### Standard BC Payment Method
+
+The **Payment Method** code assigned to the Employee Payment Method must have:
+
+- **Default Bank Payment Type** = **Computer Check** — so that OnePayroll includes these payments when the user selects Computer Check on the Create Payroll Payments report.
+- **Bal. Account No.** — set to the employer bank account that checks are drawn from. The standard BC check printing report uses this bank account to determine the check stock and numbering.
+
+If you pay employees from more than one employer bank account, create a separate Payment Method code for each bank account (for example, `CHECK-MAIN` and `CHECK-BRANCH`). The check printing report prompts you to select the bank account.
+
 ### Pay group configuration
 
 The pay group must have a **Gen. Journal Template** and **Gen. Journal Batch** configured. OnePayroll uses these to create the General Journal Lines that drive the check printing process.
