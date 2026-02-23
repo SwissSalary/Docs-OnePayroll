@@ -11,6 +11,9 @@ ms.date: 02/23/2026
 
 Employee types define how an employee's compensation is structured. Each employee type links to a pay unit and specifies a compensation method, which together determine how wages are calculated during payroll.
 
+> [!TIP]
+> If you generated setup data from the Contoso Coffee Payroll Demo Dataset (see [Getting started](getting-started.md)), 7 pay units (Hourly through Yearly) and 4 employee types (Contractor, Hourly, Salary Exempt, Salary Non-Exempt) are already configured. Review and customize these rather than creating them from scratch.
+
 ## Employee type overview
 
 Employee types are user-defined codes that you create on the **Employee Types** page. Each employee type specifies:

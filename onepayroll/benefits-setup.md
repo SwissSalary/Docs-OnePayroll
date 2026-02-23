@@ -12,6 +12,9 @@ sws.author: zeande
 
 This article explains how to configure benefit programs, coverage types, rates, limits, and contracts in OnePayroll.
 
+> [!TIP]
+> If you generated setup data from the Contoso Coffee Payroll Demo Dataset (see [Getting started](getting-started.md)), benefit coverage types (Standard, Tax, Mandatory) are already configured. With the US localization, benefits for Social Security, Medicare, FUTA, SUTA (with limits for all 50 states), 401(k), and HSA are also included. Review and customize the existing benefits rather than creating them from scratch.
+
 ## Setting Up Benefits
 
 To set up a new benefit program in OnePayroll:

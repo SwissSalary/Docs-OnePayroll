@@ -11,6 +11,9 @@ ms.date: 02/23/2026
 
 This guide walks you through creating employee records and configuring their payroll settings.
 
+> [!TIP]
+> If you generated setup data from the Contoso Coffee Payroll Demo Dataset (see [Getting started](getting-started.md)), pay groups, employee types, and other payroll configuration required for employee setup are already available. Employees themselves are company-specific and should be created manually. If you generated master data for demonstration purposes, delete the sample employees before adding your real employees.
+
 ## Create a new employee
 
 **To create a new employee:**

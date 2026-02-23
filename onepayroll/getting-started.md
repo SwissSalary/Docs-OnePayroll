@@ -27,21 +27,22 @@ Use this checklist to track your setup progress:
 
 ### Foundation
 - [ ] **Install OnePayroll** - Ensure OnePayroll Core and your regional extension are installed
+- [ ] **Generate setup data** - Use the built-in Contoso Coffee demo dataset to create foundational payroll configuration
 - [ ] **Review OnePayroll Workspace** - Familiarize yourself with the OnePayroll role center and available features
-- [ ] **Configure GL Accounts** - Set up general ledger accounts for payroll expenses and liabilities
-- [ ] **Set up Pay Groups** - Create pay groups to organize employees by pay frequency
+- [ ] **Configure GL accounts** - Set up general ledger accounts for payroll expenses and liabilities
 
 ### Configuration
-- [ ] **Define Pay Types** - Create earnings and deductions (salary, overtime, taxes, insurance)
-- [ ] **Configure Pay Cycles** - Set up pay schedules (weekly, biweekly, monthly, etc.)
-- [ ] **Create Employees** - Add employee records with payroll-specific settings
-- [ ] **Assign Pay Groups** - Link employees to their appropriate pay groups
+- [ ] **Review and customize pay types** - Adjust the pre-configured pay types to match your organization
+- [ ] **Review and customize pay cycles** - Verify pay schedules match your pay frequencies
+- [ ] **Review and customize pay groups** - Adjust pay groups and assign journal templates for GL posting
+- [ ] **Review employee types** - Verify the pre-configured employee types or create new ones
 
-### Payment setup
-- [ ] **Configure Payment Methods** - Set up direct deposit and/or check payment options
-- [ ] **Set up Employee Payment Methods** - Add bank account details for direct deposit on Employee Payment Methods
-- [ ] **Set Withholding Rules** - Configure tax withholding and deduction settings
-- [ ] **Optional: Set up Benefits** - If using benefits, create benefit types and set up enrollment
+### Employees and payments
+- [ ] **Create departments and work locations** - Set up your organizational structure
+- [ ] **Create employees** - Add employee records with payroll-specific settings
+- [ ] **Set up employee payment methods** - Add bank account details for direct deposit
+- [ ] **Configure tax withholding** - Set up tax withholding and deduction settings (US localization)
+- [ ] **Optional: Set up benefits** - If using benefits, review benefit types and configure enrollment
 
 ### Validation
 - [ ] **Run test payroll** - Create a payroll run for a small group to verify configuration
@@ -61,9 +62,62 @@ After installing OnePayroll Core and your regional extension:
 2. Open the Payroll Setup page to access configuration options
 3. Verify the OnePayroll workspace is available from your role center
 
-**Tip:** Pin the OnePayroll workspace to your home for quick access.
+> [!TIP]
+> Pin the OnePayroll workspace to your home for quick access.
 
-### 2. Configure GL accounts
+### 2. Generate setup data
+
+OnePayroll includes the **Contoso Coffee Payroll Demo Dataset**, which can generate pre-configured payroll data at two levels:
+
+- **Setup data** — Generic payroll configuration such as pay types, pay units, pay cycles, pay groups, employee types, benefit coverage, validation rules, and document types. This data is appropriate for production environments because it provides a standardized foundation that any organization can customize.
+- **Master data** — Company-specific demonstration data such as departments, job titles, sample employees, and employee payment methods. This data is intended for learning and evaluation only because it represents a fictitious company.
+
+When you first open the OnePayroll workspace, a notification appears:
+
+> *Required payroll setup data is missing. Generate the setup data now to enable payroll processing.*
+
+Select **Generate Setup Data** to create the foundation. This generates setup data only — not master data.
+
+#### Setup data included
+
+| Category | What's included |
+|----------|----------------|
+| **Pay units** | 7 standard units (Hourly, Daily, Weekly, Biweekly, Semimonthly, Monthly, Yearly) with conversion factors |
+| **Pay types** | ~95 core pay types across earnings, taxes, deductions, benefits, and employer contributions |
+| **Pay cycles** | 4 schedules (Weekly, Biweekly, Semimonthly, Monthly) with schedule lines |
+| **Pay groups** | 3 groups (All, Hourly Employees, Salary Employees) linked to pay cycles and journal batches |
+| **Employee types** | 4 types (Contractor, Hourly, Salary Exempt, Salary Non-Exempt) with pay units and compensation methods |
+| **Validation rules** | Default validation rules for employee and garnishment data |
+| **Document types** | 11 document types organized in categories (Official, Internal, Onboarding) |
+| **Benefit coverage** | 3 coverage types (Standard, Tax, Mandatory) with coverage options |
+| **Rules** | Weekday rules, workday/weekend composites, and validation rules |
+
+The US localization extension adds the following to setup data:
+
+| Category | What's included |
+|----------|----------------|
+| **US pay types** | ~60 additional pay types (Social Security, Medicare, FUTA, SUTA, 401(k), HSA, FSA, etc.) with W-2 mappings |
+| **Benefits** | Social Security, Medicare, FUTA, SUTA (with limits for all 50 states), 401(k), HSA, and garnishment benefits |
+| **Income tax jurisdictions** | Federal, California, and North Dakota as starting examples |
+| **Garnishment types** | 10 types (Child Support, IRS Levy, Tax Lien, Student Loan, etc.) |
+| **State rules** | Tax rules for all 50 states plus age and filing status rules |
+| **Data exchange definitions** | Pre-configured ACH/EFT export format |
+
+#### Master data (demonstration only)
+
+If you're evaluating OnePayroll or want to explore with sample data, you can generate master data separately through the **Contoso Demo Tool** in Business Central. Master data includes:
+
+- 11 departments in a hierarchy (Management, Finance, HR, IT, Production, Sales, etc.)
+- 26 job titles
+- 16 sample employees with payroll assignments and payment methods
+- 3 sample work locations (US localization: California, New York, North Dakota)
+
+> [!IMPORTANT]
+> Do not generate master data in a production environment. Departments, employees, job titles, and work locations are specific to your organization and should be created manually.
+
+After generating setup data, your next steps are to review and customize the generated configuration rather than creating everything from scratch.
+
+### 3. Configure GL accounts
 
 OnePayroll needs properly configured general ledger accounts for:
 
@@ -74,74 +128,54 @@ OnePayroll needs properly configured general ledger accounts for:
 
 Set up GL accounts following your company's chart of accounts structure. OnePayroll will use these accounts when posting payroll to the general ledger.
 
-### 3. Set up pay groups
+### 4. Review and customize pay groups
 
-Pay groups organize employees by pay frequency and posting rules.
+The demo dataset creates three pay groups: ALL, HOURLY, and SALARY. Review these and adjust as needed.
 
-**To create a pay group:**
+**To review pay groups:**
 
 1. Search for **Pay Groups**
-2. Select **New**
-3. Enter a **Code** (e.g., "WEEKLY", "BIWKLY")
-4. Enter a **Description**
-5. Select the **Pay Cycle** that defines the pay schedule for this group
-6. Select the **Pay Group Owner** (the employee responsible for this group)
-7. Specify the **Gen. Journal Template** and **Gen. Journal Batch** for GL posting
-8. Save
+2. Open each pay group and verify:
+   - **Pay Cycle** — the pay schedule for this group
+   - **Pay Group Owner** — the employee responsible for this group
+   - **Gen. Journal Template** and **Gen. Journal Batch** — for GL posting
+3. Add, rename, or remove pay groups to match your organization
+4. Save
 
-**Example pay groups:**
-- "WEEKLY" - Weekly paid employees
-- "BIWKLY" - Biweekly paid employees
-- "MONTHLY" - Monthly paid employees
+### 5. Review and customize pay types
 
-### 4. Define pay types
+The demo dataset creates approximately 95 core pay types (plus ~60 US-specific types) organized by category. Each pay type has a category from the Category enum: Earnings, Employee Deductions, Hypothetical, Employer Contributions, or Heading.
 
-Pay types represent earnings and deductions. Organize them by category (e.g., Regular Earnings, Overtime, Taxes, Benefits).
-
-**To create a pay type category:**
+**To review pay types:**
 
 1. Search for **Pay Types**
-2. Select **New** to create a new category
-3. Enter a category name (e.g., "Regular Earnings", "Taxes", "Benefits")
-4. Configure calculation rules for this category
-5. Save
-
-**To create individual pay types:**
-
-1. Within a category, select **New Pay Type**
-2. Enter the code (e.g., "REG", "OT150", "FIT")
-3. Enter a description
-4. Select the calculation method (Fixed Amount, Percentage, Formula, etc.)
-5. Assign a GL account for posting
+2. Review the generated pay types and their categories
+3. Adjust descriptions, GL account assignments, and pay units as needed
+4. Add any organization-specific pay types
+5. Remove or deactivate pay types you don't need
 6. Save
 
-**Common pay types to create:**
-- **Earnings:** Regular Pay, Overtime 1.5x, Overtime 2x, Bonus, Commissions
-- **Taxes:** Federal Income Tax, State Income Tax, FICA, Medicare
-- **Benefits:** Health Insurance, Dental Insurance, Retirement 401(k)
-- **Deductions:** Garnishments, Loans, Union Dues
+For more information, see [Set up pay types](pay-types-setup.md).
 
-### 5. Configure pay cycles
+### 6. Review and customize pay cycles
 
-Pay cycles define how often employees are paid.
+The demo dataset creates four pay cycles: Weekly (52 periods), Biweekly (26 periods), Semimonthly (24 periods), and Monthly (12 periods). Each includes schedule lines with date formulas.
 
-**To create a pay cycle:**
+**To review pay cycles:**
 
 1. Search for **Pay Cycles**
-2. Select **New**
-3. Enter a **Code** (e.g., "WEEKLY", "BIWEEKLY")
-4. Enter a **Description**
-5. Enter the **Periods per Year** (e.g., 52 for weekly, 26 for biweekly, 24 for semi-monthly, 12 for monthly)
-6. Select the **Pay Unit** that defines the unit of compensation for this cycle
-7. Add **Schedule Lines** to define pay periods using date formulas:
-   - **Period Start** — date formula for when each period begins (e.g., `-CW` for current week start)
-   - **Period End** — date formula for when each period ends (e.g., `CW` for current week end)
-   - **Payment Date** — date formula for the payment date (e.g., `CW+5D` for Friday after week end)
-8. Save
+2. Open each pay cycle and verify:
+   - **Periods per Year** — matches your pay frequency
+   - **Pay Unit** — the unit of compensation for this cycle
+   - **Schedule Lines** — date formulas for period start, period end, and payment date
+3. Adjust schedule lines if your payment dates differ from the defaults
+4. Save
 
-### 6. Create employees
+For more information, see [Set up pay cycles](pay-cycles-setup.md).
 
-Add employees to OnePayroll with required payroll information.
+### 7. Create employees
+
+Add your employees to OnePayroll. The demo dataset creates sample employees for demonstration purposes — delete these before adding your real employees.
 
 **To create an employee:**
 
@@ -161,18 +195,18 @@ Add employees to OnePayroll with required payroll information.
 - Payment method details (if applicable)
 - Any garnishments or special deductions
 
-### 7. Optional: Set up benefits
+### 8. Optional: Set up benefits
 
-If your company offers benefits, configure benefit enrollment.
+The demo dataset creates benefit coverage types and, with the US localization, pre-configured benefits including Social Security, Medicare, unemployment taxes, and 401(k). Review these and add any additional benefits your organization offers.
 
-**To set up benefits:**
+**To review and set up benefits:**
 
 1. Search for **Benefit Types**
-2. Create benefit types (Health Insurance, Dental, 401(k), etc.)
-3. Create specific benefits by benefit type
+2. Review the generated benefit types and their calculation settings
+3. Add any additional benefits (Health Insurance, Dental, etc.)
 4. Search for **Employee Benefits** to assign benefits to employees
 
-### 8. Set up payment methods
+### 9. Set up payment methods
 
 Configure how employees will be paid.
 
@@ -192,14 +226,14 @@ Configure how employees will be paid.
 3. When running Create Payroll Payments, select **Computer Check** as the Payment Type
 4. Print checks through the standard Business Central check-printing process
 
-### 9. Configure tax settings (US localization)
+### 10. Configure tax settings (US localization)
 
-If you're using the US localization, set up income tax calculation and withholding.
+If you're using the US localization, the demo dataset creates income tax jurisdictions for Federal, California, and North Dakota. You need to add jurisdictions for any additional states where your employees work.
 
 **To configure tax:**
 
 1. Search for **Income Tax Jurisdictions**
-2. Set up jurisdictions for federal, state, and local levels
+2. Review the existing jurisdictions and add any additional states
 3. Configure the **Calculation Method** (Standard or Simplified) for each jurisdiction
 4. Set up **Income Tax Rates** and **Income Tax Setup** for each tax year
 5. Save
@@ -207,7 +241,7 @@ If you're using the US localization, set up income tax calculation and withholdi
 > [!NOTE]
 > Tax configuration is part of the US country-specific extension. Other localizations may have different tax setup requirements.
 
-### 10. Process your first payroll
+### 11. Process your first payroll
 
 Now that setup is complete, process a test payroll run.
 

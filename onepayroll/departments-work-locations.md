@@ -11,6 +11,9 @@ ms.date: 02/23/2026
 
 Organizing employees by department and work location helps manage payroll, allocate costs, and maintain organizational structure.
 
+> [!TIP]
+> Departments and work locations are specific to your organization and should be created manually. If you generated master data from the Contoso Coffee Payroll Demo Dataset for demonstration purposes, 11 sample departments and (with the US localization) 3 sample work locations are included. In a production environment, create your own departments and work locations instead.
+
 ## Departments
 
 Departments group employees by their functional area or organizational unit.

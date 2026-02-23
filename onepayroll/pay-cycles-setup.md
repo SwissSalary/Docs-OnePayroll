@@ -11,6 +11,9 @@ ms.date: 02/23/2026
 
 This article explains how to create pay cycles with schedule lines and set up pay groups to organize employees by payroll frequency.
 
+> [!TIP]
+> If you generated setup data from the Contoso Coffee Payroll Demo Dataset (see [Getting started](getting-started.md)), four pay cycles (Weekly, Biweekly, Semimonthly, Monthly) and three pay groups (All, Hourly, Salary) are already configured with schedule lines and journal batches. Review and customize these rather than creating them from scratch.
+
 ## Prerequisites
 
 Before setting up pay cycles, make sure you have:
