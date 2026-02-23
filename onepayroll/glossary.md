@@ -50,11 +50,8 @@ General ledger account structure where payroll transactions post.
 **Commission**
 Variable compensation based on sales performance or metrics.
 
-**Conditional Pay Type**
-Pay type with rules determining when/whether payment applies (e.g., only if sales > threshold).
-
 **Conversion Factor**
-Mathematical multiplier converting between pay units (e.g., hourly to annual).
+Multiplier defined on a pay unit for converting rates between units (for example, converting annual salary to hourly rate).
 
 ## D
 
@@ -82,7 +79,7 @@ A record on the Employee Card that stores allocation settings and bank details f
 Point-in-time record of employee data on a specific date; captures historical information.
 
 **Employee Type**
-Classification (Salaried, Hourly, Commissioned, Daily) determining compensation structure.
+User-defined classification with a pay unit and compensation method (Regular or Work-Based).
 
 **Employer Match**
 Employer's contribution/matching amount (e.g., 6.2% SS, health insurance, 401k match).
@@ -198,13 +195,13 @@ Factor multiplied by regular rate for overtime (e.g., 1.5 for time-and-a-half).
 Naming convention using uppercase for first letter (variable names, procedures in OnePayroll).
 
 **Pay Cycle**
-Schedule of payroll periods; includes start/end dates and frequency.
+Schedule definition with periods per year and date formula schedule lines for start, end, and payment dates.
 
-**Pay Cycle Schedule**
-Details of all pay periods in year (start dates, end dates, cut-off rules).
+**Pay Cycle Schedule Line**
+A record on a pay cycle using date formulas (Period Start, Period End, Payment Date) to determine pay period timing.
 
 **Pay Group**
-Grouping of employees by pay frequency and GL posting rules; defines payroll batch.
+Grouping of employees by pay cycle, with journal template and batch for GL posting.
 
 **Pay Period**
 Time span covered by single payroll (weekly, biweekly, monthly, etc.).
@@ -213,7 +210,7 @@ Time span covered by single payroll (weekly, biweekly, monthly, etc.).
 Category of compensation or deduction (regular wages, overtime, bonus, health insurance, garnishment, tax).
 
 **Pay Unit**
-Measurement unit for compensation (annual, hourly, daily, per-period).
+User-defined unit of compensation (for example, hourly, annual) with a code, description, and conversion factor.
 
 **Paycheck Register**
 Report listing all paychecks issued in period.
@@ -259,15 +256,6 @@ Employee paid fixed annual amount; typically exempt from overtime.
 
 **Salary**
 Fixed annual compensation for salaried employee.
-
-**Self-Service Portal**
-Web interface for employees (paychecks, W-2s, benefits enrollment, personal info).
-
-**Semi-Monthly**
-Pay frequency: Twice per month; 24 pay periods per year.
-
-**Shift Differential**
-Bonus paid for working specific shifts (e.g., nights, weekends) at higher rate.
 
 **Snapshot (Employee)**
 Point-in-time record of employee data; captures historical state for audit trail.

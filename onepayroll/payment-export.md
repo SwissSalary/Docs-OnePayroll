@@ -31,63 +31,40 @@ Payment files enable electronic transmission of payroll to banks and financial i
 - Recipient: Accounting department
 - Purpose: GL reconciliation, management reporting
 
-## Generating ACH file
+## Creating payroll payments
 
-**To generate ACH file for direct deposit:**
+OnePayroll uses the **Create Payroll Payments** report to generate payments from a posted payroll run. This report creates payment journal lines that can then be exported as electronic payments or printed as checks through standard Business Central payment processing.
 
-1. In Payroll Run, select **Export ACH File**
-2. Select:
-   - **Settlement Date** (when deposits should post)
-   - **File Format** (typically NACHA standard)
-3. OnePayroll generates file with:
-   - All employees with direct deposit
-   - Bank account info
-   - Deposit amounts
-   - Batch information
-4. Download file to secure location
+**To create payroll payments:**
 
-**Before transmission:**
-- Review file contents
-- Verify all employees present
-- Confirm amounts match payroll
-- Check no errors or warnings
+1. Open the **Payroll Runs** page
+2. Select the payroll run to process payments for
+3. Select the **Create Payroll Payments** action
+4. On the request page:
+   - **Payroll No.** is pre-filled with the selected payroll run
+   - Select the **Payment Type**: **Electronic Payment** (for direct deposit/ACH) or **Computer Check** (for check payments)
+5. Select **OK** to create the payment entries
 
-**File transmission:**
-- Upload to bank's secure portal
-- Use bank's specified method
-- Confirm receipt/transaction ID
-- Archive transmitted file
+The report creates payment entries based on each employee's payment method configuration (allocation type, bank details, etc.).
 
-## Generating check register
+### Processing electronic payments (ACH/direct deposit)
 
-**To generate check register:**
+After creating payroll payments with the **Electronic Payment** type:
 
-1. In Payroll Run, select **Export Check Register**
-2. Select output format (PDF, Excel, CSV)
-3. OnePayroll generates register with:
-   - Check numbers (in sequence)
-   - Employee names
-   - Amounts
-   - Dates
-4. Download and print/review
+1. Payment journal lines are created in Business Central
+2. Use Business Central's standard payment export functionality to generate the bank file
+3. Upload the generated file to your bank's secure portal
+4. Confirm receipt and archive the transmitted file
 
-**Use for:**
-- Verify checks before printing
-- Distribution list
-- Reconciliation to bank statement
-- Audit trail
+### Processing check payments
 
-## Generating payment summary
+After creating payroll payments with the **Computer Check** type:
 
-**To generate payment summary:**
+1. Payment journal lines are created in Business Central
+2. Use Business Central's standard check printing process to print checks
+3. Review and distribute printed checks
 
-1. In Payroll Run, select **Payment Summary Report**
-2. Review summary by:
-   - Payment method (checks, direct deposit, etc.)
-   - Amount totals
-   - GL account impact
-   - Department (if applicable)
-3. Send to accounting for GL reconciliation
+For more details on each payment method, see [Direct deposit setup](direct-deposit-setup.md) and [Check printing](check-printing.md).
 
 ## File formats and standards
 

@@ -1,395 +1,146 @@
 ---
-title: Employee types and pay units integration
-description: Learn how employee types determine compensation structure and pay unit configuration.
+title: Employee types and pay units
+description: Learn how employee types determine compensation structure and pay unit configuration in OnePayroll.
 author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026
 ---
 
-# Employee types and pay units integration
+# Employee types and pay units
 
-Employee types define compensation classification and how pay units apply to different employee categories.
+Employee types define how an employee's compensation is structured. Each employee type links to a pay unit and specifies a compensation method, which together determine how wages are calculated during payroll.
 
 ## Employee type overview
 
-**What is an employee type?**
-A classification that determines:
-- How compensation is structured
-- What pay units apply
-- Which pay types are available
-- Overtime eligibility
-- Tax treatment (sometimes)
-- Reporting categories
+Employee types are user-defined codes that you create on the **Employee Types** page. Each employee type specifies:
 
-**Standard employee types:**
-- Salaried (annual compensation, no overtime)
-- Hourly (paid per hour, eligible for overtime)
-- Commissioned (base + commission/performance pay)
-- Daily (contract/temporary, paid per day)
+| Field | Description |
+|-------|-------------|
+| **Code** | A unique identifier for the employee type (up to 20 characters) |
+| **Description** | A human-readable name for the employee type |
+| **Pay Unit** | The unit of compensation (links to a pay unit record) |
+| **Compensation Method** | How compensation is calculated: Regular or Work-Based |
+| **Pay Conversion Factor** | A read-only field showing the conversion factor from the linked pay unit |
 
-## Salaried employees
+### Compensation methods
 
-### Characteristics
+Each employee type uses one of two compensation methods:
 
-- **Pay unit:** Annual
-- **Compensation structure:** Fixed annual salary
-- **Overtime:** Generally not eligible (exempt vs. non-exempt rules apply)
-- **Frequency:** Paid per payroll period (typically biweekly or semi-monthly)
-- **Consistency:** Same amount each period
+**Regular**
+- Employee receives a fixed amount per pay period
+- Pay is divided evenly across periods based on the pay unit's conversion factor
+- Use for employees with predictable, fixed compensation
 
-### Salaried pay setup
+**Work-Based**
+- Employee is compensated based on units of work (hours, days, shifts, etc.)
+- Pay varies each period depending on work reported
+- Use for employees whose pay fluctuates with hours or days worked
 
-**Typical pay types:**
-- Regular Salary (main compensation)
-- Bonus (discretionary)
-- Shift Differential (if applicable)
-- Other special compensation
+> [!NOTE]
+> The Compensation Method enum has exactly two values: Regular and Work-Based. It is not extensible.
 
-**No overtime calculation needed** (unless non-exempt status applies)
+## How employee types connect to pay units
 
-### Example
+Each employee type references a pay unit. The pay unit defines:
 
-```
-Employee: John (Salaried)
-Annual salary: $50,000
-Biweekly: $1,923.08
-Structure: Same amount every biweekly period
-```
+- **Code** — Identifier (e.g., "ANNUAL", "HOURLY", "DAILY")
+- **Description** — Human-readable name
+- **Conversion Factor** — A decimal value that converts between the pay unit and a standard base
+- **Unit of Measure** — The HR unit of measure used for display
 
-## Hourly employees
-
-### Characteristics
-
-- **Pay unit:** Hourly rate
-- **Compensation structure:** Variable based on hours worked
-- **Overtime:** Eligible for overtime calculation (typically 1.5x after 40 hours/week)
-- **Frequency:** Paid per payroll period based on hours worked
-- **Variability:** Amount varies with hours
-
-### Hourly pay setup
-
-**Typical pay types:**
-- Regular Wages (base rate for hours worked)
-- Overtime (1.5x rate for qualifying hours)
-- Double Time (2x rate, if applicable)
-- Holiday Pay (if holiday hours count)
-- Sick/Vacation (paid time off hours)
-
-**Overtime calculation:**
-- Hours worked > 40/week → paid at 1.5x (statutory minimum)
-- Some employers pay more (2x for over 50 hours, etc.)
-
-### Example
-
-```
-Employee: Jane (Hourly)
-Hourly rate: $25/hour
-Regular hours: 40 hours
-Overtime hours: 5 hours
-Gross:
-  Regular: 40 × $25 = $1,000
-  Overtime: 5 × $25 × 1.5 = $187.50
-  Total: $1,187.50
-```
-
-## Commissioned employees
-
-### Characteristics
-
-- **Pay unit:** Mixed (base salary + commission)
-- **Compensation structure:** Fixed base + variable commission
-- **Commission basis:** Sales, profit, or performance metrics
-- **Commission frequency:** Often paid with next regular paycheck
-- **Variability:** Commission portion varies; base consistent
-
-### Commissioned pay setup
-
-**Typical pay types:**
-- Base Salary (fixed amount)
-- Commission (variable based on sales/performance)
-- Commission Override (if supervising other sales)
-- Bonus (discretionary or eligible bonus)
-- Draw (advance on expected commission)
-
-**Commission calculation (examples):**
-
-```
-Example 1: Percentage of sales
-Sales: $50,000
-Commission rate: 5%
-Commission: $2,500
-
-Example 2: Tiered commission
-Sales: $100,000
-  0-50k: 3% = $1,500
-  50k-100k: 5% = $2,500
-Commission: $4,000
-```
-
-### Example
-
-```
-Employee: Mike (Commissioned)
-Base salary (biweekly): $1,500
-Commission on $50,000 sales at 5%: $2,500
-Deductions and taxes: Calculated on total ($4,000)
-```
-
-## Daily/Contract employees
-
-### Characteristics
-
-- **Pay unit:** Daily rate
-- **Compensation structure:** Fixed daily rate × days worked
-- **Frequency:** Paid per days worked in period
-- **Variability:** Amount varies with days worked
-- **Benefits:** Often limited (no benefits, no paid time off)
-
-### Daily employee pay setup
-
-**Typical pay types:**
-- Daily Wages (base rate × days)
-- Overtime (if applicable, 1.5x daily rate)
-- Premiums (for specific work conditions)
-- Bonuses (if project-based)
-
-### Example
-
-```
-Employee: Alex (Daily/Contract)
-Daily rate: $200/day
-Days worked: 15 days in period
-Gross: 15 × $200 = $3,000
-```
-
-## Integration with payroll
-
-### Pay unit determination
-
-**System determines pay unit from employee type:**
-
-| Employee Type | Default Pay Unit | Override Possible |
-|------|----------|----------|
-| Salaried | Annual | No |
-| Hourly | Hourly | Rare |
-| Commissioned | Mixed (Annual base + Commission) | Yes |
-| Daily | Daily | Rare |
-
-### Pay type eligibility
-
-**Pay types available by employee type:**
-
-```
-Salaried:
-  ✓ Regular Salary
-  ✓ Bonus
-  ✓ Shift Differential
-  ✗ Overtime (unless non-exempt)
-
-Hourly:
-  ✓ Regular Wages
-  ✓ Overtime
-  ✓ Double Time
-  ✗ Regular Salary (contradiction)
-
-Commissioned:
-  ✓ Base Salary
-  ✓ Commission
-  ✓ Bonus
-  ✗ Overtime (typically)
-
-Daily:
-  ✓ Daily Wages
-  ✓ Overtime (if eligible)
-  ✗ Regular Salary
-```
-
-## Changing employee type
-
-If employee changes classification:
-
-1. **Salaried → Hourly:** 
-   - Change employee type
-   - Switch from annual to hourly pay unit
-   - Configure hourly rate
-   - Enable overtime tracking
-
-2. **Hourly → Salaried:**
-   - Change employee type
-   - Switch from hourly to annual pay unit
-   - Set annual salary
-   - Disable overtime calculation
-
-3. **Effective date:** Changes take effect on specified date
-4. **Snapshot:** New snapshot created for audit trail
-
-## Overtime rules by type
-
-### Salaried employees
-
-- **Exempt:** No overtime (salary covers all hours)
-- **Non-exempt:** Overtime applies (federal requirement)
-- **Verify classification:** Ensure complies with DOL rules
-
-### Hourly employees
-
-- **Overtime standard:** 1.5x after 40 hours/week
-- **Double time:** 2x (if policy or union)
-- **Tracking:** Hours must be tracked (timesheets)
-- **Calculation:** Automatic in OnePayroll
-
-### Commissioned employees
-
-- **Typically exempt:** No overtime (unless non-exempt classification)
-- **Base salary:** May reduce overtime since includes compensation
-- **Verify:** Check wage/hour laws for applicability
-
-### Daily employees
-
-- **Depends on total hours:** If hours exceed 40/week, overtime may apply
-- **Calculation:** Convert to hourly equivalent, apply overtime
-- **Tracking:** May require detailed hour tracking
-
-## Benefits by employee type
-
-**Benefits eligibility often tied to employee type:**
-
-```
-Salaried:
-  ✓ Health insurance (typical)
-  ✓ 401k/Pension
-  ✓ Paid time off
-  ✓ Disability insurance
-
-Hourly:
-  ✓ Health insurance (if eligible)
-  ✓ 401k (if offered)
-  ✓ Paid time off (varies)
-  
-Commissioned:
-  ~ Benefits vary by policy
-  
-Daily/Contract:
-  ✗ No benefits (typically)
-```
-
-## Reporting by employee type
-
-**Reports often segmented by type:**
-- Salaried headcount and costs
-- Hourly headcount and overtime hours
-- Commissioned earnings breakdown
-- Daily/Contract workforce
-
-## Best practices
-
-- **Classify correctly** - Ensure employee type matches actual classification
-- **Verify exempt/non-exempt** - Salaried status doesn't guarantee exempt (wage/hour law)
-- **Document changes** - Track when employee type changes
-- **Test transitions** - When changing types, test payroll before live
-- **Review overtime** - Regularly ensure overtime calculated correctly
-- **Policy alignment** - Ensure pay structure matches company policy
-- **Compliance monitoring** - Monitor wage/hour compliance per type
-
-## What's next
-
-- **[Pay units and conversions](pay-units-conversions.md)** - Pay unit details
-- **[Employee setup](employee-setup.md)** - Employee configuration
-- **[Pay type setup](pay-types-setup.md)** - Pay type configuration
-
-### Choosing the Right Pay Unit
-
-Consider these factors when assigning pay units to employee types:
-
-- **How employees are paid**: Hourly workers use HOURLY, salaried staff use YEARLY or MONTHLY
-- **Legal classification**: Non-exempt employees typically use HOURLY, exempt employees use YEARLY
-- **Business practices**: Match your organization's standard compensation practices
-- **Reporting needs**: Consider how you want to compare compensation across employee groups
-
-## How Employees Inherit Pay Units
-
-When you assign an employee type to an employee, the employee automatically inherits the pay unit from that type.
+When you assign an employee type to an employee, the employee inherits the pay unit from that type. The pay unit appears on the employee card as a read-only field.
 
 ### To view an employee's pay unit
 
-1. Choose the ![Lightbulb that opens the Tell Me feature 1.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
-2. Select an employee.
-3. On the employee card, the **Pay Unit** field (inherited from the employee type) shows which pay unit is used for this employee's compensation.
+1. Search for **Employees** and open the employee card.
+2. On the **OnePayroll** section, the **Pay Unit** field shows which pay unit applies, inherited from the employee's type.
+3. The **Pay Factor** field shows the conversion factor from the linked pay unit.
 
 > [!TIP]
-> The pay unit is displayed on the employee card but cannot be changed directly. To change an employee's pay unit, you must either change their employee type or change the pay unit assigned to their employee type.
+> The pay unit is inherited from the employee type and cannot be changed directly on the employee card. To change an employee's pay unit, change their employee type or update the pay unit assigned to that employee type.
 
-## Global Pay Unit
+## Setting up employee types
 
-OnePayroll includes a **Global Pay Unit** setting on the Payroll Setup page. This setting:
+**To create an employee type:**
+
+1. Search for **Employee Types**.
+2. Select **New**.
+3. Enter a **Code** (e.g., "SALARIED", "HOURLY", "DAILY").
+4. Enter a **Description** (e.g., "Salaried Employees", "Hourly Workers").
+5. Select the **Pay Unit** that defines how compensation is expressed for this type.
+6. Select the **Compensation Method** (Regular or Work-Based).
+7. Verify the **Pay Conversion Factor** displays the expected conversion factor from the pay unit.
+
+### Example employee types
+
+| Code | Description | Pay Unit | Compensation Method |
+|------|-------------|----------|-------------------|
+| SALARIED | Salaried Employees | ANNUAL | Regular |
+| HOURLY | Hourly Workers | HOURLY | Work-Based |
+| DAILY | Daily Rate Workers | DAILY | Work-Based |
+| MONTHLY | Monthly Staff | MONTHLY | Regular |
+
+> [!NOTE]
+> These are examples. Employee types are fully user-defined — you can create whatever types match your business needs.
+
+## Assigning employee types to employees
+
+**To assign an employee type:**
+
+1. Search for **Employees** and open the employee card.
+2. On the **OnePayroll** section, select the **Type** field.
+3. Choose the appropriate employee type from the list.
+4. The employee's **Pay Unit** and **Pay Factor** fields update automatically.
+
+## Global pay unit
+
+OnePayroll includes a **Global Pay Unit** setting on the **Payroll Setup** page. This setting:
 
 - Defines the standard pay unit used across your organization for reporting
 - Enables consistent compensation comparisons in lists and reports
 - Serves as the basis for displaying employee compensation in a standardized format
 
-When viewing employee lists, you can see each employee's compensation converted to the global pay unit, making it easy to compare compensation across employees with different pay units.
+When viewing employee lists, you can see each employee's compensation converted to the global pay unit, making it easy to compare across employees with different pay units.
 
 ### To set the global pay unit
 
-1. Choose the ![Lightbulb that opens the Tell Me feature 1.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Setup**, and then choose the related link.
-2. On the **Payroll Setup** page, in the **Global Pay Unit** field, select the pay unit you want to use for standardized reporting.
+1. Search for **Payroll Setup**.
+2. In the **Global Pay Unit** field, select the pay unit you want to use for standardized reporting.
 
 > [!TIP]
-> Many organizations use YEARLY as the global pay unit for easy comparison of total compensation across all employees, regardless of whether they're paid hourly, weekly, or monthly.
+> Many organizations use an annual pay unit as the global pay unit for easy comparison of total compensation across all employees, regardless of whether they're paid hourly, daily, or monthly.
 
-## Common Scenarios
-
-### Scenario 1: Hourly Employee
-
-An hourly employee is paid $18.50 per hour:
-- Employee Type: HOURLY (Pay Unit = HOURLY, Factor = 0.125)
-- Compensation Rate: $18.50/hour
-- Yearly equivalent (for reporting with global pay unit = YEARLY): $18.50 × (260 ÷ 0.125) = $38,480
-
-### Scenario 2: Salaried Employee
-
-A salaried employee earns $65,000 per year:
-- Employee Type: SALARY (Pay Unit = YEARLY, Factor = 260)
-- Compensation Rate: $65,000/year
-- Daily equivalent: $65,000 ÷ 260 = $250/day
-
-### Scenario 3: Contractor Paid Hourly
-
-A contractor is paid $75 per hour:
-- Employee Type: CONTRACT (Pay Unit = HOURLY, Factor = 0.125)
-- Compensation Rate: $75/hour
-- Yearly equivalent (for reporting): $75 × (260 ÷ 0.125) = $156,000
-
-## Changing Pay Units
-
-### Changing an Employee Type's Pay Unit
-
-When you change the pay unit assigned to an employee type:
-
-1. All employees with that type will use the new pay unit
-2. Existing compensation rates remain in the original pay unit
-3. New conversions will use the new pay unit's conversion factor
-4. Historical payroll calculations are not affected
-
-> [!WARNING]
-> Changing a pay unit on an employee type can affect how compensation is displayed for all employees of that type. Make this change carefully and communicate it to users.
-
-### Moving an Employee to a Different Type
+## Changing employee types
 
 When you change an employee's employee type:
 
-1. The employee's pay unit changes to match the new employee type
-2. The employee's existing compensation rate remains unchanged (the numeric value stays the same, but the unit changes)
-3. You may need to recalculate or adjust the compensation rate to reflect the new unit
+1. The employee's pay unit changes to match the new employee type.
+2. The existing compensation rate value remains unchanged (the numeric value stays the same, but the unit changes).
+3. You may need to recalculate or adjust the compensation rate to reflect the new unit.
 
 > [!IMPORTANT]
-> After changing an employee's type, verify that their compensation rate makes sense in the context of the new pay unit. For example, if you change from HOURLY to YEARLY, a rate of $25 would change from $25/hour to $25/year, which is likely not intended.
+> After changing an employee's type, verify that their compensation rate makes sense in the context of the new pay unit. For example, changing from an hourly type to an annual type with a rate of $25 would change the meaning from $25/hour to $25/year, which is likely not intended.
 
-## See Also
+When you change the pay unit assigned to an employee type:
 
-[Work with pay units](employee-pay-units.md)  
-[Convert Between Pay Units](pay-units-conversions.md)  
-[Set up employee types](pay-units-employee-types.md)  
+1. All employees with that type will use the new pay unit.
+2. Historical payroll calculations are not affected.
 
-[!INCLUDE[footer-include](includes/footer-banner.md)]
+> [!WARNING]
+> Changing a pay unit on an employee type can affect how compensation is interpreted for all employees of that type. Make this change carefully.
+
+## Best practices
+
+- **Name types clearly** — Use descriptive codes and descriptions that reflect the compensation structure
+- **Match business needs** — Create employee types that reflect your actual workforce categories
+- **Verify after changes** — When changing employee types, verify compensation rates are correct
+- **Document conventions** — Keep records of what each employee type represents
+
+## See also
+
+- [Pay units and conversions](pay-units-conversions.md)
+- [Work with pay units](employee-pay-units.md)
+- [Employee overview](employee-overview.md)
+
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]

@@ -1,238 +1,92 @@
 ---
-title: Employee pay units
-description: Learn how to set up and manage pay units for employees, including conversions between different compensation units.
+title: Work with employee pay units
+description: Learn how pay units work on the employee card, how they're inherited from employee types, and how conversions work.
 author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---
 
-# Employee pay units
+# Work with employee pay units
 
-Pay units are ways to express employee compensation. An employee might be described as earning "$80,000 annually" (annual), "$3,846 per pay period" (per period), or "$38.46 per hour" (hourly). OnePayroll handles the conversion between these units automatically.
+Pay units define the unit of measurement for employee compensation. An employee might be described as earning "$80,000 annually" (annual pay unit), "$38.46 per hour" (hourly pay unit), or "$300 per day" (daily pay unit). OnePayroll uses conversion factors to translate between these units.
 
-## Understanding pay units
+## How pay units are assigned to employees
 
-A **pay unit** is a unit of measurement for compensation:
+Employees don't select a pay unit directly. Instead, the pay unit is inherited from the employee's **Employee Type**:
 
-- **Annual Salary** - Total compensation per year (e.g., $80,000/year)
-- **Salary per Pay Period** - Compensation per payroll period (e.g., $3,077 biweekly)
-- **Hourly Wage** - Compensation per hour worked (e.g., $38.46/hour)
-- **Daily Rate** - Compensation per day worked (e.g., $300/day)
+1. Each **Employee Type** specifies a **Pay Unit**.
+2. When you assign an employee type to an employee, the **Pay Unit** and **Pay Factor** fields on the employee card are populated automatically as read-only FlowFields.
 
-### Why pay units matter
+### To view an employee's pay unit
 
-Different units are useful for different purposes:
+1. Search for **Employees** and open the employee card.
+2. In the **OnePayroll** section, view:
+   - **Type** — The employee type assigned to this employee
+   - **Pay Unit** — The pay unit inherited from the employee type (read-only)
+   - **Pay Factor** — The conversion factor from the pay unit (read-only)
 
-| Unit | Used For | Example |
-|------|----------|---------|
-| **Annual Salary** | Job offers, salary reviews, compensation analysis | "This position pays $100,000/year" |
-| **Per Period** | Budget planning, period-based accounting | "Each payroll run costs $3,846 per employee" |
-| **Hourly** | Overtime calculation, benefits administration, compliance | "Tax is calculated on $38.46/hour basis" |
-| **Daily** | Temporary workers, contractors, time tracking | "Consultant rates: $400/day" |
+> [!TIP]
+> To change an employee's pay unit, change their **Employee Type** to one that uses the desired pay unit, or update the pay unit on the current employee type. You cannot change the pay unit directly on the employee card.
 
-### Converting between units
+## Understanding conversion factors
 
-OnePayroll uses **conversion factors** to translate between units:
+Each pay unit has a **Conversion Factor** that defines how compensation values translate between units. The conversion factor is a decimal value defined on the **Pay Units** page.
 
-**Example: Annual to Hourly**
-```
-Annual Salary: $80,000
-Working hours per year: 2,080 hours (40 hours/week × 52 weeks)
-Hourly Rate: $80,000 ÷ 2,080 = $38.46/hour
-```
+**Example pay units and conversion factors:**
 
-**Example: Annual to Per Period (Biweekly)**
-```
-Annual Salary: $80,000
-Periods per year: 26 (biweekly)
-Per-Period Pay: $80,000 ÷ 26 = $3,077/period
-```
+| Pay Unit | Description | Conversion Factor | Meaning |
+|----------|-------------|-------------------|---------|
+| ANNUAL | Annual salary | 260 | 260 working days per year |
+| HOURLY | Hourly rate | 0.125 | 1/8 of a working day |
+| DAILY | Daily rate | 1 | Base unit (1 day) |
+| MONTHLY | Monthly salary | 21.67 | Average working days per month |
 
-## Set up employee pay unit
+> [!NOTE]
+> These are examples. Pay units and their conversion factors are fully user-configurable on the **Pay Units** page.
 
-**To assign pay unit to an employee:**
+## Converting between pay units
 
-1. Search for **Employees**
-2. Open the empl
+OnePayroll uses conversion factors to express the same compensation in different units. For example:
 
-oyee
-3. On the **OnePayroll** tab:
-   - **Pay Unit** - Select: Annual Salary, Per Period, Hourly, or Daily
-   - **Compensation Amount** - Enter the amount for selected unit
-4. Save
+**Example: Annual to daily**
 
-### Compensation by employee type
+An employee earns $65,000/year with an annual pay unit (conversion factor = 260):
 
-**For salaried employees:**
+- Daily equivalent: $65,000 ÷ 260 = $250/day
 
-1. Set **Pay Unit** to **Annual Salary**
-2. Enter **Compensation Amount** (e.g., $80,000)
-3. OnePayroll calculates:
-   - Per-period pay automatically
-   - Hourly rate for benefits calculation
-   - Tax withholding basis
+**Example: Hourly to annual**
 
-**For hourly employees:**
+An employee earns $18.50/hour with an hourly pay unit (conversion factor = 0.125):
 
-1. Set **Pay Unit** to **Hourly**
-2. Enter **Hourly Rate** (e.g., $25.00/hour)
-3. OnePayroll calculates:
-   - Annual salary equivalent
-   - Per-period rate
-   - Overtime amounts
-4. Specify **Hours per Week** (typically 40)
+- Daily equivalent: $18.50 ÷ 0.125 = $148/day
+- Annual equivalent: $148 × 260 = $38,480/year
 
-**For daily rate employees:**
+For more details on conversion math, see [Pay units and conversions](pay-units-conversions.md).
 
-1. Set **Pay Unit** to **Daily**
-2. Enter **Daily Rate** (e.g., $400/day)
-3. Employee paid based on days worked
+## Global pay unit
 
-## Managing pay unit conversions
+The **Global Pay Unit** on the **Payroll Setup** page defines a standardized unit for comparing compensation across employees with different pay units. When viewing employee lists, compensation can be displayed in the global pay unit for easy comparison.
 
-OnePayroll automatically handles conversions. Here's what happens:
+**To set the global pay unit:**
 
-### Annual salary to hourly
-Used for:
-- Overtime calculation (OT = 1.5× or 2× hourly rate)
-- Benefits administration (health insurance calculation)
-- Tax withholding (needs hourly basis for certain jurisdictions)
+1. Search for **Payroll Setup**.
+2. In the **Global Pay Unit** field, select the pay unit you want to use for standardized reporting.
 
-**Conversion factor**
-```
-Annual Salary: $80,000
-Working hours per year: 2,080 hours
-Hourly Rate: $80,000 ÷ 2,080 = $38.46/hour
-```
-
-### Annual salary to per-period
-Used for:
-- Regular payroll calculation
-- Budget forecasting
-- GL impact analysis
-
-**Conversion factor depends on pay frequency:**
-- Weekly (52 periods): $80,000 ÷ 52 = $1,538/week
-- Biweekly (26 periods): $80,000 ÷ 26 = $3,077/period
-- Monthly (12 periods): $80,000 ÷ 12 = $6,667/month
-
-## Pay unit effective dates
-
-When compensation changes, you can set effective dates:
-
-**To set compensation change with effective date:**
-
-1. Open the employee
-2. In the **OnePayroll** tab:
-   - Record the current compensation
-3. Create a **Compensation Change** record:
-   - **Effective Date** - When change takes effect
-   - **New Amount** - New pay amount
-4. Save
-
-**Example: Raise effective 3/1/2026**
-```
-Current annual salary: $80,000 (through 2/28/2026)
-New annual salary: $85,000 (effective 3/1/2026)
-OnePayroll automatically applies correct rate in payroll per period
-```
-
-Effective dates ensure:
-- Correct compensation used in each payroll run
-- Automated pay rate transitions
-- Historical accuracy
-
-## Pay unit for different compensation types
-
-### Multiple compensation sources
-
-Some employees have multiple compensation types:
-
-**Salaried + Commission:**
-- Set primary pay unit to Annual Salary
-- Commission tracked separately as manual entry or pay type
-- Both included in gross pay calculation
-
-**Base + Shift Differential:**
-- Base pay per annual salary
-- Shift premium added when employee works specific shift
-- Combined for gross and tax calculation
-
-**Salary + Bonus:**
-- Regular annual salary for base compensation
-- Bonus tracked separately for periods when paid
-- Both included in gross pay
-
-### Seasonal or variable compensation
-
-For employees with seasonal variation:
-
-1. Set annual salary to average expected amount
-2. Adjust per-period amount manually for seasons
-3. Or use monthly pay unit for more flexibility
-
-## Pay unit conversions for reporting
-
-Pay unit conversions enable different reporting views:
-
-**Departmental salary:**
-Sum annual salaries by department = Total department compensation
-
-**Payroll run cost:**
-Sum per-period pays = Expected payroll cost this period
-
-**Hourly analysis:**
-Hourly rates enable comparison across hourly/salaried employees
-
-## Verification and testing
-
-Before processing payroll with new pay units:
-
-**Check conversion accuracy:**
-1. Create test employee with known salary (e.g., $78,000)
-2. Verify system calculates:
-   - Hourly rate: $78,000 ÷ 2,080 = $37.50
-   - Biweekly: $78,000 ÷ 26 = $3,000
-   - Monthly: $78,000 ÷ 12 = $6,500
-3. If conversions are incorrect, check setup
-4. Adjust working hours or periods as needed
-
-**Include in test payroll:**
-1. Create test payroll for employees with different pay units
-2. Verify gross pay calculated correctly
-3. Check tax withholding (uses hourly rate)
-4. Validate GL posting
-
-## Troubleshooting
-
-### "Incorrect hourly rate calculated"
-- Verify annual salary entered correctly
-- Check working hours per week (typically 40)
-- Confirm working weeks per year (typically 52)
-- Calculation: Annual ÷ (Hours/week × Weeks/year)
-
-### "Per-period pay doesn't match expectations"
-- Verify annual salary
-- Confirm pay frequency (biweekly = ÷26, weekly = ÷52)
-- Check for special period calculations
-
-### "Tax withholding incorrect"
-- Verify hourly rate calculation (used for tax)
-- Check annual salary is set correctly
-- Review tax withholding settings
+> [!TIP]
+> Many organizations use an annual pay unit as the global pay unit for easy comparison of total compensation across all employees.
 
 ## Best practices
 
-- **Use annual salary as primary** - Most flexible and standard
-- **Verify conversions** - Always check calculated rates match expectations
-- **Document effective dates** - Note when compensation changes occur
-- **Test before production** - Validate pay unit calculations in test payroll
-- **Consistent rounding** - Use consistent rounding for per-period and hourly calculations
-- **Track changes** - Maintain history of compensation changes for audit
+- **Use employee types consistently** — Assign the same employee type to employees with identical compensation structures
+- **Verify conversion factors** — Ensure your pay unit conversion factors reflect your organization's actual working days and hours
+- **Check after type changes** — When changing an employee's type, verify that their compensation rate still makes sense in the context of the new pay unit
+- **Use the global pay unit** — Set a global pay unit on Payroll Setup for meaningful cross-employee comparisons
 
-## What's next
+## See also
 
-- **[Employee setup](employee-setup.md)** - Overall employee configuration
-- **[Pay types overview](pay-types-overview.md)** - How pay types work with pay units
-- **[Departments and work locations](departments-work-locations.md)** - Organizational structure
+- [Employee types and pay units](pay-units-employee-types.md)
+- [Pay units and conversions](pay-units-conversions.md)
+- [Employee overview](employee-overview.md)
+
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]

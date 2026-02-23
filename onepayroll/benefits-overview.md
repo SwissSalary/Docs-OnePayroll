@@ -60,22 +60,22 @@ Coverage Types and Coverage options give employees choices within a benefit prog
 
 - A health insurance benefit might have coverage options like "Employee Only", "Employee + Spouse", "Employee + Children", or "Family"
 - Coverage Types can inherit from other Coverage Types, allowing you to reuse coverage structures
-- Each coverage option can specify whether it's covered by the employee, employer, or both
+- Each coverage option specifies an **Employee Liability** and **Employer Liability** setting that controls which party is liable for the cost
 
 ### Benefit Assignments
 
-Benefit Assignments link benefits to employees, pay groups, or employee templates. Each assignment specifies:
+Benefit Assignments link benefits to employees or employee templates. Each assignment specifies:
 
 - Which benefit is assigned
 - What coverage the employee has selected
-- Whether the assignment is directly to an employee or inherited from a template
+- Whether the assignment is directly to an employee or inherited from an employee template
 
 ## Working with Benefits
 
 To work effectively with the Benefits module, see the following detailed articles:
 
 - [Set Up Benefits](benefits-setup.md) - Learn how to create benefit types, configure coverage options, set rates and limits, and link benefits to contracts
-- [Assign Benefits to Employees](benefits-assignments.md) - Learn how to assign benefits to employees, employee templates, and pay groups
+- [Assign Benefits to Employees](benefits-assignments.md) - Learn how to assign benefits to employees and employee templates
 - [Work with Benefit Hierarchies](benefits-hierarchies.md) - Learn how to use benefit and benefit type hierarchies to manage related benefits efficiently
 - [Understand Benefit Limits](benefits-limits.md) - Learn how benefit limits control maximum contributions and how to configure limit bases and adjustments
 
@@ -106,4 +106,4 @@ When working with benefits in OnePayroll:
 
 [Process payroll](payroll-runs-process.md)  
 
-[!INCLUDE[footer-include](includes/footer-banner.md)]
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]

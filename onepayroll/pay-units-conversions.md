@@ -124,60 +124,46 @@ $200 × 10 = $2,000/biweekly
 
 ## Configuring pay units
 
-### Setting up standard conversions
+### Pay Units page
 
-In **Payroll Setup**:
+To set up pay units, search for **Pay Units**. Each pay unit has the following fields:
 
-1. Set **Standard Hours Per Week** = 40 (or your standard)
-2. Set **Weeks Per Year** = 52 (or 52.14 for paid days calculation)
-3. These used for all conversions
+| Field | Description |
+|-------|-------------|
+| **Code** | A unique code for the pay unit (up to 20 characters). |
+| **Description** | A description of the pay unit (up to 50 characters). |
+| **Unit of Measure** | The HR unit of measure associated with this pay unit (for example, Hour, Year, Day). |
+| **Conversion Factor** | A decimal factor used for converting between pay units. Supports up to 8 decimal places. |
 
-### Creating pay unit conversions
+### How conversion factors work
 
-For non-standard situations:
+Conversion factors express how many working days one unit represents. OnePayroll uses these factors to convert between pay units with the formula:
 
-1. Search for **Pay Unit Conversions**
-2. Create conversion by:
-   - **From Unit** = Source (e.g., Annual)
-   - **To Unit** = Target (e.g., Hourly)
-   - **Conversion Factor** = Multiplier (e.g., 0.024038 to convert annual to hourly)
-3. OnePayroll uses for all conversions in system
+```
+Converted Amount = Source Amount × Target Factor ÷ Source Factor
+```
 
 ### Example configurations
 
-**Standard US:**
-- Standard hours: 40/week
-- Weeks: 52/year
-- Conversions auto-calculated
+Based on 260 working days per year (5 days × 52 weeks):
 
-**Compressed schedule:**
-- Standard hours: 37.5/week
-- Weeks: 52/year
-- Higher per-hour rate reflects fewer hours
-
-**Shift work:**
-- Standard hours: 8/day
-- Days/week: 5
-- Conversions account for shift patterns
+| Pay unit | Conversion factor | Basis |
+|----------|-------------------|-------|
+| HOURLY | 0.125 | 1 ÷ 8 hours per day |
+| DAILY | 1 | 1 working day |
+| WEEKLY | 5 | 5 working days per week |
+| BIWEEKLY | 10 | 10 working days per two weeks |
+| SEMIMONTHLY | 10.8333333 | 260 ÷ 24 periods |
+| MONTHLY | 21.6666667 | 260 ÷ 12 months |
+| YEARLY | 260 | 260 working days per year |
 
 ## Using pay units
 
-### Employee compensation setup
+### Employee compensation
 
-When setting employee pay rate:
+An employee's pay unit is determined by their [employee type](pay-units-employee-types.md). The employee type defines the pay unit and compensation method (Regular or Work-Based). The employee's pay unit and pay factor are displayed as flow fields on the employee card.
 
-1. Specify **Pay Unit** = How it's expressed
-2. Configure **Rate** = Amount
-3. OnePayroll converts as needed
-
-**Example:**
-```
-Employee A: Annual, $50,000
-  System calculates: $24.04/hour, $2,000/2-week period
-
-Employee B: Hourly, $25/hour
-  System calculates: $52,000/year, $2,000/2-week period
-```
+When viewing employee lists, OnePayroll can convert compensation to a common pay unit for comparison purposes.
 
 ### Benefits calculations
 
@@ -202,23 +188,9 @@ Overtime compensation:
 - Calculate overtime based on hourly equivalent
 - Ensures consistent treatment
 
-## Effective dating
+## Pay unit changes
 
-### Pay unit changes
-
-If employee's compensation structure changes:
-
-1. Old pay unit: Annual $50,000 (hourly equivalent $24.04)
-2. Change date: 1/1/2025
-3. New pay unit: Hourly $26/hour
-4. Both rates valid for historical tracking
-
-### Snapshot system
-
-Snapshots capture pay units effective for each period:
-- Ensures payroll calculated with correct conversions
-- Historical record of pay unit changes
-- Supports wage/hour audits
+If an employee's compensation structure changes, the change is recorded through the [snapshot system](employee-snapshots.md). Snapshots capture the pay unit and compensation details effective for each payroll period, ensuring that payroll is calculated with the correct conversion factors and maintaining a historical record for audit purposes.
 
 ## Verification and testing
 
@@ -241,30 +213,18 @@ System shows: $1,923.08 ✓
 
 ## Common scenarios
 
-### Salary to hourly conversion
+### Changing employee type
 
-When job changes from salary to hourly:
-1. Annual salary: $50,000
-2. Convert to hourly: $24.04/hour
-3. Ensure overtime policy applies (if hourly)
-4. Payroll calculated using new pay unit
+When an employee's compensation structure changes (for example, from a yearly-based type to an hourly-based type), update the employee's **Type** field on the employee card. The employee's pay unit and pay factor update automatically because they flow from the employee type.
 
-### Hourly reclassification
+### Pay types with different units
 
-If hourly employee becomes salaried:
-1. Hourly: $25/hour
-2. Convert to annual: $52,000
-3. Remove overtime tracking (if salaried)
-4. Calculate as annual going forward
+Pay types can each have their own pay unit. This means different components of compensation can use different units:
 
-### Multi-period pay types
+- Base pay: Uses the employee's pay unit (from their employee type)
+- Other pay types: Can specify their own pay unit as needed
 
-Some pay types use different units:
-- Salary: Annual
-- Overtime: Hourly (1.5x)
-- Bonus: Percentage of annual
-
-OnePayroll tracks each separately using appropriate units
+OnePayroll uses the conversion factor to convert between units during payroll calculations.
 
 ## Troubleshooting
 
@@ -476,4 +436,4 @@ When working with pay unit conversions:
 [Assign Pay Units to Employee Types](pay-units-employee-types.md)  
 [Process payroll](payroll-runs-process.md)  
 
-[!INCLUDE[footer-include](includes/footer-banner.md)]
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]

@@ -43,8 +43,8 @@ Pay type liabilities determine which pay types (earnings) are subject to a benef
 3. On the **Coverages** FastTab, add the coverage options that employees can choose:
    - **Code**: A unique code for this coverage option
    - **Description**: What this coverage level represents
-   - **Covered by Employee**: Whether the employee pays for this coverage
-   - **Covered by Employer**: Whether the employer contributes to this coverage
+   - **Employee Liability**: Whether the employee is liable for this coverage (Not Liable, Employee, or Employer)
+   - **Employer Liability**: Whether the employer is liable for this coverage (Not Liable, Employee, or Employer)
 
 > [!TIP]
 > You can create coverage types that inherit from existing types using the **Create Inherited Type** action. This is useful when you have benefits with the same coverage options but different cost-sharing arrangements.
@@ -109,4 +109,4 @@ Pay type liabilities determine which pay types (earnings) are subject to a benef
 [Work with Benefit Hierarchies](benefits-hierarchies.md)  
 [Understand Benefit Limits](benefits-limits.md)  
 
-[!INCLUDE[footer-include](includes/footer-banner.md)]
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]

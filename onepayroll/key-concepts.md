@@ -39,16 +39,8 @@ A category of benefits (Health Insurance, Dental Insurance, Vision Insurance, Re
 **Biweekly**
 A pay frequency of every two weeks (26 pay periods per year).
 
-**Calculation Method**
-The approach used to calculate a pay type amount:
-- **Fixed Amount** - A set dollar amount per period
-- **Percentage** - A percentage of another pay type (e.g., 50% of gross pay)
-- **Hourly Rate** - Hourly wage multiplied by hours worked
-- **Annual Salary** - Annual salary divided by pay periods
-- **Formula** - Custom calculation using predefined formulas
-
-**Calculation Type**
-See [Calculation Method](#c).
+**Category**
+The classification assigned to each pay type. OnePayroll has five fixed categories: Earnings, Employee Deductions, Hypothetical, Employer Contributions, and Heading. Categories determine how pay types participate in payroll calculations.
 
 ## C
 
@@ -60,9 +52,6 @@ A physical or electronic payment method for distributing employee pay. Checks ca
 
 **Check Printing**
 The process of generating and printing employee paychecks. OnePayroll integrates with Microsoft's check printing to manage numbering and alignment.
-
-**Conditional Pay Type**
-A pay type that is automatically applied based on conditions or rules, rather than being manually entered for each employee.
 
 **Contoso Coffee**
 Sample demo data included in some Business Central extensions for learning purposes.
@@ -105,10 +94,7 @@ A record that defines how an employee's net pay is allocated and where it is dep
 A historical record of an employee's key payroll information (pay group, pay types, tax settings) captured at a point in time for audit and historical reference.
 
 **Employee Type**
-A classification of employees that determines how their compensation is calculated:
-- **Salaried** - Paid a fixed annual salary
-- **Hourly** - Paid based on hours worked
-- **Commissioned** - Paid primarily through commissions
+A user-defined classification for employees. Each employee type specifies a pay unit and a compensation method (Regular or Work-Based). Regular employees receive recurring pay regardless of reported work, while work-based employees are paid only based on reported work.
 
 **Event Subscriber**
 A code component that listens for and responds to application events (e.g., "on payroll run calculated").
@@ -188,7 +174,7 @@ See [Contoso Coffee](#c) - sample data related to product kits.
 A financial obligation or debt, such as payroll taxes owed to the government or benefits costs owed to providers.
 
 **Limit Adjustment**
-A temporary change to a benefit limit amount.
+The setting on a benefit that determines how annual limits are applied for partial-year employees. Options are No Adjustment (full limit applies) or Prorated (limit is reduced proportionally).
 
 **Local Tax**
 City or other local jurisdiction income tax withholding.
@@ -232,10 +218,10 @@ The multiplier applied to the regular hourly rate for overtime hours (e.g., 1.5x
 ## P
 
 **Pay Cycle**
-A definition of when and how often employees are paid, including the frequency (weekly, biweekly, etc.) and period cutoff rules.
+A definition of when and how often employees are paid, specified by the number of periods per year and schedule lines that use date formulas to calculate period start, end, and payment dates.
 
-**Pay Cycle Schedule**
-The specific dates and periods for a pay cycle, showing when each payroll period starts and ends.
+**Pay Cycle Schedule Line**
+A record on a pay cycle that uses date formulas (Period Start, Period End, Payment Date) to calculate when each pay period starts, ends, and when payment occurs.
 
 **Pay Group**
 A collection of employees who are paid on the same schedule and using the same payroll posting rules.
@@ -291,19 +277,16 @@ The originating system or process that created a payment (e.g., "Payroll Run", "
 A component of compensation (earnings or deductions) such as salary, overtime, taxes, or benefits.
 
 **Pay Type Category**
-A grouping of related pay types (e.g., "Regular Earnings", "Overtime", "Taxes", "Benefits").
+See [Category](#c).
 
 **Pay Unit**
-A unit of compensation measurement:
-- **Annual Salary** - compensation expressed as an annual amount
-- **Hourly Wage** - compensation expressed as an hourly amount
-- **Salary per Pay Period** - compensation expressed per payroll period
+A user-defined unit of compensation measurement with a code, description, and conversion factor. Pay units are used on employee types, pay cycles, and pay types to define how rates are expressed and converted.
 
 **Pay Unit Conversion**
-The process of converting between different pay units (e.g., annual salary to hourly rate).
+The process of converting between different pay units using the conversion factor defined on each pay unit.
 
-**Period Cutoff**
-The rules that determine when a pay period ends and the next one begins.
+**Period**
+See [Pay Period](#p).
 
 **FICA**
 See [FICA](#f).
@@ -350,8 +333,8 @@ The frequency at which fixed salary compensation is paid (annual, monthly, weekl
 **Semi-Monthly**
 A pay frequency of twice per month, typically on the 15th and last day of the month (24 pay periods per year).
 
-**Self-Service Portal**
-An employee-facing web interface where employees can view pay stubs, tax documents, update direct deposit information, and enroll in benefits.
+**Snapshot**
+See [Employee Snapshot](#e).
 
 **Snapshot**
 See [Employee Snapshot](#e).
@@ -395,7 +378,7 @@ A geographic area that has its own tax rules (federal, state, city).
 The percentage or amount of income subject to a specific tax.
 
 **Tax Statement**
-A document summarizing annual tax withholdings and payments (e.g., W-2, 1099 form).
+A document summarizing annual tax withholdings and payments (for example, W-2).
 
 **Tax Withholding**
 The amount of compensation withheld from an employee's pay for income tax purposes.

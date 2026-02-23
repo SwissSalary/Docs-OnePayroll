@@ -82,21 +82,9 @@ Debit: Salary Expense (6100) $15,000
   Credit: Cash (1000) $11,300
 ```
 
-## Department allocation
+## Department tracking
 
-Payroll can be allocated by department:
-
-- Each employee assigned to department
-- Expenses post to department-specific GL account
-- Enables department cost tracking
-- Facilitates budget variance analysis per department
-
-**Example:**
-```
-Sales department: 5 employees × $3,000 = $15,000 → GL 6100.10 (Sales)
-Operations department: 3 employees × $2,000 = $6,000 → GL 6100.20 (Operations)
-Admin department: 2 employees × $2,500 = $5,000 → GL 6100.30 (Admin)
-```
+Employees are assigned to departments, which enables payroll reporting and analysis by department. Department assignment is tracked on the employee record and captured in payroll entries for reporting purposes.
 
 ## Liability tracking
 
@@ -136,11 +124,10 @@ Every GL entry from payroll includes:
 
 ## GL posting workflow
 
-1. **Payroll Calculation** → Individual pay entries created
-2. **Payroll Approval** → Management reviews and approves
-3. **GL Posting** → OnePayroll creates General Journal Lines
-4. **GL Review** → Accountant reviews journal lines (if using Manual Posting)
-5. **GL Finalization** → Journal lines posted to General Ledger
+1. **Payroll Calculation** — Individual payroll entries created for each employee
+2. **Review** — Management reviews payroll entries for accuracy
+3. **Mark as Ready** — Payroll run is marked as ready for posting
+4. **Post** — OnePayroll creates General Journal Lines and posts them to the General Ledger
 
 ## Reconciliation
 

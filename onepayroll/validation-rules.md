@@ -1,230 +1,104 @@
 ---
-title: Validation rules and business rule engine
-description: Learn how to configure validation rules and business rules in OnePayroll.
+title: Validation rules
+description: Learn how OnePayroll's validation rules engine enforces data quality and business rules.
 author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026
 ---
 
-# Validation rules and business rule engine
+# Validation rules
 
-OnePayroll includes a configurable rules engine for field-level validation and business logic enforcement.
+OnePayroll includes a validation rules engine that enforces data quality and business rules on payroll records. Each rule targets a specific table and field, and fires during payroll processing to catch missing or invalid data before it causes problems.
 
-## Rules engine overview
+## Validation rule structure
 
-**What are validation rules?**
-Rules define:
-- Which fields are required in certain situations
-- What values are acceptable
-- When validation errors should occur
-- Custom business logic enforcement
+Each validation rule record consists of:
 
-**Examples:**
-- "Salary must be > 0"
-- "Department required if pay type is hourly"
-- "Overtime requires manager approval"
-- "Garnishment effective date cannot be in past"
+| Field | Description |
+|-------|-------------|
+| **Table ID** | The table being validated |
+| **Field ID** | The specific field being checked |
+| **Severity** | Warning or Error — determines whether the issue blocks processing |
+| **Validation Rule Type** | Simple or Complex |
+| **Rule** | For complex rules, a reference to a rule definition |
+| **Filter Expression** | For simple rules, a filter condition the field value must satisfy |
+| **Message** | The message shown when validation fails |
 
-## Rule types
+### Rule types
 
-### Required field rules
-Enforce mandatory data entry:
-- Example: "Employee department required for all new employees"
-- Error: "Department is required"
+**Simple rules** check whether a field value matches a filter expression. The most common simple rule is a "not empty" check — verifying that a required field has been filled in.
 
-### Value validation rules
-Restrict allowed values:
-- Example: "Hourly rate must be between min wage and $200/hour"
-- Example: "Pay group must be assigned before payroll processing"
-
-### Conditional rules
-Apply based on conditions:
-- Example: "If pay type is Commission, sales region required"
-- Example: "If hourly employee, timesheet required"
-
-### Dependent rules
-Rules based on related records:
-- Example: "Benefits deduction cannot exceed gross wages"
-- Example: "Garnishment priority must be in order"
-
-### Business logic rules
-Complex rules for business scenarios:
-- Example: "Employees in CA must have CA tax setup"
-- Example: "Direct deposit requires valid bank account"
-
-## Predefined rules
-
-OnePayroll includes predefined rules for common scenarios:
-
-| Rule | Applies To | Condition |
-|------|-----------|-----------|
-| Employee must be active | All payroll | Processing payroll |
-| Department required | Hourly employees | Time tracking enabled |
-| Bank account required | Direct deposit | Payment method selected |
-| W-4 required | Federal tax | Employee in US |
-| Pay type required | Payroll entry | Creating pay entries |
-| Garnishment order | Garnishments | Multiple garnishments |
-
-## Configuring custom rules
-
-### Creating a validation rule
-
-1. Search for **Validation Rules**
-2. Select **New**
-3. Configure rule:
-   - **Rule Name** - Identifier
-   - **Table** - Table being validated
-   - **Field** - Field being validated
-   - **Condition** - When rule applies
-   - **Validation** - What's being validated
-   - **Error Message** - Message if fails
-4. Option: Enable/disable as needed
-
-### Rule conditions
-
-**Conditions determine when rule applies:**
-- Always (on every operation)
-- On insert (when record created)
-- On update (when record modified)
-- On delete (when record deleted)
-- When field = specific value
-- When field > or < threshold
-- Custom formula/expression
+**Complex rules** reference a rule definition that can evaluate more sophisticated conditions involving multiple fields or related records.
 
 ### Severity levels
 
-Rules can have severity:
-- **Error** - Prevents operation (hard stop)
-- **Warning** - Allows operation but warns user
-- **Info** - Informational only
+- **Error** — The validation failure blocks the operation. The issue must be resolved before proceeding.
+- **Warning** — The validation failure is reported but does not block the operation. The user can choose to address it or continue.
 
-## Rule evaluation
+## Default validation rules
 
-### When rules are checked
+OnePayroll ships with predefined validation rules for common data quality requirements. These include:
 
-Rules evaluated at:
-1. **Field entry** - Immediate validation as user types
-2. **Record save** - Validation before saving
-3. **Payroll processing** - Validation before payroll runs
-4. **Report generation** - Validation before reports run
+### Employee validation
 
-### Performance
+- **Address** — Employee address must not be empty (Error)
+- **City** — Employee city must not be empty (Error)
+- **Post Code** — Employee post code must not be empty (Error)
+- **Country/Region Code** — Employee country/region code must not be empty (Error)
+- **Birth Date** — Employee birth date must not be empty (Error)
+- **Work Location** — Employee work location must not be empty (Error)
+- **Pay Group** — Employee pay group must not be empty (Error)
+- **Type** — Employee type must not be empty (Error)
 
-Rules impact system performance:
-- Many rules = slower operations
-- Complex rules (with lookups) = significant performance impact
-- Best practice: Minimize rules, use simple conditions
+### Employee type validation
 
-## Managing rules
+- **Pay Unit** — Employee type pay unit must not be empty (Error)
 
-### Enabling/disabling rules
+### Garnishment validation
 
-To temporarily disable rule:
-1. Open rule
-2. Set **Enabled** = No
-3. Rule no longer enforced
-4. Can re-enable later
+- **Garnishment Type** — Garnishment line garnishment type must not be empty (Error)
+- **Agency No.** — Garnishment line agency number must not be empty (Error)
+- **Remittance ID** — Garnishment line remittance ID must not be empty (Error)
+- **Exemption check** — Garnishment line exemption configuration must be complete (Warning, complex rule)
 
-**Use case:**
-- Disable during data migration
-- Disable for special scenarios
-- Re-enable for normal operations
+## Managing validation rules
 
-### Testing rules
+### Viewing validation rules
 
-Before enabling rule in production:
+1. Search for **Validation Rules**.
+2. The list shows all configured rules with their table, field, severity, and type.
 
-1. Test with sample data
-2. Verify error message clear
-3. Check performance impact
-4. Verify all processes still work
+### Adjusting severity
 
-### Troubleshooting rules
+You can change a rule's severity between **Warning** and **Error** depending on your organization's needs. For example, if you want to allow employees without a work location during initial setup, you could change that rule's severity from Error to Warning.
 
-**"Validation rule prevents operation"**
-- Verify rule is appropriate (not obsolete)
-- Review error message for guidance
-- Correct data to satisfy rule or disable rule
+### Adding rules
 
-**"Unexpected validation failure"**
-- Check rule conditions
-- Verify rule applies to current situation
-- Review rule logic
+You can add new simple validation rules to enforce additional data quality requirements:
 
-**"Rule applies incorrectly"**
-- Verify conditions are specific enough
-- Add additional conditions to limit scope
-- Consider splitting into multiple rules
+1. On the **Validation Rules** page, add a new line.
+2. Select the **Table ID** and **Field ID** for the field you want to validate.
+3. Set the **Severity** (Warning or Error).
+4. Set the **Validation Rule Type** (typically Simple for field-level checks).
+5. Enter a **Filter Expression** to define the validation condition.
+6. Enter a **Message** to display when the rule fails.
 
-## Use cases
+## When rules are evaluated
 
-### Payroll accuracy
-
-**Example rules:**
-- "Gross pay must be > 0"
-- "Deductions cannot exceed net pay"
-- "Employee must have pay group assigned"
-
-### Compliance
-
-**Example rules:**
-- "W-4 must be on file before processing payroll"
-- "State resident required for multi-state employee"
-- "Bank account required for direct deposit"
-
-### Business logic
-
-**Example rules:**
-- "Overtime requires manager approval"
-- "Commission requires territory assigned"
-- "Garnishment priority must be sequential"
-
-### Data quality
-
-**Example rules:**
-- "Employee address required"
-- "Birth date must be valid"
-- "No future-dated termination"
-
-## Advanced rule features
-
-### Rule templates
-
-For common scenarios, use templates:
-- "Required field" template
-- "Value range" template
-- "Conditional" template
-- "Dependent record" template
-
-### Rule groups
-
-Organize related rules:
-- "Employee data validation" group
-- "Payroll processing" group
-- "Tax compliance" group
-- "Payment processing" group
-
-## Performance considerations
-
-**Minimize impact:**
-- Use simple field comparisons (fast)
-- Avoid complex lookups (slow)
-- Disable unused rules
-- Test rules under load before production
-- Monitor system performance after adding rules
+Validation rules are evaluated during payroll processing. Before payroll calculations run, the rules engine checks all applicable rules against the data being processed. Any rule violations are reported based on their severity level.
 
 ## Best practices
 
-- **Start simple** - Add rules gradually, not all at once
-- **Clear messages** - Write error messages users understand
-- **Document rules** - Note why each rule exists
-- **Review regularly** - Remove obsolete rules
-- **Test thoroughly** - Validate rules work as intended
-- **Performance check** - Ensure rules don't slow system noticeably
-- **Severity appropriate** - Use Error for critical, Warning for guidance
+- **Start with defaults** — The predefined rules cover the most important data quality checks
+- **Use Error for critical data** — Fields required for correct payroll calculation should use Error severity
+- **Use Warning for advisory checks** — Fields that improve data quality but don't block processing should use Warning severity
+- **Review after setup** — After initial data migration, review any validation warnings to clean up data
+- **Keep rules focused** — Each rule should check one specific condition for clarity
 
-## What's next
+## See also
 
-- **[Payroll setup](payroll-setup.md)** - Payroll configuration
-- **[Employee setup](employee-setup.md)** - Employee configuration
+- [Getting started](getting-started.md)
+- [Payroll runs overview](payroll-runs-overview.md)
+
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]

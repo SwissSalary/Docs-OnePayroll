@@ -82,11 +82,12 @@ Pay groups organize employees by pay frequency and posting rules.
 
 1. Search for **Pay Groups**
 2. Select **New**
-3. Enter a code (e.g., "WEEKLY", "BIWEEKLY")
-4. Enter a description
-5. Select the pay cycle schedule (weekly, biweekly, etc.)
-6. Specify the GL posting rule for this group
-7. Save
+3. Enter a **Code** (e.g., "WEEKLY", "BIWKLY")
+4. Enter a **Description**
+5. Select the **Pay Cycle** that defines the pay schedule for this group
+6. Select the **Pay Group Owner** (the employee responsible for this group)
+7. Specify the **Gen. Journal Template** and **Gen. Journal Batch** for GL posting
+8. Save
 
 **Example pay groups:**
 - "WEEKLY" - Weekly paid employees
@@ -128,13 +129,15 @@ Pay cycles define how often employees are paid.
 
 1. Search for **Pay Cycles**
 2. Select **New**
-3. Enter a code (e.g., "WEEKLY", "BIWEEKLY")
-4. Enter a description
-5. Select the frequency (Weekly, Biweekly, Semi-monthly, Monthly)
-6. Specify the period calculation rules (e.g., when periods end)
-7. Save
-
-OnePayroll automatically calculates period start and end dates based on your frequency rules.
+3. Enter a **Code** (e.g., "WEEKLY", "BIWEEKLY")
+4. Enter a **Description**
+5. Enter the **Periods per Year** (e.g., 52 for weekly, 26 for biweekly, 24 for semi-monthly, 12 for monthly)
+6. Select the **Pay Unit** that defines the unit of compensation for this cycle
+7. Add **Schedule Lines** to define pay periods using date formulas:
+   - **Period Start** — date formula for when each period begins (e.g., `-CW` for current week start)
+   - **Period End** — date formula for when each period ends (e.g., `CW` for current week end)
+   - **Payment Date** — date formula for the payment date (e.g., `CW+5D` for Friday after week end)
+8. Save
 
 ### 6. Create employees
 
@@ -146,16 +149,16 @@ Add employees to OnePayroll with required payroll information.
 2. Select **New**
 3. Enter the employee number and name
 4. On the **OnePayroll** tab:
-   - Assign a **Pay Group** (e.g., "BIWEEKLY")
-   - Select the **Employee Type** (Salaried, Hourly, etc.)
-   - Create employee **Bank Accounts** if using direct deposit
+   - Assign a **Pay Group** (e.g., "BIWKLY")
+   - Select the **Employee Type** — a user-defined code that determines the employee's pay unit and compensation method (Regular or Work-Based)
+   - Set up **Payment Methods** if using direct deposit
 5. Save
 
 **Required payroll information:**
 - Pay group assignment
-- Employee type (salary basis)
-- Federal and state tax information
-- Direct deposit details (if applicable)
+- Employee type
+- Tax withholding information (US localization)
+- Payment method details (if applicable)
 - Any garnishments or special deductions
 
 ### 7. Optional: Set up benefits
@@ -168,7 +171,6 @@ If your company offers benefits, configure benefit enrollment.
 2. Create benefit types (Health Insurance, Dental, 401(k), etc.)
 3. Create specific benefits by benefit type
 4. Search for **Employee Benefits** to assign benefits to employees
-5. Employees can enroll through the self-service portal (optional)
 
 ### 8. Set up payment methods
 
@@ -190,9 +192,9 @@ Configure how employees will be paid.
 3. When running Create Payroll Payments, select **Computer Check** as the Payment Type
 4. Print checks through the standard Business Central check-printing process
 
-### 9. Configure tax settings
+### 9. Configure tax settings (US localization)
 
-Set up tax calculation and withholding.
+If you're using the US localization, set up income tax calculation and withholding.
 
 **To configure tax:**
 
@@ -201,6 +203,9 @@ Set up tax calculation and withholding.
 3. Configure the **Calculation Method** (Standard or Simplified) for each jurisdiction
 4. Set up **Income Tax Rates** and **Income Tax Setup** for each tax year
 5. Save
+
+> [!NOTE]
+> Tax configuration is part of the US country-specific extension. Other localizations may have different tax setup requirements.
 
 ### 10. Process your first payroll
 
@@ -252,10 +257,9 @@ Use the **Search** feature (Ctrl+K) to quickly find pages:
 ### Role-based access
 
 OnePayroll provides role-based permissions:
-- **Payroll Administrator** - Full access to setup and processing
-- **Payroll Clerk** - Can process payroll but not change settings
-- **HR Manager** - Can view employee data but not process payroll
-- **Employee** - Can access self-service portal only
+- **Payroll Administrator** — Full access to setup and processing
+- **Payroll Clerk** — Can process payroll but not change settings
+- **HR Manager** — Can view employee data but not process payroll
 
 ---
 
@@ -289,6 +293,6 @@ Now that you've completed setup:
 2. **Manage special scenarios** - Handle bonuses, off-cycle pays, and corrections
 3. **Review reports** - Use built-in payroll reports for analysis
 4. **Prepare tax documents** - Generate year-end tax forms
-5. **Explore advanced features** - Use the self-service portal and validation rules
+5. **Explore advanced features** — Use validation rules and other advanced capabilities
 
 See [Payroll runs overview](payroll-runs-overview.md) to learn how to process payroll, or [Employee setup](employee-setup.md) for more details on employee configuration.

@@ -72,8 +72,6 @@
 ### [Copilot features](copilot-features.md)
 
 ## Advanced features
-### [Employee self-service portal](self-service-portal.md)
-### [Payroll API integration](payroll-api.md)
 ### [Pay unit conversions](pay-units-conversions.md)
 ### [Employee types and pay units](pay-units-employee-types.md)
 

@@ -23,9 +23,9 @@ This guide walks you through creating employee records and configuring their pay
    - **Job Title** - Position (optional)
    - **Address** - Work address
 4. In the **OnePayroll** tab (payroll-specific fields):
-   - **Pay Group** - Select group (Weekly, Biweekly, Monthly, etc.)
-   - **Employee Type** - Select type (Salaried, Hourly, Commissioned, Daily)
-   - **Start Date** - Employment start date
+   - **Pay Group** - Select the appropriate pay group
+   - **Type** - Select an employee type (user-defined codes that determine pay unit and compensation method)
+   - **Work Location** - Select a work location
 5. Save
 
 ### Employee number conventions
@@ -63,38 +63,22 @@ Once the employee is created, configure payroll-specific settings:
 
 1. Open the employee
 2. On the **OnePayroll** tab:
-   - **Employee Type** - Select: Salaried, Hourly, Commissioned, or Daily
-   - This controls how compensation is calculated
+   - **Type** - Select an employee type code
+   - This determines the employee's pay unit and compensation method
 3. Save
 
-Different employee types trigger different payroll behavior:
-- **Salaried**: Annual salary ÷ periods = per-period pay
-- **Hourly**: Hourly rate × hours worked
-- **Commissioned**: Base + (Sales × Commission rate)
-- **Daily**: Daily rate × days worked
+Employee types are user-defined codes configured on the **Employee Types** page. Each type specifies:
+
+- **Pay Unit** - The unit of compensation measurement (for example, Yearly, Hourly, Daily)
+- **Compensation Method** - Regular or Work-Based
+
+The employee's pay unit and pay factor are automatically derived from their employee type. For more information, see [Employee types](pay-units-employee-types.md).
 
 ### Enter compensation information
 
-**For salaried employees:**
+Compensation is managed through [pay types](pay-types-overview.md). Pay types define the earnings, deductions, and contributions that apply to employees. Each pay type can specify its own pay unit and rate.
 
-1. **Annual Salary** - Enter the annual salary amount
-2. OnePayroll automatically calculates:
-   - Per-period pay (annual ÷ pay periods)
-   - Hourly rate (for benefits calculation)
-
-**For hourly employees:**
-
-1. **Hourly Rate** - Enter the hourly wage
-2. Specify: **Regular hours per week** (typically 40)
-3. **Overtime rules** (if applicable):
-   - Overtime after X hours per week
-   - Overtime rate multiplier (typically 1.5x or 2x)
-
-**For commissioned employees:**
-
-1. **Base Salary** - Fixed portion (if any)
-2. **Commission Rate** - Percentage or amount per sale
-3. Set up commission tracking separately
+For more information on configuring pay types and assigning them to employees, see [Set up pay types](pay-types-setup.md).
 
 ### Add Tax Information
 
@@ -171,29 +155,24 @@ See [About payment methods](payment-methods-overview.md) for more details.
 3. Save
 
 Department information is used for:
-- GL posting allocation (some departments post to different GL accounts)
 - Organizational reporting
 - Payroll management by department
-- Cost center assignment
 
-## Set employee status
+## Employee status
 
-**To change employee status:**
+OnePayroll computes the employee's status based on the **Employment Date** and **Termination Date** fields:
 
-1. Open the employee
-2. In the **General** tab:
-   - **Status** - Select from: Active, Inactive, On Leave, Terminated
-3. **Status Effective Date** - When status change takes effect
-4. Save
+| Status | Condition |
+|--------|----------|
+| **Onboarding** | Employment date is not set, or employment date is in the future |
+| **Active** | Employment date is in the past and no termination date is set |
+| **Offboarding** | Employment date is in the past and termination date is in the future |
+| **Inactive** | Employment date is in the past and termination date is in the past |
 
-| Status | Included in Payroll | Notes |
-|--------|-------------------|-------|
-| **Active** | Yes | Regular payroll processing |
-| **Inactive** | No | Not included in payroll runs |
-| **On Leave** | Yes* | May still accrue vacation/benefits |
-| **Terminated** | No | Final payroll required separately |
+To change an employee's status, update the **Employment Date** or **Termination Date** fields on the employee card. The status updates automatically.
 
-*On Leave employees may or may not be included depending on configuration.
+> [!NOTE]
+> Only **Active** and **Offboarding** employees are typically included in payroll runs.
 
 ## Set up benefits enrollment
 
@@ -239,7 +218,7 @@ Before processing payroll:
 2. Verify all required fields are filled:
    - Pay group assigned?
    - Employee type selected?
-   - Compensation amount entered?
+   - Pay types configured?
    - Tax information complete?
 3. Include in test payroll run
 4. Verify payroll calculated correctly
@@ -265,13 +244,13 @@ See your administrator for import templates and procedures.
 - Create pay group if it doesn't exist
 
 ### Employee not appearing in payroll
-- Verify employee status is "Active"
-- Check employee start date is before payroll period
+- Verify employee status is Active or Offboarding (check Employment Date and Termination Date)
+- Check employment date is before payroll period
 - Confirm pay group is correctly assigned
 
 ### Wrong pay calculated
-- Verify annual salary or hourly rate is entered correctly
-- Check employee type matches calculation method
+- Verify pay types are correctly set up
+- Check employee type is correctly assigned
 - Review tax withholding settings
 
 ### Bank details not validating

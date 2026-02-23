@@ -1,6 +1,6 @@
 ---
 title: About pay types
-description: Learn about pay types, how they're organized in categories, and how they control payroll calculations and GL posting.
+description: Learn about pay types, how they're organized into categories, and how they control payroll calculations and GL posting in OnePayroll.
 author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
@@ -9,197 +9,85 @@ ms.date: 02/23/2026
 
 # About pay types
 
-Pay types are the building blocks of payroll. They represent individual components of compensation—both earnings (what increases pay) and deductions (what decreases pay).
+Pay types are the building blocks of payroll. Each pay type represents a single component of compensation — an earning that increases pay, a deduction that decreases it, or a contribution that the employer owes.
 
 ## What is a pay type?
 
-A pay type is a single element of compensation, such as:
+A pay type defines how a payroll line item behaves: which category it belongs to, which GL accounts it posts to, and how it interacts with benefits. Every payroll entry is associated with a pay type.
 
-**Earnings (increase gross pay):**
-- Regular pay (salary or hourly)
-- Overtime (time-and-a-half, time-and-a-quarter)
-- Bonuses
-- Commissions
-- Shift differentials
-- Retention bonuses
+Examples of pay types include regular salary, overtime earnings, health insurance deductions, employer retirement contributions, and garnishment withholdings.
 
-**Deductions (decrease gross pay):**
-- Taxes (federal, state, local income tax)
-- FICA (Social Security and Medicare)
-- Health insurance premiums
-- Retirement plan contributions
-- Benefits deductions
-- Loan repayments
-- Garnishments
+## Categories
 
-Every payroll entry starts with a pay type. When you process payroll, OnePayroll calculates the amount for each pay type on each employee, then includes it in the payroll.
+Every pay type is assigned to one of five built-in categories. The category determines how the pay type participates in payroll calculations and which totals it contributes to.
 
-## Pay types and categories
+| Category | Description |
+|---|---|
+| **Earnings** | Compensation paid to the employee. Contributes to gross pay and employee payables. Examples: regular pay, overtime, bonuses. |
+| **Employee Deductions** | Amounts withheld from the employee's pay. Reduces employee payables. Examples: tax withholdings, benefit premiums, garnishments. |
+| **Employer Contributions** | Amounts the employer pays on behalf of the employee. Contributes to employer payables but does not affect the employee's net pay. Examples: employer match for retirement, employer portion of FICA. |
+| **Hypothetical** | Calculated values used for reference or as inputs to other calculations, but not actually paid. Does not affect gross or net pay. Examples: imputed income for benefit calculations, hypothetical gross for tax lookups. |
+| **Heading** | Used for visual grouping on reports and pages. Does not participate in calculations. |
 
-Pay types are organized into **categories** that group related pay types together. Categories control how pay types are:
-- Calculated (formula, percentage, fixed amount, etc.)
-- Displayed on reports
-- Included in totals (gross pay, taxable earnings, etc.)
-- Sorted in payroll calculations
+> [!NOTE]
+> Categories are fixed in the system and cannot be modified or extended. Every pay type must belong to exactly one of these five categories.
 
-### Built-in categories
+## Pay type fields
 
-OnePayroll includes standard categories:
+Each pay type record includes the following fields:
 
-| Category | Purpose | Example Pay Types |
-|----------|---------|-------------------|
-| **Regular Earnings** | Base compensation | Regular Pay, Hourly Wages |
-| **Overtime** | Extra compensation for hours over standard | Overtime 1.5x, Overtime 2x |
-| **Shift & Premium** | Differential pay | Night Shift Premium, Hazard Pay |
-| **Bonuses** | One-time or periodic awards | Annual Bonus, Performance Bonus |
-| **Taxes** | Mandatory government withholdings | Federal Income Tax, FICA |
-| **Benefits** | Insurance and retirement | Health Insurance, 401(k) |
-| **Garnishments** | Court-ordered withholdings | Child Support, Creditor Garnishment |
-| **Other Deductions** | Additional withholdings | Union Dues, Loans, Advances |
+| Field | Description |
+|---|---|
+| **No.** | A unique code (up to 10 characters) that identifies the pay type. |
+| **Description** | A text description of the pay type (up to 100 characters). |
+| **Category** | The category this pay type belongs to: Earnings, Employee Deductions, Hypothetical, Employer Contributions, or Heading. |
+| **Pay Unit** | The pay unit associated with this pay type, which determines the unit of measurement for rates (for example, hourly, annual). |
+| **Pay Factor** | A multiplier applied to the base rate. For example, set to 1.5 for overtime at time-and-a-half. |
+| **Unit of Measure** | The unit of measure code for the pay type. |
+| **Unit Conversion Factor** | The conversion factor from the pay unit, used to convert rates between different units. |
+| **Account No.** | The GL account where this pay type's amounts are posted (debit side). |
+| **Balance Account No.** | The balancing GL account for this pay type (credit side). |
+| **Rounding Method** | The rounding method applied to calculated amounts. |
+| **Benefit Type 1–10 Liable** | Ten boolean fields indicating whether this pay type is liable for each of up to ten benefit types. These fields control which benefits apply to earnings calculated with this pay type. |
 
-### Custom categories
+## GL account mapping
 
-You can create custom categories for your business. For example:
+Each pay type specifies an **Account No.** and a **Balance Account No.** for GL posting. When payroll is posted, OnePayroll creates general journal lines using these accounts:
 
-- **Commissions** - For sales staff
-- **Tips** - For hospitality staff
-- **Reimbursements** - For expense reimbursements
-- **Allowances** - For living allowances, vehicle allowances, etc.
+- The **Account No.** receives the debit entry.
+- The **Balance Account No.** receives the corresponding credit entry.
 
-## Pay type characteristics
+For example, a regular pay type might post a debit to a salary expense account and a credit to a payables account. Configuring these accounts correctly ensures that your payroll transactions are reflected accurately in the general ledger.
 
-Each pay type has key characteristics that control its behavior:
+## Benefit liability
 
-### Calculation method
+The ten **Benefit Type Liable** fields on the pay type control which benefits are calculated on the pay type's earnings. When a benefit type is marked as liable for a pay type, any earnings calculated with that pay type are included in the benefit's calculation base.
 
-How the amount is determined:
+This mechanism allows you to configure which earnings are subject to specific benefits (for example, including regular pay in retirement matching but excluding bonus pay).
 
-- **Fixed Amount** - A set dollar amount (e.g., $50/month car allowance)
-- **Percentage** - Percentage of another pay type (e.g., 25% of gross salary)
-- **Hourly Rate** - Hours worked × hourly rate (for hourly staff)
-- **Annual Salary** - Annual salary ÷ number of pay periods
-- **Formula** - Custom calculation using formulas and conditions
-- **Manual Entry** - Amount is manually entered for each employee
+## Pay units and pay factors
 
-### GL account mapping
+The **Pay Unit** field links the pay type to a pay unit, which defines the unit of measurement (such as hourly or annual). The **Pay Factor** field is a multiplier applied to the rate. Together, these fields determine how amounts are calculated:
 
-Each pay type posts to a specific general ledger account. When payroll is posted:
-- Regular pay posts to "Salary Expense" (debit)
-- Federal income tax posts to "Federal Withholding Payable" (credit)
-- Benefits post to "Benefits Payable" (credit)
+- A regular pay type might use a pay factor of 1.0.
+- An overtime pay type might use a pay factor of 1.5 to calculate time-and-a-half.
+- A double-time pay type might use a pay factor of 2.0.
 
-GL account mapping enables accurate financial reporting and GL reconciliation.
+## Planning your pay types
 
-### Category
+When setting up payroll:
 
-The category determines calculation order and display grouping.
+1. **Identify all compensation components.** List every type of earning, deduction, and employer contribution your organization uses.
+2. **Assign categories.** Determine whether each component is an earning, deduction, employer contribution, or hypothetical.
+3. **Configure GL accounts.** Map each pay type to the appropriate GL accounts for accurate financial reporting.
+4. **Set benefit liability.** Determine which pay types should be liable for each benefit type.
+5. **Define pay units and factors.** Set the appropriate pay unit and factor for rate-based pay types.
 
-### Display type
+## Related information
 
-Controls how the pay type appears on reports:
+- [Set up pay types](pay-types-setup.md)
+- [About pay cycles](pay-cycles-overview.md)
+- [Pay unit conversions](pay-units-conversions.md)
+- [About benefits](benefits-overview.md)
 
-- **Detail** - Shown on detailed payroll reports
-- **Heading** - Used only for grouping (shows total, not individual entries)
-- **Hidden** - Not shown on standard reports
-- **Hypothetical** - Calculated but not actually paid (for projection)
-
-### Conditional logic
-
-Some pay types are calculated conditionally:
-- "Overtime" - Only if hours exceed 40/week
-- "Shift Premium" - Only if shift code = "Night Shift"
-- "Health Insurance" - Only if employee enrolled in health plan
-
-You define these conditions to automate calculation.
-
-## Pay type variations
-
-### Static vs. dynamic
-
-**Static Pay Types**
-- Same calculation logic for all employees
-- Most common: regular pay, taxes, standard benefits
-- Example: "Federal Income Tax" calculated on all employees using same tax tables
-
-**Dynamic Pay Types**
-- Calculation varies by employee or time period
-- Used for: commissions, variable bonuses, adjustments
-- Example: Commission rate varies by salesperson
-
-### Visible vs. hidden
-
-**Visible Pay Types**
-- Appear on paychecks and pay stubs
-- Employees see them in self-service portal
-- Most pay types are visible
-
-**Hidden Pay Types**
-- Used for system calculations (intermediate steps)
-- Don't appear on reports or pay stubs
-- Example: "Gross Pay (before taxes)" used for calculation but not displayed
-
-### Taxable vs. non-taxable
-
-**Taxable Pay Types**
-- Subject to income tax withholding
-- Most earnings are taxable
-- Example: Salary, overtime, bonuses
-
-**Non-Taxable Pay Types**
-- Exclude from gross income for tax purposes
-- Example: Tax-deferred 401(k) contributions, health savings account deposits
-
-## Pay type tips
-
-### Planning your pay types
-
-When setting up payroll for your company:
-1. List all compensation elements you currently pay
-2. Group them into logical categories
-3. Determine calculation method for each
-4. Assign GL accounts (consider your reporting needs)
-5. Create the pay types in OnePayroll
-
-### Common pay type sets
-
-**Hourly employee:**
-- Regular Pay (hourly rate)
-- Overtime 1.5x (hours over 40/week)
-- Federal Income Tax
-- FICA Social Security
-- FICA Medicare
-- Health Insurance
-- 401(k)
-
-**Salaried employee:**
-- Regular Pay (annual salary)
-- Bonus (annual, variable)
-- Federal Income Tax
-- FICA Social Security
-- FICA Medicare
-- Health Insurance
-- 401(k)
-
-**Sales employee (commissioned):**
-- Base Salary
-- Commission
-- Bonus
-- Federal Income Tax
-- FICA Social Security
-- FICA Medicare
-- Health Insurance
-
-### Pay type naming convention
-
-Use clear, consistent names:
-- **Good:** "Federal Income Tax", "Health Insurance Premium", "Overtime 1.5x"
-- **Avoid:** "FIT", "HIP", "OT1.5" (unclear abbreviations)
-- **Avoid:** "Deduction 1", "Deduction 2" (non-descriptive)
-
-## Next steps
-
-Learn how to work with pay types:
-
-- **[Set up pay types](pay-types-setup.md)** - Create categories and define individual pay types
-- **[Payroll runs overview](payroll-runs-overview.md)** - How pay types are used in payroll processing
-- **[Employee setup](employee-setup.md)** - Assigning pay types to employees
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]

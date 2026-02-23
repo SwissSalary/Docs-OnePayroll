@@ -1,6 +1,6 @@
 ---
 title: About pay cycles
-description: Learn how pay cycles define when and how often employees are paid, and how OnePayroll calculates payroll periods.
+description: Learn how pay cycles and pay groups define when and how often employees are paid in OnePayroll.
 author: zeande
 ms.service: dynamics-365-business-central
 ms.topic: overview
@@ -9,141 +9,85 @@ ms.date: 02/23/2026
 
 # About pay cycles
 
-Pay cycles define when employees are paid—the frequency and dates of payroll processing.
+Pay cycles define the frequency and timing of payroll processing. They determine when each pay period starts and ends, and when employees receive payment. Pay groups link employees to a pay cycle and specify the journal configuration for GL posting.
 
-## What is a pay cycle?
+## Pay cycles
 
-A pay cycle specifies:
-- **Frequency** - How often employees are paid (weekly, biweekly, semi-monthly, monthly)
-- **Period dates** - When each payroll period starts and ends
-- **Payment dates** - When payroll checks/deposits are issued
+A pay cycle defines the payroll frequency through the following fields:
 
-OnePayroll uses the pay cycle to automatically calculate payroll period dates and control payroll scheduling.
+| Field | Description |
+|---|---|
+| **Code** | A unique identifier for the pay cycle (up to 20 characters). |
+| **Description** | A description of the pay cycle. |
+| **Periods per Year** | The number of pay periods in a year (1-366). For example, 52 for weekly, 26 for biweekly, 24 for semi-monthly, or 12 for monthly. |
+| **Pay Unit** | The pay unit associated with this cycle, which determines the unit of measurement for per-period rates. |
 
-### Key concepts
+### Schedule lines
 
-**Pay Cycle**
-The overall frequency definition (e.g., "Biweekly" = every two weeks)
+Each pay cycle has one or more **schedule lines** that define exactly when periods start, end, and when payment occurs. Schedule lines use **date formulas** rather than fixed dates, which makes them flexible across years.
 
-**Pay Period**
-A specific payroll period for that cycle (e.g., 1/1/2026-1/14/2026)
+Each schedule line contains:
 
-**Period Number**
-The sequential period number within the year (Period 1 = first period of year, Period 2 = second, etc.)
+| Field | Description |
+|---|---|
+| **Period Start** | A date formula that calculates when the pay period starts. For example, `-CW` for the start of the current week, or `-CM` for the start of the current month. |
+| **Period End** | A date formula that calculates when the pay period ends. For example, `CW` for the end of the current week, or `CM` for the end of the current month. |
+| **Payment Date** | A date formula that calculates when employees receive payment. For example, `CM+5D` for five days after the end of the month, or `CW` for the end of the current week. |
 
-**Payment Date**
-When employees receive their payroll (might be different from period end date)
+If the **Payment Date** is left blank when setting **Period End**, it defaults to the same as the Period End formula.
 
-## Common pay frequencies
+### Period calculations
 
-| Frequency | Periods/Year | Common Use | Example Period |
-|-----------|------------|-----------|-----------------|
-| **Weekly** | 52 | Hourly, retail, hospitality | Mon-Sun each week |
-| **Biweekly** | 26 | Most common | Mon-Sun, two-week intervals |
-| **Semi-Monthly** | 24 | Salary, professional | 1st-15th, 16th-last day |
-| **Monthly** | 12 | Executive, finance | 1st-last day of month |
+Using the schedule lines, OnePayroll can:
 
-### Choosing a frequency
-
-Consider:
-- **Industry norms** - What's standard in your industry?
-- **Employee expectations** - When do employees expect to be paid?
-- **Administrative burden** - More frequent payroll = more processing
-- **Compliance** - Some regions require minimum payment frequency
-- **Business operations** - Align with billing cycles, cash flow patterns
+- Calculate the start and end dates for any pay period given a reference date.
+- Determine the payment date for a period.
+- Count the number of periods within a date range.
+- Identify the period number within the year for a given payment date.
 
 ## Pay groups
 
-**Pay Groups** organize employees who share the same pay cycle. For example:
+A pay group organizes employees who share the same payroll schedule and posting configuration. Each employee is assigned to one pay group.
 
-- Pay Group "Weekly" - All weekly-paid employees
-- Pay Group "Biweekly" - All biweekly-paid employees
-- Pay Group "Monthly" - All monthly-paid employees
+| Field | Description |
+|---|---|
+| **Code** | A unique identifier for the pay group (up to 10 characters). |
+| **Description** | A description of the pay group. |
+| **Pay Cycle** | The pay cycle that determines this group's payroll frequency. |
+| **Pay Group Owner** | The employee responsible for managing this pay group. |
+| **Gen. Journal Template** | The general journal template used when posting payroll runs for this group. |
+| **Gen. Journal Batch** | The general journal batch used when posting payroll runs for this group. |
 
-Each employee is assigned to one pay group, which determines when they're paid.
+### Assigning employees
 
-### Why use pay groups?
+Each employee is assigned to a pay group through the **Pay Group** field on the Employee Card. The pay group determines:
 
-Pay groups:
-- Organize payroll processing by frequency (process weekly employees separately from monthly)
-- Control GL posting rules (specify which accounts each group posts to)
-- Enable parallel payroll processing (process multiple groups simultaneously)
-- Simplify payroll scheduling
+- How often the employee is paid (through the linked pay cycle).
+- Which general journal template and batch are used when posting their payroll entries.
 
-## Payroll period calculations
+## Choosing a frequency
 
-OnePayroll automatically calculates period dates based on your pay cycle setup.
+When deciding how many periods per year to use, consider:
 
-### Period start and end dates
+- **Industry norms** &mdash; What's standard in your industry?
+- **Employee expectations** &mdash; When do employees expect to be paid?
+- **Administrative effort** &mdash; More frequent payroll means more processing runs.
+- **Compliance** &mdash; Some jurisdictions require a minimum payment frequency.
 
-The pay cycle specifies rules for when periods start and end:
+Common configurations:
 
-**Weekly**
-- Periods are 7-day blocks (usually Mon-Sun)
-- Example: 1/1/2026 (Wed) starts first partial week, then full weeks
+| Frequency | Periods per Year |
+|---|---|
+| Weekly | 52 |
+| Biweekly | 26 |
+| Semi-monthly | 24 |
+| Monthly | 12 |
 
-**Biweekly**
-- Periods are 14-day blocks
-- Example: 1/1/2026 - 1/14/2026 (first period), 1/15/2026 - 1/28/2026 (second period)
+## Related information
 
-**Semi-Monthly**
-- Two periods per month (1st-15th, 16th-last day)
-- Example: 1/1/2026 - 1/15/2026, 1/16/2026 - 1/31/2026
+- [Set up pay cycles](pay-cycles-setup.md)
+- [Process payroll runs](payroll-runs-process.md)
+- [Employee setup](employee-setup.md)
+- [Payroll journal entries](payroll-journal.md)
 
-**Monthly**
-- Periods align with calendar months
-- Example: 1/1/2026 - 1/31/2026
-
-### Period cutoff rules
-
-You can customize when periods end. For example:
-
-- "Pay period ends on Friday" - Even if your frequency is biweekly, always end on Friday
-- "Pay period ends on 15th and last day" - For semi-monthly
-- "Pay period ends last day of month" - For monthly
-
-Period cutoff rules ensure consistency across years and handle month-end edge cases.
-
-## Payment dates vs. period dates
-
-**Period dates** = When the employee worked (1/1/2026-1/14/2026)
-
-**Payment date** = When the employee is paid (1/20/2026)
-
-The payment date might be different from the period end date for administrative reasons:
-- Extra time for calculation and review
-- Bank processing time for direct deposit
-- Check printing
-- Compliance with "regular pay schedule" laws
-
-Typical payment schedule:
-- Period ends: Friday 1/15
-- Payment issued: Next Friday 1/22 (one week later)
-
-## Period-to-period carry-forward
-
-OnePayroll tracks what happens at period boundaries:
-
-- **Hours worked** - Carryover to next period
-- **Accrual balances** - YTD and current period totals
-- **Benefits** - Effective through period, then recalculate
-- **Changing pay groups** - Employee moves to different pay cycle mid-year
-
-When an employee changes pay groups (e.g., hourly to salary), OnePayroll recalculates future periods using the new cycle.
-
-## Special periods
-
-Beyond regular payroll cycles, OnePayroll supports special periods for:
-
-- **Off-cycle payroll** - Bonuses, severance (any date)
-- **Year-end adjustment** - Final payroll of fiscal year
-- **Partial period** - Employee hired mid-period (1st part of period only)
-- **Catch-up payroll** - Correcting previous period error
-
-## Next steps
-
-Learn how to set up pay cycles:
-
-- **[Set up pay cycles](pay-cycles-setup.md)** - Define frequencies and periods
-- **[Process payroll runs](payroll-runs-process.md)** - Use pay cycles in payroll
-- **[Employee setup](employee-setup.md)** - Assign employees to pay groups
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]

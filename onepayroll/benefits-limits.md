@@ -1,104 +1,84 @@
 ---
-title: Understand Benefit Limits
+title: Benefits limits
 description: Learn how benefit limits control maximum contributions and how to configure limit bases, adjustments, and inherited limits in OnePayroll.
-author: myGitHubHandle
-
-ms.service: dynamics365-business-central
-ms.topic: article
-ms.date: 01/08/2026
-ms.author: MyMSFTAlias (if I work for Microsoft; otherwise edupont)
+author: zeande
+ms.service: dynamics-365-business-central
+ms.topic: concept
+ms.date: 02/23/2026
 ---
-# Understand Benefit Limits
 
-Benefit limits control how much can be contributed to a benefit. Limits can be set at the annual level and pay period level, for both employee and employer contributions.
+# Benefits limits
 
-## Limit Base
+Benefit limits control how much can be contributed to a benefit over a given period. Limits can apply separately to employee contributions, employer contributions, or overall amounts. OnePayroll evaluates limits during payroll calculation and stops contributions when limits are reached.
 
-The **Limit Base** determines what amount the limit applies to:
+## Limit fields
 
-- **Liable Wages**: Limits are based on the employee's liable wages (earnings subject to the benefit)
-- **Benefit Amounts**: Limits are based on the employee and employer contribution amounts
+You configure limits on the **Benefit Limits** page, which you access from a benefit record. Each limit record contains the following fields:
 
-### Choosing the Right Limit Base
+| Field | Description |
+|---|---|
+| **Benefit** | The benefit this limit applies to. |
+| **Valid From** | The date when this limit becomes effective. The system applies the most recent limit that is effective for the current pay period. |
+| **Rule** | A rule that can be used to determine or adjust limit amounts. |
+| **Lower Limit (Annual)** | The minimum annual amount for the benefit. |
+| **Upper Limit (Annual)** | The maximum annual amount for the benefit (combined employee and employer). |
+| **Employee Lower Limit (Annual)** | The minimum annual employee contribution. |
+| **Employee Upper Limit (Annual)** | The maximum annual employee contribution. |
+| **Employer Lower Limit (Annual)** | The minimum annual employer contribution. |
+| **Employer Upper Limit (Annual)** | The maximum annual employer contribution. |
 
-Use **Liable Wages** when:
-- The benefit contribution is calculated as a percentage of wages
-- You need to cap the wages subject to the benefit calculation
-
-Use **Benefit Amounts** when:
-- The benefit has fixed contribution amounts
-- You need to cap the total contribution amount regardless of wages
-
-## Limit Adjustment
-
-The **Limit Adjustment** determines how annual limits are applied:
-
-- **No Adjustment**: Full annual limit applies regardless of when the employee starts
-- **Prorated**: Annual limits are reduced based on the number of pay periods the employee works
-
-### Examples of Limit Adjustments
-
-**No Adjustment**: An employee starting mid-year has the same annual limit as someone who worked the full year.
-
-**Prorated**: An employee starting halfway through the year has their annual limit reduced proportionally based on the remaining pay periods.
-
-> [!TIP]
-> Use prorated adjustments for benefits where contributions should be proportional to the time worked in a calendar year.
-
-## Inherited Limits
-
-When **Inherit Limits** is set to Yes for a benefit:
-
-- The benefit uses the same limits as its parent benefit (Applies-From Benefit)
-- The Pay Type, Exemption Pay Type, Limit Base, and Limit Adjustment fields must match the parent
-- You cannot define separate limits for this benefit
-
-### Benefits of Inherited Limits
-
-Inherited limits are useful when you have multiple related benefits that should share the same contribution limits. For example:
-- Multiple health insurance plan options under the same IRS contribution limit
-- Different retirement plan investment options that share the same maximum contribution
-
-## Configuring Benefit Limits
-
-### To set benefit limits
-
-1. From the **Benefit Setup** page, select a benefit and choose **Limits**.
-2. On the **Benefit Limits** page, create limit rules:
-   - **Starting Date**: When this limit becomes effective
-   - **Annual Employee Limit**: Maximum employee contribution per year
-   - **Annual Employer Limit**: Maximum employer contribution per year
-   - **Annual Total Limit**: Combined maximum per year
-   - **Pay Period Employee Limit**: Maximum employee contribution per pay period
-   - **Pay Period Employer Limit**: Maximum employer contribution per pay period
+The **Limit Base** and **Limit Adjustment** fields are inherited from the benefit configuration and displayed as read-only reference fields.
 
 > [!NOTE]
-> Limits are only available for benefits where **Inherit Limits** is set to No. Benefits that inherit limits use the limits from their parent benefit.
+> All limits are defined as annual amounts. OnePayroll calculates the applicable limit for each pay period based on the pay cycle's periods per year.
 
-### Multiple Limit Periods
+## Limit base
 
-You can define multiple limit records with different starting dates to handle:
-- Annual limit increases (such as IRS limit adjustments)
+The **Limit Base** setting on the benefit determines what the limit applies to:
+
+- **Liable Wages** &mdash; Limits apply to the wages that are subject to the benefit calculation (the base on which the benefit is calculated).
+- **Benefit Amounts** &mdash; Limits apply to the calculated benefit contribution amounts themselves.
+
+Use **Liable Wages** when you need to cap the earnings subject to a benefit (for example, Social Security wage base). Use **Benefit Amounts** when you need to cap the contribution amount (for example, maximum annual 401(k) contribution).
+
+## Limit adjustment
+
+The **Limit Adjustment** setting determines how annual limits are applied for employees who don't work the full year:
+
+- **No Adjustment** &mdash; The full annual limit applies regardless of when the employee starts or how many periods they work.
+- **Prorated** &mdash; Annual limits are reduced proportionally based on the number of pay periods the employee actually works during the year.
+
+> [!TIP]
+> Use prorated adjustments for benefits where contributions should be proportional to the time worked in a calendar year, such as employer matching programs.
+
+## Inherited limits
+
+When **Inherit Limits** is enabled on a benefit, the benefit uses the limits defined on its parent benefit (the **Applies-From Benefit**). You cannot define separate limits for a benefit that inherits limits.
+
+Inherited limits ensure that related benefits sharing the same contribution cap are always in sync. For example, multiple retirement plan options that share the same IRS maximum contribution limit can all inherit from a single parent benefit.
+
+## Multiple limit periods
+
+You can create multiple limit records with different **Valid From** dates to handle changes over time:
+
+- Annual IRS limit increases
 - Mid-year policy changes
-- Different limits for different time periods
+- Different limits for different years
 
-The system automatically applies the limit that is effective for the current pay period based on the starting date.
+The system automatically applies the limit with the most recent **Valid From** date that is on or before the current pay period.
 
-## Best Practices
+## Best practices
 
-When configuring benefit limits:
+- Enter future limit amounts in advance when they're known (for example, published IRS limits for the upcoming year).
+- Use inherited limits for benefits that share the same contribution cap to avoid maintaining duplicate limit records.
+- Review payroll results after changing limits to verify they're applying correctly.
+- When using prorated adjustments, verify that mid-year hires receive correctly reduced limits.
 
-- **Set up limits carefully**: Test limit configurations, especially when using prorated adjustments
-- **Plan for annual changes**: Enter future limit amounts in advance when they are known (such as IRS limit increases)
-- **Use inherited limits for shared caps**: This ensures consistency across related benefits
-- **Monitor limit application**: Review payroll results to verify limits are being applied correctly
-- **Document limit rules**: Keep notes on why specific limit configurations were chosen
+## Related information
 
-## See Also
+- [About benefits](benefits-overview.md)
+- [Set up benefits](benefits-setup.md)
+- [Assign benefits to employees](benefits-assignments.md)
+- [Benefits hierarchies](benefits-hierarchies.md)
 
-[About benefits](benefits-overview.md)  
-[Set Up Benefits](benefits-setup.md)  
-[Assign Benefits to Employees](benefits-assignments.md)  
-[Work with Benefit Hierarchies](benefits-hierarchies.md)  
-
-[!INCLUDE[footer-include](includes/footer-banner.md)]
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]

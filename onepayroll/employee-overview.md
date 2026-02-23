@@ -26,93 +26,78 @@ Each employee in OnePayroll includes:
 
 **Payroll extensions** (added by OnePayroll):
 - Pay group assignment
-- Employee type (salary basis)
-- Bank accounts for direct deposit
-- Tax withholding information
-- Pay units and compensation rate
+- Employee type (determines pay unit and compensation method)
+- Work location
+- Payment methods for direct deposit
 - Garnishment details
 - Benefits enrollment
-- Time off balances
-- Pay history
+- Pay unit and pay factor (derived from employee type)
+- Rehirable flag
+- Self-service status
 
 ## Employee types
 
-OnePayroll supports different employee types to control compensation calculation:
+Employee types are user-defined codes that control how an employee's compensation is calculated. Each employee type specifies:
 
-### Salaried employees
-- Receive fixed annual salary
-- Paid the same amount each period regardless of hours
-- Calculate hourly rate from annual salary for benefits/taxes
-- Common for: office staff, management, professionals
+- **Code** — A unique identifier (up to 20 characters)
+- **Description** — A human-readable name
+- **Pay Unit** — The unit of compensation (e.g., Annual, Hourly)
+- **Compensation Method** — Determines how pay is calculated
 
-**Pay calculation:**
-Annual Salary ÷ 26 periods = Pay per period (for biweekly)
+### Compensation methods
 
-### Hourly employees
-- Compensated based on hours worked
-- Subject to overtime rules
-- Hours tracked daily or weekly
-- Common for: production, retail, support staff
+Each employee type uses one of two compensation methods:
 
-**Pay calculation:**
-Hourly Rate × Hours Worked = Pay per period
+**Regular**
+- Employee receives a fixed amount per pay period
+- Pay is divided evenly across periods based on the pay unit conversion factor
+- Common for: salaried office staff, management, professionals
 
-### Commissioned employees
-- Earn commissions as primary compensation
-- May have base salary + commission structure
-- Commissions vary by period
-- Common for: sales staff
+**Work-Based**
+- Employee is compensated based on units of work (hours, days, etc.)
+- Pay varies each period depending on work reported
+- Common for: hourly workers, production staff, temporary employees
 
-**Pay calculation:**
-Base Salary + (Sales Volume × Commission Rate) = Pay per period
+You define employee types on the **Employee Types** page. Because employee types are user-defined, you can create as many as needed to represent your organization's compensation structures.
 
-### Daily rate employees
-- Compensated by day worked
-- Used for temporary or contingent workers
-- Pay by number of days
-
-**Pay calculation:**
-Daily Rate × Days Worked = Pay per period
+> [!TIP]
+> The **Pay Conversion Factor** on the Employee Types page shows the conversion factor from the assigned pay unit, which determines how the employee's rate converts to a per-period amount.
 
 ## Employee status
 
-Employees move through statuses as their employment lifecycle progresses:
+OnePayroll defines an employee lifecycle through four statuses:
+
+**Onboarding**
+- New employee being set up
+- Not yet included in regular payroll processing
 
 **Active**
-- Currently employed
-- Participates in regular payroll
-- Most employees are active
+- Currently employed and participating in regular payroll
+- Most employees are in this status
+
+**Offboarding**
+- Employee is leaving the organization
+- Final payroll processing and separation tasks
 
 **Inactive**
-- No longer employed
+- No longer employed or temporarily not working
 - Doesn't appear in payroll processing
 - Historical records retained for audit
-
-**On Leave**
-- Temporarily not working
-- May still accrue compensation (vacation, benefits)
-- Returns to active when leave ends
-
-**Terminated**
-- Employment ended
-- Final payroll processed separately
-- Receives final paycheck and tax documents
 
 ### Status transitions
 
 ```
-New Hire
+Onboarding (new hire setup)
    ↓
 Active (employed)
    ↓
-On Leave (temporarily out)
+Offboarding (separation in progress)
    ↓
-Active (returns)
-   ↓
-Terminated (ends employment)
-   ↓
-Archived (historical record)
+Inactive (no longer employed)
 ```
+
+> [!NOTE]
+> The status is determined automatically based on the employee's employment date and termination date.
 
 ## Pay group assignment
 
@@ -126,23 +111,20 @@ Employees in the same pay group (e.g., "Biweekly Salaried") are processed togeth
 
 ## Compensation structure
 
-Employees have multiple elements controlling compensation:
+Employee compensation is determined by several related elements:
 
-**Annual salary / Hourly rate**
-- Base compensation amount
-- Used to calculate gross pay
+**Employee type**
+- Determines the pay unit and compensation method (Regular or Work-Based)
+- Set on the employee card
 
 **Pay units**
-- How compensation is expressed (annual, hourly, per period)
-- Different employees can have same salary in different units
+- How compensation is expressed (Annual, Hourly, Daily, etc.)
+- The pay unit's conversion factor translates between different units
+- Defined on the **Pay Units** page and linked through the employee type
 
 **Pay types**
-- Specific earnings and deductions applied to employee
-- Each employee may have different mix (benefits, deductions, etc.)
-
-**Effective dates**
-- When compensation changes take effect
-- Example: Raise effective 3/1/2026
+- Specific earnings and deductions applied to the employee
+- Each employee may have a different combination of pay types
 
 ## Benefits and deductions
 
@@ -155,9 +137,9 @@ Employees can be enrolled in:
 - Benefits can have coverage tiers and life event changes
 
 **Garnishments**
-- Wage garnishments (court-ordered, child support)
-- Priority determines calculation order
-- Limited by disposable income rules
+- Wage garnishments (court-ordered, child support, etc.)
+- Processing order determines calculation priority
+- Protected by disposable pay rules and exempt amounts
 
 **Other deductions**
 - Union dues
@@ -167,25 +149,21 @@ Employees can be enrolled in:
 
 ## Tax information
 
-Employees have tax details controlling withholding:
+Employees have tax details controlling withholding (US localization):
 
 **Federal**
 - Filing status (Single, Married, etc.)
-- Number of allowances
+- Withholding credits and adjustments
 - Additional withholding amount (if any)
 
 **State** (if applicable)
 - State of residence
 - Filing status
-- Allowances or credits
+- State-specific withholding parameters
 
 **Local** (if applicable)
 - Local tax jurisdiction
 - Any special local tax rules
-
-**Federal identification**
-- Social Security Number (US)
-- Tax identification number (other countries)
 
 ## Historical tracking
 

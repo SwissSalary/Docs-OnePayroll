@@ -25,9 +25,8 @@ OnePayroll is a comprehensive payroll management extension for Microsoft Dynamic
 - Automatic tax withholding calculations
 - Employee payment method management and direct deposit
 - Check printing and payment processing
-- Year-end tax form generation (W-2, 1099, and regional forms)
+- Year-end tax statement generation (W-2 and regional forms)
 - General ledger integration and automatic journal posting
-- Employee self-service portal capabilities
 - Historical tracking and audit trails
 
 **Localized for your region.** OnePayroll Core provides the foundation. Add a country-specific extension to process payroll for your region. Currently supported:
@@ -47,7 +46,7 @@ A payroll run is a processing batch that calculates and processes wages for a gr
 Pay types represent different components of employee compensation: earnings (base salary, overtime, bonuses) and deductions (taxes, insurance, garnishments). Each pay type belongs to a category that determines how it's calculated and displayed.
 
 ### Pay Cycles
-Pay cycles define how often employees are paid and when payroll periods occur. Common schedules include weekly, biweekly, semi-monthly, and monthly. OnePayroll automatically calculates period dates and handles period-end cutoffs.
+Pay cycles define how often employees are paid and when payroll periods occur. Common schedules include weekly, biweekly, semi-monthly, and monthly. Each pay cycle specifies the number of periods per year and uses schedule lines with date formulas to define period start, period end, and payment dates.
 
 ### Employees
 Employees in OnePayroll extend the standard Business Central employee record with payroll-specific information: pay group assignment, employee type, payment methods with bank details for direct deposit, and garnishment details.
@@ -89,7 +88,7 @@ OnePayroll is organized into functional modules:
 | **Tax & Compliance** | Calculate tax withholdings and generate tax statements |
 | **Financial Integration** | Post payroll entries to the general ledger |
 | **Reporting** | Generate payroll reports and tax documents |
-| **Advanced Features** | Employee snapshots, validation rules, self-service portal |
+| **Advanced Features** | Employee snapshots, validation rules |
 
 ## What's next
 

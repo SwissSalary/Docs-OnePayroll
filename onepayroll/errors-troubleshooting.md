@@ -46,10 +46,10 @@ Explanations and solutions for common OnePayroll errors.
 **Why:** Pay type doesn't exist or is inactive
 
 **Solution:**
-1. Verify **Pay Type** name/code is correct
-2. Check pay type **Active status** = Yes
-3. Create pay type if needed
-4. Assign to correct employee type
+1. Verify **Pay Type** code is correct
+2. Check that the pay type exists on the **Pay Types** page
+3. Create the pay type if needed
+4. Retry
 
 ## Compensation and calculation errors
 
@@ -233,34 +233,6 @@ Example cause: Missing benefit deduction payable account
 4. Try different **export format** (PDF, CSV)
 5. Save to different **location** if permission issue
 
-## Self-service portal errors
-
-### "Portal login fails"
-
-**When:** Employee cannot log into self-service portal
-
-**Why:** Account not activated, password wrong, or browser issue
-
-**Solution:**
-1. Verify **employee account activated** in portal
-2. **Reset password** and resend
-3. Try different **browser** (or clear cache)
-4. Check **two-factor auth** if enabled
-5. Verify employee **status = Active**
-
-### "Paychecks not showing in portal"
-
-**When:** Portal shows no paycheck history
-
-**Why:** Payroll not processed, GL not posted, or sync delay
-
-**Solution:**
-1. Verify **payroll processed** for period
-2. Confirm **GL entries posted**
-3. Wait 1-2 hours (data sync delay)
-4. Force **portal cache refresh** (clear browser cache)
-5. Check employee included in payroll run
-
 ## Performance and system errors
 
 ### "Payroll processing slow"
@@ -311,13 +283,13 @@ Example cause: Missing benefit deduction payable account
 4. **Check documentation** - See relevant topics
 5. **Contact support** - Provide details above
 
-**Support contact:** support@onepayroll.com
+**Support contact:** Contact your Business Central partner or visit [SwissSalary support](https://www.swisssalary.ch)
 
 ## Best practices to avoid errors
 
 - **Test before production** - Test new pay types, rates, processes with sample data
 - **Review before posting** - Always preview payroll before final posting
-- **Keep data current** - Update W-4s, bank accounts, benefits annually
+- **Keep data current** - Update tax withholding, bank accounts, and benefits regularly
 - **Validate setup** - Periodic review of employee records, GL accounts
 - **Document procedures** - Written procedures reduce mistakes
 - **Reconcile regularly** - Monthly GL and tax reconciliation catches issues early

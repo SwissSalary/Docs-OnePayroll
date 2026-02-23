@@ -125,10 +125,10 @@ Some cities/counties impose:
 - **W-3:** Transmittal form to IRS with all W-2s
 - **State W-2 equivalent:** Per state requirements
 
-**OnePayroll generates:**
-- W-2 form with all required boxes
-- W-3 transmittal automatically
-- State copies if configured
+**OnePayroll supports:**
+- Tax statement generation based on payroll entries
+- W-2 data from processed payroll
+- State tax withholding by jurisdiction
 
 **Boxes included:**
 - Box 1: Federal wages
@@ -224,7 +224,7 @@ Some cities/counties impose:
 
 **Federal minimum wage:** $7.25/hour (2024)
 - States may have higher minimum (most do)
-- OnePayroll enforces per state rules
+- Employers are responsible for ensuring compliance with applicable minimum wage laws
 - Tipped employees: May be lower if tips credited (varies by state)
 
 **Overtime:**
@@ -363,7 +363,7 @@ Some cities/counties impose:
 **Employee vs. contractor (common issue):**
 - IRS Form SS-8 determines status
 - Employees: Subject to withholding
-- Contractors: 1099 (no withholding)
+- Contractors: Not subject to withholding
 - Heavy penalties for misclassification
 
 **Exempt vs. non-exempt:**

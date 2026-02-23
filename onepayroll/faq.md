@@ -111,15 +111,15 @@ This provides controls and audit trail.
 
 ## Employees and compensation
 
-### Q: How do I convert a salaried employee to hourly?
+### Q: How do I convert an employee's compensation method?
 
-A: Change employee type:
-1. Open employee
-2. Change **Employee Type** = Hourly
-3. Specify **Hourly Rate**
-4. Changes effective next payroll
+A: Change the employee's employee type:
+1. Open the employee card
+2. Change the **Employee Type** to one that uses the desired compensation method
+3. Update the compensation rate accordingly
+4. Changes take effect in the next payroll
 
-Snapshot captures the change for audit trail.
+Employee types are user-defined codes that specify a **Compensation Method** (Regular or Work-Based) and a **Pay Unit**. You can create new employee types on the **Employee Types** page.
 
 ### Q: Can an employee have multiple pay methods?
 
@@ -182,17 +182,17 @@ This protects against erroneous large deductions.
 
 ### Q: How do I handle garnishments?
 
-A: Garnishments managed separately:
-1. Create **Garnishment** record
-2. Specify garnishment details:
-   - Type (child support, judgment, etc.)
-   - Amount (fixed or percentage)
-   - Priority
-   - Payment destination
-3. Withheld from each paycheck
-4. Track and remit to payee
+A: Garnishments are managed through garnishment types and garnishment lines:
+1. Create a **Garnishment Type** (defines the type of garnishment and its rules)
+2. On the employee, add a **Wage Garnishment** line:
+   - Select the garnishment type
+   - Set the **Calculation Method** (Percentage or Fixed Amount)
+   - Set the **Processing Order** (1–99) for priority
+   - Enter the **Agency No.** (the vendor to remit payment to)
+3. Garnishments are withheld from each paycheck in processing order
+4. Track lifetime limits and remittance
 
-See [Garnishments](garnishments.md) for complete workflow.
+See [Garnishments](garnishments.md) for complete details.
 
 ## Taxes
 
@@ -262,8 +262,6 @@ A: OnePayroll supports multiple export formats:
 - **PDF** - For printing/archiving
 - **GL export** - Direct to GL import
 
-Export from reports or use API.
-
 ### Q: Can I compare payroll across periods?
 
 A: Yes. Most reports include:
@@ -280,33 +278,20 @@ Department and pay type breakdowns available.
 
 A: Verify:
 1. Employee **pay rate** and **pay unit** correct
-2. **Hours worked** entered correctly (for hourly)
+2. **Hours worked** entered correctly (for work-based employees)
 3. **Deductions and taxes** calculated properly
-4. **Tax setup** matches employee W-4
+4. **Tax setup** matches employee W-4 (US localization)
 5. No manual adjustments in payroll
 
-Run **payroll entry detail report** to trace each component.
+Review the payroll entries to trace each component.
 
 ### Q: GL posting shows wrong account
 
 A: Check:
-1. **GL Account assignment** on pay type
+1. **Account No.** and **Balance Account No.** on the pay type
 2. **Default accounts** in Payroll Setup
-3. **Department allocation** if using
-4. Verify account number correct
-
-Create GL entry manually if system route wrong.
-
-### Q: Employee can't log into self-service portal
-
-A: Troubleshoot:
-1. Verify employee account **activated** in portal
-2. Check employee **status** = Active
-3. Try **password reset**
-4. Verify two-factor auth if enabled
-5. Check browser/network (clear cache)
-
-Contact IT if persists.
+3. **Gen. Journal Template** and **Gen. Journal Batch** on the pay group
+4. Verify account numbers are correct
 
 ## Best practices
 
@@ -321,10 +306,10 @@ Contact IT if persists.
 
 ## Getting additional help
 
-- **Documentation** - Read specific topic guides
-- **Built-in Help** - Windows Help menu
-- **Training** - Scheduled training sessions
-- **Support** - Contact support@onepayroll.com
+- **Documentation** — Read specific topic guides in this documentation set
+- **Built-in Help** — Use the Help menu in Business Central
+- **Training** — Contact your partner or administrator for training resources
+- **Support** — Contact your Business Central partner or visit [SwissSalary support](https://www.swisssalary.ch)
 
 ## What's next
 
