@@ -13,10 +13,9 @@ Before you begin, install these tools:
 
 ### Recommended VS Code extensions
 
-After installing VS Code, add these extensions (from the Extensions panel, `Ctrl+Shift+X`):
+After installing VS Code, add this extension (from the Extensions panel, `Ctrl+Shift+X`):
 
-- **Learn Authoring Pack** (Microsoft) — Markdown linting, link validation, and template snippets
-- **Markdown Preview Enhanced** — Live preview with table and alert support
+**Learn Authoring Pack** (Microsoft) — Markdown linting, link validation, template snippets, and Learn Preview
 
 ### Repository access
 
