@@ -98,13 +98,12 @@ With employees and payment methods configured, process a test payroll run to ver
 
 1. Search for **Payroll Runs**.
 2. Select **New**.
-3. Select the **Pay Group** (for example, BIWEEKLY).
-4. Specify the **Period** (payroll period).
-5. The status starts as **Draft**.
-6. Select **Calculate** to compute payroll amounts.
-7. Review the **Payroll Entries** for accuracy.
-8. When satisfied, select **Mark as Ready**.
-9. Finally, select **Post** to post entries to the general ledger.
+3. Set the **Pay Group** (for example, BIWEEKLY).
+4. Set the **Start Date** for the pay period.
+5. Select **OK**. OnePayroll creates the payroll run and calculates all amounts automatically. Status is set to **Open**.
+6. Review the **Payroll Entries** for accuracy.
+7. If your setup requires approvals, select **Approve** to approve the payroll run.
+8. Select **Post** to post entries to the general ledger. Status changes to **Posted**.
 
 ### Verify the results
 
