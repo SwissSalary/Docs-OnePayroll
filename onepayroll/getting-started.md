@@ -28,7 +28,7 @@ Use this checklist to track your setup progress:
 ### Foundation
 - [ ] **Install OnePayroll** - Ensure OnePayroll Core and your regional extension are installed
 - [ ] **Generate setup data** - Use the built-in Contoso Coffee demo dataset to create foundational payroll configuration
-- [ ] **Review OnePayroll Workspace** - Familiarize yourself with the OnePayroll role center and available features
+- [ ] **Review the Payroll Manager role center** - Familiarize yourself with the role center and available features
 - [ ] **Configure GL accounts** - Set up general ledger accounts for payroll expenses and liabilities
 
 ### Configuration
@@ -60,10 +60,10 @@ After installing OnePayroll Core and your regional extension:
 
 1. In Business Central, search for **Payroll Setup**
 2. Open the Payroll Setup page to access configuration options
-3. Verify the OnePayroll workspace is available from your role center
+3. Verify the **Payroll Manager** role center is available
 
 > [!TIP]
-> Pin the OnePayroll workspace to your home for quick access.
+> Pin the Payroll Manager role center to your home for quick access.
 
 ### 2. Generate setup data
 
@@ -72,7 +72,7 @@ OnePayroll includes the **Contoso Coffee Payroll Demo Dataset**, which can gener
 - **Setup data** — Generic payroll configuration such as pay types, pay units, pay cycles, pay groups, employee types, benefit coverage, validation rules, and document types. This data is appropriate for production environments because it provides a standardized foundation that any organization can customize.
 - **Master data** — Company-specific demonstration data such as departments, job titles, sample employees, and employee payment methods. This data is intended for learning and evaluation only because it represents a fictitious company.
 
-When you first open the OnePayroll workspace, a notification appears:
+When you first open the **Payroll Manager** role center, a notification appears:
 
 > *Required payroll setup data is missing. Generate the setup data now to enable payroll processing.*
 
@@ -269,7 +269,7 @@ Review the calculation results carefully before posting. Check that:
 
 ## Navigation and interface
 
-### Key pages and workspaces
+### Key pages and navigation
 
 | Page | Purpose |
 |------|---------|
