@@ -321,11 +321,27 @@ When directing users to a page, use this standard pattern (matching Microsoft Le
 
 The `search_small.png` icon already exists in `onepayroll/media/ui-search/`.
 
-## Local preview
+## Previewing your changes
 
-You can preview the site locally before pushing changes. This is optional but recommended for larger changes.
+Before pushing changes, you can preview how your article will look. There are two options:
 
-### One-time setup
+### Option 1: Learn Preview in VS Code (recommended)
+
+The **Learn Authoring Pack** extension (listed in [Recommended VS Code extensions](#recommended-vs-code-extensions)) includes a built-in preview that renders your Markdown the way it appears on a Microsoft Learn site — including alerts, tables, and metadata.
+
+To use it:
+
+1. Open the article you're editing in VS Code
+2. Open the Command Palette (`Ctrl+Shift+P`)
+3. Type **Learn Preview** and select it
+
+This is the fastest way to check your formatting without leaving VS Code.
+
+### Option 2: Full site build with DocFX
+
+For larger changes — such as TOC restructuring, cross-reference updates, or template changes — you can build the entire site locally. This requires a one-time setup.
+
+**One-time setup:**
 
 1. Install the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 2. Install DocFX:
@@ -334,7 +350,7 @@ You can preview the site locally before pushing changes. This is optional but re
    dotnet tool install -g docfx
    ```
 
-### Building and previewing
+**Build and preview:**
 
 From the repository root folder:
 
@@ -370,7 +386,8 @@ Copy the appropriate template to `onepayroll/`, rename it following the [file na
 | Add a screenshot | `onepayroll/media/[article-name]/` |
 | Change site config | `docfx.json` (ask a dev first) |
 | Check article templates | `templates/` folder |
-| Preview locally | Run `docfx --serve` from repo root |
+| Preview an article | **Learn Preview** in VS Code (`Ctrl+Shift+P`) |
+| Preview the full site | Run `docfx --serve` from repo root |
 
 ## Getting help
 
