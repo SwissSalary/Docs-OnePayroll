@@ -1,13 +1,14 @@
 # Welcome to OnePayroll
-## Get started
-### [Introduction](introduction.md)
-### [Getting started](getting-started.md)
-#### [Install and generate setup data](setup-install.md)
-#### [Configure payroll settings](setup-configure.md)
-#### [Set up employees and process your first payroll](setup-first-payroll.md)
-### [Key concepts and terminology](key-concepts.md)
-### [Payroll Manager Role Center](role-center.md)
+# Get started
+## [Introduction](introduction.md)
+## [Getting started](getting-started.md)
+### [Install and generate setup data](setup-install.md)
+### [Configure payroll settings](setup-configure.md)
+### [Set up employees and process your first payroll](setup-first-payroll.md)
+## [Key concepts and terminology](key-concepts.md)
+## [Payroll Manager Role Center](role-center.md)
 
+# Business functionality
 ## Core payroll processing
 ### Payroll runs
 #### [About payroll runs](payroll-runs-overview.md)
@@ -78,8 +79,8 @@
 ### [Pay unit conversions](pay-units-conversions.md)
 ### [Employee types and pay units](pay-units-employee-types.md)
 
-## Help and reference
-### [FAQ](faq.md)
-### [Troubleshooting and errors](errors-troubleshooting.md)
-### [US-specific features](us-localization.md)
-### [Glossary](glossary.md)
+# Help and reference
+## [FAQ](faq.md)
+## [Troubleshooting and errors](errors-troubleshooting.md)
+## [US-specific features](us-localization.md)
+## [Glossary](glossary.md)
