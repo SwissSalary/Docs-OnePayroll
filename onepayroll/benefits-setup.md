@@ -12,6 +12,9 @@ sws.author: zeande
 
 This article explains how to configure benefit programs, coverage types, rates, limits, and contracts in OnePayroll.
 
+> [!TIP]
+> If you generated setup data from the Contoso Coffee Payroll Demo Dataset (see [Getting started](getting-started.md)), benefit coverage types (Standard, Tax, Mandatory) are already configured. With the US localization, benefits for Social Security, Medicare, FUTA, SUTA (with limits for all 50 states), 401(k), and HSA are also included. Review and customize the existing benefits rather than creating them from scratch.
+
 ## Setting Up Benefits
 
 To set up a new benefit program in OnePayroll:
@@ -23,20 +26,13 @@ To set up a new benefit program in OnePayroll:
    - **Code**: A unique identifier for the benefit type
    - **Description**: A clear description of the benefit category
    - **Base Pay Type**: The hypothetical pay type used for calculations
-3. Configure which pay types are liable for this benefit type (see below).
 
 ### To configure pay type liabilities
 
-Pay Type Liabilities determine which pay types (earnings) are subject to a benefit. This controls which earnings are included when calculating benefit amounts and contributions.
+Pay type liabilities determine which pay types (earnings) are subject to a benefit type. This controls which earnings are included when calculating benefit amounts and contributions. Liabilities are configured from the pay type side, not from the benefit type.
 
-1. From the **Benefit Types** page, select a benefit type.
-2. In the **Liable Benefit Types** section, add the pay types that should be liable for this benefit:
-   - Choose each pay type that represents earnings subject to this benefit
-   - Common liable pay types include regular wages, overtime, bonuses, and commissions
-   - Exclude pay types like reimbursements, allowances, or other non-taxable compensation as appropriate
-
-> [!NOTE]
-> You can also configure liabilities from the Pay Type side. On the **Pay Type** page, use the **Liable Benefit Types** section to specify which benefit types apply to that pay type.
+- On the **Pay Types** list page, each benefit type appears as a column with a **Liable** checkbox. Select the checkbox to mark a pay type as liable for that benefit type.
+- On the **Pay Type Card** page, use the **Benefit Type Liabilities** section to toggle which benefit types apply to the selected pay type.
 
 > [!TIP]
 > Review your benefit plan documents and regulatory requirements to determine which types of earnings should be included in benefit calculations.
@@ -50,8 +46,8 @@ Pay Type Liabilities determine which pay types (earnings) are subject to a benef
 3. On the **Coverages** FastTab, add the coverage options that employees can choose:
    - **Code**: A unique code for this coverage option
    - **Description**: What this coverage level represents
-   - **Covered by Employee**: Whether the employee pays for this coverage
-   - **Covered by Employer**: Whether the employer contributes to this coverage
+   - **Employee Liability**: Whether the employee is liable for this coverage (Not Liable, Employee, or Employer)
+   - **Employer Liability**: Whether the employer is liable for this coverage (Not Liable, Employee, or Employer)
 
 > [!TIP]
 > You can create coverage types that inherit from existing types using the **Create Inherited Type** action. This is useful when you have benefits with the same coverage options but different cost-sharing arrangements.
@@ -111,9 +107,9 @@ Pay Type Liabilities determine which pay types (earnings) are subject to a benef
 
 ## See Also
 
-[Work with Benefits](about-benefits.md)  
+[About benefits](benefits-overview.md)  
 [Assign Benefits to Employees](benefits-assignments.md)  
 [Work with Benefit Hierarchies](benefits-hierarchies.md)  
 [Understand Benefit Limits](benefits-limits.md)  
 
-[!INCLUDE[footer-include](includes/footer-banner.md)]
+[!INCLUDE[footer-banner](../includes/footer-banner.md)]
