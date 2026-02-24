@@ -109,5 +109,3 @@ Use the **Search** feature (Alt+Q) to quickly find pages:
 - [Set up employees and process your first payroll](setup-first-payroll.md)
 - [Payroll Manager role center](role-center.md)
 - [Key concepts and terminology](key-concepts.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]
