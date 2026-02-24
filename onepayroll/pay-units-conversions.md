@@ -255,15 +255,6 @@ OnePayroll uses the conversion factor to convert between units during payroll ca
 - **Archive rates** - Keep history of pay unit conversions
 - **Review annually** - Verify standard hours/weeks still valid
 
-## What's next
-
-- **[Employee setup](employee-setup.md)** - Employee configuration
-- **[Employee types and pay units](pay-units-employee-types.md)** - Integration with employee types
-- **[Pay type setup](pay-types-setup.md)** - Pay type configuration
-```
-
-**Explanation**: The employee works 2,080 hours per year (260 days × 8 hours).
-
 ### Yearly to Hourly
 
 Converting $65,000 per year to hourly:
@@ -276,6 +267,8 @@ Hourly Amount = $65,000 × 0.125 ÷ 260
               = $65,000 ÷ 2,080
               = $31.25
 ```
+
+**Explanation**: The employee works 2,080 hours per year (260 days × 8 hours).
 
 ### Daily to Monthly
 
@@ -435,5 +428,11 @@ When working with pay unit conversions:
 [Work with pay units](employee-pay-units.md)  
 [Assign Pay Units to Employee Types](pay-units-employee-types.md)  
 [Process payroll](payroll-runs-process.md)  
+
+## What's next
+
+- **[Employee setup](employee-setup.md)** - Employee configuration
+- **[Employee types and pay units](pay-units-employee-types.md)** - Integration with employee types
+- **[Pay type setup](pay-types-setup.md)** - Pay type configuration
 
 [!INCLUDE[footer-banner](../includes/footer-banner.md)]
