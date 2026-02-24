@@ -29,7 +29,6 @@ This guide walks you through creating employee records and configuring their pay
    - **Pay Group** - Select the appropriate pay group
    - **Type** - Select an employee type (user-defined codes that determine pay unit and compensation method)
    - **Work Location** - Select a work location
-5. Save
 
 ### Employee number conventions
 
@@ -52,7 +51,6 @@ Once the employee is created, configure payroll-specific settings:
 2. On the **OnePayroll** tab:
    - **Pay Group** - Select the appropriate group
    - This determines when the employee is paid
-3. Save
 
 **When to change:**
 - Promotion from hourly to salaried (may change from weekly to biweekly)
@@ -68,7 +66,6 @@ Once the employee is created, configure payroll-specific settings:
 2. On the **OnePayroll** tab:
    - **Type** - Select an employee type code
    - This determines the employee's pay unit and compensation method
-3. Save
 
 Employee types are user-defined codes configured on the **Employee Types** page. Each type specifies:
 
@@ -91,7 +88,6 @@ For more information on configuring pay types and assigning them to employees, s
    - **Federal Filing Status** - Single, Married, Head of Household
    - **Federal Allowances** - Number of exemptions
    - **Additional Federal Withholding** - Extra withholds (if needed)
-2. Save
 
 **State tax withholding** (if applicable):
 
@@ -109,9 +105,8 @@ For more information on configuring pay types and assigning them to employees, s
 
 **For US employees:**
 
-1. **Social Security Number** - Required for W-2 reporting
+1. **Social Security Number** — Required for W-2 reporting
 2. Mark **SSN Validation** to ensure correct format
-3. Save securely
 
 The SSN is critical for:
 - Federal tax withholding
@@ -155,7 +150,6 @@ See [About payment methods](payment-methods-overview.md) for more details.
 2. In the **General** tab:
    - **Department** - Which department the employee belongs to
    - **Manager/Supervisor** - Who oversees the employee
-3. Save
 
 Department information is used for:
 - Organizational reporting
@@ -188,7 +182,6 @@ To change an employee's status, update the **Employment Date** or **Termination 
    - **Benefit** - Which benefit program (Health Insurance, 401(k), etc.)
    - **Coverage** - Coverage level (Employee Only, Employee + Spouse, etc.)
    - **Effective Date** - When coverage begins
-5. Save
 
 Benefits can also be managed through:
 - Employee self-service portal (employees enroll themselves)

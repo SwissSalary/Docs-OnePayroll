@@ -2,6 +2,9 @@
 ## Get started
 ### [Introduction](introduction.md)
 ### [Getting started](getting-started.md)
+#### [Install and generate setup data](setup-install.md)
+#### [Configure payroll settings](setup-configure.md)
+#### [Set up employees and process your first payroll](setup-first-payroll.md)
 ### [Key concepts and terminology](key-concepts.md)
 ### [Payroll Manager Role Center](role-center.md)
 

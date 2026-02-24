@@ -105,7 +105,6 @@ Each pay type can be mapped to a W-2 box so that earnings, deductions, and taxes
 2. In the **Tax Statement** group, set:
    - **W-2 Box** — the W-2 box this pay type maps to (for example, *1 - Wages Tips Other Compensation*, *2 - Federal Income Tax Withheld*)
    - **W-2 Box Code** — additional code for boxes that require one (Box 12 Codes and Box 14 Other)
-3. Save.
 
 For the full list of W-2 box options, see [Tax statements and reporting](tax-statements.md).
 

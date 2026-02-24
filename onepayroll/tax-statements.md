@@ -48,7 +48,6 @@ Boxes 12, 14, and 14 (Treasury Tipped Occupation Code) require a **W-2 Box Code*
 2. In the **Tax Statement** group, set:
    - **W-2 Box** — select the appropriate box from the list above
    - **W-2 Box Code** — required for Box 12 Codes, Box 14 Other, and Box 14 Treasury Tipped Occupation Code
-3. Save.
 
 Repeat for each pay type that should appear on the W-2.
 

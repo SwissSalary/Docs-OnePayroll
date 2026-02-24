@@ -28,7 +28,6 @@ Departments group employees by their functional area or organizational unit.
    - **Code** — Short identifier (e.g., "SALES", "ACCT", "MFG")
    - **Description** — Full department name (e.g., "Sales", "Accounting", "Manufacturing")
 4. Optional: Set **Parent Department** to create a hierarchy
-5. Save
 
 ### Department hierarchies
 
@@ -46,10 +45,10 @@ Operations (Parent)
 
 **To create a hierarchy:**
 
-1. Create parent department first
-2. When creating child departments, set **Parent Department** to the parent
-3. Save each level of hierarchy
-4. OnePayroll tracks relationships automatically
+1. Create parent department first.
+2. When creating child departments, set **Parent Department** to the parent.
+
+OnePayroll tracks relationships automatically.
 
 Hierarchies enable:
 - Reporting by department structure
@@ -60,10 +59,8 @@ Hierarchies enable:
 
 **To assign an employee to a department:**
 
-1. Open the **Employee** record
-2. In the **General** tab:
-   - **Department** - Select the department
-3. Save
+1. Open the **Employee** record.
+2. In the **General** tab, set the **Department** field.
 
 Employees automatically inherit department settings:
 - Department hierarchy level
@@ -84,7 +81,6 @@ Work locations track physical or remote work sites.
    - **Description** — Location name (e.g., "Main Office", "Branch 1", "Remote")
    - **Type** — On-Site or Remote
    - **Address**, **City**, **Post Code**, **County**, **Country/Region Code** — Physical location details
-4. Save
 
 ### Work location types
 
@@ -99,10 +95,8 @@ OnePayroll supports two work location types:
 
 **To assign an employee to a work location:**
 
-1. Open the **Employee** record
-2. In the **OnePayroll** tab:
-   - **Work Location** - Select the location
-3. Save
+1. Open the **Employee** record.
+2. In the **OnePayroll** tab, set the **Work Location** field.
 
 Employees can be assigned to a primary work location on the **Employee Card**.
 
@@ -162,9 +156,8 @@ Mark remote employees with the **Remote** work location type:
 
 **To move an employee:**
 
-1. Open the employee card
-2. Update **Department** or **Work Location**
-3. Save
+1. Open the employee card.
+2. Update the **Department** or **Work Location** field.
 
 OnePayroll's snapshot system tracks changes to employee records over time for audit purposes.
 
