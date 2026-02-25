@@ -1,23 +1,41 @@
-# OnePayroll Documentation
+# OnePayroll Learn
 
-Welcome to the **OnePayroll** documentation repository. This repository contains the complete documentation for OnePayroll, an innovative payroll management solution built on Microsoft Dynamics 365 Business Central.
+Source repository for [learn.onepayroll.com](https://learn.onepayroll.com) — the documentation site for OnePayroll, a payroll management extension for Microsoft Dynamics 365 Business Central.
 
-## About OnePayroll
+## Repository structure
 
-OnePayroll is a comprehensive payroll management solution that simplifies payroll processing, ensuring accuracy, compliance, and efficiency for businesses of all sizes. Built on the Microsoft Dynamics 365 Business Central platform, OnePayroll provides a user-friendly interface and robust features that make payroll processing simple yet flexible.
+```
+onepayroll/          Documentation articles (Markdown)
+  media/             Screenshots and images
+templates/           Article templates (overview, setup, how-to)
+  custom/            DocFX template overrides (CSS, JS)
+docfx.json           DocFX build configuration
+toc.yml              Site table of contents
+CONTRIBUTING.md      Contributor guide
+```
 
-### Key Features
+## Getting started
 
-- **Employee Payroll Management**: Effortlessly handle employee payroll processing
-- **Tax Calculations**: Automated and accurate tax calculations
-- **Compliance Reporting**: Built-in compliance reporting for various jurisdictions
-- **Benefits Management**: Comprehensive benefits tracking and administration
-- **Pay Units**: Flexible pay unit configuration and management
+1. Clone the repository with [GitHub Desktop](https://desktop.github.com)
+2. Open the folder in [VS Code](https://code.visualstudio.com)
+3. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow — branching, editing, committing, and creating pull requests
 
-### Available Localizations
+## Local preview
 
-- **OnePayroll Core**: The foundational payroll management system
-- **OnePayroll (US)**: United States-specific payroll localization with IRS compliance
+```bash
+dotnet tool install -g docfx
+docfx docfx.json --serve
+```
+
+The site builds at `http://localhost:8080`.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for everything you need: prerequisites, Markdown reference, DocFX conventions, screenshot guidelines, article templates, and writing style.
+
+## Deployment
+
+The site deploys automatically to Azure Static Web Apps when changes are merged to `main` (via GitHub Actions).
 
 ---
 
