@@ -28,5 +28,3 @@ Remember to add See Also links, and to add the new article to the TOC.md file.
 ## See also
 
 [Related article title](related-article.md)  
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

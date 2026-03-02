@@ -42,5 +42,3 @@ Or a bulleted list, such as the following:
 ## See also
 
 [Related article title](related-article.md)  
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]
