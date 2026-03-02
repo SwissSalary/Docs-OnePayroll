@@ -2,8 +2,9 @@
 title: Employee payables
 description: Learn how employee payables define compensation in OnePayroll, including pay rates, employment percentage, and department allocation.
 author: zeande
-ms.topic: concept
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: concept
+sws.date: 02/23/2026
 ---
 
 # Employee payables

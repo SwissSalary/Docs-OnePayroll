@@ -2,8 +2,9 @@
 title: Configure payroll settings
 description: Learn how to configure the Payroll Setup page, assign GL accounts to pay types, and configure payroll processing rules.
 author: zeande
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Configure payroll settings

@@ -2,8 +2,9 @@
 title: Set up pay types
 description: Learn how to create and configure pay types in OnePayroll, including setting categories, GL accounts, pay factors, and benefit liability.
 author: zeande
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Set up pay types

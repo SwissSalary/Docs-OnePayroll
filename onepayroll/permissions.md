@@ -2,8 +2,9 @@
 title: Permissions and security
 description: Learn about the permission sets available in OnePayroll and how to assign them to control access to payroll data.
 author: zeande
-ms.topic: concept
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: concept
+sws.date: 02/23/2026
 ---
 
 # Permissions and security

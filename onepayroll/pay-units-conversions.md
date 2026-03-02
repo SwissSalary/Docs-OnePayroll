@@ -2,8 +2,9 @@
 title: Pay units and conversions
 description: Learn how to configure pay units and conversion factors for different pay frequencies.
 author: zeande
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Pay units and conversions

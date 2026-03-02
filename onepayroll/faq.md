@@ -2,8 +2,9 @@
 title: Frequently asked questions
 description: Find answers to common OnePayroll questions about setup, processing, and compliance.
 author: zeande
-ms.topic: article
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: article
+sws.date: 02/23/2026
 ---
 
 # Frequently asked questions

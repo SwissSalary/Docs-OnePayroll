@@ -2,8 +2,9 @@
 title: Check printing and management
 description: Learn how to print employee paychecks using the Computer Check payment type in OnePayroll.
 author: zeande
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Check printing and management

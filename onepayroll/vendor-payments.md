@@ -2,8 +2,9 @@
 title: Vendor payments
 description: Learn how OnePayroll creates vendor payments for benefit providers and garnishment agencies during payroll processing.
 author: zeande
-ms.topic: concept
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: concept
+sws.date: 02/23/2026
 ---
 
 # Vendor payments

@@ -2,8 +2,9 @@
 title: Set up employees and process your first payroll
 description: Learn how to create departments, add employees, configure payment methods and tax settings, and process your first payroll run.
 author: zeande
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Set up employees and process your first payroll

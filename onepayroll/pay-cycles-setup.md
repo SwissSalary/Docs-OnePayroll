@@ -2,8 +2,9 @@
 title: Set up pay cycles
 description: Learn how to create pay cycles, define schedule lines, and configure pay groups in OnePayroll.
 author: zeande
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Set up pay cycles

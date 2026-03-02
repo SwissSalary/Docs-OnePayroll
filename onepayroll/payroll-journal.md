@@ -2,8 +2,9 @@
 title: Payroll journal entries
 description: Learn how OnePayroll creates and posts General Journal Lines from payroll entries.
 author: zeande
-ms.topic: concept
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: concept
+sws.date: 02/23/2026
 ---
 
 # Payroll journal entries

@@ -2,8 +2,9 @@
 title: Error messages and troubleshooting
 description: Find solutions to common OnePayroll error messages and issues.
 author: zeande
-ms.topic: troubleshooting
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: troubleshooting
+sws.date: 02/23/2026
 ---
 
 # Error messages and troubleshooting

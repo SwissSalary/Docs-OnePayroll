@@ -2,9 +2,10 @@
 title: Achieve Some Task Max 46 characters
 description: Learn about doing XYZ in OnePayroll (and then lots of nice search terms in a natural-sounding sentence. Max length is 160 characters, which is this long).
 author: myGitHubHandle
-ms.topic: article
-ms.date: 10/01/2021
-ms.author: myGitHubHandle
+sws.service: onepayroll
+sws.topic: article
+sws.date: 10/01/2021
+sws.author: myGitHubHandle
 ---
 # Achieve Some Task in Max. 100 Characters
 

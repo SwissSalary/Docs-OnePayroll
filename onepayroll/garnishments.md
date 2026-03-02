@@ -2,8 +2,9 @@
 title: Garnishments
 description: Learn how to set up and manage wage garnishments in OnePayroll, including garnishment types, calculation methods, and protected amounts.
 author: zeande
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Garnishments

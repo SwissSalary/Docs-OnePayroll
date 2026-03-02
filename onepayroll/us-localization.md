@@ -2,8 +2,9 @@
 title: US localization and compliance
 description: Learn about US-specific OnePayroll features, tax treatment, and compliance requirements.
 author: zeande
-ms.topic: reference
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: reference
+sws.date: 02/23/2026
 ---
 
 # US localization and compliance

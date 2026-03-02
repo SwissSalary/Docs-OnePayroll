@@ -2,8 +2,9 @@
 title: Benefits limits
 description: Learn how benefit limits control maximum contributions and how to configure limit bases, adjustments, and inherited limits in OnePayroll.
 author: zeande
-ms.topic: concept
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: concept
+sws.date: 02/23/2026
 ---
 
 # Benefits limits

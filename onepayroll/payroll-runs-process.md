@@ -2,8 +2,9 @@
 title: Process payroll runs
 description: Learn how to create, review, and post payroll runs in OnePayroll.
 author: zeande
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Process payroll runs

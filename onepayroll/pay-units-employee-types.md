@@ -2,8 +2,9 @@
 title: Employee types and pay units
 description: Learn how employee types determine compensation structure and pay unit configuration in OnePayroll.
 author: zeande
-ms.topic: overview
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: overview
+sws.date: 02/23/2026
 ---
 
 # Employee types and pay units

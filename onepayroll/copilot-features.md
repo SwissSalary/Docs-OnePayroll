@@ -2,8 +2,9 @@
 title: Copilot features
 description: Learn about AI-powered features in OnePayroll, including employee creation from resumes and automatic qualification extraction from documents.
 author: zeande
-ms.topic: concept
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: concept
+sws.date: 02/23/2026
 ---
 
 # Copilot features

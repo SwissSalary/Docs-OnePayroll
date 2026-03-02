@@ -2,8 +2,9 @@
 title: Key concepts and terminology
 description: A comprehensive glossary of OnePayroll terms and concepts.
 author: zeande
-ms.topic: reference
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: reference
+sws.date: 02/23/2026
 ---
 
 # Key concepts and terminology

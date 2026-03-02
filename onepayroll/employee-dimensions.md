@@ -2,8 +2,9 @@
 title: Employee dimensions
 description: Learn how dimensions are assigned to employee payables and how they flow through to payroll entries and GL postings in OnePayroll.
 author: zeande
-ms.topic: concept
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: concept
+sws.date: 02/23/2026
 ---
 
 # Employee dimensions

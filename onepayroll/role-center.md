@@ -2,8 +2,9 @@
 title: Payroll Manager Role Center
 description: Learn about the Payroll Manager Role Center in OnePayroll, including headlines, activity cues, and navigation.
 author: zeande
-ms.topic: concept
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: concept
+sws.date: 02/23/2026
 ---
 
 # Payroll Manager Role Center

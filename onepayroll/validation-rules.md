@@ -2,8 +2,9 @@
 title: Validation rules
 description: Learn how OnePayroll's validation rules engine enforces data quality and business rules.
 author: zeande
-ms.topic: overview
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: overview
+sws.date: 02/23/2026
 ---
 
 # Validation rules

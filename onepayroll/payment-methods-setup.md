@@ -2,8 +2,9 @@
 title: Set up payment methods
 description: Learn how to create and configure Employee Payment Methods for direct deposit and check payments in OnePayroll.
 author: zeande
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Set up payment methods
