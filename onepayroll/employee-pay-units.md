@@ -49,13 +49,13 @@ Each pay unit has a **Conversion Factor** that defines how compensation values t
 
 OnePayroll uses conversion factors to express the same compensation in different units. For example:
 
-**Example: Annual to daily**
+### Example: Annual to daily
 
 An employee earns $65,000/year with an annual pay unit (conversion factor = 260):
 
 - Daily equivalent: $65,000 ÷ 260 = $250/day
 
-**Example: Hourly to annual**
+### Example: Hourly to annual
 
 An employee earns $18.50/hour with an hourly pay unit (conversion factor = 0.125):
 
@@ -64,9 +64,22 @@ An employee earns $18.50/hour with an hourly pay unit (conversion factor = 0.125
 
 For more details on conversion math, see [Pay units and conversions](pay-units-conversions.md).
 
+## Compensation Rates factbox
+
+The **Compensation Rates** factbox on the employee card displays the employee's compensation expressed in every pay unit defined in the system. This gives you an at-a-glance view of the equivalent rate across all units without having to calculate conversions manually.
+
+For example, if an employee earns $78,000 annually, the factbox automatically shows the equivalent hourly, daily, and monthly rates based on the conversion factors configured on the **Pay Units** page.
+
+![Screenshot of the Compensation Rates factbox showing equivalent pay rates across all pay units.](media/employee-pay-units/compensation-rates-factbox.png)
+
+> [!TIP]
+> The Compensation Rates factbox updates automatically when you change the employee's compensation rate or employee type. Use it to quickly verify that a rate change produces the expected values across all pay units.
+
 ## Global pay unit
 
 The **Global Pay Unit** on the **Payroll Setup** page defines a standardized unit for comparing compensation across employees with different pay units. When viewing employee lists, compensation can be displayed in the global pay unit for easy comparison.
+
+![Screenshot of the standardized compensation on the employee list page.](media/employee-pay-units/global-pay-unit.png)
 
 **To set the global pay unit:**
 
