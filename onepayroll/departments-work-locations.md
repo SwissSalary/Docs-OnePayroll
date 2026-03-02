@@ -2,7 +2,6 @@
 title: Departments and work locations
 description: Learn how to set up organizational structure with departments and work locations in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---

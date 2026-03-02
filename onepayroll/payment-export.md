@@ -2,7 +2,6 @@
 title: Export payment files
 description: Learn how to generate and manage electronic payment files (ACH, check register) for payroll processing.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---

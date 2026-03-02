@@ -2,7 +2,6 @@
 title: Employee bank account information
 description: Learn how bank account details are stored on Employee Payment Methods for direct deposit in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: concept
 ms.date: 02/23/2026
 ---

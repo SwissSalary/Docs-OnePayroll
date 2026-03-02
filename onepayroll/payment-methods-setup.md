@@ -2,7 +2,6 @@
 title: Set up payment methods
 description: Learn how to create and configure Employee Payment Methods for direct deposit and check payments in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---

@@ -2,7 +2,6 @@
 title: Configure payroll settings
 description: Learn how to configure the Payroll Setup page, assign GL accounts to pay types, and configure payroll processing rules.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---

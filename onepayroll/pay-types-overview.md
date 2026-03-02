@@ -2,7 +2,6 @@
 title: About pay types
 description: Learn about pay types, how they're organized into categories, and how they control payroll calculations and GL posting in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026
 ---

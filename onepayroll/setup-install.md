@@ -2,7 +2,6 @@
 title: Install and generate setup data
 description: Learn how to install OnePayroll, choose the Payroll Manager role center, and generate pre-configured setup data.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---

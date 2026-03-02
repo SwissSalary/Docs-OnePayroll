@@ -2,7 +2,6 @@
 title: About payroll runs
 description: Learn how payroll runs work, understand the payroll processing workflow, and the statuses that guide your payroll through calculation to posting.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026
 ---

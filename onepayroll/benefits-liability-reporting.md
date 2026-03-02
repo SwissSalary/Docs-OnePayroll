@@ -2,7 +2,6 @@
 title: Benefits liability and reporting
 description: Learn how OnePayroll tracks employer and employee benefit costs through coverage types, liability settings, and GL posting.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: concept
 ms.date: 02/23/2026
 ---

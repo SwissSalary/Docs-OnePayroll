@@ -2,7 +2,6 @@
 title: Getting started with OnePayroll
 description: Get an overview of the OnePayroll setup process, from installation through your first payroll run.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026
 ---

@@ -2,7 +2,6 @@
 title: Payroll journal entries
 description: Learn how OnePayroll creates and posts General Journal Lines from payroll entries.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: concept
 ms.date: 02/23/2026
 ---

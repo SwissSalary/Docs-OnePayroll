@@ -3,10 +3,8 @@ title: Work with Benefits
 description: Learn about the benefits module in OnePayroll and how to configure, assign, and manage employee benefits such as health insurance, retirement plans, and other compensation packages.
 author: myGitHubHandle2
 
-ms.service: dynamics365-business-central
 ms.topic: article
 ms.date: 01/08/2026
-ms.author: MyMSFTAlias (if I work for Microsoft; otherwise edupont)
 ---
 
 # Work with Benefits in OnePayroll

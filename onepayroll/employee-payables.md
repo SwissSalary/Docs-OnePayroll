@@ -2,7 +2,6 @@
 title: Employee payables
 description: Learn how employee payables define compensation in OnePayroll, including pay rates, employment percentage, and department allocation.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: concept
 ms.date: 02/23/2026
 ---

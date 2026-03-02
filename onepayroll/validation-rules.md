@@ -2,7 +2,6 @@
 title: Validation rules
 description: Learn how OnePayroll's validation rules engine enforces data quality and business rules.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: overview
 ms.date: 02/23/2026
 ---

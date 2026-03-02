@@ -2,7 +2,6 @@
 title: Permissions and security
 description: Learn about the permission sets available in OnePayroll and how to assign them to control access to payroll data.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: concept
 ms.date: 02/23/2026
 ---

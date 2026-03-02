@@ -2,7 +2,6 @@
 title: OnePayroll glossary
 description: Glossary of OnePayroll terms and payroll-related definitions.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: reference
 ms.date: 02/23/2026
 ---

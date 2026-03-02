@@ -2,7 +2,6 @@
 title: Work with employee pay units
 description: Learn how pay units work on the employee card, how they're inherited from employee types, and how conversions work.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---

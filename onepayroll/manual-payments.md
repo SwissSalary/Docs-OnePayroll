@@ -2,7 +2,6 @@
 title: Manual payments
 description: Learn how to create individual ad-hoc payments outside of scheduled payroll runs using the Manual Payment Journal in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---

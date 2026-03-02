@@ -2,7 +2,6 @@
 title: Tax compliance
 description: Learn how OnePayroll supports tax reporting and compliance, including W-2 generation and payroll data for tax filings.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: concept
 ms.date: 02/23/2026
 ---

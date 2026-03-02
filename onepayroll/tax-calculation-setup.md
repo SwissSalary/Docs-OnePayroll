@@ -2,7 +2,6 @@
 title: Set up tax calculations
 description: Learn how to configure Income Tax Jurisdictions, calculation methods, and tax rates in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---

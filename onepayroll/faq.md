@@ -2,7 +2,6 @@
 title: Frequently asked questions
 description: Find answers to common OnePayroll questions about setup, processing, and compliance.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: article
 ms.date: 02/23/2026
 ---

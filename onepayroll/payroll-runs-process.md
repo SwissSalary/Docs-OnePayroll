@@ -2,7 +2,6 @@
 title: Process payroll runs
 description: Learn how to create, review, and post payroll runs in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
 ms.topic: how-to
 ms.date: 02/23/2026
 ---
