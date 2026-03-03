@@ -31,7 +31,11 @@
       "_appName": "OnePayroll Learn",
       "_appTitle": "OnePayroll Learn",
       "_appLogoPath": "logo.svg",
+      "_appLogoUrl": "https://onepayroll.com",
+      "_appFaviconPath": "favicon.ico",
       "_enableSearch": true,
+      "_appFooter": "<span>Powered by <a href='https://onepayroll.com'>SwissSalary USA INC.</a> &mdash; Next-generation payroll for Business Central</span>",
+      "_disableContribution": false,
       "pdf": false
     }
   }

@@ -1,13 +1,233 @@
-/* Heading anchor links — Microsoft Learn style (link icon, left of heading) */
+/* ==========================================================================
+   OnePayroll Learn — Custom Brand Styles
+   Matches the look and feel of https://onepayroll.com
+   ========================================================================== */
 
-/* Ensure headings can contain absolutely positioned anchors */
+/* -------------------------------------------------------------------------
+   1. Font — Myriad Pro via Adobe Typekit
+   ------------------------------------------------------------------------- */
+@import url("https://use.typekit.net/ixp6ptv.css");
+
+/* -------------------------------------------------------------------------
+   2. Bootstrap / DocFx CSS Variable Overrides
+   ------------------------------------------------------------------------- */
+:root {
+    /* Brand colours (from onepayroll.com/styles/variables.css) */
+    --onepayroll-primary-red: #db0000;
+    --onepayroll-primary-red-rgb: 219, 0, 0;
+    --onepayroll-secondary-red: #aa0000;
+    --onepayroll-tertiary-red: #990000;
+    --onepayroll-deep-red: #770000;
+
+    --onepayroll-primary-gray: #333333;
+    --onepayroll-secondary-gray: #444444;
+    --onepayroll-tertiary-gray: #777777;
+
+    --onepayroll-primary-light: #aaaaaa;
+    --onepayroll-secondary-light: #dddddd;
+    --onepayroll-tertiary-light: #f2f2f2;
+
+    --onepayroll-font-color: #0B1215; /* Obsidian */
+    --onepayroll-bg-color: #ffffff;
+
+    /* ---- Bootstrap overrides ---- */
+    --bs-primary: var(--onepayroll-primary-red) !important;
+    --bs-primary-rgb: var(--onepayroll-primary-red-rgb) !important;
+    --bs-link-color: var(--onepayroll-primary-red) !important;
+    --bs-link-color-rgb: var(--onepayroll-primary-red-rgb) !important;
+    --bs-link-hover-color: var(--onepayroll-secondary-red) !important;
+    --bs-link-hover-color-rgb: 170, 0, 0 !important;
+
+    --bs-body-font-family: "myriad-pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    --bs-body-color: var(--onepayroll-font-color) !important;
+    --bs-body-color-rgb: 11, 18, 21 !important;
+}
+
+/* Dark mode overrides */
+[data-bs-theme="dark"] {
+    --onepayroll-primary-red: #db0000;
+    --onepayroll-primary-red-rgb: 219, 0, 0;
+    --onepayroll-font-color: #ffffff;
+    --onepayroll-bg-color: #0B1215;
+    --onepayroll-primary-gray: #e0e0e0;
+
+    --bs-primary: #db0000 !important;
+    --bs-primary-rgb: 219, 0, 0 !important;
+    --bs-link-color: #ff4d4d !important;
+    --bs-link-color-rgb: 255, 77, 77 !important;
+    --bs-link-hover-color: #ff6666 !important;
+    --bs-link-hover-color-rgb: 255, 102, 102 !important;
+    --bs-body-color: #ffffff !important;
+    --bs-body-color-rgb: 255, 255, 255 !important;
+}
+
+/* -------------------------------------------------------------------------
+   3. Typography
+   ------------------------------------------------------------------------- */
+body {
+    font-family: "myriad-pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--onepayroll-font-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "myriad-pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    color: var(--onepayroll-font-color);
+}
+
+article h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    border-bottom: none;
+}
+
+article h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+article h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------
+   4. Links
+   ------------------------------------------------------------------------- */
+a {
+    color: var(--onepayroll-primary-red);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+a:hover {
+    color: var(--onepayroll-secondary-red);
+    text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------
+   5. Navbar / Header
+   ------------------------------------------------------------------------- */
+.navbar {
+    border-bottom: 2px solid var(--onepayroll-primary-red);
+}
+
+/* Logo sizing */
+.navbar .navbar-brand img {
+    height: 28px;
+    width: auto;
+}
+
+/* App name text beside logo */
+.navbar .navbar-brand {
+    font-family: "myriad-pro", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--onepayroll-font-color);
+}
+
+/* Active/hover nav links */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--onepayroll-primary-red) !important;
+}
+
+.navbar .nav-link.active {
+    color: var(--onepayroll-primary-red) !important;
+    font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------
+   6. Table of Contents (TOC) Sidebar
+   ------------------------------------------------------------------------- */
+.toc .nav-link.active,
+.toc .nav-link:hover {
+    color: var(--onepayroll-primary-red) !important;
+    border-left-color: var(--onepayroll-primary-red) !important;
+}
+
+/* -------------------------------------------------------------------------
+   7. Buttons
+   ------------------------------------------------------------------------- */
+.btn-primary {
+    background-color: var(--onepayroll-primary-red) !important;
+    border-color: var(--onepayroll-primary-red) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--onepayroll-secondary-red) !important;
+    border-color: var(--onepayroll-secondary-red) !important;
+}
+
+.btn-outline-primary {
+    color: var(--onepayroll-primary-red) !important;
+    border-color: var(--onepayroll-primary-red) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--onepayroll-primary-red) !important;
+    border-color: var(--onepayroll-primary-red) !important;
+    color: #fff !important;
+}
+
+/* -------------------------------------------------------------------------
+   8. Alerts & Callouts
+   ------------------------------------------------------------------------- */
+.alert-info {
+    border-left: 4px solid var(--onepayroll-primary-red);
+}
+
+/* -------------------------------------------------------------------------
+   9. Code blocks
+   ------------------------------------------------------------------------- */
+code {
+    color: var(--onepayroll-secondary-red);
+}
+
+/* -------------------------------------------------------------------------
+   10. Footer
+   ------------------------------------------------------------------------- */
+footer {
+    border-top: 2px solid var(--onepayroll-primary-red);
+}
+
+/* -------------------------------------------------------------------------
+   11. Breadcrumb
+   ------------------------------------------------------------------------- */
+.breadcrumb-item a {
+    color: var(--onepayroll-primary-red);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--onepayroll-secondary-red);
+}
+
+/* -------------------------------------------------------------------------
+   12. Search
+   ------------------------------------------------------------------------- */
+.search-results .search-result a {
+    color: var(--onepayroll-primary-red);
+}
+
+/* -------------------------------------------------------------------------
+   13. Right-hand "In this article" (Affix)
+   ------------------------------------------------------------------------- */
+.affix .nav-link.active {
+    color: var(--onepayroll-primary-red) !important;
+    border-left-color: var(--onepayroll-primary-red) !important;
+}
+
+/* -------------------------------------------------------------------------
+   14. Heading anchor links (Microsoft Learn style)
+   ------------------------------------------------------------------------- */
 article h2,
 article h3,
 article h4 {
     position: relative;
 }
 
-/* Style the anchor link */
 .anchorjs-link {
     font-family: bootstrap-icons !important;
     font-style: normal !important;
@@ -19,6 +239,63 @@ article h4 {
 }
 
 .anchorjs-link:hover {
-    color: var(--bs-primary) !important;
+    color: var(--onepayroll-primary-red) !important;
     text-decoration: none !important;
+}
+
+/* -------------------------------------------------------------------------
+   15. Landing page
+   ------------------------------------------------------------------------- */
+.landing .hero {
+    background: linear-gradient(135deg, var(--onepayroll-font-color) 0%, var(--onepayroll-primary-gray) 100%);
+    color: #ffffff;
+    padding: 4rem 2rem;
+    border-radius: 0;
+}
+
+.landing .hero h1 {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.landing .hero .lead {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.landing .hero .btn-primary {
+    background-color: var(--onepayroll-primary-red) !important;
+    border-color: var(--onepayroll-primary-red) !important;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.6rem 1.8rem;
+    border-radius: 4px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.landing .hero .btn-primary:hover {
+    background-color: var(--onepayroll-secondary-red) !important;
+    border-color: var(--onepayroll-secondary-red) !important;
+}
+
+/* -------------------------------------------------------------------------
+   16. Scrollbar accent (supporting browsers)
+   ------------------------------------------------------------------------- */
+* {
+    scrollbar-color: var(--onepayroll-secondary-light) transparent;
+}
+
+/* -------------------------------------------------------------------------
+   17. Selection highlight
+   ------------------------------------------------------------------------- */
+::selection {
+    background-color: rgba(219, 0, 0, 0.15);
+    color: inherit;
+}
+
+/* -------------------------------------------------------------------------
+   18. Previous / Next article links
+   ------------------------------------------------------------------------- */
+.prev-next-link:hover {
+    color: var(--onepayroll-primary-red);
+    border-color: var(--onepayroll-primary-red);
 }
