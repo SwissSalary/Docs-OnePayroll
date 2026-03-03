@@ -4,55 +4,52 @@ title: OnePayroll Learn
 description: Official documentation for OnePayroll — next-generation payroll for Microsoft Dynamics 365 Business Central.
 ---
 
-# OnePayroll Learn
+# OnePayroll Documentation
 
-Welcome to the official documentation for **OnePayroll**, the next-generation payroll solution built natively in Microsoft Dynamics 365 Business Central.
+Discover how to set up, run, and manage payroll with OnePayroll — the next-generation payroll solution built natively in Microsoft Dynamics 365 Business Central.
 
-## Get started
+> [!TIP]
+> **New to OnePayroll?** Start with the [Introduction](onepayroll/introduction.md), follow the [Getting started](onepayroll/getting-started.md) guide, or review [Key concepts](onepayroll/key-concepts.md). If you run into issues, see [Troubleshooting](onepayroll/errors-troubleshooting.md).
 
-:::row:::
-:::column span="4":::
-### [Introduction](onepayroll/introduction.md)
-Learn what OnePayroll is and how it streamlines your payroll process within Business Central.
-:::column-end:::
-:::column span="4":::
-### [Getting started](onepayroll/getting-started.md)
-Install, configure, and run your first payroll in minutes.
-:::column-end:::
-:::column span="4":::
-### [Key concepts](onepayroll/key-concepts.md)
-Understand pay cycles, pay types, employee setup, and the core building blocks of OnePayroll.
-:::column-end:::
-:::row-end:::
+## Set up and configure
 
-## Explore the documentation
+| Installation | Pay cycles | Tax and compliance |
+|---|---|---|
+| [Install OnePayroll](onepayroll/setup-install.md) | [Pay cycles overview](onepayroll/pay-cycles-overview.md) | [Tax calculation setup](onepayroll/tax-calculation-setup.md) |
+| [Configure settings](onepayroll/setup-configure.md) | [Set up pay cycles](onepayroll/pay-cycles-setup.md) | [Income tax setup](onepayroll/income-tax-setup.md) |
+| [Payroll setup](onepayroll/payroll-setup.md) | [Set up your first payroll](onepayroll/setup-first-payroll.md) | [Validation rules](onepayroll/validation-rules.md) |
+| [Permissions](onepayroll/permissions.md) | | |
 
-:::row:::
-:::column span="4":::
-**Payroll processing**
-- [Payroll runs](onepayroll/payroll-runs-overview.md)
-- [Pay types](onepayroll/pay-types-overview.md)
-- [Pay cycles](onepayroll/pay-cycles-overview.md)
-- [Payroll journal](onepayroll/payroll-journal.md)
-:::column-end:::
-:::column span="4":::
-**Employees & payments**
-- [Employee overview](onepayroll/employee-overview.md)
-- [Payment methods](onepayroll/payment-methods-overview.md)
-- [Direct deposit](onepayroll/direct-deposit-setup.md)
-- [Benefits](onepayroll/benefits-overview.md)
-:::column-end:::
-:::column span="4":::
-**Tax & compliance**
-- [Tax calculation](onepayroll/tax-calculation-overview.md)
-- [Tax reports](onepayroll/tax-reports.md)
-- [Tax statements](onepayroll/tax-statements.md)
-- [GL integration](onepayroll/gl-integration-overview.md)
-:::column-end:::
-:::row-end:::
+## Run payroll
 
-## Need help?
+| Payroll processing | Pay types | Payments |
+|---|---|---|
+| [Payroll runs overview](onepayroll/payroll-runs-overview.md) | [Pay types overview](onepayroll/pay-types-overview.md) | [Payment methods overview](onepayroll/payment-methods-overview.md) |
+| [Process payroll](onepayroll/payroll-runs-process.md) | [Set up pay types](onepayroll/pay-types-setup.md) | [Set up payment methods](onepayroll/payment-methods-setup.md) |
+| [Payroll journal](onepayroll/payroll-journal.md) | [Pay unit conversions](onepayroll/pay-units-conversions.md) | [Direct deposit](onepayroll/direct-deposit-setup.md) |
+| [Paycheck reversal](onepayroll/paycheck-reversal.md) | [Employee types](onepayroll/pay-units-employee-types.md) | [Payment export](onepayroll/payment-export.md) |
+| | | [Check printing](onepayroll/check-printing.md) |
 
-- Browse the [FAQ](onepayroll/faq.md) for common questions
-- Review [Troubleshooting](onepayroll/errors-troubleshooting.md) for error resolution
-- Visit [onepayroll.com](https://onepayroll.com) for product information
+## Manage employees
+
+| Employee management | Benefits and garnishments | Employee details |
+|---|---|---|
+| [Employee overview](onepayroll/employee-overview.md) | [Benefits overview](onepayroll/benefits-overview.md) | [Bank accounts](onepayroll/employee-bank-accounts.md) |
+| [Employee setup](onepayroll/employee-setup.md) | [Set up benefits](onepayroll/benefits-setup.md) | [Dimensions](onepayroll/employee-dimensions.md) |
+| [Employee payables](onepayroll/employee-payables.md) | [Assign benefits](onepayroll/benefits-assignments.md) | [Dossier](onepayroll/employee-dossier.md) |
+| [Employee pay units](onepayroll/employee-pay-units.md) | [Benefit limits](onepayroll/benefits-limits.md) | [Snapshots](onepayroll/employee-snapshots.md) |
+| [Employee termination](onepayroll/employee-termination.md) | [Benefit hierarchies](onepayroll/benefits-hierarchies.md) | [Departments and work locations](onepayroll/departments-work-locations.md) |
+| | [Garnishments](onepayroll/garnishments.md) | |
+
+## Report and integrate
+
+| Tax reporting | Reports | Finance and integration |
+|---|---|---|
+| [Tax calculation overview](onepayroll/tax-calculation-overview.md) | [Reports overview](onepayroll/reports-overview.md) | [GL integration overview](onepayroll/gl-integration-overview.md) |
+| [Tax reports](onepayroll/tax-reports.md) | [Payroll reports](onepayroll/payroll-reports.md) | [GL posting setup](onepayroll/gl-posting-setup.md) |
+| [Tax statements](onepayroll/tax-statements.md) | [Benefits liability](onepayroll/benefits-liability-reporting.md) | [Vendor payments](onepayroll/vendor-payments.md) |
+| | | [Manual payments](onepayroll/manual-payments.md) |
+
+---
+
+[Glossary](onepayroll/glossary.md) · [FAQ](onepayroll/faq.md) · [Role center](onepayroll/role-center.md) · [Copilot features](onepayroll/copilot-features.md) · [US localization](onepayroll/us-localization.md)

@@ -246,35 +246,74 @@ article h4 {
 /* -------------------------------------------------------------------------
    15. Landing page
    ------------------------------------------------------------------------- */
-.landing .hero {
-    background: linear-gradient(135deg, var(--onepayroll-font-color) 0%, var(--onepayroll-primary-gray) 100%);
-    color: #ffffff;
-    padding: 4rem 2rem;
-    border-radius: 0;
+/* Hero: h1 + first paragraph */
+body[data-layout="landing"] article>h1:first-child {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2.5rem 0 0.75rem;
 }
 
-.landing .hero h1 {
-    color: #ffffff;
-    font-weight: 700;
+body[data-layout="landing"] article>h1:first-child+p {
+    text-align: center;
+    font-size: 1.15rem;
+    color: var(--bs-secondary-color);
+    max-width: 700px;
+    margin: 0 auto 2rem;
 }
 
-.landing .hero .lead {
-    color: rgba(255, 255, 255, 0.85);
+/* Section headings */
+body[data-layout="landing"] article>h2 {
+    border-bottom: 2px solid var(--onepayroll-primary-red);
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
 }
 
-.landing .hero .btn-primary {
-    background-color: var(--onepayroll-primary-red) !important;
-    border-color: var(--onepayroll-primary-red) !important;
-    color: #ffffff;
+/* Tables as card-column grids */
+body[data-layout="landing"] article table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 1.5rem 0;
+    margin-left: -1.5rem;
+    width: calc(100% + 3rem);
+}
+
+body[data-layout="landing"] article table thead th {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--bs-border-color);
+    font-size: 1.05rem;
     font-weight: 600;
-    padding: 0.6rem 1.8rem;
-    border-radius: 4px;
-    transition: background-color 0.15s ease-in-out;
+    padding: 0 0 0.5rem;
+        color: var(--bs-heading-color);
+    }
+    
+    body[data-layout="landing"] article table tbody td {
+        border: none;
+        padding: 0.35rem 0;
+        vertical-align: top;
+        background: transparent;
+    }
+    
+    body[data-layout="landing"] article table tbody td a {
+        color: var(--onepayroll-primary-red);
+    }
+    
+    body[data-layout="landing"] article table tbody td a:hover {
+        color: var(--onepayroll-secondary-red);
+        text-decoration: underline;
+    }
+    
+    /* Footer links row */
+    body[data-layout="landing"] article>hr:last-of-type {
+        margin-top: 3rem;
 }
 
-.landing .hero .btn-primary:hover {
-    background-color: var(--onepayroll-secondary-red) !important;
-    border-color: var(--onepayroll-secondary-red) !important;
+body[data-layout="landing"] article>hr:last-of-type+p {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
 }
 
 /* -------------------------------------------------------------------------
