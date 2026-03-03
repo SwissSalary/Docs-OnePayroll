@@ -275,8 +275,6 @@ body[data-layout="landing"] article table {
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 1.5rem 0;
-    margin-left: -1.5rem;
-    width: calc(100% + 3rem);
 }
 
 body[data-layout="landing"] article table thead th {
