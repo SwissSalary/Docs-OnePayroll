@@ -186,8 +186,11 @@ Every article starts with a YAML metadata block (called "front matter"):
 ---
 title: Set up pay types
 description: Learn how to configure pay types in OnePayroll for earnings, deductions, and employer contributions.
-ms.topic: article
-ms.date: 02/24/2026
+author: myGitHubHandle
+sws.service: onepayroll
+sws.topic: article
+sws.date: 02/24/2026
+sws.author: myGitHubHandle
 ---
 ```
 
@@ -195,8 +198,11 @@ ms.date: 02/24/2026
 |-------|-------|
 | `title` | Maximum 60 characters. Sentence case. Must match the `# Heading 1` in the article. |
 | `description` | Maximum 160 characters. Starts with "Learn how to..." or "Learn about...". Natural-sounding sentence with search keywords. |
-| `ms.topic` | Use `article` for most pages, `overview` for overview articles, `how-to` for task articles. |
-| `ms.date` | Date of last meaningful content change (`MM/DD/YYYY`). |
+| `author` | Your GitHub username. |
+| `sws.service` | Always `onepayroll`. |
+| `sws.topic` | Use `article` for most pages, `overview` for overview articles, `how-to` for task articles. |
+| `sws.date` | Date of last meaningful content change (`MM/DD/YYYY`). |
+| `sws.author` | Your GitHub username. |
 
 ### Table of contents (toc.md)
 

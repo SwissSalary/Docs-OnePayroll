@@ -2,9 +2,9 @@
 title: About payroll reports
 description: Learn about the reports available in OnePayroll for payroll analysis, compliance, and management.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: overview
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: overview
+sws.date: 02/23/2026
 ---
 
 # About payroll reports

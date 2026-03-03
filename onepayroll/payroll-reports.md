@@ -2,9 +2,9 @@
 title: Payroll reports
 description: Learn how to run payroll analysis and operational reports in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Payroll reports

@@ -2,9 +2,9 @@
 title: About GL integration
 description: Learn how OnePayroll integrates with the general ledger and posts payroll transactions.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: overview
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: overview
+sws.date: 02/23/2026
 ---
 
 # About GL integration

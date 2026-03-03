@@ -2,9 +2,9 @@
 title: Employee dossier and documents
 description: Learn how to manage employee documents using the dossier system in OnePayroll, including document types, uploading, and automatic qualification extraction.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: concept
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: concept
+sws.date: 02/23/2026
 ---
 
 # Employee dossier and documents

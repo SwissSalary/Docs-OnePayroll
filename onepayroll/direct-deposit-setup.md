@@ -2,9 +2,9 @@
 title: Set up direct deposit
 description: Learn how to configure and process electronic payments (direct deposit) in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Set up direct deposit

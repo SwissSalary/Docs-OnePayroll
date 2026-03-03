@@ -2,9 +2,9 @@
 title: About tax calculations
 description: Learn how OnePayroll calculates federal, state, and local income taxes using the Income Tax Jurisdiction and Employee Withholding system.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: overview
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: overview
+sws.date: 02/23/2026
 ---
 
 # About tax calculations

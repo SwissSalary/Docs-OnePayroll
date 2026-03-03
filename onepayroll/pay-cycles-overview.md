@@ -2,9 +2,9 @@
 title: About pay cycles
 description: Learn how pay cycles and pay groups define when and how often employees are paid in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: overview
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: overview
+sws.date: 02/23/2026
 ---
 
 # About pay cycles

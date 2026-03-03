@@ -2,9 +2,9 @@
 title: Set up income tax withholding
 description: Learn how to configure employee income tax withholding information in OnePayroll, including federal W-4, state, and local tax data.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Set up income tax withholding

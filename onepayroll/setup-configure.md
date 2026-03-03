@@ -2,9 +2,9 @@
 title: Configure payroll settings
 description: Learn how to review and customize pay types, pay cycles, pay groups, employee types, and benefits after generating setup data.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Configure payroll settings

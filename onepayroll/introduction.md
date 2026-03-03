@@ -2,9 +2,9 @@
 title: Welcome to OnePayroll
 description: Learn about OnePayroll, a comprehensive payroll solution built natively in Microsoft Dynamics 365 Business Central.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: overview
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: overview
+sws.date: 02/23/2026
 ---
 
 # Welcome to OnePayroll

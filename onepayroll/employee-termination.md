@@ -2,9 +2,9 @@
 title: Employee termination
 description: Learn how to terminate an employee in OnePayroll, including the termination dialog, employee lifecycle statuses, and how garnishments are handled.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Employee termination

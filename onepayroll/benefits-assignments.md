@@ -3,10 +3,9 @@ title: Assign Benefits to Employees
 description: Learn how to assign benefits to employees and employee templates in OnePayroll.
 author: myGitHubHandle
 
-ms.service: dynamics365-business-central
-ms.topic: article
-ms.date: 01/08/2026
-ms.author: MyMSFTAlias (if I work for Microsoft; otherwise edupont)
+sws.service: onepayroll
+sws.topic: article
+sws.date: 01/08/2026
 ---
 # Assign Benefits to Employees
 

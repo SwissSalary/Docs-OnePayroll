@@ -2,9 +2,9 @@
 title: Set up GL posting for payroll
 description: Learn how to configure general ledger accounts and posting rules for payroll in OnePayroll.
 author: zeande
-ms.service: dynamics-365-business-central
-ms.topic: how-to
-ms.date: 02/23/2026
+sws.service: onepayroll
+sws.topic: how-to
+sws.date: 02/23/2026
 ---
 
 # Set up GL posting for payroll
