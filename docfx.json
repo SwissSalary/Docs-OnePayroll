@@ -34,7 +34,7 @@
       "_appLogoUrl": "/",
       "_appFaviconPath": "favicon.ico",
       "_enableSearch": true,
-      "_appFooter": "<span>Powered by <a href='https://onepayroll.com'>SwissSalary USA INC.</a> &mdash; Next-generation payroll for Business Central</span>",
+      "_appFooter": "<span>Powered by <a href='https://onepayroll.com'>SwissSalary USA INC.</a> &mdash; Next-generation payroll for Microsoft Dynamics 365 Business Central</span>",
       "_disableContribution": false,
       "pdf": false
     }
