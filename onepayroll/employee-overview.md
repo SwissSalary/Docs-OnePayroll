@@ -11,6 +11,8 @@ sws.date: 02/23/2026
 
 Employees are the heart of any payroll system. OnePayroll extends the standard Business Central employee record with comprehensive payroll-specific fields and workflows.
 
+:::image type="content" source="media/employee-overview/employee-list.png" alt-text="Employee list page showing employees and factboxes":::
+
 ## Employee record overview
 
 Each employee in OnePayroll includes:
