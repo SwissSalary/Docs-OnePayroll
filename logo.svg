@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 68" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">OnePayroll logo</title>
+  <!-- Red "1" — parallelogram serif top (left edge leans from x=9 at y=0 to x=0 at y=16),
+       vertical right edge at x=26, rectangular stem y=17–26, tapering to point at y=34 -->
+  <path fill="#e60000" d="M9,0 H26 V26 L10,34 H9 V17 L0,16 Z"/>
+  <!-- Black "P" — wide bowl upper-right (x=29–63, rows 0–16), open interior cutout (rows 17–28),
+       diagonal sweep lower-left (rows 29–45), vertical stem matching red at x=9–26 (rows 46–67) -->
+  <path fill="#000000" fill-rule="evenodd" d="M29,0 L46,0 L63,16 V29 L47,45 L26,46 V67 H9 V46 L22,29 H29 V0 Z M29,17 H43 Q47,22 43,28 H29 Z"/>
+</svg>
