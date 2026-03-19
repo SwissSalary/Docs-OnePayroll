@@ -61,30 +61,30 @@ You can also generate setup data through the standard Business Central Contoso D
 
 | Category | What's included |
 |----------|----------------|
-| **Pay units** | 7 standard units (Hourly, Daily, Weekly, Biweekly, Semimonthly, Monthly, Yearly) with conversion factors |
-| **Pay types** | ~95 core pay types across earnings, taxes, deductions, benefits, and employer contributions |
-| **Pay cycles** | 4 schedules (Weekly, Biweekly, Semimonthly, Monthly) with schedule lines |
-| **Pay groups** | 3 groups (All, Hourly Employees, Salary Employees) linked to pay cycles and journal batches |
-| **Employee types** | 4 types (Contractor, Hourly, Salary Exempt, Salary Non-Exempt) with pay units and compensation methods |
+| **Pay units** |  Standard units (Hourly, Daily, Weekly, Biweekly, Semimonthly, Monthly, Yearly) with conversion factors |
+| **Pay types** |  Core pay types across earnings, taxes, deductions, benefits, and employer contributions |
+| **Pay cycles** |  Schedules (Weekly, Biweekly, Semimonthly, Monthly) with schedule lines |
+| **Pay groups** |  Groups (All, Hourly Employees, Salary Employees) linked to pay cycles and journal batches |
+| **Employee types** |  Types (Contractor, Hourly, Salary Exempt, Salary Non-Exempt) with pay units and compensation methods |
 | **Validation rules** | Default validation rules for employee and garnishment data |
-| **Document types** | 11 document types organized in categories (Official, Internal, Onboarding) |
-| **Benefit coverage** | 3 coverage types (Standard, Tax, Mandatory) with coverage options |
+| **Document types** |  Document types organized in categories (Official, Internal, Onboarding) |
+| **Benefit coverage** | Coverage types (Standard, Tax, Mandatory) with coverage options |
 | **Rules** | Weekday rules, workday/weekend composites, and validation rules |
 
 The US localization extension adds the following to setup data:
 
 | Category | What's included |
 |----------|----------------|
-| **US pay types** | ~60 additional pay types (Social Security, Medicare, FUTA, SUTA, 401(k), HSA, FSA, etc.) with W-2 mappings |
+| **US pay types** | Additional pay types (Social Security, Medicare, FUTA, SUTA, 401(k), HSA, FSA, etc.) with W-2 mappings |
 | **Benefits** | Social Security, Medicare, FUTA, SUTA (with limits for all 50 states), 401(k), HSA, and garnishment benefits |
-| **Income tax jurisdictions** | Federal, California, and North Dakota as starting examples |
-| **Garnishment types** | 10 types (Child Support, IRS Levy, Tax Lien, Student Loan, etc.) |
-| **State rules** | Tax rules for all 50 states plus age and filing status rules |
+| **Income tax jurisdictions** | Federal, All 50 US states supported |
+| **Garnishment types** | (Child Support, IRS Levy, Tax Lien, Student Loan, etc.) |
+| **State rules** | Tax rules for all 50 states |
 | **Data exchange definitions** | Pre-configured ACH/EFT export format |
 
 ### Master and transactional data (demonstration only)
 
-If you're evaluating OnePayroll or want to explore with sample data, you can generate master data through the **Contoso Demo Data** page. Master data includes 11 departments, 26 job titles, 16 sample employees with payroll assignments and payment methods, and (with the US localization) 3 sample work locations. Transactional data includes posted payroll runs for the sample employees.
+If you're evaluating OnePayroll or want to explore with sample data, you can generate master data through the **Contoso Demo Data** page. Master data includes sample departments, job titles and employees with payroll assignments and payment methods, and (with the US localization) 3 sample work locations. Transactional data includes posted payroll runs for the sample employees.
 
 > [!IMPORTANT]
 > Do not generate master data in a production environment. Departments, employees, job titles, work locations, and payroll runs are specific to your organization and should be created manually.
