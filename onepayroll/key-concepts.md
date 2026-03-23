@@ -142,7 +142,7 @@ A pay type used only for grouping or organizational purposes on payroll reports,
 An organizational structure showing parent-child relationships, such as departments within divisions.
 
 **Holiday**
-A day when employees are paid but don't work. OnePayroll can track holiday hours separately from regular hours.
+A designated day recognized by the employer that may be paid or unpaid depending on company policy. OnePayroll can track holiday hours separately from regular hours.
 
 **Hourly Rate**
 The compensation amount per hour worked, used for calculating pay for hourly employees.
