@@ -336,8 +336,6 @@ A pay frequency of twice per month, typically on the 15th and last day of the mo
 **Snapshot**
 See [Employee Snapshot](#e).
 
-**Snapshot**
-See [Employee Snapshot](#e).
 
 **Source Table ID**
 A field on every payroll entry that records which table generated the entry (e.g., table ID for Pay Type, Benefit, or Garnishment), maintaining an audit trail.
