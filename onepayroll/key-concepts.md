@@ -185,7 +185,7 @@ City or other local jurisdiction income tax withholding.
 A payroll entry created outside the normal payroll run calculation, such as a bonus or off-cycle payment.
 
 **Medicare Tax**
-A federal payroll tax on wages. Both employee and employer portions are withheld.
+A federal payroll tax that funds Medicare. It is withheld from employee wages, and the employer also pays a matching amount.
 
 **Month-End Close**
 The accounting process at the end of each month, which typically includes reconciling payroll entries posted to GL.
