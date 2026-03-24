@@ -125,7 +125,7 @@ A legal demand to withhold a portion of an employee's wages and remit them to a 
 The order in which multiple garnishments are applied when an employee has garnishment orders from multiple sources.
 
 **GL Account**
-See [General Ledger Account](#g).
+A General Ledger account used to record payroll-related wages, taxes, deductions, and other financial transactions in the accounting system.
 
 **GL Integration**
 The automatic posting of payroll entries to general ledger accounts for accounting purposes.
@@ -264,8 +264,6 @@ The state of a payroll run in the processing workflow:
 - **Ready** - payroll is approved and ready to post
 - **Posted** - payroll has been posted to GL
 
-**Payroll Status**
-See [Payroll Run Status](#p).
 
 **Payment Method**
 A configuration that defines how an employee will be paid (direct deposit or check) and how net pay will be allocated across accounts.
@@ -277,7 +275,7 @@ The originating system or process that created a payment (e.g., "Payroll Run", "
 A component of compensation (earnings or deductions) such as salary, overtime, taxes, or benefits.
 
 **Pay Type Category**
-See [Category](#c).
+A grouping used to classify pay types based on how earnings should be handled in payroll, such as regular pay, overtime, bonus, or other compensation types.
 
 **Pay Unit**
 A user-defined unit of compensation measurement with a code, description, and conversion factor. Pay units are used on employee types, pay cycles, and pay types to define how rates are expressed and converted.
@@ -285,11 +283,6 @@ A user-defined unit of compensation measurement with a code, description, and co
 **Pay Unit Conversion**
 The process of converting between different pay units using the conversion factor defined on each pay unit.
 
-**Period**
-See [Pay Period](#p).
-
-**FICA**
-See [FICA](#f).
 
 **Priority**
 An ordering of Employee Payment Methods. Each method has a unique priority per employee that determines the processing order.
@@ -300,8 +293,6 @@ A transaction that has been recorded in the general ledger and is final.
 **Primary Allocation**
 The default payment method for an employee, to which the majority of net pay is directed.
 
-**Processing Status**
-See [Payroll Run Status](#p).
 
 ## Q
 
@@ -346,8 +337,6 @@ The unique identifier for US employees for tax purposes.
 **State Income Tax**
 Income tax withheld by a specific state.
 
-**Status (Payroll Run)**
-See [Payroll Run Status](#p).
 
 **Statutory Deduction**
 A deduction required by law, such as FICA or income tax withholding.
@@ -410,8 +399,6 @@ An individual payroll entry or journal posting.
 **Unemployment Insurance (UI)**
 State-mandated insurance against job loss, funded by employer payroll taxes.
 
-**Unit of Measurement**
-See [Pay Unit](#p).
 
 **User-Defined Field**
 A custom field added to a table by implementing partners to extend OnePayroll functionality.
