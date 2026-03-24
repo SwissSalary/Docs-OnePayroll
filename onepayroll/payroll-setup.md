@@ -111,13 +111,6 @@ With approval enabled:
 - Default: 30 days
 - Adjust based on your notification needs
 
-## Set up pay type GL account mapping
-
-In addition to global GL accounts, some organizations need pay type-specific accounts:
-
-1. Open desired **Pay Type**
-2. Go to **Posting** tab
-3. Select the GL account for this pay type
 
 > [!TIP]
 > Use consistent GL account numbering by expense/deduction type (e.g., 6000-6099 for salary, 2100-2199 for payables) to simplify reconciliation.
