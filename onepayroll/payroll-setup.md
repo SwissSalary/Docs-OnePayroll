@@ -85,7 +85,7 @@ To require approval before payroll can be paid or posted:
 With approval enabled:
 - Payroll runs must be approved by an authorized user before posting
 - Non-approvers see the payroll but cannot post it
-- Create audit trail of who approved each payroll
+- Creates an audit trail of who approved each payroll
 
 ## Configure other payroll settings
 
