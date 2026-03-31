@@ -48,7 +48,7 @@ Once the employee is created, configure payroll-specific settings:
 **To assign a pay group:**
 
 1. Open the employee
-2. On the **OnePayroll** tab:
+2. On the **Employment** tab:
    - **Pay Group** - Select the appropriate group
    - This determines when the employee is paid
 
@@ -63,7 +63,7 @@ Once the employee is created, configure payroll-specific settings:
 **To set employee type:**
 
 1. Open the employee
-2. On the **OnePayroll** tab:
+2. On the **Employment** tab:
    - **Type** - Select an employee type code
    - This determines the employee's pay unit and compensation method
 
@@ -76,9 +76,19 @@ The employee's pay unit and pay factor are automatically derived from their empl
 
 ### Enter compensation information
 
-Compensation is managed through [pay types](pay-types-overview.md). Pay types define the earnings, deductions, and contributions that apply to employees. Each pay type can specify its own pay unit and rate.
+Based on the employee type code selected on the Employment tab, you will be able to enter the corresponding compensation on the Job and Compensation tab.
 
-For more information on configuring pay types and assigning them to employees, see [Set up pay types](pay-types-setup.md).
+To set an employee’s compensation:
+
+Open the employee record.
+Go to the Job and Compensation tab.
+In the Amount field, enter the employee’s compensation based on their employee type.
+
+For example:
+
+If the employee type is Salary, enter the employee’s gross annual salary in the Amount field.
+If the employee type is Hourly, enter the employee’s hourly rate in the Amount field.
+
 
 ### Add Tax Information
 
