@@ -157,7 +157,7 @@ See [About payment methods](payment-methods-overview.md) for more details.
 **To set organizational relationships:**
 
 1. Open the employee
-2. In the **General** tab:
+2. In the **Job & Compensation** tab:
    - **Department** - Which department the employee belongs to
    - **Manager/Supervisor** - Who oversees the employee
 
