@@ -82,9 +82,6 @@ export default {
 const svg = document.querySelector('.op-logo');
     if (!svg) return;
 
-    const prefersReducedMotion =
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true;
-
     let scrollTimeout = null;
     const THRESHOLD = 80; // px of scroll before fade/slide
 
