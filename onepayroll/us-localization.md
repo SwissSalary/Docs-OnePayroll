@@ -113,6 +113,16 @@ Some cities/counties impose:
 - Federal income tax withheld
 - Social Security and Medicare taxes (employee and employer)
 
+**OnePayroll Form 941 support:**
+
+OnePayroll can automatically fill out Form 941 as a PDF using payroll data collected in payment batches. To use this feature:
+
+1. Configure a remittance group with **Filing Method** set to **IRS Form 941** and a quarterly filing cycle.
+2. Assign your federal tax jurisdictions to the remittance group.
+3. After creating payroll runs for the quarter, open the accumulated payment batch from **Payroll Payments** and select **Report**.
+
+See [IRS Form 941](irs-form-941.md) for detailed instructions.
+
 **If error discovered:**
 - File Form 941-X (amended return)
 - Same filing deadline as original

@@ -129,6 +129,8 @@ The posting behavior depends on the **General Ledger Posting** setting in Payrol
 - **Automatic Posting**: Payroll entries are transferred to General Journal Lines and immediately posted to the General Ledger.
 - **Always Ask**: You are prompted each time whether to post the journal automatically or leave it for manual posting.
 
+Payment batches for payroll obligations such as taxes, benefits, and garnishments are created or updated earlier, when the payroll run is created and calculated. For sources with a remittance group, amounts are consolidated into batches by payment period. For sources without a remittance group, a separate batch is created per payroll run. See [Work with payment batches](payment-batches.md).
+
 **How GL entries are created:**
 
 1. Payroll entries are collected and buffered with their GL accounts and dimensions

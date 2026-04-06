@@ -36,7 +36,7 @@ OnePayroll calculates and tracks tax withholding amounts, but **does not file ta
 
 ### Quarterly filings
 
-- **IRS Form 941** (Employer's Quarterly Federal Tax Return) — report federal income tax, Social Security, and Medicare taxes. Use OnePayroll's payroll entry data to populate the form.
+- **IRS Form 941** (Employer's Quarterly Federal Tax Return) — report federal income tax, Social Security, and Medicare taxes. OnePayroll can automatically fill out Form 941 from payroll data when you use remittance groups. See [IRS Form 941](irs-form-941.md).
 - **State quarterly returns** — requirements vary by state. Filter payroll data by state jurisdiction as needed.
 
 ### Annual filings
@@ -52,7 +52,7 @@ OnePayroll calculates and tracks tax withholding amounts, but **does not file ta
 
 ## Using payroll data for tax filings
 
-### To gather quarterly totals
+### To gather quarterly totals (manual method)
 
 1. Run the **Payroll Register** report filtered to the quarter's date range
 2. Review totals by tax-related pay types:
@@ -61,6 +61,9 @@ OnePayroll calculates and tracks tax withholding amounts, but **does not file ta
    - Total Social Security wages and tax
    - Total Medicare wages and tax
 3. Use these totals to populate Form 941 or equivalent state forms
+
+> [!TIP]
+> If you use remittance groups, OnePayroll automatically fills out Form 941 from payroll data. See [IRS Form 941](irs-form-941.md).
 
 ### To reconcile year-end data
 
@@ -72,6 +75,8 @@ OnePayroll calculates and tracks tax withholding amounts, but **does not file ta
 ## Related information
 
 - [Tax statements and W-2 reporting](tax-statements.md)
+- [IRS Form 941](irs-form-941.md)
+- [About remittance groups](remittance-groups-overview.md)
 - [About tax calculations](tax-calculation-overview.md)
 - [Set up tax calculations](tax-calculation-setup.md)
 - [Payroll reports](payroll-reports.md)

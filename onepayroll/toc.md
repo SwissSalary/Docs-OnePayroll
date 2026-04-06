@@ -51,12 +51,18 @@
 ### [Export payment files](payment-export.md)
 ### [Vendor payments](vendor-payments.md)
 
+### Remittance groups and payment batches
+#### [About remittance groups](remittance-groups-overview.md)
+#### [Set up remittance groups](remittance-groups-setup.md)
+#### [Work with payment batches](payment-batches.md)
+
 ## Tax and compliance
 ### [About tax calculations](tax-calculation-overview.md)
 ### [Set up tax calculations](tax-calculation-setup.md)
 ### [Income tax setup](income-tax-setup.md)
 ### [Tax statements and W-2 reporting](tax-statements.md)
 ### [Tax compliance](tax-reports.md)
+### [IRS Form 941 (US)](irs-form-941.md)
 
 ## Financial integration
 ### [About GL integration](gl-integration-overview.md)
