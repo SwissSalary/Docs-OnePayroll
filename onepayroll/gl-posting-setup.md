@@ -63,7 +63,7 @@ Each pay type must be mapped to GL accounts for posting.
 
 ## How GL posting works
 
-When you select **Post** on a payroll run, the following happens (assuming GL posting is enabled):
+When you choose the **Post** action on a payroll run, the following happens (assuming GL posting is enabled):
 
 ### Step 1: Buffer payroll entries
 
@@ -115,7 +115,7 @@ If unposted journal lines already exist in the pay group's configured journal ba
 After posting, verify the general ledger was updated correctly:
 
 1. In the **Payroll Runs** list, select the posted payroll run
-2. Select **General Ledger Log** (in Reporting actions)
+2. Choose the **General Ledger Log** action
 3. Review entries to confirm:
    - Amounts posted to correct GL accounts
    - Debits equal credits

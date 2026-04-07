@@ -25,7 +25,7 @@ Before creating pay types, make sure you have:
 ## Create a pay type
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Types**, and then choose the related link.
-2. Select **New** to create a new pay type.
+2. Choose the **New** action to create a new pay type.
 3. Fill in the following fields:
 
 | Field | Description |

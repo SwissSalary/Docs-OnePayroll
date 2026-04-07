@@ -26,13 +26,13 @@ These fields are also visible in the **Employee Payment Methods** list page.
 ## Access Employee Payment Methods
 
 1. Open the **Employee Card**.
-2. Select the **Payment Methods** action.
+2. Choose the **Payment Methods** action.
 3. The **Employee Payment Methods** list opens, showing all payment methods for that employee.
 4. Select a record to open the **Employee Payment Method** card, which shows the Transfer group with bank fields.
 
 ## Set up bank details for direct deposit
 
-1. Open the **Employee Card** and select **Payment Methods**.
+1. Open the **Employee Card** and choose the **Payment Methods** action.
 2. Create a new Employee Payment Method.
 3. Fill in the **General** group: Name, Allocation Type (Primary, Fixed Amount, or Percentage), and Allocation amount.
 4. Fill in the **Transfer** group: Payment Method code, Bank Account No., and Bank Identifier Code.

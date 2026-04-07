@@ -22,9 +22,8 @@ Install the following extensions from the Business Central app marketplace:
 
 After installing OnePayroll, set the **Payroll Manager** role center as your default home page:
 
-1. Select the **Settings** icon (gear) in the top-right corner of Business Central, then select **My Settings**.
-2. In the **Role** field, select **Payroll Manager**.
-3. Select **OK**.
+1. Choose the **Settings** icon (gear) in the top-right corner of Business Central, then choose the **My Settings** action.
+2. In the **Role** field, select **Payroll Manager**. Choose **OK**.
 
 The Payroll Manager role center is now your home page. It provides a dashboard with payroll activity cues, headlines, and navigation to all payroll functions.
 
@@ -44,7 +43,7 @@ When you first open the **Payroll Manager** role center, a notification appears:
 
 > *Required payroll setup data is missing. Generate the setup data now to enable payroll processing.*
 
-Select **Generate Setup Data** to create the foundation. This generates setup data only — not master or transactional data.
+Choose the **Generate Setup Data** action to create the foundation. This generates setup data only — not master or transactional data.
 
 ### Generate setup data from the Contoso Demo Data page
 
@@ -52,10 +51,10 @@ You can also generate setup data through the standard Business Central Contoso D
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Contoso Demo Data**, and then choose the related link.
 2. Find the **SwS Payroll Module** row.
-3. Select **Generate Setup Data** to generate setup data only.
+3. Choose the **Generate Setup Data** action to generate setup data only.
 
 > [!WARNING]
-> Do not select **Generate** (without qualification). The **Generate** action generates both setup data and master data, which includes fictitious departments, employees, and payroll runs that are not appropriate for a production environment. Use **Generate Setup Data** to generate only the generic payroll configuration.
+> Do not choose the **Generate** action (without qualification). The **Generate** action generates both setup data and master data, which includes fictitious departments, employees, and payroll runs that are not appropriate for a production environment. Use **Generate Setup Data** to generate only the generic payroll configuration.
 
 ### Setup data included
 

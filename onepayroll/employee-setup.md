@@ -19,7 +19,7 @@ This guide walks you through creating employee records and configuring their pay
 **To create a new employee:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
-2. Select **New**
+2. Choose the **New** action
 3. In the **General** tab:
    - **No.** - Employee number (auto-generated or enter manually)
    - **First Name** / **Last Name** - Employee name
@@ -122,8 +122,8 @@ The SSN is critical for:
 **To add an Employee Payment Method:**
 
 1. Open the **Employee Card**.
-2. Select the **Payment Methods** action.
-3. On the **Employee Payment Methods** list, select **New**.
+2. Choose the **Payment Methods** action.
+3. On the **Employee Payment Methods** list, choose the **New** action.
 4. Enter details on the card:
    - **Name** — a descriptive label (for example, "Main Checking")
    - **Priority** — the processing order
@@ -176,8 +176,8 @@ To change an employee's status, update the **Employment Date** or **Termination 
 **To enroll employee in benefits:**
 
 1. Open the employee
-2. On the **OnePayroll** tab, select **Benefits**
-3. Select **New**
+2. On the **OnePayroll** tab, choose the **Benefits** action
+3. Choose the **New** action
 4. Enter:
    - **Benefit** - Which benefit program (Health Insurance, 401(k), etc.)
    - **Coverage** - Coverage level (Employee Only, Employee + Spouse, etc.)

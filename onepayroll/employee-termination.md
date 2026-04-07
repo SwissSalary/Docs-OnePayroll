@@ -32,12 +32,11 @@ These statuses are calculated automatically based on the employee's **Employment
 ### To terminate an employee
 
 1. Open the **Employee Card** for the employee
-2. Select **Terminate** from the actions
+2. Choose the **Terminate** action
 3. In the **Termination** dialog, fill in the fields:
    - **Termination Date** — the employee's last day of employment
    - **Grounds for Term. Code** — select the reason for termination from the lookup (for example, resignation, layoff, retirement)
-   - **Rehirable** — turn on if the employee is eligible for rehire
-4. Select **OK**
+   - **Rehirable** — turn on if the employee is eligible for rehire. Choose **OK**.
 
 The employee record is updated with the termination date and reason.
 
@@ -54,9 +53,8 @@ Garnishments have their own termination process separate from employee terminati
 ### To terminate a garnishment
 
 1. Open the employee's garnishment lines
-2. Select **Terminate** on the garnishment line
-3. Set the **Termination Date** (defaults to the current work date)
-4. Select **OK**
+2. Choose the **Terminate** action on the garnishment line
+3. Set the **Termination Date** (defaults to the current work date). Choose **OK**.
 
 The garnishment's end date is set, and it stops being included in future payroll calculations after that date.
 

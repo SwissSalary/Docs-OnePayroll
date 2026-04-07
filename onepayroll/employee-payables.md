@@ -55,7 +55,7 @@ The Employee Card shows payables in the **Job & Compensation** section. If the e
 For a detailed view:
 
 1. Open the **Employee Card**
-2. Select **View Payables** from the actions, or select the payable part
+2. Choose the **View Payables** action, or select the payable part
 3. The **Payables** page opens showing all payable lines for the employee
 
 From this page, you can also manage dimensions for each payable (see [Employee dimensions](employee-dimensions.md)).

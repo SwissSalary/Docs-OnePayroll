@@ -37,11 +37,10 @@ Creating a payroll run also calculates all pay for the selected employees.
 **To create a new payroll run:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Runs**, and then choose the related link.
-2. Select **New** to open the New Payroll request page
+2. Choose the **New** action to open the New Payroll request page
 3. Set the required parameters:
    - **Pay Group** - Select the pay group to process (for example, "Biweekly Employees")
-   - **Start Date** - The start date of the pay period
-4. Select **OK** to create and calculate
+   - **Start Date** - The start date of the pay period. Choose **OK** to create and calculate.
 
 **What happens automatically:**
 
@@ -67,7 +66,7 @@ Before posting, review calculated entries to ensure accuracy.
 **To review entries:**
 
 1. In the **Payroll Runs** list, select the payroll run
-2. Select **Payroll Entries** from the navigation actions
+2. Choose the **Payroll Entries** action
 3. Review entries:
    - **Pay Type** - All expected pay types present?
    - **Amount** - Calculations look reasonable?
@@ -78,7 +77,7 @@ Before posting, review calculated entries to ensure accuracy.
 **To preview individual paychecks:**
 
 1. In the **Payroll Runs** list, select the payroll run
-2. Select **Paycheck** (in Paycheck Actions)
+2. Choose the **Paycheck** action
 3. Review paycheck details for each employee:
    - Employee name and information
    - Gross pay amount
@@ -91,7 +90,7 @@ Before posting, review calculated entries to ensure accuracy.
 **To view the overall payroll register:**
 
 1. In the **Payroll Runs** list, select the payroll run
-2. Select **Payroll Register** (in Reporting actions)
+2. Choose the **Payroll Register** action
 3. Review the summary report
 
 ## Step 3: Approve (if required)
@@ -101,7 +100,7 @@ If **Require Approvals** is enabled in Payroll Setup, an authorized user must ap
 **To approve a payroll run:**
 
 1. Open the payroll run (Status = **Open**)
-2. Select **Approve**
+2. Choose the **Approve** action
 3. Confirm the approval
 4. Status changes to **Approved**
 
@@ -115,7 +114,7 @@ Posting transfers payroll entries to the general journal and optionally posts th
 **To post a payroll run:**
 
 1. Open the payroll run
-2. Select **Post**
+2. Choose the **Post** action
 3. Confirm the posting action
 4. Wait for posting to complete
 5. Status changes to **Posted**
@@ -147,11 +146,10 @@ After posting (or after approval, if posting is not needed), generate payment fi
 **To create payments:**
 
 1. In the **Payroll Runs** list, select the payroll run
-2. Select **Pay**
+2. Choose the **Pay** action
 3. In the **Create Payroll Payments** request page, select the **Payment Type**:
    - **Electronic Payment** - Generates a payment file for direct deposit
-   - **Computer Check** - Prints checks for check-payment employees
-4. Select **OK**
+   - **Computer Check** - Prints checks for check-payment employees. Choose **OK**.
 
 See [Direct deposit setup](direct-deposit-setup.md) and [Check printing](check-printing.md) for detailed payment workflows.
 
@@ -165,7 +163,7 @@ After posting, verify the general ledger was updated correctly.
 **To review GL postings for a payroll run:**
 
 1. In the **Payroll Runs** list, select the posted payroll run
-2. Select **General Ledger Log** (in Reporting actions)
+2. Choose the **General Ledger Log** action
 3. Review entries by GL account
 
 **To verify GL accounts directly:**
@@ -196,7 +194,7 @@ Employee & Employer Payables (Credits)
 To create PDF copies of paychecks for employee records:
 
 1. In the **Payroll Runs** list, select the payroll run
-2. Select **Save in Dossier** (in Paycheck Actions)
+2. Choose the **Save in Dossier** action
 3. Paychecks are saved as PDFs to each employee's dossier
 
 ### Cancel a payroll run
@@ -204,7 +202,7 @@ To create PDF copies of paychecks for employee records:
 If a payroll run has errors and needs to be redone:
 
 1. Select the payroll run (must not be **Posted**)
-2. Select **Cancel**
+2. Choose the **Cancel** action
 3. Confirm the cancellation
 
 > [!WARNING]
@@ -215,7 +213,7 @@ If a payroll run has errors and needs to be redone:
 If an error is discovered after posting:
 
 1. In **Payroll Runs**, select the posted payroll run
-2. Select **Reverse Paycheck**
+2. Choose the **Reverse Paycheck** action
 3. Follow the reversal report to create offsetting entries
 4. If needed, create a new corrected payroll run
 

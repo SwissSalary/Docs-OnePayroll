@@ -50,11 +50,11 @@ During payroll calculation, 60% of the employee's payroll amount is posted with 
 ### To assign dimensions to a payable
 
 1. Open the **Employee Card**
-2. Select **View Payables** or navigate to the payable in the Job & Compensation section
+2. Choose the **View Payables** action, or navigate to the payable in the Job & Compensation section
 3. On the **Payables** page, select the payable line
-4. Select **Dimensions** from the actions
+4. Choose the **Dimensions** action
 5. On the **Dimensions** page, add dimension lines:
-   - Select **Edit Dimension Set** to open the standard Business Central dimension set editor and choose dimension values
+   - Choose the **Edit Dimension Set** action to open the standard Business Central dimension set editor and choose dimension values
    - Set **Start Date** and **End Date** for period-specific dimensions
    - Set **Quantity** if splitting across multiple dimension sets
 6. Close the page

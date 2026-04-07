@@ -37,7 +37,7 @@ Add your employees to OnePayroll. Each employee must be assigned a pay group and
 **To create an employee:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
-2. Select **New**.
+2. Choose the **New** action.
 3. Enter the employee number and name.
 4. On the **OnePayroll** tab:
    - Assign a **Pay Group** (for example, BIWKLY).
@@ -97,13 +97,12 @@ With employees and payment methods configured, process a test payroll run to ver
 **To create a payroll run:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Runs**, and then choose the related link.
-2. Select **New**.
+2. Choose the **New** action.
 3. Set the **Pay Group** (for example, BIWEEKLY).
-4. Set the **Start Date** for the pay period.
-5. Select **OK**. OnePayroll creates the payroll run and calculates all amounts automatically. Status is set to **Open**.
+4. Set the **Start Date** for the pay period. Choose **OK**. OnePayroll creates the payroll run and calculates all amounts automatically. Status is set to **Open**.
 6. Review the **Payroll Entries** for accuracy.
-7. If your setup requires approvals, select **Approve** to approve the payroll run.
-8. Select **Post** to post entries to the general ledger. Status changes to **Posted**.
+7. If your setup requires approvals, choose the **Approve** action to approve the payroll run.
+8. Choose the **Post** action to post entries to the general ledger. Status changes to **Posted**.
 
 ### Verify the results
 

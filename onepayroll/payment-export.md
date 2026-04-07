@@ -39,11 +39,10 @@ OnePayroll uses the **Create Payroll Payments** report to generate payments from
 
 1. Open the **Payroll Runs** page
 2. Select the payroll run to process payments for
-3. Select the **Create Payroll Payments** action
+3. Choose the **Create Payroll Payments** action
 4. On the request page:
    - **Payroll No.** is pre-filled with the selected payroll run
-   - Select the **Payment Type**: **Electronic Payment** (for direct deposit/ACH) or **Computer Check** (for check payments)
-5. Select **OK** to create the payment entries
+   - Select the **Payment Type**: **Electronic Payment** (for direct deposit/ACH) or **Computer Check** (for check payments). Choose **OK** to create the payment entries.
 
 The report creates payment entries based on each employee's payment method configuration (allocation type, bank details, etc.).
 

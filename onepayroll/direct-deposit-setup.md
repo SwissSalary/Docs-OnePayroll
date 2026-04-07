@@ -14,7 +14,7 @@ Direct deposit electronically transfers employee pay to their bank accounts. In 
 ## How it works
 
 1. Each employee has one or more Employee Payment Method records with bank details.
-2. You post a payroll run and select **Pay**.
+2. You post a payroll run and choose the **Pay** action.
 3. On the **Create Payroll Payments** request page, you set **Payment Type** to **Electronic Payment**.
 4. OnePayroll generates a payment file and attaches it to the payroll run.
 5. You download the file and transmit it to your bank.
@@ -93,9 +93,8 @@ For US-based payroll, the payment export uses a NACHA/ACH file format. The US de
 ### Step 2: Generate payment file
 
 1. On the **Payroll Runs** page, select the posted payroll run.
-2. Select **Pay**.
-3. On the **Create Payroll Payments** request page, set **Payment Type** to **Electronic Payment**.
-4. Select **OK**.
+2. Choose the **Pay** action.
+3. On the **Create Payroll Payments** request page, set **Payment Type** to **Electronic Payment**. Choose **OK**.
 
 OnePayroll generates a payment file through the configured payment export interface. The file is automatically attached to the payroll run as a document attachment, visible in the **Payment Files** FactBox on the Payroll Runs page. You are also prompted to download the file.
 

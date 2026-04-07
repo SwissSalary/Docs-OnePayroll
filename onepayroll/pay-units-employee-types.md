@@ -68,7 +68,7 @@ When you assign an employee type to an employee, the employee inherits the pay u
 **To create an employee type:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employee Types**, and then choose the related link.
-2. Select **New**.
+2. Choose the **New** action.
 3. Enter a **Code** (e.g., "SALARIED", "HOURLY", "DAILY").
 4. Enter a **Description** (e.g., "Salaried Employees", "Hourly Workers").
 5. Select the **Pay Unit** that defines how compensation is expressed for this type.

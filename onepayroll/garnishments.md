@@ -18,7 +18,7 @@ Before you can assign garnishments to employees, you must set up garnishment typ
 **To set up a garnishment type:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Garnishment Types**, and then choose the related link.
-2. Select **New** to create a new type.
+2. Choose the **New** action to create a new type.
 3. Fill in the fields:
 
 | Field | Description |

@@ -14,7 +14,7 @@ OnePayroll prints employee paychecks by creating General Journal Lines and deleg
 ## Check payment workflow
 
 1. Create, review, and (optionally) post a payroll run.
-2. Select **Pay** on the payroll run.
+2. Choose the **Pay** action on the payroll run.
 3. On the **Create Payroll Payments** request page, set **Payment Type** to **Computer Check**.
 4. OnePayroll creates General Journal Lines and runs the BC check printing process.
 5. Distribute printed checks to employees.
@@ -61,9 +61,8 @@ The pay group must have a **Gen. Journal Template** and **Gen. Journal Batch** c
 ### Step 2: Run Pay with Computer Check
 
 1. On the **Payroll Runs** page, select the posted payroll run.
-2. Select **Pay**.
-3. On the **Create Payroll Payments** request page, set **Payment Type** to **Computer Check**.
-4. Select **OK**.
+2. Choose the **Pay** action.
+3. On the **Create Payroll Payments** request page, set **Payment Type** to **Computer Check**. Choose **OK**.
 
 OnePayroll creates General Journal Lines for each employee's check payment and runs the Business Central check printing process. Checks print to the configured printer or generate PDF output.
 
@@ -72,14 +71,14 @@ OnePayroll creates General Journal Lines for each employee's check payment and r
 To review paycheck details before or after printing:
 
 1. On the **Payroll Runs** page, select the payroll run.
-2. Select **Paycheck** to preview paycheck details for each employee.
+2. Choose the **Paycheck** action to preview paycheck details for each employee.
 
 ### Step 4: Archive paychecks (optional)
 
 To save PDF copies to employee dossiers:
 
 1. On the **Payroll Runs** page, select the payroll run.
-2. Select **Save in Dossier**.
+2. Choose the **Save in Dossier** action.
 
 ## Troubleshooting
 

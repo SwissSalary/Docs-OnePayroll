@@ -13,7 +13,7 @@ When you post a payroll run, OnePayroll creates General Journal Lines based on p
 
 ## When General Journal Lines are created
 
-General Journal Lines are created when you select **Post** on a payroll run — not during creation or approval. The behavior depends on the **General Ledger Posting** setting in Payroll Setup:
+General Journal Lines are created when you choose the **Post** action on a payroll run — not during creation or approval. The behavior depends on the **General Ledger Posting** setting in Payroll Setup:
 
 | Setting | General Journal Lines created? | Automatically posted? |
 |---|---|---|
@@ -78,7 +78,7 @@ If using Manual Posting, review the lines in the General Journal:
 To review posted entries:
 
 1. In **Payroll Runs**, select the posted payroll run
-2. Select **General Ledger Log** (in Reporting actions)
+2. Choose the **General Ledger Log** action
 
 Or choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **General Ledger Entries**, and then choose the related link, and filter by document number and posting date.
 

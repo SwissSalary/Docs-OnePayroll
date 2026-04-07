@@ -20,7 +20,7 @@ This article describes each payroll report in OnePayroll, including what it show
 **To run:**
 
 1. On the **Payroll Runs** page, select a payroll run
-2. Select **Paycheck** from the Paycheck Actions group
+2. Choose the **Paycheck** action
 3. On the request page, optionally filter by employee
 4. Preview or print
 
@@ -47,7 +47,7 @@ This article describes each payroll report in OnePayroll, including what it show
 **To run:**
 
 1. On the **Payroll Runs** page, select a payroll run
-2. Select **Payroll Register** from the Reporting group
+2. Choose the **Payroll Register** action
 3. Preview or export to Excel
 
 **Shows per employee:**
@@ -158,7 +158,7 @@ This article describes each payroll report in OnePayroll, including what it show
 **To run:**
 
 1. On the **Payroll Runs** page, select a payroll run
-2. Select **General Ledger Log** from the Reporting group
+2. Choose the **General Ledger Log** action
 3. Preview or print
 
 > [!IMPORTANT]

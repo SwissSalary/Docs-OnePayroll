@@ -70,9 +70,9 @@ Employee documents are the actual files stored in the system. Each document is l
 ### Upload a document
 
 1. Open the **Employee Card** for the employee
-2. Select **Dossier** from the actions
+2. Choose the **Dossier** action
 3. In the **Employee Dossier** page, select a document type from the tree
-4. In the **Employee Documents** FactBox, select **Upload**
+4. In the **Employee Documents** FactBox, choose the **Upload** action
 5. Browse and select the file to upload
 6. The file is stored and associated with the selected document type
 
@@ -82,7 +82,7 @@ Documents can also be uploaded programmatically or through the self-service port
 
 1. In the **Employee Dossier**, select the document type
 2. In the **Employee Documents** FactBox, select the document
-3. Select **Download** to save a copy locally, or use the **Document Preview** FactBox to view it inline
+3. Choose the **Download** action to save a copy locally, or use the **Document Preview** FactBox to view it inline
 
 ## Employee Dossier page
 
@@ -95,7 +95,7 @@ The **Employee Dossier** page provides a consolidated view of all documents for 
 ### To open the dossier
 
 1. Open the **Employee Card**
-2. Select **Dossier** from the actions
+2. Choose the **Dossier** action
 
 ## Save paychecks to dossier
 
@@ -104,11 +104,10 @@ You can batch-save generated paychecks as PDF documents into employee dossiers.
 ### To save paychecks from a payroll run
 
 1. On the **Payroll Runs** page, select the payroll run
-2. Select **Save in Dossier** from the paycheck actions
+2. Choose the **Save in Dossier** action
 3. On the request page, set:
    - **Document Type** — select the document type for paychecks
-   - **Available On** — set the date the documents become available
-4. Select **OK**
+   - **Available On** — set the date the documents become available. Choose **OK**.
 
 OnePayroll generates a PDF paycheck for each employee in the payroll run and saves them as employee documents in their dossiers.
 

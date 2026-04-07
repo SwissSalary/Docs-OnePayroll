@@ -128,7 +128,7 @@ Explanations and solutions for common OnePayroll errors.
 **Why:** Employee Payment Method is missing Bank Account No. or Bank Identifier Code
 
 **Solution:**
-1. Open the **Employee Card** and select **Payment Methods**
+1. Open the **Employee Card** and choose the **Payment Methods** action
 2. Verify the Employee Payment Method has:
    - **Bank Account No.** filled in
    - **Bank Identifier Code** filled in

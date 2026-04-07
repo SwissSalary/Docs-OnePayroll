@@ -23,7 +23,7 @@ Departments group employees by their functional area or organizational unit.
 **To create a department:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Departments**, and then choose the related link.
-2. Select **New**
+2. Choose the **New** action
 3. Enter:
    - **Code** — Short identifier (e.g., "SALES", "ACCT", "MFG")
    - **Description** — Full department name (e.g., "Sales", "Accounting", "Manufacturing")
@@ -75,7 +75,7 @@ Work locations track physical or remote work sites.
 **To create a work location:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Work Locations**, and then choose the related link.
-2. Select **New**
+2. Choose the **New** action
 3. Enter:
    - **Code** — Location identifier (e.g., "MAIN", "BRANCH1", "REMOTE")
    - **Description** — Location name (e.g., "Main Office", "Branch 1", "Remote")
