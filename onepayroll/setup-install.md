@@ -100,5 +100,3 @@ After generating setup data, review and customize the generated configuration:
 
 - [Getting started with OnePayroll](getting-started.md)
 - [Payroll Manager Role Center](role-center.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

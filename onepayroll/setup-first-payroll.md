@@ -136,5 +136,3 @@ Now that you've completed the initial setup and verified your first payroll:
 - [About payroll runs](payroll-runs-overview.md)
 - [Set up employees](employee-setup.md)
 - [Set up payment methods](payment-methods-setup.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

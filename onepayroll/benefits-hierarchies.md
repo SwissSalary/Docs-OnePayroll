@@ -57,5 +57,3 @@ When working with benefit hierarchies:
 [Set Up Benefits](benefits-setup.md)  
 [Assign Benefits to Employees](benefits-assignments.md)  
 [Understand Benefit Limits](benefits-limits.md)  
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

@@ -89,5 +89,3 @@ Common configurations:
 - [Process payroll runs](payroll-runs-process.md)
 - [Employee setup](employee-setup.md)
 - [Payroll journal entries](payroll-journal.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

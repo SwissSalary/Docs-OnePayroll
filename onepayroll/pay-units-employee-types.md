@@ -145,5 +145,3 @@ When you change the pay unit assigned to an employee type:
 - [Pay units and conversions](pay-units-conversions.md)
 - [Work with pay units](employee-pay-units.md)
 - [Employee overview](employee-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

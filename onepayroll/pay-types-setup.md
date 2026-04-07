@@ -116,5 +116,3 @@ Hypothetical pay types are calculated but don't affect actual pay. They're used 
 - [Set up GL posting for payroll](gl-posting-setup.md)
 - [Pay unit conversions](pay-units-conversions.md)
 - [About benefits](benefits-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

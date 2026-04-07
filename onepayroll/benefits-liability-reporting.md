@@ -67,5 +67,3 @@ After payroll is posted, benefit liability balances accumulate in the GL until p
 - [Set up benefits](benefits-setup.md)
 - [Benefits limits](benefits-limits.md)
 - [Set up GL posting for payroll](gl-posting-setup.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

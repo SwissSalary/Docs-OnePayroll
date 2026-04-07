@@ -88,5 +88,3 @@ The **Global Pay Unit** on the **Payroll Setup** page defines a standardized uni
 - [Employee types and pay units](pay-units-employee-types.md)
 - [Pay units and conversions](pay-units-conversions.md)
 - [Employee overview](employee-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

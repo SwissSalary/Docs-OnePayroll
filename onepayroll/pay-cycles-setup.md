@@ -87,5 +87,3 @@ The **Pay Group Details** FactBox on the pay group page shows the current period
 - [Set up GL posting for payroll](gl-posting-setup.md)
 - [Employee setup](employee-setup.md)
 - [Payroll journal entries](payroll-journal.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

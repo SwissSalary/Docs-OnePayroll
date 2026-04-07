@@ -100,5 +100,3 @@ Validation rules are evaluated during payroll processing. Before payroll calcula
 
 - [Getting started](getting-started.md)
 - [Payroll runs overview](payroll-runs-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

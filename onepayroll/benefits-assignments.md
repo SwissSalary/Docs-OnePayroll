@@ -47,5 +47,3 @@ Benefit Assignments link benefits to employees or employee templates. Each assig
 [Set Up Benefits](benefits-setup.md)  
 [Work with Benefit Hierarchies](benefits-hierarchies.md)  
 [Understand Benefit Limits](benefits-limits.md)  
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

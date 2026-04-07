@@ -104,5 +104,3 @@ When working with benefits in OnePayroll:
 [Set up pay types](pay-types-setup.md)  
 
 [Process payroll](payroll-runs-process.md)  
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

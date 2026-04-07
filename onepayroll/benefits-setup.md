@@ -111,5 +111,3 @@ Pay type liabilities determine which pay types (earnings) are subject to a benef
 [Assign Benefits to Employees](benefits-assignments.md)  
 [Work with Benefit Hierarchies](benefits-hierarchies.md)  
 [Understand Benefit Limits](benefits-limits.md)  
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

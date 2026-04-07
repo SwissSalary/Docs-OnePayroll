@@ -434,5 +434,3 @@ When working with pay unit conversions:
 - **[Employee setup](employee-setup.md)** - Employee configuration
 - **[Employee types and pay units](pay-units-employee-types.md)** - Integration with employee types
 - **[Pay type setup](pay-types-setup.md)** - Pay type configuration
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

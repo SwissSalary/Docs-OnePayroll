@@ -89,5 +89,3 @@ When setting up payroll:
 - [About pay cycles](pay-cycles-overview.md)
 - [Pay unit conversions](pay-units-conversions.md)
 - [About benefits](benefits-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

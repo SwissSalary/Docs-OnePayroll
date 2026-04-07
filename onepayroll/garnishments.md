@@ -129,5 +129,3 @@ Garnishment withholdings post to the GL account configured on the garnishment's 
 - [Employee setup](employee-setup.md)
 - [Process payroll runs](payroll-runs-process.md)
 - [Pay types overview](pay-types-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

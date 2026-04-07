@@ -80,5 +80,3 @@ The system automatically applies the limit with the most recent **Valid From** d
 - [Set up benefits](benefits-setup.md)
 - [Assign benefits to employees](benefits-assignments.md)
 - [Benefits hierarchies](benefits-hierarchies.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

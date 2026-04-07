@@ -119,5 +119,3 @@ Once payroll settings are configured, set up your employees and process your fir
 - [Set up pay types](pay-types-setup.md)
 - [Set up pay cycles](pay-cycles-setup.md)
 - [Set up benefits](benefits-setup.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]
