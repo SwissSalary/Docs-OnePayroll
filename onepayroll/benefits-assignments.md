@@ -1,5 +1,5 @@
 ---
-title: Assign Benefits to Employees
+title: Assign benefits to employees
 description: Learn how to assign benefits to employees and employee templates in OnePayroll.
 author: myGitHubHandle
 
@@ -7,7 +7,7 @@ sws.service: onepayroll
 sws.topic: article
 sws.date: 01/08/2026
 ---
-# Assign Benefits to Employees
+# Assign benefits to employees
 
 Once benefits are configured, you assign them to employees. Benefits can be assigned directly to employees or through employee templates.
 

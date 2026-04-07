@@ -1,14 +1,13 @@
 ---
-title: Set Up Benefits
+title: Set up benefits
 description: Learn how to set up benefit types, coverage options, rates, limits, and contracts in OnePayroll.
 author: zeande
 
 sws.service: onepayroll
 sws.topic: article
 sws.date: 01/08/2026
-sws.author: zeande
 ---
-# Set Up Benefits in OnePayroll
+# Set up benefits
 
 This article explains how to configure benefit programs, coverage types, rates, limits, and contracts in OnePayroll.
 

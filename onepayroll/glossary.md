@@ -1,6 +1,6 @@
 ---
 title: OnePayroll glossary
-description: Glossary of OnePayroll terms and payroll-related definitions.
+description: Learn the terminology used in OnePayroll, including payroll concepts and definitions.
 author: zeande
 sws.service: onepayroll
 sws.topic: reference

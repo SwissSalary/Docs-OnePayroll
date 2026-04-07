@@ -1,6 +1,6 @@
 ---
 title: Error messages and troubleshooting
-description: Find solutions to common OnePayroll error messages and issues.
+description: Learn how to resolve common OnePayroll error messages and issues.
 author: zeande
 sws.service: onepayroll
 sws.topic: troubleshooting

@@ -1,5 +1,5 @@
 ---
-title: Work with Benefit Hierarchies
+title: Work with benefit hierarchies
 description: Learn how to use benefit and benefit type hierarchies to manage related benefits efficiently in OnePayroll.
 author: myGitHubHandle
 
@@ -7,7 +7,7 @@ sws.service: onepayroll
 sws.topic: article
 sws.date: 01/08/2026
 ---
-# Work with Benefit Hierarchies
+# Work with benefit hierarchies
 
 OnePayroll supports hierarchical benefit structures through the **Applies-From** relationships. This allows you to efficiently manage similar benefits that share common characteristics but need separate tracking.
 

@@ -1,6 +1,6 @@
 ---
 title: Frequently asked questions
-description: Find answers to common OnePayroll questions about setup, processing, and compliance.
+description: Learn about common OnePayroll questions covering setup, processing, and compliance.
 author: zeande
 sws.service: onepayroll
 sws.topic: article

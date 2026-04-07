@@ -1,6 +1,6 @@
 ---
 title: Benefits overview
-description: Learn about the benefits module in OnePayroll and how to configure, assign, and manage employee benefits such as health insurance, retirement plans, and other compensation packages.
+description: Learn about the benefits module in OnePayroll, including how to configure benefit types, assign coverage, set limits, and track liability.
 author: myGitHubHandle2
 
 sws.service: onepayroll
