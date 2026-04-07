@@ -77,10 +77,10 @@ Processing uses the payment method stored on the batch to choose the payment pro
 
 ## Generate a report or filing
 
-Use the **Report** action to produce the remittance report or file for this payment batch. The output depends on the **Filing Method** configured on the remittance group:
+Use the **Report** action to produce a report or file for this payment batch. The output depends on whether the batch has a remittance group:
 
-- For the **Default** method, a summary report of the batch is produced.
-- For localization-specific filing methods, the applicable country- or region-specific remittance file or form is generated.
+- **With a remittance group** — The output depends on the **Filing Method** configured on the remittance group. For the **Default** filing method, a summary report is produced. For localization-specific filing methods, the applicable country- or region-specific remittance file or form is generated.
+- **Without a remittance group** — A payment summary report is produced, listing the payments collected for the batch within the batch's start and end dates.
 
 **To create a report:**
 
