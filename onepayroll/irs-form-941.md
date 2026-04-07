@@ -72,7 +72,7 @@ OnePayroll calculates the total prior deposits for the quarter by summing all **
 
 ## Monthly liability schedule (Part 2)
 
-Monthly schedule depositor information (the tax liability for each month of the quarter) is derived from the payment batches in each month of the quarter. If your organization is an IRS semi-weekly depositor, this section is left blank and you would attach Schedule B (Form 941) separately. In IRS terminology, semi-weekly means deposits are due twice per week based on the payday.
+Monthly schedule depositor information (the tax liability for each month of the quarter) is derived from the payment batches in each month of the quarter. If your organization is an IRS semiweekly depositor, this section is left blank and you would attach Schedule B (Form 941) separately.
 
 For the current IRS deposit rules, see [IRS Topic no. 757, Forms 941 and 944 - deposit requirements](https://www.irs.gov/taxtopics/tc757).
 
