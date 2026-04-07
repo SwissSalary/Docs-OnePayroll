@@ -1,5 +1,5 @@
 ---
-title: About pay types
+title: Pay types overview
 description: Learn about pay types, how they're organized into categories, and how they control payroll calculations and GL posting in OnePayroll.
 author: zeande
 sws.service: onepayroll
@@ -7,7 +7,7 @@ sws.topic: overview
 sws.date: 02/23/2026
 ---
 
-# About pay types
+# Pay types overview
 
 Pay types are the building blocks of payroll. Each pay type represents a single component of compensation — an earning that increases pay, a deduction that decreases it, or a contribution that the employer owes.
 

@@ -1,5 +1,5 @@
 ---
-title: About GL integration
+title: GL integration overview
 description: Learn how OnePayroll integrates with the general ledger and posts payroll transactions.
 author: zeande
 sws.service: onepayroll
@@ -7,7 +7,7 @@ sws.topic: overview
 sws.date: 02/23/2026
 ---
 
-# About GL integration
+# GL integration overview
 
 OnePayroll integrates with Business Central's General Ledger (GL) to post all payroll transactions automatically.
 

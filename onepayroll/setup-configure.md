@@ -1,5 +1,5 @@
 ---
-title: Configure payroll settings
+title: Set up payroll settings
 description: Learn how to review and customize pay types, pay cycles, pay groups, employee types, and benefits after generating setup data.
 author: zeande
 sws.service: onepayroll
@@ -7,7 +7,7 @@ sws.topic: how-to
 sws.date: 02/23/2026
 ---
 
-# Configure payroll settings
+# Set up payroll settings
 
 After [generating setup data](setup-install.md), review and customize the pre-configured payroll settings to match your organization's needs.
 

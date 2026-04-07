@@ -1,5 +1,5 @@
 ---
-title: About employees in payroll
+title: Employees in payroll overview
 description: Learn about employee records in OnePayroll, payroll-specific extensions, employee types, and status management.
 author: zeande
 sws.service: onepayroll
@@ -7,7 +7,7 @@ sws.topic: overview
 sws.date: 02/23/2026
 ---
 
-# About employees in payroll
+# Employees in payroll overview
 
 Employees are the heart of any payroll system. OnePayroll extends the standard Business Central employee record with comprehensive payroll-specific fields and workflows.
 
