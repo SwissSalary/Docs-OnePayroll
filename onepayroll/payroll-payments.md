@@ -18,7 +18,7 @@ OnePayroll creates a payment batch for every payroll obligation when a payroll r
 **For income taxes and benefits:**
 
 - **With a remittance group assigned** — When you create a payroll run, OnePayroll calculates the payment period using the remittance group's payment cycle and the payroll payment date. It finds an existing open batch for that remittance group and period, or creates a new one, then adds the amounts. This means multiple payroll runs within the same cycle period accumulate into a single batch.
-- **Without a remittance group** — A separate batch is created per payroll run, keyed to the individual jurisdiction or benefit record with the payroll run's period dates and the Tax Authority vendor's payment method.
+- **Without a remittance group** — A separate batch is created per payroll run, keyed to the individual jurisdiction or benefit record with the payroll run's period dates and the payment method from the vendor assigned to the tax authority or benefit provider.
 
 **For employee paychecks and garnishments:**
 
