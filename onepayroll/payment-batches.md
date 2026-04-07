@@ -80,8 +80,7 @@ Processing uses the payment method stored on the batch to choose the payment pro
 Use the **Report** action to produce the remittance report or file for this payment batch. The output depends on the **Filing Method** configured on the remittance group:
 
 - For the **Default** method, a summary report of the batch is produced.
-- For **IRS Form 941**, the quarterly federal tax return PDF is automatically filled with payroll data. See [IRS Form 941](irs-form-941.md).
-- For state-specific methods, the applicable state remittance file is generated.
+- For localization-specific filing methods, the applicable country- or region-specific remittance file or form is generated.
 
 **To create a report:**
 
@@ -126,5 +125,5 @@ The **Amount** field on a payment batch is a calculated total of all associated 
 
 - [About remittance groups](remittance-groups-overview.md)
 - [Set up remittance groups](remittance-groups-setup.md)
-- [IRS Form 941 (US)](irs-form-941.md)
+- [US localization and compliance](us-localization.md)
 - [Process payroll runs](payroll-runs-process.md)

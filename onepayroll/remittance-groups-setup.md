@@ -75,40 +75,41 @@ The **Filing Method** on the remittance group determines what report or file is 
 | Method | Description |
 |--------|-------------|
 | **Default** | Produces a standard payment batch summary report. |
-| **IRS Form 941** (US) | Automatically fills out an IRS Form 941 PDF based on payroll entry data. The period must be a full calendar quarter. See [IRS Form 941](irs-form-941.md). |
-| **California State Income Tax** (US) | Generates a California state income tax remittance file. |
-| **North Dakota State Income Tax** (US) | Generates a North Dakota state income tax remittance file. |
+| **Localized filing methods** | Can generate country- or region-specific remittance files and forms. See your localization documentation for details. |
 
-## Example: Federal payroll taxes (FICA and withholding)
+## Example: Payroll tax remittance
 
-Here is a typical setup for a federal payroll tax remittance group. Most employers deposit monthly or semi-monthly:
+Here is a typical setup for a payroll tax remittance group where payments are made monthly and filings are submitted quarterly:
 
 | Field | Value |
 |-------|-------|
-| Code | `FED-TAX` |
-| Description | Federal Payroll Taxes |
-| Payment Cycle | `MONTHLY` or `SEMIMONTHLY` depending on your deposit schedule |
-| Filing Cycle | `QUARTERLY` |
-| Payment Method | `ACH` |
-| Filing Method | IRS Form 941 |
-
-Then assign the **Federal Income Tax** jurisdiction and the **FICA** jurisdiction to this remittance group.
-
-## Example: Quarterly state income tax
-
-| Field | Value |
-|-------|-------|
-| Code | `STATE-CA` |
-| Description | California Income Tax |
+| Code | `PAYROLL-TAX` |
+| Description | Payroll Taxes |
 | Payment Cycle | `MONTHLY` |
 | Filing Cycle | `QUARTERLY` |
 | Payment Method | `ACH` |
-| Filing Method | California State Income Tax |
+| Filing Method | A localization-specific tax filing method, if available |
+
+Then assign the applicable payroll tax jurisdictions to this remittance group.
+
+> [!NOTE]
+> Country- or region-specific tax filing methods and deposit schedules vary by localization. For US-specific guidance, see [US localization and compliance](us-localization.md) and [IRS Form 941 (US)](irs-form-941.md).
+
+## Example: Quarterly regional income tax
+
+| Field | Value |
+|-------|-------|
+| Code | `REGION-TAX` |
+| Description | Regional Income Tax |
+| Payment Cycle | `MONTHLY` |
+| Filing Cycle | `QUARTERLY` |
+| Payment Method | `ACH` |
+| Filing Method | A localization-specific regional tax filing method, if available |
 
 ## Related pages
 
 - [About remittance groups](remittance-groups-overview.md)
 - [Work with payment batches](payment-batches.md)
-- [IRS Form 941 (US)](irs-form-941.md)
+- [US localization and compliance](us-localization.md)
 - [Set up pay cycles](pay-cycles-setup.md)
 - [Set up payment methods](payment-methods-setup.md)

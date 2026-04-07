@@ -19,29 +19,30 @@ OnePayroll creates a payment batch for every payroll obligation—employee paych
 
 A remittance group changes **how** those batches are created:
 
-- **Period consolidation** — Instead of one batch per payroll run, amounts from multiple payroll runs within the same payment cycle period are consolidated into a single batch. For example, a semi-monthly deposit schedule accumulates two biweekly payroll runs into one batch.
+- **Period consolidation** — Instead of one batch per payroll run, amounts from multiple payroll runs within the same payment cycle period are consolidated into a single batch. For example, a monthly deposit schedule can accumulate multiple payroll runs into one batch.
 - **Payment cycle and due date** — The remittance group's payment cycle controls the period start/end dates and the due date for each batch.
 - **Payment method** — The remittance group's payment method is stored on the batch and determines the payment processing mode, such as electronic payment or computer check.
 - **Shared description** — The batch description comes from the remittance group, giving a meaningful payee name (for example, *Federal Payroll Taxes*) rather than an individual jurisdiction or benefit name.
 
 Typical examples of what remittance groups handle:
 
-- **Federal payroll taxes** — FICA (Social Security and Medicare) and federal income tax withheld, due to the IRS on a deposit schedule
-- **State and local income taxes** — amounts withheld for each state or locality, filed with the applicable agency
-- **Benefit premiums** — employee payroll deductions and employer contributions forwarded to an insurance carrier or retirement plan administrator
+- **Payroll taxes** — amounts withheld or owed to tax authorities based on the applicable localization
+- **Regional or local taxes** — amounts owed to state, provincial, municipal, or other regional agencies
+- **Benefit premiums** — employee payroll deductions and employer contributions forwarded to an insurance carrier or plan administrator
 
 ### Separate schedules for paying and filing
 
-A key feature of remittance groups is the distinction between the deposit schedule (how often you pay) and the filing cycle (how often you report). These can be different:
+A key feature of remittance groups is the distinction between the payment schedule (how often you pay) and the filing cycle (how often you report). These can be different:
 
 | Example | Payment Cycle | Filing Cycle |
 |---------|---------------|--------------|
-| FICA taxes (monthly depositor) | Monthly | Quarterly |
-| FICA taxes (semi-monthly depositor) | Semi-monthly | Quarterly |
-| State income tax | Monthly | Quarterly |
+| Payroll taxes | Monthly | Quarterly |
+| Regional income tax | Monthly | Quarterly |
 | Health insurance premiums | Each payroll | Monthly |
 
 Use the **Payment Cycle** field to control when payment batches are consolidated and due. Use the **Filing Cycle** field to control how often reporting forms are generated.
+
+Localized tax terminology and filing schedules can vary by country or region. For US-specific guidance, see [US localization and compliance](us-localization.md) and [IRS Form 941 (US)](irs-form-941.md).
 
 ## Remittance group fields
 
@@ -81,14 +82,12 @@ The resulting payment batches are visible on the **Payroll Payments** page as so
 
 ## Filing methods
 
-The **Filing Method** on a remittance group determines what happens when you run a report from the payment batch. OnePayroll includes the following built-in filing methods:
+The **Filing Method** on a remittance group determines what happens when you run a report from the payment batch. OnePayroll includes a default summary report, and localizations can add country- or region-specific filing methods.
 
 | Method | Description |
 |--------|-------------|
 | **Default** | Produces a standard summary report of the payment batch contents. |
-| **IRS Form 941** (US) | Automatically fills out an IRS Form 941 PDF based on the payroll entry data in the batch period. See [IRS Form 941](irs-form-941.md). |
-| **California State Income Tax** (US) | Generates a California income tax remittance file. |
-| **North Dakota State Income Tax** (US) | Generates a North Dakota income tax remittance file. |
+| **Localized filing methods** | Can generate country- or region-specific remittance files and forms. See your localization documentation for details. |
 
 Additional filing methods can be added by extending the `Remittance Filing Method` enum.
 
@@ -96,5 +95,5 @@ Additional filing methods can be added by extending the `Remittance Filing Metho
 
 - [Set up remittance groups](remittance-groups-setup.md)
 - [Work with payment batches](payment-batches.md)
-- [IRS Form 941 (US)](irs-form-941.md)
+- [US localization and compliance](us-localization.md)
 - [Set up pay cycles](pay-cycles-setup.md)
