@@ -26,7 +26,7 @@ The original entries remain in the system unchanged. The negative entries offset
 
 ### To reverse a posted paycheck
 
-1. Search for **Payroll Runs**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Runs**, and then choose the related link.
 2. Select the posted payroll run containing the paycheck to reverse
 3. Select **Reverse Paycheck** from the actions
 4. On the **Paycheck Reversal** request page, fill in the fields:

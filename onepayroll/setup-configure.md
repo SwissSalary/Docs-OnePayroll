@@ -28,7 +28,7 @@ The setup data creates three pay groups: ALL, HOURLY, and SALARY. Review these a
 
 **To review pay groups:**
 
-1. Search for **Pay Groups**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Groups**, and then choose the related link.
 2. Open each pay group and verify:
    - **Pay Cycle** — the pay schedule for this group
    - **Pay Group Owner** — the employee responsible for this group
@@ -43,7 +43,7 @@ The setup data creates approximately 95 core pay types (plus ~60 US-specific typ
 
 **To review pay types:**
 
-1. Search for **Pay Types**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Types**, and then choose the related link.
 2. Review the generated pay types and their categories.
 3. Adjust descriptions, GL account assignments, and pay units as needed.
 4. Add any organization-specific pay types.
@@ -57,7 +57,7 @@ The setup data creates four pay cycles: Weekly (52 periods), Biweekly (26 period
 
 **To review pay cycles:**
 
-1. Search for **Pay Cycles**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Cycles**, and then choose the related link.
 2. Open each pay cycle and verify:
    - **Periods per Year** — matches your pay frequency
    - **Pay Unit** — the unit of compensation for this cycle
@@ -72,7 +72,7 @@ The setup data creates four employee types: Contractor, Hourly, Salary Exempt, a
 
 **To review employee types:**
 
-1. Search for **Employee Types**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employee Types**, and then choose the related link.
 2. Review each type's **Pay Unit** and **Compensation Method** (Regular or Work-Based).
 3. Add, rename, or remove types to match your organization's employee classifications.
 
@@ -84,7 +84,7 @@ With the US localization, the setup data creates pre-configured benefits includi
 
 **To review benefits:**
 
-1. Search for **Benefit Types**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Benefit Types**, and then choose the related link.
 2. Review the generated benefit types and their calculation settings.
 3. Verify rates and limits are current for the tax year.
 4. Add any additional benefits your organization offers (additional health insurance, dental, vision, etc.).
@@ -97,7 +97,7 @@ The setup data creates income tax jurisdictions for Federal, California, and Nor
 
 **To configure tax:**
 
-1. Search for **Income Tax Jurisdictions**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Income Tax Jurisdictions**, and then choose the related link.
 2. Review the existing jurisdictions and add any additional states.
 3. Configure the **Calculation Method** (Standard or Simplified) for each jurisdiction.
 4. Set up **Income Tax Rates** and **Income Tax Setup** for each tax year.

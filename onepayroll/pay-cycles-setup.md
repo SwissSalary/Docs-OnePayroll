@@ -23,7 +23,7 @@ Before setting up pay cycles, make sure you have:
 
 ## Create a pay cycle
 
-1. Search for **Pay Cycles** and open the page.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Cycles**, and then choose the related link.
 2. Enter a **Code** and **Description** for the pay cycle (for example, `BIWEEKLY` and "Biweekly Pay Cycle").
 3. Set **Periods per Year** to the number of pay periods. Common values: 52 (weekly), 26 (biweekly), 24 (semi-monthly), 12 (monthly).
 4. Optionally, set the **Pay Unit** to associate a unit of measurement with this cycle.
@@ -57,7 +57,7 @@ For each schedule line, fill in:
 
 Pay groups link employees to a pay cycle and specify the GL posting configuration.
 
-1. Search for **Pay Groups** and open the page.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Groups**, and then choose the related link.
 2. Enter a **Code** and **Description** (for example, `BIWK` and "Biweekly Employees").
 3. Set **Pay Cycle** to the pay cycle you created.
 4. Optionally, set **Pay Group Owner** to the employee responsible for this group.

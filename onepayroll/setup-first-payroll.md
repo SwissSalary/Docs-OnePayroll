@@ -17,12 +17,12 @@ Before adding employees, set up the organizational structure they belong to.
 
 **To create departments:**
 
-1. Search for **Departments**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Departments**, and then choose the related link.
 2. Add your departments with codes, descriptions, and optional parent departments for hierarchy.
 
 **To create work locations (US localization):**
 
-1. Search for **Work Locations**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Work Locations**, and then choose the related link.
 2. Add work locations with addresses and state assignments for tax purposes.
 
 > [!TIP]
@@ -36,7 +36,7 @@ Add your employees to OnePayroll. Each employee must be assigned a pay group and
 
 **To create an employee:**
 
-1. Search for **Employees**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
 2. Select **New**.
 3. Enter the employee number and name.
 4. On the **OnePayroll** tab:
@@ -96,7 +96,7 @@ With employees and payment methods configured, process a test payroll run to ver
 
 **To create a payroll run:**
 
-1. Search for **Payroll Runs**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Runs**, and then choose the related link.
 2. Select **New**.
 3. Set the **Pay Group** (for example, BIWEEKLY).
 4. Set the **Start Date** for the pay period.

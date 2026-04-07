@@ -113,7 +113,7 @@ Explanations and solutions for common OnePayroll errors.
 **Why:** Employee state assigned but state not configured in system
 
 **Solution:**
-1. Search for **States Setup** (or similar)
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **States Setup** (or similar), and then choose the related link.
 2. Create entry for state if needed
 3. Verify **pay rules** for state
 4. Assign tax tables/provider for state

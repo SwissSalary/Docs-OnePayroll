@@ -29,7 +29,7 @@ The **Suggest Employee** feature uses AI to parse a resume or CV and extract emp
 
 ### To create an employee from a resume
 
-1. Search for **Employees** to open the Employee List
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
 2. Select **New with Copilot** from the actions
 3. In the **Suggest Employee** dialog, do one of the following:
    - **Type or paste** CV text directly into the input area
@@ -71,7 +71,7 @@ The extraction runs as a background task when possible. If background processing
 
 ### To set up automatic qualification extraction
 
-1. Search for **Document Types**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Document Types**, and then choose the related link.
 2. Select the document type used for certificates or qualifications
 3. Set the **Qualification** field to the appropriate qualification code
 4. When employees upload documents of this type, qualification information is automatically extracted

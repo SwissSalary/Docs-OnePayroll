@@ -32,7 +32,7 @@ Key differences from standard payroll runs:
 
 ### To create a manual payment from the journal
 
-1. Search for **Manual Payment Journal**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Manual Payment Journal**, and then choose the related link.
 2. Select or create a journal batch for the appropriate pay group
 3. Enter the fields for each line:
    - **Employee No.** — the employee to pay

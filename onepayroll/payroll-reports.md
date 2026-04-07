@@ -67,7 +67,7 @@ This article describes each payroll report in OnePayroll, including what it show
 
 **To run:**
 
-1. Search for **Payroll Register Difference** or select it from the Role Center Reports section
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Register Difference**, and then choose the related link. Alternatively, select it from the Role Center Reports section.
 2. On the request page, select:
    - **Payroll 1** — the first payroll run to compare
    - **Payroll 2** — the second payroll run to compare
@@ -91,7 +91,7 @@ This article describes each payroll report in OnePayroll, including what it show
 
 **To run:**
 
-1. Search for **Cost of Labor** or select it from the Role Center Reports section
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Cost of Labor**, and then choose the related link. Alternatively, select it from the Role Center Reports section.
 2. On the request page, set:
    - **Date From** and **Date To** — the analysis period
    - Optionally filter by pay type or employee
@@ -114,7 +114,7 @@ This article describes each payroll report in OnePayroll, including what it show
 
 **To run:**
 
-1. Search for **Benefit Summary** or select it from the Role Center Reports section
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Benefit Summary**, and then choose the related link. Alternatively, select it from the Role Center Reports section.
 2. On the request page, set:
    - **Date From** and **Date To** — the analysis period
    - Optionally filter by benefit type or employee
@@ -137,7 +137,7 @@ This article describes each payroll report in OnePayroll, including what it show
 
 **To run:**
 
-1. Search for **Pay Type List** or select it from the Role Center Reports section
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Type List**, and then choose the related link. Alternatively, select it from the Role Center Reports section.
 2. On the request page, select up to five pay types to compare, with output type options for each
 3. Optionally filter by employee
 4. Preview or export to Excel

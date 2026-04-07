@@ -126,7 +126,7 @@ $200 × 10 = $2,000/biweekly
 
 ### Pay Units page
 
-To set up pay units, search for **Pay Units**. Each pay unit has the following fields:
+To set up pay units, choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Units**, and then choose the related link. Each pay unit has the following fields:
 
 | Field | Description |
 |-------|-------------|

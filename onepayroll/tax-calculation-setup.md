@@ -17,7 +17,7 @@ Income Tax Jurisdictions define the taxing authorities and their calculation rul
 
 **To create or edit jurisdictions:**
 
-1. Search for **Income Tax Jurisdictions** to open the list page.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Income Tax Jurisdictions**, and then choose the related link.
 2. Select a jurisdiction or choose **New** to create one.
 3. On the **General** group, fill in:
    - **Code** — identifier for the jurisdiction (for example, `US` for federal, `CA` for California)
@@ -66,7 +66,7 @@ Tax rate brackets determine how withholding amounts are calculated for each juri
 
 **To configure tax rates:**
 
-1. Search for **Income Tax Rates** to open the list page.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Income Tax Rates**, and then choose the related link.
 2. Create entries with:
    - **Tax Year** — the calendar year
    - **Jurisdiction ID** — the jurisdiction these rates apply to
@@ -84,7 +84,7 @@ Income Tax Setup stores supplementary calculation parameters per jurisdiction an
 
 **To configure:**
 
-1. Search for **Income Tax Setup** to open the list page.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Income Tax Setup**, and then choose the related link.
 2. Create entries with:
    - **Tax Year** — the calendar year
    - **Jurisdiction ID** — the jurisdiction

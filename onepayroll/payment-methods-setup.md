@@ -78,7 +78,7 @@ Each Employee Payment Method references a standard Business Central **Payment Me
 
 ### Create Payment Method codes
 
-1. Search for **Payment Methods** (the standard BC page, not the Employee Payment Methods list).
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payment Methods** (the standard BC page, not the Employee Payment Methods list), and then choose the related link.
 2. Select **New** to create a code.
 3. Fill in the fields:
    - **Code** — a short identifier (for example, `ELEC-PMT`).

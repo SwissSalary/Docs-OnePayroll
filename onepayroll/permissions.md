@@ -85,7 +85,7 @@ Typical users: payroll managers and administrators who configure the system and 
 
 ### To assign a permission set
 
-1. Search for **Users**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Users**, and then choose the related link.
 2. Select the user to configure
 3. In the **User Permission Sets** section, select **New**
 4. In the **Permission Set** field, choose one of the OnePayroll permission sets (for example, **Payroll Edit**)
@@ -107,7 +107,7 @@ These fields are only relevant when **Require Approvals** is turned on in **Payr
 
 ### To set approval limits
 
-1. Search for **Approval User Setup**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Approval User Setup**, and then choose the related link.
 2. Find the user
 3. Set the **Payroll Approval Limit** or turn on **Unlimited Payroll Approval**
 

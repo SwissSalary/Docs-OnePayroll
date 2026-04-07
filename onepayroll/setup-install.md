@@ -50,7 +50,7 @@ Select **Generate Setup Data** to create the foundation. This generates setup da
 
 You can also generate setup data through the standard Business Central Contoso Demo Tool:
 
-1. Search for **Contoso Demo Data**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Contoso Demo Data**, and then choose the related link.
 2. Find the **SwS Payroll Module** row.
 3. Select **Generate Setup Data** to generate setup data only.
 

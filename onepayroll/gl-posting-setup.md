@@ -24,7 +24,7 @@ When a payroll run is posted, the **General Ledger Posting** setting in Payroll 
 
 ### 1. Payroll Setup - General Ledger Posting setting
 
-1. Search for **Payroll Setup**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Setup**, and then choose the related link.
 2. In the **Posting** section, under **General Ledger**, set **General Ledger Posting** to the desired option
 3. Set the **G/L Document No. Format** to define how document numbers are formatted on General Journal Lines (uses placeholders from the payroll run)
 4. Set the **G/L Description Format** to define the description text on General Journal Lines
@@ -44,7 +44,7 @@ Each pay group must specify where General Journal Lines are created.
 
 Each pay type must be mapped to GL accounts for posting.
 
-1. Search for **Pay Types**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Types**, and then choose the related link.
 2. Open a pay type
 3. On the **Posting** tab:
    - **Account No.** - The primary GL account for this pay type (posted as a debit)

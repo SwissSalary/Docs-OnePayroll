@@ -18,7 +18,7 @@ This guide walks you through creating employee records and configuring their pay
 
 **To create a new employee:**
 
-1. Search for **Employees**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
 2. Select **New**
 3. In the **General** tab:
    - **No.** - Employee number (auto-generated or enter manually)
@@ -224,7 +224,7 @@ Before processing payroll:
 
 For importing multiple employees:
 
-1. Search for **Employee Import**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employee Import**, and then choose the related link.
 2. Prepare import file with: Employee number, name, pay group, employee type, annual salary
 3. Run import
 4. OnePayroll creates employee records in bulk

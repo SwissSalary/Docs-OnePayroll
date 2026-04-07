@@ -36,7 +36,7 @@ Creating a payroll run also calculates all pay for the selected employees.
 
 **To create a new payroll run:**
 
-1. Search for **Payroll Runs**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Runs**, and then choose the related link.
 2. Select **New** to open the New Payroll request page
 3. Set the required parameters:
    - **Pay Group** - Select the pay group to process (for example, "Biweekly Employees")
@@ -170,7 +170,7 @@ After posting, verify the general ledger was updated correctly.
 
 **To verify GL accounts directly:**
 
-1. Search for **Chart of Accounts** or **General Ledger Entries**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Chart of Accounts** or **General Ledger Entries**, and then choose the related link.
 2. Filter by the payroll posting date and document number
 3. Verify:
    - Correct amounts posted

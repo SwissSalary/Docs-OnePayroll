@@ -24,7 +24,7 @@ Before creating pay types, make sure you have:
 
 ## Create a pay type
 
-1. Search for **Pay Types** and open the page.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Types**, and then choose the related link.
 2. Select **New** to create a new pay type.
 3. Fill in the following fields:
 
@@ -95,7 +95,7 @@ Hypothetical pay types are calculated but don't affect actual pay. They're used 
 
 ## Modify a pay type
 
-1. Search for **Pay Types** and open the page.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Types**, and then choose the related link.
 2. Select the pay type to edit.
 3. Update the fields as needed.
 

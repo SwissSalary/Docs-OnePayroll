@@ -13,7 +13,7 @@ Before processing payroll, configure essential settings in Payroll Setup and ass
 
 ## Access Payroll Setup
 
-1. Search for **Payroll Setup**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Setup**, and then choose the related link.
 2. The setup page opens with various configuration options
 
 ## Configure General Ledger Posting
@@ -60,7 +60,7 @@ Each pay type must be mapped to a GL account. When payroll entries are posted, t
 
 **To set up GL accounts for pay types:**
 
-1. Search for **Pay Types**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Pay Types**, and then choose the related link.
 2. Open or create a pay type
 3. On the **Posting** tab:
    - **Account No.** - Select the primary GL account for this pay type
