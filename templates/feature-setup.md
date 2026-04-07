@@ -6,7 +6,6 @@ author: myGitHubHandle
 sws.service: onepayroll
 sws.topic: article
 sws.date: 10/01/2021
-sws.author: myGitHubHandle
 ---
 # Set Up This Feature in Max. 100 Characters
 
