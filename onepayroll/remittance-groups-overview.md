@@ -9,13 +9,13 @@ sws.date: 04/06/2026
 
 # About remittance groups
 
-Remittance groups define how and when payments for payroll obligations—such as employer and employee taxes, benefit premiums, and other withholdings—are collected, scheduled, and reported. When you run payroll, OnePayroll automatically accumulates the amounts owed into payment batches based on each remittance group's configuration.
+Remittance groups define how and when payments for payroll obligations - such as employer and employee taxes, benefit premiums, and other withholdings - are collected, scheduled, and reported. When you run payroll, OnePayroll automatically accumulates the amounts owed into payment batches based on each remittance group's configuration.
 
 ## What remittance groups do
 
 ### Automatic payment collection
 
-OnePayroll creates a payment batch for every payroll obligation—employee paychecks, taxes, benefits, and garnishments—regardless of whether a remittance group is configured. Without a remittance group, a tax or benefit batch is created per payroll run, keyed to the individual jurisdiction or benefit record.
+OnePayroll creates a payment batch for every payroll obligation - employee paychecks, taxes, benefits, and garnishments - regardless of whether a remittance group is configured. Without a remittance group, a tax or benefit batch is created per payroll run, keyed to the individual jurisdiction or benefit record.
 
 A remittance group changes **how** those batches are created:
 
@@ -42,14 +42,15 @@ A key feature of remittance groups is the distinction between the payment schedu
 
 Use the **Payment Cycle** field to control when payment batches are consolidated and due. Use the **Filing Cycle** field to control how often reporting forms are generated.
 
-Localized tax terminology and filing schedules can vary by country or region. For US-specific guidance, see [US localization and compliance](us-localization.md) and [IRS Form 941 (US)](irs-form-941.md).
+> [!NOTE]
+> Localized tax terminology and filing schedules can vary by country or region. For US-specific guidance, see [US localization and compliance](us-localization.md) and [IRS Form 941 (US)](irs-form-941.md).
 
 ## Remittance group fields
 
 | Field | Description |
 |-------|-------------|
 | **Code** | A unique identifier for this remittance group. |
-| **Description** | A descriptive name, such as *Federal Payroll Taxes* or *Health Insurance – Carrier A*. |
+| **Description** | A descriptive name, such as *Federal Payroll Taxes* or *Health Insurance - Carrier A*. |
 | **Payment Cycle** | The pay cycle that determines the deposit frequency and the period covered by each payment batch. If blank, one batch is created per payroll run. |
 | **Filing Cycle** | The pay cycle that determines how often reporting forms are generated. |
 | **Payment Method** | The Business Central payment method stored on the batch to control the payment processing mode. The actual payee and posting details still come from each payment source, such as the tax authority or benefit provider vendor. |
@@ -58,7 +59,7 @@ Localized tax terminology and filing schedules can vary by country or region. Fo
 
 ## Sources
 
-Each remittance group has one or more **sources**—the income tax jurisdictions and benefits whose amounts are collected into this group's payment batches. Sources are assigned at the jurisdiction or benefit level:
+Each remittance group has one or more **sources** - the income tax jurisdictions and benefits whose amounts are collected into this group's payment batches. Sources are assigned at the jurisdiction or benefit level:
 
 - **Income tax jurisdictions** — set the **Remittance Group** field on the income tax jurisdiction record
 - **Benefits** — set the **Remittance Group** field on the benefit record or benefit rate record
