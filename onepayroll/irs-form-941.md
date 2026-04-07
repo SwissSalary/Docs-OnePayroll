@@ -16,13 +16,17 @@ OnePayroll can automatically fill out **IRS Form 941** (Employer's Quarterly Fed
 
 ## Prerequisites
 
+> [!CAUTION]
+> Set up the remittance group and assign sources **before** processing payroll runs for the quarter. Payment batches are created during payroll calculation, so payroll runs created before the remittance group is configured will not accumulate into the correct quarterly batch.
+
 Before you can generate a Form 941, complete the following setup:
 
 1. **EIN Number** — Your company's Employer Identification Number must be entered in the **EIN Number** field on the Company Information page. OnePayroll uses this to populate the form header.
 
 2. **Remittance group** — Create a remittance group with:
+   - **Payment Cycle** set to match your IRS deposit schedule. Monthly depositors should use a monthly pay cycle; semiweekly depositors should use a pay cycle that ensures deposits are made within the required timeframe after each payday (see [IRS Topic no. 757](https://www.irs.gov/taxtopics/tc757) for deposit timing rules).
+   - **Filing Cycle** set to a quarterly pay cycle (periods per year = 4). This tells OnePayroll to validate the batch period against a full calendar quarter when generating the form.
    - **Filing Method** set to **IRS Form 941**
-   - **Filing Cycle** set to a quarterly pay cycle (periods per year = 4)
    
    See [Set up remittance groups](remittance-groups-setup.md).
 

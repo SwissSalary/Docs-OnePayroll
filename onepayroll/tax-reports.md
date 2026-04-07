@@ -34,23 +34,23 @@ You can extract this data using the **Payroll Register** and **Cost of Labor** r
 
 OnePayroll calculates and tracks tax withholding amounts, but **does not file tax returns with government agencies**. Your organization is responsible for:
 
+> [!NOTE]
+> Some localizations add built-in filing support for specific forms and deposit guidance. See your localization documentation for details (for example, [US localization and compliance](us-localization.md)).
+
 ### Quarterly filings
 
 - Quarterly tax filings vary by country and region.
 - Use payroll reports and payroll entries to gather the amounts required for your local filing obligations.
-- Some localizations add built-in filing support for specific forms. For US-specific guidance, see [US localization and compliance](us-localization.md) and [IRS Form 941](irs-form-941.md).
 
 ### Annual filings
 
 - Annual tax statements and returns vary by country and region.
 - Use payroll wage and withholding data together with any localization-specific reporting features to prepare the required annual filings.
-- For US-specific annual filing guidance, see [US localization and compliance](us-localization.md).
 
 ### Tax deposits
 
 - Make tax deposits according to the requirements of the applicable tax authority.
 - Deposit timing and payment channels vary by country, region, and tax type.
-- For US-specific deposit schedule guidance, see [US localization and compliance](us-localization.md).
 
 ## Using payroll data for tax filings
 
@@ -58,10 +58,8 @@ OnePayroll calculates and tracks tax withholding amounts, but **does not file ta
 
 1. Run the **Payroll Register** report filtered to the quarter's date range
 2. Review totals by tax-related pay types:
-   - Total wages subject to federal income tax
-   - Total federal income tax withheld
-   - Total Social Security wages and tax
-   - Total Medicare wages and tax
+   - Total taxable wages by tax type
+   - Total tax withheld by tax type
 3. Use these totals to populate the required tax forms for your jurisdiction
 
 > [!TIP]
