@@ -50,7 +50,7 @@
 ### [Work with payroll payments](payroll-payments.md)
 #### [Export payment files](payment-export.md)
 #### [Check printing and management](check-printing.md)
-### [Vendor payments](vendor-payments.md)
+#### [Vendor payments](vendor-payments.md)
 
 ### Remittance groups
 #### [About remittance groups](remittance-groups-overview.md)
