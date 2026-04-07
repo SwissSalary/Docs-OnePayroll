@@ -37,7 +37,7 @@ Before creating remittance groups, make sure the following are configured:
    |-------|-------------|
    | **Payment Cycle** | Select the pay cycle that determines how often payment batches are consolidated and when they are due. If you leave this blank, one batch is created per payroll run. |
    | **Filing Cycle** | Select the pay cycle that determines how often reporting forms are generated. This can differ from the payment cycle—for example, monthly deposits with quarterly reports. |
-   | **Payment Method** | Select the Business Central payment method code used to process payments for this group. |
+   | **Payment Method** | Select the Business Central payment method code stored on payment batches for this group. This controls the payment processing mode, but the actual payee and posting details still come from the underlying source records. |
    | **Filing Method** | Select the method used to produce remittance reports or files. See [Filing methods](#filing-methods) below. |
 
 5. Optionally, enter the agency or carrier's remittance portal URL in the **Home Page** field.
@@ -64,6 +64,9 @@ After creating the remittance group, assign it to the income tax jurisdictions a
 3. Save the record.
 
 After assigning sources, the **Sources** factbox on the Remittance Group card will list all assigned jurisdictions and benefits.
+
+> [!IMPORTANT]
+> If you want to use the **Pay** action on a remittance-group batch, group together only sources that have compatible payout setup. For example, if one benefit provider vendor is configured for electronic payment and another is configured for checks, the batch's payment method does not normalize those vendor settings into one unified payment.
 
 ## Filing methods
 

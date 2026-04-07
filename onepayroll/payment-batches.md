@@ -60,17 +60,20 @@ To navigate directly to the remittance group, benefit, or tax jurisdiction that 
 
 ## Process a payment
 
-Processing generates a payment file or initiates an electronic transfer using the payment method configured on the remittance group.
+Processing uses the payment method stored on the batch to choose the payment processing mode, such as electronic payment or computer check. However, the actual payee, recipient bank account, and payment method details for each entry still come from the underlying source record.
 
 **To process a payment:**
 
 1. Open the **Payroll Payments** list.
 2. Select the batch with status **Open**.
 3. Select **Pay**.
-4. OnePayroll processes the payment using the configured payment method. The status changes to **Processed**.
+4. OnePayroll processes the payment by using the batch's payment method to determine the payment type.
 
 > [!NOTE]
 > The **Pay** action is only enabled for batches with **Open** status.
+
+> [!IMPORTANT]
+> The **Pay** action works best when all entries in the batch have compatible underlying payout setup. In remittance-group batches, amounts can come from multiple jurisdictions or benefits that still resolve to different vendors and vendor payment methods. If those source-level settings are not aligned, the batch might not behave as a single unified payment. In those cases, use **Report** and settle the payment outside the system, then use **Mark as paid**.
 
 ## Generate a report or filing
 

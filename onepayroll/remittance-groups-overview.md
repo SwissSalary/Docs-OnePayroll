@@ -21,7 +21,7 @@ A remittance group changes **how** those batches are created:
 
 - **Period consolidation** — Instead of one batch per payroll run, amounts from multiple payroll runs within the same payment cycle period are consolidated into a single batch. For example, a semi-monthly deposit schedule accumulates two biweekly payroll runs into one batch.
 - **Payment cycle and due date** — The remittance group's payment cycle controls the period start/end dates and the due date for each batch.
-- **Payment method** — The remittance group's payment method is applied to the batch instead of the source's default.
+- **Payment method** — The remittance group's payment method is stored on the batch and determines the payment processing mode, such as electronic payment or computer check.
 - **Shared description** — The batch description comes from the remittance group, giving a meaningful payee name (for example, *Federal Payroll Taxes*) rather than an individual jurisdiction or benefit name.
 
 Typical examples of what remittance groups handle:
@@ -51,7 +51,7 @@ Use the **Payment Cycle** field to control when payment batches are consolidated
 | **Description** | A descriptive name, such as *Federal Payroll Taxes* or *Health Insurance – Carrier A*. |
 | **Payment Cycle** | The pay cycle that determines the deposit frequency and the period covered by each payment batch. If blank, one batch is created per payroll run. |
 | **Filing Cycle** | The pay cycle that determines how often reporting forms are generated. |
-| **Payment Method** | The Business Central payment method used to process payments in this group. |
+| **Payment Method** | The Business Central payment method stored on the batch to control the payment processing mode. The actual payee and posting details still come from each payment source, such as the tax authority or benefit provider vendor. |
 | **Filing Method** | The method used to generate remittance reports or files for this group. |
 | **Home Page** | The URL of the agency or carrier's remittance portal. |
 
@@ -63,6 +63,9 @@ Each remittance group has one or more **sources**—the income tax jurisdictions
 - **Benefits** — set the **Remittance Group** field on the benefit record or benefit rate record
 
 The **Sources** factbox on the Remittance Group card lists all currently assigned jurisdictions and benefits for quick reference.
+
+> [!IMPORTANT]
+> Remittance groups are best used for sources that can be paid in a consistent way. The batch can store one payment method, but the underlying payment entries still resolve their payee and payment details from each source record. If the assigned jurisdictions or benefits point to different vendor payment methods or payout setups, the **Pay** action might not produce a single unified payment result for the whole batch.
 
 ## Payment batch lifecycle
 
