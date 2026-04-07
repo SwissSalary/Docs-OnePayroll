@@ -115,8 +115,8 @@ a:hover {
 }
 
 /* Logo sizing */
-.navbar .navbar-brand img {
-    height: 28px;
+.navbar .navbar-brand svg {
+    height: 42px;
     width: auto;
 }
 
@@ -137,6 +137,79 @@ a:hover {
 .navbar .nav-link.active {
     color: var(--onepayroll-primary-red) !important;
     font-weight: 600;
+}
+
+.op-logo {
+  width: auto;
+  height: 1.6rem;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.op-logo g {
+  transition: opacity .32s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.op-logo.logo-fade g:not(:last-of-type) {
+  opacity: 0;
+}
+
+.op-logo .condensed-slide {
+  transform-box: fill-box;
+  transform-origin: left center;
+  transition: transform .38s cubic-bezier(0.4, 0.0, 0.2, 1), 
+              opacity .32s cubic-bezier(0.4, 0.0, 0.2, 1);
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
+.op-logo.logo-fade .condensed-slide {
+  transform: scale(1) translateX(-210%);
+  opacity: 1;
+  transition-delay: .06s;
+}
+
+.op-logo-wrapper {
+  display: inline-flex;
+  align-items: end;
+  gap: .4rem;
+  position: relative;
+  font-size: 2rem;
+}
+
+.op-logo-divider,
+.op-logo-learn {
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition: opacity .28s cubic-bezier(0.4,0,0.2,1),
+              transform .28s cubic-bezier(0.4,0,0.2,1);
+}
+
+.op-logo.logo-fade ~ .op-logo-divider {
+  opacity: 1;
+  transform: translate(45px, -5px);
+}
+
+.op-logo.logo-fade ~ .op-logo-learn {
+  opacity: 1;
+  transform: translateX(65px);
+}
+
+.op-logo-wrapper.is-condensed .op-logo-divider { transition-delay: .06s; }
+.op-logo-wrapper.is-condensed .op-logo-learn   { transition-delay: .12s; }
+
+.op-logo-divider {
+  color: var(--onepayroll-font-color);
+}
+
+.op-logo-learn {
+  color: var(--onepayroll-font-color);
+  text-decoration: none;
+}
+
+.op-logo-learn:hover {
+  text-decoration: underline;
 }
 
 /* -------------------------------------------------------------------------
@@ -191,8 +264,31 @@ code {
    ------------------------------------------------------------------------- */
 footer {
     border-top: 2px solid var(--onepayroll-primary-red);
+    height: auto !important;
+    background-color: #333;
 }
-
+footer p, footer span, footer a{
+    color: #fff !important;
+}
+.footer-links div{
+    width: 25%;
+}
+.footer-labels-wrapper{
+    justify-content: center;
+    margin: 3rem 0 3rem 0;
+}
+.footer-labels-wrapper div svg{
+    width: 170px;
+}
+.footer-social-media-icons svg{
+    width: 20px;
+    height: auto;
+    margin: 0px 10px 4px 10px;
+    fill: #fff;
+}
+#sws-slogans{
+    color: #fff;
+}
 /* -------------------------------------------------------------------------
    11. Breadcrumb
    ------------------------------------------------------------------------- */
