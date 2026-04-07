@@ -109,7 +109,7 @@ Then assign the applicable payroll tax jurisdictions to this remittance group.
 ## Related pages
 
 - [About remittance groups](remittance-groups-overview.md)
-- [Work with payment batches](payment-batches.md)
+- [Work with payroll payments](payroll-payments.md)
 - [US localization and compliance](us-localization.md)
 - [Set up pay cycles](pay-cycles-setup.md)
 - [Set up payment methods](payment-methods-setup.md)

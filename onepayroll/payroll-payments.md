@@ -1,5 +1,5 @@
 ---
-title: Payroll payments overview
+title: Work with payroll payments
 description: Learn how OnePayroll automatically creates payroll payments for employees, taxes, benefits, and garnishments, and how to process, track, and report on them.
 author: zeande
 sws.service: onepayroll
@@ -7,7 +7,7 @@ sws.topic: how-to
 sws.date: 04/06/2026
 ---
 
-# Payroll payments overview
+# Work with payroll payments
 
 Payroll payments are automatically created when a payroll run is created (during calculation). Each payment batch represents a payment obligation, whether to employees, a tax agency, a benefit carrier, or another payee. All payments, including employee pay, are processed from the **Payroll Payments** page. This article explains how batches are created, what they contain, and how to process them.
 

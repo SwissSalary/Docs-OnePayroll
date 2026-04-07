@@ -22,7 +22,7 @@ This guide walks you through the payroll processing workflow: creating a payroll
    ↓
 4. Post to General Ledger
    ↓
-5. Pay (generate payment files or print checks)
+5. Pay Employees (from Payroll Payments page)
    ↓
 6. Verify GL Postings
 ```
@@ -129,7 +129,7 @@ The posting behavior depends on the **General Ledger Posting** setting in Payrol
 - **Automatic Posting**: Payroll entries are transferred to General Journal Lines and immediately posted to the General Ledger.
 - **Always Ask**: You are prompted each time whether to post the journal automatically or leave it for manual posting.
 
-Payment batches for payroll obligations such as taxes, benefits, and garnishments are created or updated earlier, when the payroll run is created and calculated. For sources with a remittance group, amounts are consolidated into batches by payment period. For sources without a remittance group, a separate batch is created per payroll run. See [Work with payment batches](payment-batches.md).
+Payment batches for payroll obligations such as taxes, benefits, and garnishments are created or updated earlier, when the payroll run is created and calculated. For sources with a remittance group, amounts are consolidated into batches by payment period. For sources without a remittance group, a separate batch is created per payroll run. See [Work with payroll payments](payroll-payments.md).
 
 **How GL entries are created:**
 
@@ -142,23 +142,26 @@ Payment batches for payroll obligations such as taxes, benefits, and garnishment
 > [!IMPORTANT]
 > The pay group must have **Gen. Journal Template** and **Gen. Journal Batch** configured for GL posting to work. If existing unposted journal lines are found in the batch, an error is raised with an option to view the journal.
 
-## Step 5: Pay (generate payment files or print checks)
+## Step 5: Pay employees (from Payroll Payments)
 
-After posting (or after approval, if posting is not needed), generate payment files or print checks.
+When a payroll run is created, OnePayroll also creates payment batches for employee payments, grouped by payment method. For example, if some employees use electronic payment and others use check, two separate batches are created, each with the corresponding payment method already assigned.
 
-**To create payments:**
+Employee payments are processed from the **Payroll Payments** page, not from the Payroll Runs page.
 
-1. In the **Payroll Runs** list, select the payroll run
-2. Select **Pay**
-3. In the **Create Payroll Payments** request page, select the **Payment Type**:
-   - **Electronic Payment** - Generates a payment file for direct deposit
-   - **Computer Check** - Prints checks for check-payment employees
-4. Select **OK**
+**To pay employees:**
 
-See [Direct deposit setup](direct-deposit-setup.md) and [Check printing](check-printing.md) for detailed payment workflows.
+1. Open the **Payroll Payments** page (from the role center cues or by searching for *Payroll Payments*).
+2. Locate the employee payment batch for the payroll run you want to pay.
+3. Choose the **Pay** action.
+4. OnePayroll uses the payment method on the batch to determine the payment type (electronic payment or computer check) and processes the payment accordingly.
+5. Repeat for each employee payment batch if there are multiple batches (for example, one for direct deposit and one for checks).
+
+Generated payment files are displayed on the **Payroll Payments** page and are also visible in the **Attachments** FactBox on the Payroll Runs page.
+
+See [Work with payroll payments](payroll-payments.md), [Direct deposit setup](direct-deposit-setup.md), and [Check printing](check-printing.md) for detailed payment workflows.
 
 > [!NOTE]
-> The **Pay** action is available when the payroll run is Approved or Posted (or Open when approvals aren't required). You can generate payment files before or after posting to the GL.
+> The **Pay** action on the Payroll Payments page is available for batches with **Open** status. You can process payments before or after posting the payroll run to the GL.
 
 ## Step 6: Verify GL postings
 
@@ -253,9 +256,10 @@ To cancel a pending reversal, use the **Cancel Reversal** action.
 
 ### "No payment entries to export" error
 
-- Verify payment entries exist for the payroll run (check **Payment Entries** in Navigation)
-- Check that payment methods are correctly assigned to employees
+- Verify payment entries exist for the payroll run (check **Payment Entries** in Navigation on the Payroll Runs page)
+- Check that payment methods are correctly assigned to employees (Employee Card > **Payment Methods**)
 - Ensure employees have valid bank accounts for direct deposit
+- Confirm the employee payment batch exists on the **Payroll Payments** page
 
 ## Best practices
 
@@ -269,6 +273,7 @@ To cancel a pending reversal, use the **Cancel Reversal** action.
 
 - [Configure payroll settings](payroll-setup.md)
 - [Pay types overview](pay-types-overview.md)
+- [Work with payroll payments](payroll-payments.md)
 - [Payment methods overview](payment-methods-overview.md)
 - [Set up direct deposit](direct-deposit-setup.md)
 - [Check printing and management](check-printing.md)

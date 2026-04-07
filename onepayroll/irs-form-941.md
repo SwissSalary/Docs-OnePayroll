@@ -80,6 +80,6 @@ For the current IRS deposit rules, see [IRS Topic no. 757, Forms 941 and 944 - d
 
 - [About remittance groups](remittance-groups-overview.md)
 - [Set up remittance groups](remittance-groups-setup.md)
-- [Work with payment batches](payment-batches.md)
+- [Work with payroll payments](payroll-payments.md)
 - [Tax compliance](tax-reports.md)
 - [US localization and compliance](us-localization.md)

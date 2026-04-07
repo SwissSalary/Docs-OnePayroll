@@ -47,14 +47,14 @@
 ### [About payment methods](payment-methods-overview.md)
 ### [Set up payment methods](payment-methods-setup.md)
 ### [Set up direct deposit](direct-deposit-setup.md)
-### [Check printing and management](check-printing.md)
-### [Export payment files](payment-export.md)
+### [Work with payroll payments](payroll-payments.md)
+#### [Export payment files](payment-export.md)
+#### [Check printing and management](check-printing.md)
 ### [Vendor payments](vendor-payments.md)
 
-### Remittance groups and payment batches
+### Remittance groups
 #### [About remittance groups](remittance-groups-overview.md)
 #### [Set up remittance groups](remittance-groups-setup.md)
-#### [Work with payment batches](payment-batches.md)
 
 ## Tax and compliance
 ### [About tax calculations](tax-calculation-overview.md)

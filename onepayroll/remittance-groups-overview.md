@@ -79,7 +79,7 @@ When a payroll run is created, OnePayroll creates or updates a payment batch for
 
 If no remittance group is assigned, a separate batch is created for each payroll run, keyed to the individual jurisdiction or benefit record using the payroll run's period dates.
 
-The resulting payment batches are visible on the **Payroll Payments** page as soon as payroll calculation completes. See [Work with payment batches](payment-batches.md) for details on managing and processing those batches.
+The resulting payment batches are visible on the **Payroll Payments** page as soon as payroll calculation completes. See [Work with payroll payments](payroll-payments.md) for details on managing and processing those batches.
 
 ## Filing methods
 
@@ -95,6 +95,6 @@ Additional filing methods can be added by extending the `Remittance Filing Metho
 ## Related pages
 
 - [Set up remittance groups](remittance-groups-setup.md)
-- [Work with payment batches](payment-batches.md)
+- [Work with payroll payments](payroll-payments.md)
 - [US localization and compliance](us-localization.md)
 - [Set up pay cycles](pay-cycles-setup.md)
