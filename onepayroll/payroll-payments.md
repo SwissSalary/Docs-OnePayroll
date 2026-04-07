@@ -98,7 +98,7 @@ If payment was made outside of OnePayroll—for example, by logging into the EFT
 **To mark one or more batches as paid:**
 
 1. In the **Payroll Payments** list, select the batch or batches to mark.
-2. Choose the **Mark as Paid** action.
+2. Choose the **Mark as paid** action.
 3. Confirm the action.
 4. Status changes to **Completed** and the payment date is recorded.
 
