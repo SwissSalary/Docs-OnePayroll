@@ -18,12 +18,12 @@ Before adding employees, set up the organizational structure they belong to.
 **To create departments:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Departments**, and then choose the related link.
-2. Add your departments with codes, descriptions, and optional parent departments for hierarchy.
+1. Add your departments with codes, descriptions, and optional parent departments for hierarchy.
 
 **To create work locations (US localization):**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Work Locations**, and then choose the related link.
-2. Add work locations with addresses and state assignments for tax purposes.
+1. Add work locations with addresses and state assignments for tax purposes.
 
 > [!TIP]
 > Departments and work locations are specific to your organization and must be created manually. The setup data generation doesn't include them.
@@ -37,9 +37,9 @@ Add your employees to OnePayroll. Each employee must be assigned a pay group and
 **To create an employee:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
-2. Choose the **New** action.
-3. Enter the employee number and name.
-4. On the **OnePayroll** tab:
+1. Choose the **New** action.
+1. Enter the employee number and name.
+1. On the **OnePayroll** tab:
    - Assign a **Pay Group** (for example, BIWKLY).
    - Select the **Employee Type**, which determines the employee's pay unit and compensation method (Regular or Work-Based).
    - Set the **Employment Date**.
@@ -61,17 +61,17 @@ Configure how employees are paid.
 **For direct deposit:**
 
 1. Open the **Employee Card** and select the **Payment Methods** action.
-2. Create a new employee payment method.
-3. Set the **Allocation Type** (Primary, Fixed Amount, or Percentage).
-4. Fill in **Bank Account No.** and **Bank Identifier Code** in the Transfer group.
-5. Select a Business Central **Payment Method** code.
+1. Create a new employee payment method.
+1. Set the **Allocation Type** (Primary, Fixed Amount, or Percentage).
+1. Fill in **Bank Account No.** and **Bank Identifier Code** in the Transfer group.
+1. Select a Business Central **Payment Method** code.
 
 **For check payment:**
 
 1. Open the **Employee Card** and select the **Payment Methods** action.
-2. Create a new employee payment method with a **Payment Method** code.
-3. When running **Create Payroll Payments**, select **Computer Check** as the payment type.
-4. Print checks through the standard Business Central check-printing process.
+1. Create a new employee payment method with a **Payment Method** code.
+1. When running **Create Payroll Payments**, select **Computer Check** as the payment type.
+1. Print checks through the standard Business Central check-printing process.
 
 For more information, see [Set up payment methods](payment-methods-setup.md) and [Set up direct deposit](direct-deposit-setup.md).
 
@@ -97,12 +97,12 @@ With employees and payment methods configured, process a test payroll run to ver
 **To create a payroll run:**
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Runs**, and then choose the related link.
-2. Choose the **New** action.
-3. Set the **Pay Group** (for example, BIWEEKLY).
-4. Set the **Start Date** for the pay period. Choose **OK**. OnePayroll creates the payroll run and calculates all amounts automatically. Status is set to **Open**.
-6. Review the **Payroll Entries** for accuracy.
-7. If your setup requires approvals, choose the **Approve** action to approve the payroll run.
-8. Choose the **Post** action to post entries to the general ledger. Status changes to **Posted**.
+1. Choose the **New** action.
+1. Set the **Pay Group** (for example, BIWEEKLY).
+1. Set the **Start Date** for the pay period. Choose **OK**. OnePayroll creates the payroll run and calculates all amounts automatically. Status is set to **Open**.
+1. Review the **Payroll Entries** for accuracy.
+1. If your setup requires approvals, choose the **Approve** action to approve the payroll run.
+1. Choose the **Post** action to post entries to the general ledger. Status changes to **Posted**.
 
 ### Verify the results
 
