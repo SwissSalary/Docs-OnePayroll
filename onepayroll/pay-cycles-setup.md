@@ -83,7 +83,7 @@ The **Pay Group Details** FactBox on the pay group page shows the current period
 
 ## Related information
 
-- [About pay cycles](pay-cycles-overview.md)
+- [Pay cycles overview](pay-cycles-overview.md)
 - [Set up GL posting for payroll](gl-posting-setup.md)
 - [Employee setup](employee-setup.md)
 - [Payroll journal entries](payroll-journal.md)
