@@ -78,6 +78,10 @@ Some cities/counties impose:
 - **Semiweekly schedule** (most common) - Deposit by Wednesday or Friday
 - **Monthly schedule** (if under $50,000 annual tax) - Deposit by 15th of next month
 
+In IRS terminology, **semiweekly** means wages paid on Wednesday, Thursday, or Friday are generally due the following Wednesday, and wages paid on Saturday, Sunday, Monday, or Tuesday are generally due the following Friday. In practice, that usually means depositing within 3 to 5 business days after payday. It does **not** mean biweekly payroll and it does **not** mean semi-monthly payroll.
+
+For the current IRS deposit rules, see [IRS Topic no. 757, Forms 941 and 944 - deposit requirements](https://www.irs.gov/taxtopics/tc757).
+
 **Method:**
 - EFTPS (Electronic Federal Tax Payment System)
 - Bank ACH deposit
@@ -112,6 +116,16 @@ Some cities/counties impose:
 - Total wages paid
 - Federal income tax withheld
 - Social Security and Medicare taxes (employee and employer)
+
+**OnePayroll Form 941 support:**
+
+OnePayroll can automatically fill out Form 941 as a PDF using payroll data collected in payment batches. To use this feature:
+
+1. Configure a remittance group with **Filing Method** set to **IRS Form 941** and a quarterly filing cycle.
+2. Assign your federal tax jurisdictions to the remittance group.
+3. After creating payroll runs for the quarter, open the accumulated payment batch from **Payroll Payments** and select **Report**.
+
+See [IRS Form 941](irs-form-941.md) for detailed instructions.
 
 **If error discovered:**
 - File Form 941-X (amended return)

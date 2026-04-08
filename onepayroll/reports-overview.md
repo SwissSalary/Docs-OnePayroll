@@ -44,7 +44,7 @@ These reports perform actions rather than producing printable output:
 |--------|-------------|
 | **New Payroll** | Creates and calculates a new payroll run |
 | **Paycheck Reversal** | Reverses a posted paycheck by creating offsetting entries |
-| **Create Payroll Payments** | Generates payment journal entries for direct deposit or check printing |
+| **Create Payroll Payments** | Processes a payment batch to generate a payment file or print checks |
 | **Save to Dossier** | Saves generated report output as PDF documents in employee dossiers |
 
 ## Running reports

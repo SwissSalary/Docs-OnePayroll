@@ -55,7 +55,7 @@ Employees in OnePayroll extend the standard Business Central employee record wit
 Benefits are company-sponsored programs (health insurance, retirement plans, wellness programs) that employees can enroll in. OnePayroll tracks employee coverage, calculates employer liabilities, and integrates benefits deductions into payroll.
 
 ### Payment Methods
-Employee Payment Methods define how employees receive their wages. Each record stores allocation rules (Primary, Fixed Amount, or Percentage) and bank details (Bank Account No., Bank Identifier Code). The payment type (Computer Check or Electronic Payment) is selected at pay time on the Create Payroll Payments report.
+Employee Payment Methods define how employees receive their wages. Each record stores allocation rules (Primary, Fixed Amount, or Percentage) and bank details (Bank Account No., Bank Identifier Code). The payment type (Computer Check or Electronic Payment) is determined by the payment method assigned to the employee's payment batch.
 
 ### Tax Calculations
 OnePayroll calculates federal, state, and local income tax withholding using a jurisdiction-based architecture. Each Income Tax Jurisdiction defines its own calculation method (Standard or Simplified), and employee withholding records are automatically maintained based on the employee's location.
