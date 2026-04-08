@@ -80,7 +80,7 @@ To review posted entries:
 1. In **Payroll Runs**, select the posted payroll run
 2. Choose the **General Ledger Log** action
 
-Or choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **General Ledger Entries**, and then choose the related link, and filter by document number and posting date.
+Or choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **General Ledger Entries**, and then choose the related link, then filter by document number and posting date.
 
 ## Journal batch requirements
 

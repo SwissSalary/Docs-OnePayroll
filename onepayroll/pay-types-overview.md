@@ -86,6 +86,6 @@ When setting up payroll:
 ## Related information
 
 - [Set up pay types](pay-types-setup.md)
-- [About pay cycles](pay-cycles-overview.md)
+- [Pay cycles overview](pay-cycles-overview.md)
 - [Pay unit conversions](pay-units-conversions.md)
-- [About benefits](benefits-overview.md)
+- [Benefits overview](benefits-overview.md)

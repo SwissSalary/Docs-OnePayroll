@@ -112,7 +112,7 @@ Hypothetical pay types are calculated but don't affect actual pay. They're used 
 
 ## Related information
 
-- [About pay types](pay-types-overview.md)
+- [Pay types overview](pay-types-overview.md)
 - [Set up GL posting for payroll](gl-posting-setup.md)
 - [Pay unit conversions](pay-units-conversions.md)
-- [About benefits](benefits-overview.md)
+- [Benefits overview](benefits-overview.md)

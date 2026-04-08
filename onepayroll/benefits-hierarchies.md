@@ -52,7 +52,7 @@ When working with benefit hierarchies:
 
 ## See Also
 
-[About benefits](benefits-overview.md)  
-[Set Up Benefits](benefits-setup.md)  
-[Assign Benefits to Employees](benefits-assignments.md)  
-[Understand Benefit Limits](benefits-limits.md)  
+[Benefits overview](benefits-overview.md)  
+[Set up benefits](benefits-setup.md)  
+[Assign benefits to employees](benefits-assignments.md)  
+[Benefits limits](benefits-limits.md)  
