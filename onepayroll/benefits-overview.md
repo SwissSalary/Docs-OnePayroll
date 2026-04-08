@@ -3,7 +3,7 @@ title: Benefits overview
 description: Learn about the benefits module in OnePayroll, including how to configure benefit types, assign coverage, set limits, and track liability.
 author: zeande
 sws.service: onepayroll
-sws.topic: article
+sws.topic: overview
 sws.date: 01/08/2026
 ---
 
