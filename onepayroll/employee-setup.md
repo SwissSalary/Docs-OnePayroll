@@ -20,12 +20,12 @@ This guide walks you through creating employee records and configuring their pay
 
 1. Search for **Employees**
 2. Select **New**
-3. In the **General** tab:
+3. In the **General** FastTab:
    - **No.** - Employee number (auto-generated or enter manually)
    - **First Name** / **Last Name** - Employee name
    - **Job Title** - Position (optional)
    - **Address** - Work address
-4. In the **OnePayroll** tab (payroll-specific fields):
+4. In the **Employment** FastTab (payroll-specific fields):
    - **Pay Group** - Select the appropriate pay group
    - **Type** - Select an employee type (user-defined codes that determine pay unit and compensation method)
    - **Work Location** - Select a work location
@@ -48,7 +48,7 @@ Once the employee is created, configure payroll-specific settings:
 **To assign a pay group:**
 
 1. Open the employee
-2. On the **Employment** tab:
+2. On the **Employment** FastTab:
    - **Pay Group** - Select the appropriate group
    - This determines when the employee is paid
 
@@ -63,7 +63,7 @@ Once the employee is created, configure payroll-specific settings:
 **To set employee type:**
 
 1. Open the employee
-2. On the **Employment** tab:
+2. On the **Employment** FastTab:
    - **Type** - Select an employee type code
    - This determines the employee's pay unit and compensation method
 
@@ -76,12 +76,12 @@ The employee's pay unit and pay factor are automatically derived from their empl
 
 ### Enter compensation information
 
-Based on the employee type code selected on the Employment tab, you will be able to enter the corresponding compensation on the Job and Compensation tab.
+Based on the employee type code selected on the Employment FastTab, you will be able to enter the corresponding compensation on the Job and Compensation FastTab.
 
 To set an employee’s compensation:
 
 Open the employee record.
-Go to the Job and Compensation tab.
+Go to the Job and Compensation FastTab.
 In the Amount field, enter the employee’s compensation based on their employee type.
 
 For example:
@@ -94,7 +94,7 @@ If the employee type is Hourly, enter the employee’s hourly rate in the Amount
 
 **Federal tax withholding:**
 
-1. On the **Tax Information** tab:
+1. On the **Tax Information** FastFastTab:
    - **Federal Filing Status** - Single, Married, Head of Household
    - **Federal Allowances** - Number of exemptions
    - **Additional Federal Withholding** - Extra withholds (if needed)
@@ -157,7 +157,7 @@ See [About payment methods](payment-methods-overview.md) for more details.
 **To set organizational relationships:**
 
 1. Open the employee
-2. In the **Job & Compensation** tab:
+2. In the **Job & Compensation** FastTab:
    - **Department** - Which department the employee belongs to
    - **Manager/Supervisor** - Who oversees the employee
 
@@ -183,20 +183,12 @@ To change an employee's status, update the **Employment Date** or **Termination 
 
 ## Set up benefits enrollment
 
-**To enroll employee in benefits:**
+**To enroll an employee in benefits:**
 
-1. Open the employee
-2. On the **OnePayroll** tab, select **Benefits**
-3. Select **New**
-4. Enter:
-   - **Benefit** - Which benefit program (Health Insurance, 401(k), etc.)
-   - **Coverage** - Coverage level (Employee Only, Employee + Spouse, etc.)
-   - **Effective Date** - When coverage begins
-
-Benefits can also be managed through:
-- Employee self-service portal (employees enroll themselves)
-- Benefits administration page (HR can bulk update)
-- Life event changes (marriage, new dependent, etc.)
+1. Open the employee card or select the employee on the Employee list.
+2. Choose the **Benefit Assignments** action.
+3. On the **Benefit Assignments** page, locate the benefit and specify whether the employee is liable for it.
+4. If the benefit uses employee-assigned rates, choose **Benefit Rates** to set the employee-specific rate (for example, 401(k)).
 
 ## Garnishment setup
 
