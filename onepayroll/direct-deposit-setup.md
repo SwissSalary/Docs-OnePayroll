@@ -9,14 +9,14 @@ sws.date: 02/23/2026
 
 # Set up direct deposit
 
-Direct deposit electronically transfers employee pay to their bank accounts. In OnePayroll, direct deposit is processed by selecting **Electronic Payment** as the payment type when running the **Pay** action on a posted payroll run.
+Direct deposit electronically transfers employee pay to their bank accounts. When a payroll run is created, OnePayroll automatically creates payment batches for employees, grouped by payment method. Batches for employees with an electronic payment method are processed from the **Payroll Payments** page.
 
 ## How it works
 
 1. Each employee has one or more Employee Payment Method records with bank details.
-2. You post a payroll run and choose the **Pay** action.
-3. On the **Create Payroll Payments** request page, you set **Payment Type** to **Electronic Payment**.
-4. OnePayroll generates a payment file and attaches it to the payroll run.
+2. You create a payroll run. OnePayroll creates payment batches grouped by payment method.
+3. On the **Payroll Payments** page, select the employee electronic payment batch and choose the **Pay** action.
+4. OnePayroll generates a payment file and attaches it to the payment batch.
 5. You download the file and transmit it to your bank.
 
 ## Set up Employee Payment Methods
@@ -26,7 +26,7 @@ Bank account information is stored directly on the Employee Payment Method recor
 **To set up a direct deposit payment method:**
 
 1. Open the **Employee Card**.
-2. Select the **Payment Methods** action to open the **Employee Payment Methods** list.
+2. Choose the **Payment Methods** action to open the **Employee Payment Methods** list.
 3. Create a new record and fill in the following fields:
 
 **General group:**
@@ -92,17 +92,17 @@ For US-based payroll, the payment export uses a NACHA/ACH file format. The US de
 
 ### Step 2: Generate payment file
 
-1. On the **Payroll Runs** page, select the posted payroll run.
-2. Choose the **Pay** action.
-3. On the **Create Payroll Payments** request page, set **Payment Type** to **Electronic Payment**. Choose **OK**.
+1. Open the **Payroll Payments** page (from the role center cues or by searching for *Payroll Payments*).
+2. Locate the employee electronic payment batch for the payroll run.
+3. Choose the **Pay** action.
 
-OnePayroll generates a payment file through the configured payment export interface. The file is automatically attached to the payroll run as a document attachment, visible in the **Payment Files** FactBox on the Payroll Runs page. You are also prompted to download the file.
+OnePayroll generates a payment file through the configured payment export interface. The file is automatically attached to the payment batch and is also visible in the **Attachments** FactBox on the Payroll Runs page. You are also prompted to download the file.
 
-If a payment file has already been generated for this payroll run, you are prompted to confirm before generating another one.
+If a payment file has already been generated for this payment batch, you are prompted to confirm before generating another one.
 
 ### Step 3: Transmit to bank
 
-1. Download the payment file (from the download prompt or the Payment Files FactBox).
+1. Download the payment file (from the download prompt or the Attachments FactBox on the Payroll Payments or Payroll Runs page).
 2. Log into your bank's secure portal and upload the file.
 3. Note any confirmation number from the bank.
 
@@ -117,7 +117,7 @@ After the bank confirms processing, verify deposits posted to employees' account
 
 ### "No payment entries to export" error
 
-- Verify payment entries exist for the payroll run (check **Payment Entries** in the navigation actions).
+- Verify payment entries exist for the payroll run (check **Payment Entries** on the Payroll Runs page or **Show Payment Entries** on the Payroll Payments page).
 - Confirm employees have Employee Payment Method records with bank details (Bank Account No. and Bank Identifier Code).
 
 ### Payment file export fails
@@ -132,6 +132,7 @@ After the bank confirms processing, verify deposits posted to employees' account
 
 ## Related information
 
+- [Work with payroll payments](payroll-payments.md)
 - [Payment methods setup](payment-methods-setup.md)
 - [Payment methods overview](payment-methods-overview.md)
 - [Process payroll runs](payroll-runs-process.md)
