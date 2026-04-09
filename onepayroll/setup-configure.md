@@ -80,7 +80,7 @@ For more information, see [Employee types and pay units](pay-units-employee-type
 
 ## Review benefits
 
-With the US localization, the setup data creates pre-configured payroll deductions  including Social Security, Medicare, FUTA, SUTA (with limits for all 50 states), 401(k), HSA, and garnishment. Review these and add any additional deductions your organization may have.
+With the US localization, the setup data creates pre-configured payroll deductions. This includes Social Security, Medicare, FUTA, SUTA (with limits for all 50 states), 401(k), HSA, and garnishment. Review these and add any additional deductions your organization may have.
 
 **To review benefits:**
 
