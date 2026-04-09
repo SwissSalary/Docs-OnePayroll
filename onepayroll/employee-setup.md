@@ -76,7 +76,7 @@ The employee's pay unit and pay factor are automatically derived from their empl
 
 ### Enter compensation information
 
-Based on the employee type code selected on the Employment FastTab, you will be able to enter the corresponding compensation on the Job and Compensation FastTab.
+Based on the employee type selected on the **Employment** FastTab, you will be able to enter the corresponding compensation rate in the **Amount** field under the **Job and Compensation** FastTab.
 
 To set an employee’s compensation:
 1.Open the employee record.
