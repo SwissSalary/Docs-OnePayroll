@@ -79,15 +79,14 @@ The employee's pay unit and pay factor are automatically derived from their empl
 Based on the employee type code selected on the Employment FastTab, you will be able to enter the corresponding compensation on the Job and Compensation FastTab.
 
 To set an employee’s compensation:
+1.Open the employee record.
+2.Go to the Job and Compensation FastTab.
+3.In the Amount field, enter the employee’s compensation based on their employee type.
 
-Open the employee record.
-Go to the Job and Compensation FastTab.
-In the Amount field, enter the employee’s compensation based on their employee type.
+**Example**
 
-For example:
-
-If the employee type is Salary, enter the employee’s gross annual salary in the Amount field.
-If the employee type is Hourly, enter the employee’s hourly rate in the Amount field.
+-If the employee type is Salary, enter the employee’s gross annual salary in the Amount field.
+-If the employee type is Hourly, enter the employee’s hourly rate in the Amount field.
 
 
 ### Add Tax Information
