@@ -275,7 +275,7 @@ The originating system or process that created a payment (e.g., "Payroll Run", "
 A component of compensation (earnings or deductions) such as salary, overtime, taxes, or benefits.
 
 **Pay Type Category**
-A grouping used to classify pay types based on how earnings should be handled in payroll, such as regular pay, overtime, bonus, or other compensation types.
+A grouping used to classify pay types by their payroll purpose and treatment. Categories indicate whether a pay type is an earning, reimbursement, deduction, employer contribution or hypothetical amount. 
 
 **Pay Unit**
 A user-defined unit of compensation measurement with a code, description, and conversion factor. Pay units are used on employee types, pay cycles, and pay types to define how rates are expressed and converted.
