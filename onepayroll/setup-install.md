@@ -28,7 +28,7 @@ After installing OnePayroll, set the **Payroll Manager** role center as your def
 
 The Payroll Manager role center is now your home page. It provides a dashboard with payroll activity cues, headlines, and navigation to all payroll functions.
 
-For more information about changing your role center, see [Change basic settings](https://learn.onepayroll.com/dynamics365/business-central/ui-change-basic-settings#role) in the Business Central documentation.
+For more information about changing your role center, see [Change basic settings](https://learn.microsoft.com/dynamics365/business-central/ui-change-basic-settings#role) in the Business Central documentation.
 
 ## Generate setup data
 
