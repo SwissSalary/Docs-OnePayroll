@@ -91,24 +91,25 @@ To set an employee’s compensation:
 
 ### Add Tax Information
 
-**Federal tax withholding:**
+**To add federal tax withholding information:**
 
-1. On the **Tax Information** FastFastTab:
+1. Open the employee card or select the employee on the Employee list.
+2. Choose the **Withholding Information** action.
+3. Fill out the necessary fields:
    - **Federal Filing Status** - Single, Married, Head of Household
    - **Federal Allowances** - Number of exemptions
    - **Additional Federal Withholding** - Extra withholds (if needed)
 
-**State tax withholding** (if applicable):
+**For state and local tax withholding** (if applicable):
 
-1. **State of Residence** - Where employee lives (determines tax jurisdiction)
-2. **State Filing Status** - Single, Married, etc.
-3. **State Allowances** - Number of exemptions
-4. **Additional State Withholding** - Extra amount (if needed)
+On the **Withholding Information** page, configure:
 
-**Local tax** (if applicable):
-
-1. **Local Tax Jurisdiction** - City/county with payroll tax
-2. **Local Withholding** - Amount or percentage
+- **State of Residence** - Where employee lives (determines tax jurisdiction)
+- **State Filing Status** - Single, Married, etc.
+- **State Allowances** - Number of exemptions
+- **Additional State Withholding** - Extra amount (if needed)
+- **Local Tax Jurisdiction** - City/county with payroll tax (if applicable)
+- **Local Withholding** - Amount or percentage (if applicable)
 
 ### Social Security / Tax ID
 
