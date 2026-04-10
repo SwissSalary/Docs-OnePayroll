@@ -9,21 +9,22 @@ sws.date: 02/23/2026
 
 # Check printing and management
 
-OnePayroll prints employee paychecks by creating General Journal Lines and delegating to the standard Business Central check printing process. You select **Computer Check** as the payment type when running the **Pay** action on a payroll run.
+OnePayroll prints employee paychecks by delegating to the standard Business Central check printing process. When a payroll run is created, payment batches are automatically created for employees, grouped by payment method. Batches for employees with a check payment method are processed from the **Payroll Payments** page.
 
 ## Check payment workflow
 
 1. Create, review, and (optionally) post a payroll run.
-2. Select **Pay** on the payroll run.
-3. On the **Create Payroll Payments** request page, set **Payment Type** to **Computer Check**.
-4. OnePayroll creates General Journal Lines and runs the BC check printing process.
-5. Distribute printed checks to employees.
+2. Open the **Payroll Payments** page.
+3. Select the employee check payment batch for the payroll run.
+4. Choose the **Pay** action. The batch's payment method determines the payment type (Computer Check).
+5. Business Central's check printing process runs and prints the checks.
+6. Distribute printed checks to employees.
 
 ## Prerequisites
 
 ### Employee payment methods
 
-Each employee who should receive a check needs an Employee Payment Method record. Open the Employee Card and select the **Payment Methods** action to manage the employee's payment methods.
+Each employee who should receive a check needs an Employee Payment Method record. Open the Employee Card and choose the **Payment Methods** action to manage the employee's payment methods.
 
 On the Employee Payment Method card:
 
@@ -41,14 +42,14 @@ For check payments, bank account fields (Bank Account No. and Bank Identifier Co
 
 The **Payment Method** code assigned to the Employee Payment Method must have:
 
-- **Default Bank Payment Type** = **Computer Check** — so that OnePayroll includes these payments when the user selects Computer Check on the Create Payroll Payments report.
-- **Bal. Account No.** — set to the employer bank account that checks are drawn from. The standard BC check printing report uses this bank account to determine the check stock and numbering.
+- **Default Bank Payment Type** = **Computer Check** — so that OnePayroll uses the check printing process for these payments.
+- **Bal. Account No.** — set to the employer bank account that checks are drawn from. This bank account determines the check stock and numbering.
 
 If you pay employees from more than one employer bank account, create a separate Payment Method code for each bank account (for example, `CHECK-MAIN` and `CHECK-BRANCH`). The check printing report prompts you to select the bank account.
 
 ### Pay group configuration
 
-The pay group must have a **Gen. Journal Template** and **Gen. Journal Batch** configured. OnePayroll uses these to create the General Journal Lines that drive the check printing process.
+The pay group must have a **Gen. Journal Template** and **Gen. Journal Batch** configured. OnePayroll uses these internally during payment processing.
 
 ## Print checks
 
@@ -58,14 +59,13 @@ The pay group must have a **Gen. Journal Template** and **Gen. Journal Batch** c
 2. Review payroll entries.
 3. Approve (if required) and post the payroll.
 
-### Step 2: Run Pay with Computer Check
+### Step 2: Pay from Payroll Payments
 
-1. On the **Payroll Runs** page, select the posted payroll run.
-2. Select **Pay**.
-3. On the **Create Payroll Payments** request page, set **Payment Type** to **Computer Check**.
-4. Select **OK**.
+1. Open the **Payroll Payments** page (from the role center cues or by searching for *Payroll Payments*).
+2. Locate the employee check payment batch for the payroll run.
+3. Choose the **Pay** action.
 
-OnePayroll creates General Journal Lines for each employee's check payment and runs the Business Central check printing process. Checks print to the configured printer or generate PDF output.
+OnePayroll runs the Business Central check printing process. Checks print to the configured printer or generate PDF output.
 
 ### Step 3: Preview paychecks
 
@@ -86,7 +86,7 @@ To save PDF copies to employee dossiers:
 ### No payment entries for Computer Check
 
 - Verify employees have payment methods assigned (Employee Card → **Payment Methods** action).
-- Ensure payment entries exist for the payroll run (check **Payment Entries** in the navigation actions).
+- Ensure payment entries exist for the payroll run (check **Payment Entries** on the Payroll Runs page or **Show Payment Entries** on the Payroll Payments page).
 
 ### Printing alignment issues
 
@@ -97,5 +97,6 @@ To save PDF copies to employee dossiers:
 ## Related information
 
 - [Process payroll runs](payroll-runs-process.md)
+- [Work with payroll payments](payroll-payments.md)
 - [Payment methods setup](payment-methods-setup.md)
 - [Set up direct deposit](direct-deposit-setup.md)

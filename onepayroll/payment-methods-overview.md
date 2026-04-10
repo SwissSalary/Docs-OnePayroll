@@ -26,7 +26,7 @@ An **Employee Payment Method** record contains:
 Payment methods are accessed from the **Employee Card** by selecting the **Payment Methods** action.
 
 > [!NOTE]
-> The payment type (Computer Check or Electronic Payment) is **not** stored on the Employee Payment Method. Instead, you select it on the **Create Payroll Payments** report dialog when generating payments for a completed payroll run.
+> The payment type (Computer Check or Electronic Payment) is determined automatically from the payment method assigned to the payment batch. When a payroll run is created, OnePayroll creates separate employee payment batches for each payment method, so batches are already grouped by payment type.
 
 ## Allocation types
 
@@ -109,18 +109,21 @@ The **Default Bank Payment Type** field is added by OnePayroll and determines ho
 - **Electronic payments (ACH)**: OnePayroll generates a **separate payment file for each employer bank account**. If some employees reference a Payment Method with `BANK-MAIN` and others reference one with `BANK-BRANCH`, two separate NACHA/ACH files are created.
 - **Computer checks**: The standard BC check printing process prompts you to select the employer bank account. The `Bal. Account No.` on the Payment Method determines which bank account's check stock is used.
 
-## Payment type at pay time
+## Payment type and payment batches
 
-When you run the **Create Payroll Payments** report after a payroll is calculated and posted, the report dialog asks you to select a **Payment Type**:
+When a payroll run is created, OnePayroll automatically creates payment batches for employees, grouped by payment method. For example, if some employees have an electronic payment method and others have a check method, two separate batches are created.
 
-- **Computer Check** — generates check documents using the standard Business Central check-printing process
-- **Electronic Payment** — generates a payment file for direct deposit (ACH)
+Each batch inherits its payment method, which determines the **Default Bank Payment Type**:
 
-This selection applies to the entire payment run, not to individual employee payment methods. OnePayroll filters Employee Payment Methods by matching their Payment Method code's **Default Bank Payment Type** against the selected payment type, so only relevant payments are processed.
+- **Computer Check** — the **Pay** action generates check documents using the standard Business Central check-printing process
+- **Electronic Payment** — the **Pay** action generates a payment file for direct deposit (ACH)
+
+You process payments from the **Payroll Payments** page by selecting a batch and choosing the **Pay** action. Because batches are already grouped by payment method, each batch processes only the relevant payment type. See [Work with payroll payments](payroll-payments.md) for details.
 
 ## Related information
 
 - [Set up payment methods](payment-methods-setup.md)
+- [Work with payroll payments](payroll-payments.md)
 - [Set up direct deposit](direct-deposit-setup.md)
 - [Check printing](check-printing.md)
 - [Employee bank account information](employee-bank-accounts.md)

@@ -7,7 +7,8 @@
           "**/*.{md,yml}"
         ],
         "exclude": [
-          "_site/**"
+          "_site/**",
+          "node_modules/**"
         ]
       }
     ],
@@ -31,7 +32,11 @@
       "_appName": "OnePayroll Learn",
       "_appTitle": "OnePayroll Learn",
       "_appLogoPath": "logo.svg",
+      "_appLogoUrl": "/",
+      "_appFaviconPath": "favicon.ico",
       "_enableSearch": true,
+      "_appFooter": "<span>Powered by <a href='https://onepayroll.com'>SwissSalary USA Inc.</a></span>",
+      "_disableContribution": false,
       "pdf": false
     }
   }

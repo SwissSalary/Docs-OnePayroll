@@ -69,9 +69,9 @@ Configure how employees are paid.
 **For check payment:**
 
 1. Open the **Employee Card** and select the **Payment Methods** action.
-2. Create a new employee payment method with a **Payment Method** code.
-3. When running **Create Payroll Payments**, select **Computer Check** as the payment type.
-4. Print checks through the standard Business Central check-printing process.
+2. Create a new employee payment method with a **Payment Method** code that has **Default Bank Payment Type** = **Computer Check**.
+3. After creating a payroll run, open the **Payroll Payments** page and choose the **Pay** action on the check payment batch.
+4. Checks print through the standard Business Central check-printing process.
 
 For more information, see [Set up payment methods](payment-methods-setup.md) and [Set up direct deposit](direct-deposit-setup.md).
 
