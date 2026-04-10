@@ -51,12 +51,10 @@ jobs:
       # Optional: Make it obvious in logs why deploy didn't run
       - name: Skip deploy for fork PRs (expected)
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
-        run: echo "Fork PR detected: build ran, deploy intentionally skipped (no secrets/OIDC for forks)."
+        run: echo "Fork PR detected - build ran, deploy intentionally skipped (no secrets/OIDC for forks)."
 
   close_pull_request_job:
-    if: github.event_name == 'pull_request'
-      && github.event.action == 'closed'
-      && github.event.pull_request.head.repo.full_name == github.repository
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     name: Close Pull Request Job
     permissions:
