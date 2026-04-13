@@ -1,5 +1,5 @@
 ---
-title: About payroll runs
+title: Payroll runs overview
 description: Learn how payroll runs work, understand the payroll processing workflow, and the statuses that guide your payroll through calculation to posting.
 author: zeande
 sws.service: onepayroll
@@ -7,7 +7,7 @@ sws.topic: overview
 sws.date: 02/23/2026
 ---
 
-# About payroll runs
+# Payroll runs overview
 
 A payroll run is a processing batch that calculates and processes wages for a group of employees for a specific payroll period. Payroll runs are the core of the OnePayroll processing workflow.
 

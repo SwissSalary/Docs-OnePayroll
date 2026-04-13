@@ -1,6 +1,6 @@
 ---
 title: Key concepts and terminology
-description: A comprehensive glossary of OnePayroll terms and concepts.
+description: Learn about key OnePayroll terms and concepts, including payroll components, processing workflow, and setup entities.
 author: zeande
 sws.service: onepayroll
 sws.topic: reference

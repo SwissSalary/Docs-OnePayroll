@@ -1,14 +1,13 @@
 ---
-title: Work with Benefits
-description: Learn about the benefits module in OnePayroll and how to configure, assign, and manage employee benefits such as health insurance, retirement plans, and other compensation packages.
-author: myGitHubHandle2
-
+title: Benefits overview
+description: Learn about the benefits module in OnePayroll, including how to configure benefit types, assign coverage, set limits, and track liability.
+author: zeande
 sws.service: onepayroll
-sws.topic: article
+sws.topic: overview
 sws.date: 01/08/2026
 ---
 
-# Work with Benefits in OnePayroll
+# Benefits overview
 
 The Benefits module in OnePayroll allows you to configure and manage employee benefit programs such as health insurance, retirement plans, and other supplemental compensation. Benefits can have complex calculation methods, coverage options, and hierarchical relationships that allow you to efficiently manage similar benefits across your organization.
 
@@ -104,5 +103,3 @@ When working with benefits in OnePayroll:
 [Set up pay types](pay-types-setup.md)  
 
 [Process payroll](payroll-runs-process.md)  
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

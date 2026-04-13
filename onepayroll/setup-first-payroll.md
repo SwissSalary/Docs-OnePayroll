@@ -17,13 +17,13 @@ Before adding employees, set up the organizational structure they belong to.
 
 **To create departments:**
 
-1. Search for **Departments**.
-2. Add your departments with codes, descriptions, and optional parent departments for hierarchy.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Departments**, and then choose the related link.
+1. Add your departments with codes, descriptions, and optional parent departments for hierarchy.
 
 **To create work locations (US localization):**
 
-1. Search for **Work Locations**.
-2. Add work locations with addresses and state assignments for tax purposes.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Work Locations**, and then choose the related link.
+1. Add work locations with addresses and state assignments for tax purposes.
 
 > [!TIP]
 > Departments and work locations are specific to your organization and must be created manually. The setup data generation doesn't include them.
@@ -36,10 +36,10 @@ Add your employees to OnePayroll. Each employee must be assigned a pay group and
 
 **To create an employee:**
 
-1. Search for **Employees**.
-2. Select **New**.
-3. Enter the employee number and name.
-4. On the **OnePayroll** tab:
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
+1. Choose the **New** action.
+1. Enter the employee number and name.
+1. On the **OnePayroll** tab:
    - Assign a **Pay Group** (for example, BIWKLY).
    - Select the **Employee Type**, which determines the employee's pay unit and compensation method (Regular or Work-Based).
    - Set the **Employment Date**.
@@ -61,10 +61,10 @@ Configure how employees are paid.
 **For direct deposit:**
 
 1. Open the **Employee Card** and select the **Payment Methods** action.
-2. Create a new employee payment method.
-3. Set the **Allocation Type** (Primary, Fixed Amount, or Percentage).
-4. Fill in **Bank Account No.** and **Bank Identifier Code** in the Transfer group.
-5. Select a Business Central **Payment Method** code.
+1. Create a new employee payment method.
+1. Set the **Allocation Type** (Primary, Fixed Amount, or Percentage).
+1. Fill in **Bank Account No.** and **Bank Identifier Code** in the Transfer group.
+1. Select a Business Central **Payment Method** code.
 
 **For check payment:**
 
@@ -96,14 +96,13 @@ With employees and payment methods configured, process a test payroll run to ver
 
 **To create a payroll run:**
 
-1. Search for **Payroll Runs**.
-2. Select **New**.
-3. Set the **Pay Group** (for example, BIWEEKLY).
-4. Set the **Start Date** for the pay period.
-5. Select **OK**. OnePayroll creates the payroll run and calculates all amounts automatically. Status is set to **Open**.
-6. Review the **Payroll Entries** for accuracy.
-7. If your setup requires approvals, select **Approve** to approve the payroll run.
-8. Select **Post** to post entries to the general ledger. Status changes to **Posted**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Runs**, and then choose the related link.
+1. Choose the **New** action.
+1. Set the **Pay Group** (for example, BIWEEKLY).
+1. Set the **Start Date** for the pay period. Choose **OK**. OnePayroll creates the payroll run and calculates all amounts automatically. Status is set to **Open**.
+1. Review the **Payroll Entries** for accuracy.
+1. If your setup requires approvals, choose the **Approve** action to approve the payroll run.
+1. Choose the **Post** action to post entries to the general ledger. Status changes to **Posted**.
 
 ### Verify the results
 
@@ -133,8 +132,6 @@ Now that you've completed the initial setup and verified your first payroll:
 ## See also
 
 - [Getting started with OnePayroll](getting-started.md)
-- [About payroll runs](payroll-runs-overview.md)
+- [Payroll runs overview](payroll-runs-overview.md)
 - [Set up employees](employee-setup.md)
 - [Set up payment methods](payment-methods-setup.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

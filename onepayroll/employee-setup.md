@@ -18,8 +18,8 @@ This guide walks you through creating employee records and configuring their pay
 
 **To create a new employee:**
 
-1. Search for **Employees**
-2. Select **New**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
+2. Choose the **New** action
 3. In the **General** FastTab:
    - **No.** - Employee number (auto-generated or enter manually)
    - **First Name** / **Last Name** - Employee name
@@ -132,8 +132,8 @@ The SSN is critical for:
 **To add an Employee Payment Method:**
 
 1. Open the **Employee Card**.
-2. Select the **Payment Methods** action.
-3. On the **Employee Payment Methods** list, select **New**.
+2. Choose the **Payment Methods** action.
+3. On the **Employee Payment Methods** list, choose the **New** action.
 4. Enter details on the card:
    - **Name** — a descriptive label (for example, "Main Checking")
    - **Priority** — the processing order
@@ -226,7 +226,7 @@ Before processing payroll:
 
 For importing multiple employees:
 
-1. Search for **Employee Import**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employee Import**, and then choose the related link.
 2. Prepare import file with: Employee number, name, pay group, employee type, annual salary
 3. Run import
 4. OnePayroll creates employee records in bulk

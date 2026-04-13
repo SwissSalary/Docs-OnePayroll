@@ -1,5 +1,5 @@
 ---
-title: About tax calculations
+title: Tax calculations overview
 description: Learn how OnePayroll calculates federal, state, and local income taxes using the Income Tax Jurisdiction and Employee Withholding system.
 author: zeande
 sws.service: onepayroll
@@ -7,7 +7,7 @@ sws.topic: overview
 sws.date: 02/23/2026
 ---
 
-# About tax calculations
+# Tax calculations overview
 
 OnePayroll calculates income tax withholding at federal, state, and local levels using a jurisdiction-based architecture. Each jurisdiction defines its own calculation method, and employee withholding records are automatically maintained based on the employee's location.
 

@@ -17,8 +17,8 @@ Before you can assign garnishments to employees, you must set up garnishment typ
 
 **To set up a garnishment type:**
 
-1. Search for **Garnishment Types** and open the page.
-2. Select **New** to create a new type.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Garnishment Types**, and then choose the related link.
+2. Choose the **New** action to create a new type.
 3. Fill in the fields:
 
 | Field | Description |
@@ -43,7 +43,7 @@ Each employee's individual garnishment orders are recorded as garnishment lines.
 1. Open the **Employee Card**.
 2. In the **Wage Garnishments** part on the employee card, select a line to edit or add a new entry.
 
-Alternatively, search for **Wage Garnishments** to work with garnishments across employees.
+Alternatively, choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Wage Garnishments**, and then choose the related link to work with garnishments across employees.
 
 ### Garnishment line fields
 
@@ -129,5 +129,3 @@ Garnishment withholdings post to the GL account configured on the garnishment's 
 - [Employee setup](employee-setup.md)
 - [Process payroll runs](payroll-runs-process.md)
 - [Pay types overview](pay-types-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

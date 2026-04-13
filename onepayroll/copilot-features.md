@@ -29,18 +29,17 @@ The **Suggest Employee** feature uses AI to parse a resume or CV and extract emp
 
 ### To create an employee from a resume
 
-1. Search for **Employees** to open the Employee List
-2. Select **New with Copilot** from the actions
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
+2. Choose the **New with Copilot** action
 3. In the **Suggest Employee** dialog, do one of the following:
    - **Type or paste** CV text directly into the input area
    - **Attach** a document file (PDF, Word document, or image) using the **Attach** action
-4. Select **Generate**
+4. Choose the **Generate** action
 5. Review the **Suggested Employee Fields** page:
    - Each row shows the **Field Name**, the **Suggested Value**, and a **Confidence** score (0–100)
    - Fields with confidence 80 or above are automatically selected
    - Use the **Select** checkbox to include or exclude individual fields
-   - Use **Select All** to include all suggested fields
-6. Select **OK** to create the new employee record with the selected field values
+   - Use **Select All** to include all suggested fields. Choose **OK** to create the new employee record with the selected field values.
 
 > [!TIP]
 > After creating the employee with Copilot, review the employee card to verify the extracted information and fill in any fields that couldn't be extracted from the resume (for example, pay group, payment methods, and payables).
@@ -71,7 +70,7 @@ The extraction runs as a background task when possible. If background processing
 
 ### To set up automatic qualification extraction
 
-1. Search for **Document Types**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Document Types**, and then choose the related link.
 2. Select the document type used for certificates or qualifications
 3. Set the **Qualification** field to the appropriate qualification code
 4. When employees upload documents of this type, qualification information is automatically extracted

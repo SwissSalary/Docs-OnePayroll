@@ -56,7 +56,7 @@ When you assign an employee type to an employee, the employee inherits the pay u
 
 ### To view an employee's pay unit
 
-1. Search for **Employees** and open the employee card.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
 2. On the **OnePayroll** section, the **Pay Unit** field shows which pay unit applies, inherited from the employee's type.
 3. The **Pay Factor** field shows the conversion factor from the linked pay unit.
 
@@ -67,8 +67,8 @@ When you assign an employee type to an employee, the employee inherits the pay u
 
 **To create an employee type:**
 
-1. Search for **Employee Types**.
-2. Select **New**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employee Types**, and then choose the related link.
+2. Choose the **New** action.
 3. Enter a **Code** (e.g., "SALARIED", "HOURLY", "DAILY").
 4. Enter a **Description** (e.g., "Salaried Employees", "Hourly Workers").
 5. Select the **Pay Unit** that defines how compensation is expressed for this type.
@@ -91,7 +91,7 @@ When you assign an employee type to an employee, the employee inherits the pay u
 
 **To assign an employee type:**
 
-1. Search for **Employees** and open the employee card.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
 2. On the **OnePayroll** section, select the **Type** field.
 3. Choose the appropriate employee type from the list.
 4. The employee's **Pay Unit** and **Pay Factor** fields update automatically.
@@ -108,7 +108,7 @@ When viewing employee lists, you can see each employee's compensation converted 
 
 ### To set the global pay unit
 
-1. Search for **Payroll Setup**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Setup**, and then choose the related link.
 2. In the **Global Pay Unit** field, select the pay unit you want to use for standardized reporting.
 
 > [!TIP]
@@ -145,5 +145,3 @@ When you change the pay unit assigned to an employee type:
 - [Pay units and conversions](pay-units-conversions.md)
 - [Work with pay units](employee-pay-units.md)
 - [Employee overview](employee-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

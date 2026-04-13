@@ -1,5 +1,5 @@
 ---
-title: About pay cycles
+title: Pay cycles overview
 description: Learn how pay cycles and pay groups define when and how often employees are paid in OnePayroll.
 author: zeande
 sws.service: onepayroll
@@ -7,7 +7,7 @@ sws.topic: overview
 sws.date: 02/23/2026
 ---
 
-# About pay cycles
+# Pay cycles overview
 
 Pay cycles define the frequency and timing of payroll processing. They determine when each pay period starts and ends, and when employees receive payment. Pay groups link employees to a pay cycle and specify the journal configuration for GL posting.
 
@@ -89,5 +89,3 @@ Common configurations:
 - [Process payroll runs](payroll-runs-process.md)
 - [Employee setup](employee-setup.md)
 - [Payroll journal entries](payroll-journal.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

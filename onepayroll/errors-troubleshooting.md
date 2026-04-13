@@ -1,6 +1,6 @@
 ---
 title: Error messages and troubleshooting
-description: Find solutions to common OnePayroll error messages and issues.
+description: Learn how to resolve common OnePayroll error messages and issues.
 author: zeande
 sws.service: onepayroll
 sws.topic: troubleshooting
@@ -113,7 +113,7 @@ Explanations and solutions for common OnePayroll errors.
 **Why:** Employee state assigned but state not configured in system
 
 **Solution:**
-1. Search for **States Setup** (or similar)
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **States Setup** (or similar), and then choose the related link.
 2. Create entry for state if needed
 3. Verify **pay rules** for state
 4. Assign tax tables/provider for state
@@ -128,7 +128,7 @@ Explanations and solutions for common OnePayroll errors.
 **Why:** Employee Payment Method is missing Bank Account No. or Bank Identifier Code
 
 **Solution:**
-1. Open the **Employee Card** and select **Payment Methods**
+1. Open the **Employee Card** and choose the **Payment Methods** action
 2. Verify the Employee Payment Method has:
    - **Bank Account No.** filled in
    - **Bank Identifier Code** filled in

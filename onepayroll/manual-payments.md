@@ -27,12 +27,12 @@ Key differences from standard payroll runs:
 ### To create a manual payment from Employee Card
 
 1. Open the **Employee Card** for the employee
-2. Select **Manual Payments** from the actions
+2. Choose the **Manual Payments** action
 3. The **Manual Payment Journal** opens, filtered for that employee with the journal batch pre-configured for the employee's pay group
 
 ### To create a manual payment from the journal
 
-1. Search for **Manual Payment Journal**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Manual Payment Journal**, and then choose the related link.
 2. Select or create a journal batch for the appropriate pay group
 3. Enter the fields for each line:
    - **Employee No.** — the employee to pay
@@ -42,7 +42,7 @@ Key differences from standard payroll runs:
    - **Rate** — the pay rate
    - **Line Amount** — the total amount for the line (calculated from Quantity × Rate, or entered directly)
 4. Add additional lines as needed for other pay types or deductions
-5. Select **Run Payroll** to create and calculate the manual payroll run
+5. Choose the **Run Payroll** action to create and calculate the manual payroll run
 
 ### What happens when you run the journal
 

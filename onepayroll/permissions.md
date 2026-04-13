@@ -85,11 +85,10 @@ Typical users: payroll managers and administrators who configure the system and 
 
 ### To assign a permission set
 
-1. Search for **Users**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Users**, and then choose the related link.
 2. Select the user to configure
-3. In the **User Permission Sets** section, select **New**
-4. In the **Permission Set** field, choose one of the OnePayroll permission sets (for example, **Payroll Edit**)
-5. Select **OK**
+3. In the **User Permission Sets** section, choose the **New** action
+4. In the **Permission Set** field, choose one of the OnePayroll permission sets (for example, **Payroll Edit**). Choose **OK**.
 
 > [!TIP]
 > Users also need standard Business Central permission sets for general functionality. For example, a payroll processor typically needs both **Payroll Edit** and a standard BC permission set like **D365 BASIC** or equivalent.
@@ -107,7 +106,7 @@ These fields are only relevant when **Require Approvals** is turned on in **Payr
 
 ### To set approval limits
 
-1. Search for **Approval User Setup**
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Approval User Setup**, and then choose the related link.
 2. Find the user
 3. Set the **Payroll Approval Limit** or turn on **Unlimited Payroll Approval**
 

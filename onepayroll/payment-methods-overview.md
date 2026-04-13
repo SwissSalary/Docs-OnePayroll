@@ -1,5 +1,5 @@
 ---
-title: About payment methods
+title: Payment methods overview
 description: Learn how Employee Payment Methods control pay allocation and bank details for direct deposit and check payments in OnePayroll.
 author: zeande
 sws.service: onepayroll
@@ -7,7 +7,7 @@ sws.topic: overview
 sws.date: 02/23/2026
 ---
 
-# About payment methods
+# Payment methods overview
 
 Employee Payment Methods define how an employee's net pay is allocated across one or more payment destinations. Each record stores both the allocation rule and the bank details for that destination.
 

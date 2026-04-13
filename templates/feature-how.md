@@ -5,7 +5,6 @@ author: myGitHubHandle
 sws.service: onepayroll
 sws.topic: article
 sws.date: 10/01/2021
-sws.author: myGitHubHandle
 ---
 # Achieve Some Task in Max. 100 Characters
 

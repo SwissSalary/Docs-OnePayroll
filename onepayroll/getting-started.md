@@ -1,6 +1,6 @@
 ---
 title: Getting started with OnePayroll
-description: Get an overview of the OnePayroll setup process, from installation through your first payroll run.
+description: Learn about the OnePayroll setup process, from installation through your first payroll run.
 author: zeande
 sws.service: onepayroll
 sws.topic: overview

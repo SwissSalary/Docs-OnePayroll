@@ -66,7 +66,7 @@ OnePayroll ships with predefined validation rules for common data quality requir
 
 ### Viewing validation rules
 
-1. Search for **Validation Rules**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Validation Rules**, and then choose the related link.
 2. The list shows all configured rules with their table, field, severity, and type.
 
 ### Adjusting severity
@@ -100,5 +100,3 @@ Validation rules are evaluated during payroll processing. Before payroll calcula
 
 - [Getting started](getting-started.md)
 - [Payroll runs overview](payroll-runs-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

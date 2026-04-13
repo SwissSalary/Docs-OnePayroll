@@ -21,8 +21,8 @@ Before creating Employee Payment Methods:
 ## Create an Employee Payment Method
 
 1. Open the **Employee Card** for the employee.
-2. Select the **Payment Methods** action.
-3. On the **Employee Payment Methods** list, select **New** to open the card.
+2. Choose the **Payment Methods** action.
+3. On the **Employee Payment Methods** list, choose the **New** action to open the card.
 4. Fill in the **General** group:
    - **Name** — a descriptive label (for example, "Main Checking" or "Savings").
    - **Priority** — the processing order. Each employee's payment methods must have unique priorities.
@@ -41,7 +41,7 @@ The first Employee Payment Method created for an employee is automatically set t
 
 For an employee paid entirely to one bank account:
 
-1. Open the **Employee Card** and select **Payment Methods**.
+1. Open the **Employee Card** and choose the **Payment Methods** action.
 2. Create one Employee Payment Method with:
    - **Allocation Type** = Primary
    - **Bank Account No.** and **Bank Identifier Code** filled in
@@ -65,7 +65,7 @@ Fixed and percentage amounts are applied first. The primary method receives what
 
 ## Modify an Employee Payment Method
 
-1. Open the **Employee Card** and select **Payment Methods**.
+1. Open the **Employee Card** and choose the **Payment Methods** action.
 2. Open the payment method to edit.
 3. Update the fields (bank details, allocation, priority).
 4. Close the card.
@@ -78,8 +78,8 @@ Each Employee Payment Method references a standard Business Central **Payment Me
 
 ### Create Payment Method codes
 
-1. Search for **Payment Methods** (the standard BC page, not the Employee Payment Methods list).
-2. Select **New** to create a code.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payment Methods** (the standard BC page, not the Employee Payment Methods list), and then choose the related link.
+2. Choose the **New** action to create a code.
 3. Fill in the fields:
    - **Code** — a short identifier (for example, `ELEC-PMT`).
    - **Description** — a descriptive name (for example, "Electronic Payment - Main Bank").

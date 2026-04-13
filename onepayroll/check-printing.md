@@ -72,14 +72,14 @@ OnePayroll runs the Business Central check printing process. Checks print to the
 To review paycheck details before or after printing:
 
 1. On the **Payroll Runs** page, select the payroll run.
-2. Select **Paycheck** to preview paycheck details for each employee.
+2. Choose the **Paycheck** action to preview paycheck details for each employee.
 
 ### Step 4: Archive paychecks (optional)
 
 To save PDF copies to employee dossiers:
 
 1. On the **Payroll Runs** page, select the payroll run.
-2. Select **Save in Dossier**.
+2. Choose the **Save in Dossier** action.
 
 ## Troubleshooting
 

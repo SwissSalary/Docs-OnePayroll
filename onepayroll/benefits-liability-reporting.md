@@ -34,7 +34,7 @@ Coverage types group related coverage options. For example, a health insurance b
 
 Coverage types can inherit from other coverage types using the **Inherits-From Type** field, creating a hierarchy. This allows you to define base coverage options once and extend them for specific benefits.
 
-To set up coverage types, search for **Benefit Coverage Setup**.
+To set up coverage types, choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Benefit Coverage Setup**, and then choose the related link.
 
 ## GL posting for benefits
 
@@ -67,5 +67,3 @@ After payroll is posted, benefit liability balances accumulate in the GL until p
 - [Set up benefits](benefits-setup.md)
 - [Benefits limits](benefits-limits.md)
 - [Set up GL posting for payroll](gl-posting-setup.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

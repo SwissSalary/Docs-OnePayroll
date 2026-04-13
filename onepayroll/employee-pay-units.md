@@ -20,7 +20,7 @@ Employees don't select a pay unit directly. Instead, the pay unit is inherited f
 
 ### To view an employee's pay unit
 
-1. Search for **Employees** and open the employee card.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
 2. In the **OnePayroll** section, view:
    - **Type** — The employee type assigned to this employee
    - **Pay Unit** — The pay unit inherited from the employee type (read-only)
@@ -70,7 +70,7 @@ The **Global Pay Unit** on the **Payroll Setup** page defines a standardized uni
 
 **To set the global pay unit:**
 
-1. Search for **Payroll Setup**.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Payroll Setup**, and then choose the related link.
 2. In the **Global Pay Unit** field, select the pay unit you want to use for standardized reporting.
 
 > [!TIP]
@@ -88,5 +88,3 @@ The **Global Pay Unit** on the **Payroll Setup** page defines a standardized uni
 - [Employee types and pay units](pay-units-employee-types.md)
 - [Pay units and conversions](pay-units-conversions.md)
 - [Employee overview](employee-overview.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

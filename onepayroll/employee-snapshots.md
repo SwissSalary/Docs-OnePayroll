@@ -78,5 +78,3 @@ This ensures that changes made to employee records after a payroll period has be
 
 - [Employee overview](employee-overview.md)
 - [Employee setup](employee-setup.md)
-
-[!INCLUDE[footer-banner](../includes/footer-banner.md)]

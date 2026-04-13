@@ -190,7 +190,6 @@ author: myGitHubHandle
 sws.service: onepayroll
 sws.topic: article
 sws.date: 02/24/2026
-sws.author: myGitHubHandle
 ---
 ```
 
@@ -202,7 +201,6 @@ sws.author: myGitHubHandle
 | `sws.service` | Always `onepayroll`. |
 | `sws.topic` | Use `article` for most pages, `overview` for overview articles, `how-to` for task articles. |
 | `sws.date` | Date of last meaningful content change (`MM/DD/YYYY`). |
-| `sws.author` | Your GitHub username. |
 
 ### Table of contents (toc.md)
 
