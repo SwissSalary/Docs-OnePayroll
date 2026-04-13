@@ -37,7 +37,7 @@ The activity section shows counts of key items organized in two groups:
 | **Onboarding** | Employees in onboarding status (employment date in the future) |
 | **Active** | Currently active employees |
 | **Offboarding** | Employees with a future termination date |
-| **Resigned** | Employees with a past termination date |
+| **Inactive** | Employees with a past termination date |
 
 ### Payroll
 

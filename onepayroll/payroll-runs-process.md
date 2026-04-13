@@ -49,7 +49,7 @@ Creating a payroll run also calculates all pay for the selected employees.
 - All active employees in the pay group are included
 - Gross pay is calculated for each employee (salary, hourly, etc.)
 - All earnings pay types are applied
-- All deductions are applied (taxes, benefits, garnishments)
+- All deductions are applied (taxes, garnishments)
 - Net pay is calculated (Gross - Deductions)
 - GL accounts are assigned based on pay type configuration
 - Status is set to **Open**

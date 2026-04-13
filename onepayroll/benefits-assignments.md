@@ -14,11 +14,13 @@ Once benefits are configured, you assign them to employees. Benefits can be assi
 
 ### To assign a benefit to employees
 
-1. Choose the ![Lightbulb that opens the Tell Me feature 1.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Benefit Assignments**, and then choose the related link.
-2. On the **Benefit Assignments** page, you'll see all available benefits and their current assignments.
-3. For each benefit you want to assign:
-   - Select the employee or employee template
+1. Open the employee card or select the employee on the Employee list.
+2. Choose the **Benefit Assignments** action.
+3. On the **Benefit Assignments** page, you'll see all available benefits and their current assignments.
+4. For each benefit you want to assign:
+   - Specify whether the employee is liable for the benefit
    - Choose the appropriate **Coverage** option
+5. If the benefit uses employee-assigned rates, choose **Benefit Rates** to set the employee-specific rate (for example, 401(k)).
 
 > [!NOTE]
 > You can only assign benefits where the **Assignable** field is set to Yes. Benefits that inherit from other benefits receive their assignments automatically.
