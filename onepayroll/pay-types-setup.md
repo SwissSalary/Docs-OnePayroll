@@ -12,7 +12,7 @@ sws.date: 02/23/2026
 Pay types define the individual components of an employee's compensation. This article explains how to create and configure pay types in OnePayroll.
 
 > [!TIP]
-> If you generated setup data from the Contoso Coffee Payroll Demo Dataset (see [Getting started](getting-started.md)), approximately 95 core pay types are already configured, including common earnings, taxes, deductions, and employer contributions. With the US localization, approximately 60 additional US-specific pay types are included. Review and customize the existing pay types rather than creating them from scratch.
+> If you generated setup data from the Contoso Coffee Payroll Demo Dataset (see [Getting started](getting-started.md)), some core pay types are already configured, including common earnings, taxes, deductions, and employer contributions. With the US localization  additional US-specific pay types are included. Review and customize the existing pay types rather than creating them from scratch.
 
 ## Prerequisites
 

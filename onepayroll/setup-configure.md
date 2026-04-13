@@ -39,7 +39,7 @@ For more information, see [Set up pay cycles](pay-cycles-setup.md).
 
 ## Review and customize pay types
 
-The setup data creates approximately 95 core pay types (plus ~60 US-specific types) organized by category. Each pay type has a category from the Category enum: Earnings, Employee Deductions, Hypothetical, Employer Contributions, or Heading.
+ Each pay type has a category from the Category enum: Earnings, Employee Deductions, Hypothetical, Employer Contributions, or Heading.
 
 **To review pay types:**
 
@@ -80,7 +80,7 @@ For more information, see [Employee types and pay units](pay-units-employee-type
 
 ## Review benefits
 
-With the US localization, the setup data creates pre-configured benefits including Social Security, Medicare, FUTA, SUTA (with limits for all 50 states), 401(k), HSA, and garnishment benefits. Review these and add any additional benefits your organization offers.
+With the US localization, the setup data creates pre-configured payroll deductions. This includes Social Security, Medicare, FUTA, SUTA (with limits for all 50 states), 401(k), HSA, and garnishment. Review these and add any additional deductions your organization may have.
 
 **To review benefits:**
 
@@ -93,7 +93,7 @@ For more information, see [Set up benefits](benefits-setup.md).
 
 ## Configure tax settings (US localization)
 
-The setup data creates income tax jurisdictions for Federal, California, and North Dakota. You need to add jurisdictions for any additional states where your employees work.
+The setup data creates income tax jurisdictions for Federal and all 50 US states. 
 
 **To configure tax:**
 
