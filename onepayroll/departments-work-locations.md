@@ -12,7 +12,7 @@ sws.date: 02/23/2026
 Organizing employees by department and work location helps manage payroll, allocate costs, and maintain organizational structure.
 
 > [!TIP]
-> Departments and work locations are specific to your organization and should be created manually. If you generated master data from the Contoso Coffee Payroll Demo Dataset for demonstration purposes, 11 sample departments and (with the US localization) 3 sample work locations are included. In a production environment, create your own departments and work locations instead.
+> Departments and work locations are specific to your organization and should be created manually. If you generated master data from the Contoso Coffee Payroll Demo Dataset for demonstration purposes, sample departments and (with the US localization) sample work locations are included. In a production environment, create your own departments and work locations instead.
 
 ## Departments
 
@@ -60,7 +60,7 @@ Hierarchies enable:
 **To assign an employee to a department:**
 
 1. Open the **Employee** record.
-2. In the **General** tab, set the **Department** field.
+2. In the **Job & Compensation** tab, set the **Department** field.
 
 Employees automatically inherit department settings:
 - Department hierarchy level
@@ -96,7 +96,7 @@ OnePayroll supports two work location types:
 **To assign an employee to a work location:**
 
 1. Open the **Employee** record.
-2. In the **OnePayroll** tab, set the **Work Location** field.
+2. In the **Employment** tab, set the **Work Location** field.
 
 Employees can be assigned to a primary work location on the **Employee Card**.
 
