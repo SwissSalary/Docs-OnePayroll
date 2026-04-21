@@ -20,9 +20,9 @@ OnePayroll tracks employees through four lifecycle statuses:
 | **Onboarding** | Employment date is in the future — employee has been set up but has not yet started |
 | **Active** | Employee is currently employed and eligible for payroll |
 | **Offboarding** | Termination date is set in the future — employee is still active but will be leaving |
-| **Resigned** | Termination date is in the past — employee has left the organization |
+| **Inactive** | Termination and Inactive  date is in the past — employee has left the organization or is on a temporary leave of absence |
 
-These statuses are calculated automatically based on the employee's **Employment Date** and **Termination Date** fields. They are not set manually.
+These statuses are calculated automatically based on the employee's **Employment Date** **Inactive Date** and **Termination Date** fields. They are not set manually.
 
 > [!NOTE]
 > The Payroll Manager Role Center shows activity cues with counts for each lifecycle status, allowing you to quickly see how many employees are in each stage.
@@ -43,7 +43,7 @@ The employee record is updated with the termination date and reason.
 ### What happens after termination
 
 - If the termination date is in the future, the employee status automatically changes to **Offboarding**. They remain eligible for payroll until the termination date passes.
-- If the termination date is today or in the past, the employee status changes to **Resigned**. They no longer appear in payroll runs created after their termination date.
+- If the termination date is today or in the past, the employee status changes to **Inactive**. They no longer appear in payroll runs created after their termination date.
 - The Role Center headlines highlight upcoming terminations so you can prepare final paychecks.
 
 ## Terminate a garnishment
