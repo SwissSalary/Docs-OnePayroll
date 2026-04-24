@@ -20,9 +20,9 @@ OnePayroll tracks employees through four lifecycle statuses:
 | **Onboarding** | Employment date is in the future — employee has been set up but has not yet started |
 | **Active** | Employee is currently employed and eligible for payroll |
 | **Offboarding** | Termination date is set in the future — employee is still active but will be leaving |
-| **Inactive** | Termination and Inactive  date is in the past — employee has left the organization or is on a temporary leave of absence |
+| **Inactive** | Termination date is in the past — employee has left the organization |
 
-These statuses are calculated automatically based on the employee's **Employment Date** **Inactive Date** and **Termination Date** fields. They are not set manually.
+These statuses are calculated automatically based on the employee's Employment Date and Termination Date fields. They are not set manually.
 
 > [!NOTE]
 > The Payroll Manager Role Center shows activity cues with counts for each lifecycle status, allowing you to quickly see how many employees are in each stage.
