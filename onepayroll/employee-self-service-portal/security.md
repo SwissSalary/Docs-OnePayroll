@@ -4,7 +4,7 @@ description: An overview of the security measures in place for OnePayroll's Empl
 author: LasseHerget
 sws.service: onepayroll
 sws.topic: security
-sws.date: 27/04/2026
+sws.date: 04/27/2026
 ---
 
 # Responsible Disclosure

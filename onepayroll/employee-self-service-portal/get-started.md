@@ -4,7 +4,7 @@ description: Setup the Business Central environment for the use of OnePayroll's 
 author: LasseHerget
 sws.service: onepayroll
 sws.topic: article
-sws.date: 27/04/2026
+sws.date: 04/27/2026
 ---
 
 # Enable the Employee Self-Service Portal

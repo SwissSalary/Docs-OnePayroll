@@ -4,7 +4,7 @@ description: Sign-up an employee for the use of OnePayroll's Self-Service Portal
 author: LasseHerget
 sws.service: onepayroll
 sws.topic: article
-sws.date: 27/04/2026
+sws.date: 04/27/2026
 ---
 
 # Prerequisites
