@@ -16,7 +16,7 @@ We take all reports seriously.
 
 ---
 
-## Third-party verification tools
+# Third-party verification tools
 
 We encourage administrators and security teams to run independent assessments,
 not just for OnePayrolls Employee Self-Service Portal but for any service that handles sensitive data.
@@ -32,7 +32,7 @@ We can recommend the use of the following tools for quick tests:
 
 ---
 
-## Authentication & Session Management
+# Authentication & Session Management
 
 Sign-in is handled exclusively through Microsoft Entra External ID using OpenID Connect.
 The Self-Service Portal itself does not manage credentials.
