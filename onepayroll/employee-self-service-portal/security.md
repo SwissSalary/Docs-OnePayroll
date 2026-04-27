@@ -8,6 +8,7 @@ sws.date: 24/04/2026
 ---
 
 # Responsible Disclosure
+
 Security is not an afterthought in OnePayrolls Employee Self-Service Portal. <br/>
 Employees *access sensitive data** through it, and we treat that responsibility seriously.
 

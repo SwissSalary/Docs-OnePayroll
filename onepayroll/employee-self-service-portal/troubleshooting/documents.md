@@ -14,9 +14,11 @@ sws.date: 27/04/2026
 ## Document missing
 
 ### When
+
 An employee reports that a specific document is not visible in the Self-Service Portal, even though it has been uploaded in Business Central.
 
 ### Why
+
 The Self-Service Portal only exposes a document when **both** of the following conditions are met:
 
 1. The document type has `Employee Access` enabled.

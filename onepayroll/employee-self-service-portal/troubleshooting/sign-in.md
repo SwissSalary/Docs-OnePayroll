@@ -14,14 +14,17 @@ sws.date: 27/04/2026
 ## Looks like you're not signed up yet.
 
 ### When
+
 After authenticating, the employee ends up on the sign-in page with the message:<br/>
  > Looks like you're not signed up yet.<br/>
  > Please contact your payroll or HR department for further assistance.
 
 ### Why
+
 Upon authentication, the application was unable to determine any connected employees in Business Central for submitted user account.
 
 ### Steps
+
 Confirm the employee has been registered in Business Central with the correct private email address. 
 1. Open `OnePayroll Self-Service Setup`
    > Tip: You can click on the lens in the top right corner to open the search.
@@ -45,6 +48,7 @@ Confirm the employee has been registered in Business Central with the correct pr
 ## We could not load all required employee information for your account.
 
 ### When
+
 1. After authenticating, the employee ends up on the sign-in page with the message:<br/>
    > We could not load all required employee information for your account.<br/>
    > Please contact your payroll or HR department for further assistance.
@@ -53,10 +57,12 @@ Confirm the employee has been registered in Business Central with the correct pr
    > We could not load all required employee information for your account.
 
 ### Why
+
 The account was successfully associated with an employee in Business Central, but there was an error while trying to fetch the employee's information.
 The connection was therefore considered invalid and deactivated.
 
 ### Steps
+
 1. Check if OnePayroll needs to be updated.
    > API changes may cause disruptions in the data flow between Business Central and the Self-Service Portal.
 
@@ -91,9 +97,11 @@ The connection was therefore considered invalid and deactivated.
 ## User keeps getting signed out.
 
 ### When
+
 The employee is signed out unexpectedly while using the Self-Service Portal, and needs to sign in again.
 
 ### Why
+
 When you sign in, the portal creates a ticket and stores it in your browser.
 That ticket is used to identify the user and bound to the IP address used at sign-in.
 If that IP address changes while you are using the portal, the portal considers your session invalid and no longer accepts your ticket.
@@ -104,4 +112,5 @@ This typically happens when:
 - Connecting to or disconnecting from a VPN
 
 ### Steps
+
 This is expected behavior and not a bug. There is nothing to configure or fix at this point in time.
