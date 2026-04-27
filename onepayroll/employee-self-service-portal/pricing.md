@@ -4,7 +4,7 @@ description: Pricing for OnePayroll's Employee Self-Service Portal.
 author: LasseHerget
 sws.service: Employee Self-Service Portal
 sws.topic: article
-sws.date: 24/04/2026
+sws.date: 27/04/2026
 ---
 
 # Pricing

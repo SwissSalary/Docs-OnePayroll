@@ -4,7 +4,7 @@ description: Find answers to common questions employees and administrators have 
 author: LasseHerget
 sws.service: Employee Self-Service Portal
 sws.topic: overview
-sws.date: 28/04/2026
+sws.date: 27/04/2026
 ---
 
 # Overview

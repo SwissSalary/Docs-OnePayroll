@@ -4,7 +4,7 @@ description: Learn about the OnePayroll Employee Self-Service Portal, where empl
 author: LasseHerget
 sws.service: Employee Self-Service Portal
 sws.topic: overview
-sws.date: 28/04/2026
+sws.date: 27/04/2026
 ---
 
 # Overview
