@@ -67,7 +67,7 @@ The connection was therefore considered invalid and deactivated.
 
       - Open the application with the Client ID `9bcc839b-d6fa-4641-b961-2dc9919449c9`
         > This is the fixed ID of the OnePayroll Self-Service Portal API.
-        > If it is not present in the list, you need to set it up, following the steps in the [Get Started Guide](/get-started.md).
+        > If it is not present in the list, you need to set it up, following the steps in the [Get Started Guide](../get-started.md).
 
       - Verify that the state is `Enabled`.
       - Verify that the required permissions are still assigned to the application.
