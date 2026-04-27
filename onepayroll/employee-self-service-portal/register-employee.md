@@ -21,6 +21,3 @@ See also: [Get Started](/get-started.md)
    > Within a few minutes, the user should receive an email at the provided address with an actual invitation link.
 
 3. Now all the user has to do is to click the link in the email and follow the instructions to set up their account.
-
-# Bulk User Registration
-TODO: Zech, I have no idea how this is done.
