@@ -21,7 +21,7 @@ We take all reports seriously.
 ## Third-party verification tools
 
 We encourage administrators and security teams to run independent assessments,
-not just for Self-Service Portal but for any service that handles sensitive data.
+not just for the Self-Service Portal but for any service that handles sensitive data.
 
 We can recommend the use of the following tools for quick tests:
 
