@@ -3,7 +3,7 @@ title: Security — Employee Self-Service Portal
 description: An overview of the security measures in place for OnePayroll's Employee Self-Service Portal.
 author: LasseHerget
 sws.service: onepayroll
-sws.topic: security
+sws.topic: article
 sws.date: 04/27/2026
 ---
 
