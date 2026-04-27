@@ -86,7 +86,7 @@ The connection was therefore considered invalid and deactivated.
 
    b. Make sure the Self-Service Portal is enabled in Business Central.
       - Open "OnePayroll Self-Service Setup"
-       > Tip: You can click on the lens in the top right corner to open the search.
+        > Tip: You can click on the lens in the top right corner to open the search.
       - Verify that the switch is set to "Enabled"
 
 3. If the company, environment or tenant have been deleted...
