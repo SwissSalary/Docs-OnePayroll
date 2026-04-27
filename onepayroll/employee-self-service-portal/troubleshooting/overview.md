@@ -15,5 +15,5 @@ This section covers common challenges in OnePayroll's Employee Self-Service Port
 
 | Article | Description |
 |---------|-------------|
-| [Sign-in](sign-in.md) | Common error messages employees encounter on sign-in. |
+| [Sign-In](sign-in.md) | Common error messages employees encounter on sign-in. |
 | [Documents](documents.md) | Documents not appearing or being inaccessible. |

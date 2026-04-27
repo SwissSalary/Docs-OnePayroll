@@ -7,7 +7,7 @@ sws.topic: troubleshooting
 sws.date: 04/27/2026
 ---
 
-# Sign-in and access errors
+# Sign-In & Access Errors
 
 Find answers to common authentication-related questions in the Employee Self-Service Portal.
 
