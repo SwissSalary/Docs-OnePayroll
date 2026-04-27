@@ -1,6 +1,6 @@
 ---
 title: User Registration for OnePayroll's Employee Self-Service Portal
-description: Sign-up an employee for the use of OnePayroll's Self-Service Portal
+description: Sign up an employee for the use of OnePayroll's Self-Service Portal
 author: LasseHerget
 sws.service: onepayroll
 sws.topic: article
