@@ -52,3 +52,22 @@ If either condition is not satisfied, the document will not appear in the Self-S
       > - Click `ctrl + alt + F1` to open the "Page Inspection" <br/>
       > - Click on the document to show the details of that line in the "Page Inspection" <br/>
       > - Press `ctrl + F` to search for "Available On" in the document details.
+
+---
+
+## Document preview is not working on mobile
+
+### When
+
+An employee reports that a document cannot be previewed when opening it through the Self-Service Portal on a mobile device.
+
+### Why
+
+Not all mobile browsers support inline PDF preview.
+The Self-Service Portal renders document previews using the browser's built-in PDF viewer, which is not available in all mobile browsers.
+
+### Steps
+
+1. Click on the `Open in new Tab` icon in the top right corner of the document preview.
+2. Download the document and open it in a dedicated PDF reader app on the device.
+3. Use a different browser.
