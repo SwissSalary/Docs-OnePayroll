@@ -7,9 +7,11 @@ sws.topic: article
 sws.date: 04/27/2026
 ---
 
-# Enable the Employee Self-Service Portal
+# Setup the OnePayroll Self-Service Portal
 
-## Grant Access
+Learn how to set up your Business Central environment for the use of the Employee Self-Service Portal.
+
+## Grant Access to the Entra App
 
 In order to enable the Employee Self-Service Portal, you will need to grant access to the application in your Microsoft Entra tenant:
 1. Open "Microsoft Entra Applications"
@@ -33,7 +35,7 @@ In order to enable the Employee Self-Service Portal, you will need to grant acce
 6. Set the state to "Enabled"
 7. Click on "Grant Consent" and follow the instructions.
 
-## Enable
+## Enable the Self-Service Portal
 
 Once the permissions for the application have been granted, you can enable the Employee Self-Service Portal in Business Central:
 

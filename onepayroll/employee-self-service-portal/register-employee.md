@@ -7,12 +7,16 @@ sws.topic: article
 sws.date: 04/27/2026
 ---
 
-# Prerequisites
+# Registration
+
+Learn how to onboard employees to the Self-Service Portal.
+
+## Prerequisites
 
 Make sure the Employee Self-Service Portal is enabled in your Business Central environment.
 See also: [Get Started](./get-started.md)
 
-# Single User Registration
+## Single User Registration
 
 1. Open up the employee card in the Business Central client.
    > Simply navigate to the employee list and select the employee you want to register for the Employee Self-Service Portal.

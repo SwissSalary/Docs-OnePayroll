@@ -7,7 +7,11 @@ sws.topic: security
 sws.date: 04/27/2026
 ---
 
-# Responsible Disclosure
+# Security
+
+Learn how the Employee Self-Service Portal keeps your employees' data secure.
+
+## Responsible Disclosure
 
 Security is not an afterthought in OnePayroll's Employee Self-Service Portal. <br/>
 Employees *access sensitive data*¹ through it, and we treat that responsibility seriously.
@@ -19,7 +23,7 @@ We take all reports seriously.
 
 ---
 
-# Third-Party Verification Tools
+## Third-Party Verification Tools
 
 We encourage administrators and security teams to run independent assessments,
 not just for the Self-Service Portal but for any service that handles sensitive data.
@@ -35,7 +39,7 @@ We can recommend the use of the following tools for quick tests:
 
 ---
 
-# Authentication & Session Management
+## Authentication & Session Management
 
 Sign-in is handled exclusively through Microsoft Entra External ID using OpenID Connect.
 The Self-Service Portal itself does not manage end-user credentials.

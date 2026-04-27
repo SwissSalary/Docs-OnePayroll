@@ -9,6 +9,8 @@ sws.date: 04/27/2026
 
 # Sign-in and access errors
 
+Find answers to common authentication-related questions in the Employee Self-Service Portal.
+
 ---
 
 ## Looks like you're not signed up yet.

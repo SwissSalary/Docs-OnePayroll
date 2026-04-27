@@ -9,6 +9,8 @@ sws.date: 04/27/2026
 
 # Troubleshooting Documents
 
+Find answers to common document-related questions in the Employee Self-Service Portal.
+
 ---
 
 ## Document missing
