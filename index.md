@@ -39,7 +39,7 @@ Discover how to set up, run, and manage payroll with OnePayroll — the next-gen
 | [Employee payables](onepayroll/employee-payables.md) | [Assign benefits](onepayroll/benefits-assignments.md) | [Dossier](onepayroll/employee-dossier.md) |
 | [Employee pay units](onepayroll/employee-pay-units.md) | [Benefit limits](onepayroll/benefits-limits.md) | [Snapshots](onepayroll/employee-snapshots.md) |
 | [Employee termination](onepayroll/employee-termination.md) | [Benefit hierarchies](onepayroll/benefits-hierarchies.md) | [Departments and work locations](onepayroll/departments-work-locations.md) |
-| [Employee Self-Service Portal](onepayroll/employee-self-service-portal/overview.md)| [Garnishments](onepayroll/garnishments.md) | |
+| [Employee Self-Service Portal](onepayroll/employee-self-service-portal/overview.md) | [Garnishments](onepayroll/garnishments.md) | |
 
 ## Report and integrate
 
