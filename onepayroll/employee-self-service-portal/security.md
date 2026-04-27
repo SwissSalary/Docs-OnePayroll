@@ -25,7 +25,7 @@ We can recommend the use of the following tools for quick tests:
 
 | Tool | What it tests |
 |------|---------------|
-| [Mozilla Observatory](https://observatory.mozilla.org/) | Web Application Security |
+| [Mozilla Observatory](https://observatory.mozilla.org/) | Overall Web Application Security |
 | [SSL Labs](https://www.ssllabs.com/ssltest/) | Transport Layer Security |
 | [Security Headers](https://securityheaders.com) | HTTP Response Headers |
 | [CSP Evaluator](https://csp-evaluator.withgoogle.com/) | Content-Security-Policy |
