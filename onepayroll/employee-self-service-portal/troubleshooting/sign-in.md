@@ -104,13 +104,12 @@ The employee is signed out unexpectedly while using the Self-Service Portal, and
 
 ### Why
 
-When you sign in, the portal creates a ticket and stores it in your browser.
-That ticket is used to identify the user and is bound to the IP address used at sign-in.
-If that IP address changes while you are using the portal, the portal considers your session invalid and no longer accepts your ticket.
+When you sign in to the Self-Service Portal, a session ticket is created and tied to your device's current IP address.
+If a request comes in from a different IP address, using that same ticket, the application rejects that ticket and treats the request as unauthenticated.
 
-This typically happens when:
+This can happen whenever your IP address changes, such as when:
 - Switching between Wi-Fi and mobile data
-- Your internet provider assigning you a new IP address
+- Your internet provider assigns you a new IP address
 - Connecting to or disconnecting from a VPN
 
 ### Steps
