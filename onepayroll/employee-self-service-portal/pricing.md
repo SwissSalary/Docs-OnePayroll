@@ -2,7 +2,7 @@
 title: Pricing of OnePayroll's Employee Self-Service Portal
 description: Pricing for OnePayroll's Employee Self-Service Portal.
 author: LasseHerget
-sws.service: Employee Self-Service Portal
+sws.service: onepayroll
 sws.topic: article
 sws.date: 27/04/2026
 ---

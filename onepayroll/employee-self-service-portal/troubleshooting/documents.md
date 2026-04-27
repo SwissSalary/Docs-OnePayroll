@@ -2,7 +2,7 @@
 title: Troubleshooting documents
 description: Common challenges with documents in the OnePayroll Employee Self-Service Portal and how to resolve them.
 author: LasseHerget
-sws.service: Employee Self-Service Portal
+sws.service: onepayroll
 sws.topic: troubleshooting
 sws.date: 27/04/2026
 ---

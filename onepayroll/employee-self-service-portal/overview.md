@@ -2,7 +2,7 @@
 title: Employee Self-Service Portal overview
 description: Learn about the OnePayroll Employee Self-Service Portal, where employees can securely view their pay stubs, documents, and personal payroll information.
 author: LasseHerget
-sws.service: Employee Self-Service Portal
+sws.service: onepayroll
 sws.topic: overview
 sws.date: 27/04/2026
 ---

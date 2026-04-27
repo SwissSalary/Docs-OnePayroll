@@ -2,7 +2,7 @@
 title: Troubleshooting the Employee Self-Service Portal
 description: Find answers to common questions employees and administrators have about the OnePayroll Employee Self-Service Portal.
 author: LasseHerget
-sws.service: Employee Self-Service Portal
+sws.service: onepayroll
 sws.topic: overview
 sws.date: 27/04/2026
 ---
