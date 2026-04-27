@@ -86,7 +86,8 @@
 ## [Get started](employee-self-service-portal/get-started.md)
 ## [Register an employee](employee-self-service-portal/register-employee.md)
 ## [Security](employee-self-service-portal/security.md)
-## [Troubleshooting](employee-self-service-portal/troubleshooting/overview.md)
+## Troubleshooting
+### [Overview](employee-self-service-portal/troubleshooting/overview.md)
 ### [Sign-In](employee-self-service-portal/troubleshooting/sign-in.md)
 ### [Documents](employee-self-service-portal/troubleshooting/documents.md)
 
