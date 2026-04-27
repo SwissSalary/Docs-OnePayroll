@@ -37,7 +37,7 @@ Confirm the employee has been registered in Business Central with the correct pr
    > If the email address is missing or incorrect, update the private email address field in the employee card.
    > The changes should immediately take effect.
 5. Verify that the "Status" field shows "Active"
-   > If the status is "Unregistered", the private email address has been added before the Self-Service portal was enabled.<br/>
+   > If the status is "Unregistered", the private email address has been added before the Self-Service Portal was enabled.<br/>
    > Open the employee card and clear the private email address field.
    > Make sure you leave the field after clearing it, so that the changes get saved.<br/>
    > Then, re-enter the correct private email address and save the changes to trigger the registration process.<br/>
