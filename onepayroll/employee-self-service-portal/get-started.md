@@ -7,7 +7,7 @@ sws.topic: article
 sws.date: 04/27/2026
 ---
 
-# Set up Business Central
+# Get Started
 
 Learn how to set up your Business Central environment for the use of the Employee Self-Service Portal.
 
