@@ -45,7 +45,7 @@ Sign-in is handled exclusively through Microsoft Entra External ID using OpenID 
 The Self-Service Portal itself does not manage end-user credentials.
 
 The sessions...
-- ... are stored server-side.
+- ... are memorized server-side.
 - ... are accessed through secure cookies.
 - ... always expire after 10 hours.
 - ... are bound to the user's IP address upon authentication.
