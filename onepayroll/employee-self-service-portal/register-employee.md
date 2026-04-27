@@ -10,7 +10,7 @@ sws.date: 04/27/2026
 # Prerequisites
 
 Make sure the Employee Self-Service Portal is enabled in your Business Central environment.
-See also: [Get Started](/get-started.md)
+See also: [Get Started](./get-started.md)
 
 # Single User Registration
 
