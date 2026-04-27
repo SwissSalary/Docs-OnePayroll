@@ -30,20 +30,18 @@ We can recommend the use of the following tools for quick tests:
 | [Security Headers](https://securityheaders.com) | HTTP Response Headers |
 | [CSP Evaluator](https://csp-evaluator.withgoogle.com/) | Content-Security-Policy |
 
-Please do not use more aggressive tools like the [Zed Attack Proxy (ZAP)](https://www.zaproxy.org/) or [OWASP Nettacker](https://owasp.org/www-project-nettacker/),
-without contacting the OnePayroll Team beforehand for coordination.
-
 ---
 
-## Authentication and session management
+## Authentication & Session Management
 
 Sign-in is handled exclusively through Microsoft Entra External ID using OpenID Connect.
 The Self-Service Portal itself does not manage credentials.
 
-Session Management:
-- The sessions are stored server-side and are accessed through secure cookies.
-- The sessions always expire after 10 hours.
-- The sessions are bound to the user's IP address upon authentication.
+The sessions...
+- ... are stored server-side.
+- ... are accessed through secure cookies.
+- ... always expire after 10 hours.
+- ... are bound to the user's IP address upon authentication.
   > If a session is accessed from a different IP address, the Self-Service Portal treats the request as unauthenticated.
 
 ---
