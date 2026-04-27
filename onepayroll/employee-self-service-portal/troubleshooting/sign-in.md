@@ -23,7 +23,7 @@ After authenticating, the employee ends up on the sign-in page with the message:
 
 ### Why
 
-Upon authentication, the application was unable to determine any connected employees in Business Central for submitted user account.
+Upon authentication, the application was unable to determine any connected employees in Business Central for the submitted user account.
 
 ### Steps
 
