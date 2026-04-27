@@ -85,3 +85,23 @@ The connection was therefore considered invalid and deactivated.
     > Not all deletions provide the required triggers for us to clean up the data accordingly,
     > so the employee connection might have not been cleaned up properly.
     > In this case, the connection requires manual deactivation by the OnePayroll Team.
+
+---
+
+## User keeps getting signed out.
+
+### When
+The employee is signed out unexpectedly while using the Self-Service Portal, and needs to sign in again.
+
+### Why
+When you sign in, the portal creates a ticket and stores it in your browser.
+That ticket is used to identify the user and bound to the IP address used at sign-in.
+If that IP address changes while you are using the portal, the portal considers your session invalid and no longer accepts your ticket.
+
+This typically happens when:
+- Switching between Wi-Fi and mobile data
+- Your internet provider assigning you a new IP address
+- Connecting to or disconnecting from a VPN
+
+### Steps
+This is expected behavior and not a bug. There is nothing to configure or fix at this point in time.
