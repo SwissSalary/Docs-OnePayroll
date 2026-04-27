@@ -81,6 +81,16 @@
 ### [Validation rules](validation-rules.md)
 ### [Copilot features](copilot-features.md)
 
+# Employee Self-Service Portal
+## [Self-Service Portal Overview](employee-self-service-portal/overview.md)
+## [Pricing](employee-self-service-portal/pricing.md)
+## [Get started](employee-self-service-portal/get-started.md)
+## [Register an employee](employee-self-service-portal/register-employee.md)
+## [Security](employee-self-service-portal/security.md)
+## [Troubleshooting](employee-self-service-portal/troubleshooting/overview.md)
+### [Sign-In](employee-self-service-portal/troubleshooting/sign-in.md)
+### [Documents](employee-self-service-portal/troubleshooting/documents.md)
+
 # Help and reference
 ## [FAQ](faq.md)
 ## [Troubleshooting and errors](errors-troubleshooting.md)
