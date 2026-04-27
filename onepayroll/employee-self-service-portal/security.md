@@ -7,12 +7,12 @@ sws.topic: security
 sws.date: 24/04/2026
 ---
 
-# Security
-
+# Responsible Disclosure
 Security is not an afterthought in the Employee Self-Service Portal. <br/>
 Employees access sensitive data through it, and we treat that responsibility seriously.
 
-This page gives administrators and security teams a transparent picture of the measures we have in place and the tools we recommend for verifying them.
+If you discover a vulnerability in the Employee Self-Service Portal, please report it responsibly by contacting us directly rather than disclosing it publicly.
+We take all reports seriously.
 
 ---
 
@@ -43,14 +43,3 @@ The sessions...
 - ... always expire after 10 hours.
 - ... are bound to the user's IP address upon authentication.
   > If a session is accessed from a different IP address, the Self-Service Portal treats the request as unauthenticated.
-
----
-
-## Responsible disclosure
-
-If you discover a security vulnerability in the Employee Self-Service Portal, please report it responsibly by contacting us directly rather than disclosing it publicly.
-We take all reports seriously.
-
-However there is no bounty program in place for this service, so we cannot offer financial rewards for vulnerability reports.
-
----
