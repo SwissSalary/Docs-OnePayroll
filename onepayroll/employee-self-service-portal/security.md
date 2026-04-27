@@ -10,12 +10,12 @@ sws.date: 27/04/2026
 # Responsible Disclosure
 
 Security is not an afterthought in OnePayroll's Employee Self-Service Portal. <br/>
-Employees *access sensitive data** through it, and we treat that responsibility seriously.
+Employees *access sensitive data*¹ through it, and we treat that responsibility seriously.
 
 If you discover a vulnerability in the Self-Service Portal, please report it responsibly by contacting us directly rather than disclosing it publicly.
 We take all reports seriously.
 
-<small>**Note*: The Self-Service Portal does not store any data — it only connects to external data sources. </small>
+<small>*Note*¹: The Self-Service Portal does not store any data — it only connects to external data sources. </small>
 
 ---
 
