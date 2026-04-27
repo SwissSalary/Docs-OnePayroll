@@ -82,7 +82,7 @@
 ### [Copilot features](copilot-features.md)
 
 # Employee Self-Service Portal
-## [Self-Service Portal Overview](employee-self-service-portal/overview.md)
+## [Overview](employee-self-service-portal/overview.md)
 ## [Pricing](employee-self-service-portal/pricing.md)
 ## [Get started](employee-self-service-portal/get-started.md)
 ## [Register an employee](employee-self-service-portal/register-employee.md)
