@@ -16,7 +16,7 @@ We take all reports seriously.
 
 ---
 
-# Third-party Verification Tools
+# Third-Party Verification Tools
 
 We encourage administrators and security teams to run independent assessments,
 not just for OnePayrolls Employee Self-Service Portal but for any service that handles sensitive data.
