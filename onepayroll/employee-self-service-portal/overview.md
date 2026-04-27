@@ -15,7 +15,6 @@ The OnePayroll Self-Service Portal gives employees secure access to their payrol
 
 | Article | Description |
 |---------|-------------|
-| [Pricing](pricing.md) | Pricing information for the Self-Service Portal. |
 | [Get started](get-started.md) | How to enable the Self-Service Portal and connect it to your Business Central environment. |
 | [Register an employee](register-employee.md) | How to register employees so they can use the Self-Service Portal. |
 | [Security](security.md) | Security information about the Self-Service Portal. |
