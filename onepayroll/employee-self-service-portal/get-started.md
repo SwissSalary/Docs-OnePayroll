@@ -1,6 +1,6 @@
 ---
-title: Get Started with OnePayrolls Employee Self-Service Portal
-description: Setup the Business Central environment for the use of OnePayrolls Employee Self-Service Portal.
+title: Get Started with OnePayroll's Employee Self-Service Portal
+description: Setup the Business Central environment for the use of OnePayroll's Employee Self-Service Portal.
 author: LasseHerget
 sws.service: Employee Self-Service Portal
 sws.topic: article

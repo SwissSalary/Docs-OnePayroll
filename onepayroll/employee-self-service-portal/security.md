@@ -1,6 +1,6 @@
 ---
 title: Security — Employee Self-Service Portal
-description: An overview of the security measures in place for OnePayrolls Employee Self-Service Portal.
+description: An overview of the security measures in place for OnePayroll's Employee Self-Service Portal.
 author: LasseHerget
 sws.service: Employee Self-Service Portal
 sws.topic: security
@@ -9,7 +9,7 @@ sws.date: 24/04/2026
 
 # Responsible Disclosure
 
-Security is not an afterthought in OnePayrolls Employee Self-Service Portal. <br/>
+Security is not an afterthought in OnePayroll's Employee Self-Service Portal. <br/>
 Employees *access sensitive data** through it, and we treat that responsibility seriously.
 
 If you discover a vulnerability in the Self-Service Portal, please report it responsibly by contacting us directly rather than disclosing it publicly.

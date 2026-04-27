@@ -1,6 +1,6 @@
 ---
-title: Pricing of OnePayrolls Employee Self-Service Portal
-description: Pricing for OnePayrolls Employee Self-Service Portal.
+title: Pricing of OnePayroll's Employee Self-Service Portal
+description: Pricing for OnePayroll's Employee Self-Service Portal.
 author: LasseHerget
 sws.service: Employee Self-Service Portal
 sws.topic: article
