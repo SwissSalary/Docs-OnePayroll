@@ -24,10 +24,12 @@ CONTRIBUTING.md      Contributor guide
 
 ```bash
 dotnet tool install -g docfx
-docfx docfx.json --serve
+dotnet tool install --global dotnet-serve
+dotnet dev-certs https --trust
+docfx docfx.json; dotnet serve -o -S -d _site
 ```
 
-The site builds at `http://localhost:8080`.
+One the site is built, it should automatically open up in your default browser.
 
 ## Contributing
 
