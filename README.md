@@ -22,20 +22,38 @@ CONTRIBUTING.md      Contributor guide
 
 ## Local preview
 1. Install docfx
-   `dotnet tool install -g docfx;`
+   > ```
+   > dotnet tool install -g docfx;
+   > ```
 
 2. `Install NodeJS` *(optional)*
-   - Windows: `winget install OpenJS.NodeJS.LTS;`
-   - Linux: `sudo apt install nodejs`
-   - MacOS: `brew install node`
+   - Windows:
+     > ```
+     > winget install OpenJS.NodeJS.LTS;
+     > ```
+   - Linux: 
+     > ```
+     > sudo apt install nodejs
+     > ```
+   - MacOS:
+     > ```
+     > brew install node
+     > ```
 
 3. Build and serve the app
    - With NodeJS *(recommended)*: 
-     - Build: `docfx docfx.json`
-     - Run: `npx @azure/static-web-apps-cli start _site --swa-config-location . --ssl --open`
-       > The site should automatically get opened in your default browser.
-   - With docfx: `docfx docfx.json --serve`
-     > The site will be available at `http://localhost:8080`
+     - Build: 
+      > ```
+      > docfx docfx.json
+      > ```
+     - Run: *(The site should automatically get opened in your default browser.)*
+       > ```
+       > npx @azure/static-web-apps-cli start _site --swa-config-location . --ssl --open
+       > ```
+   - With docfx: *(The site will be available at `http://localhost:8080`.)*
+     > ```
+     > docfx docfx.json --serve
+     > ```
 
 ## Contributing
 
