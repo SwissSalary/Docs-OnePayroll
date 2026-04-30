@@ -43,9 +43,9 @@ CONTRIBUTING.md      Contributor guide
 3. Build and serve the app
    - With NodeJS *(recommended)*: 
      - Build: 
-      > ```
-      > docfx docfx.json
-      > ```
+       > ```
+       > docfx docfx.json
+       > ```
      - Run: *(The site should automatically get opened in your default browser.)*
        > ```
        > npx @azure/static-web-apps-cli start _site --swa-config-location . --ssl --open
