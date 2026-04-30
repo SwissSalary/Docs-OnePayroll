@@ -21,27 +21,6 @@ CONTRIBUTING.md      Contributor guide
 3. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow — branching, editing, committing, and creating pull requests
 
 ## Local preview
-### Hosting with docfx
-This section explains the easiest way to host the learn platform locally.
-It's behavior may differ from the actual website hosted at `https://learn.onepayroll.com/`.
-
-1. Install the required tools.
-```bash
-dotnet tool install -g docfx
-```
-
-2. Run the app locally
-```bash
-docfx docfx.json --serve
-```
-
-Once the site is built, it will be available at:
-`http://localhost:8080`
-
-### Hosting with NodeJS
-This section explains the recommended way to host the learn platform locally.
-It's behavior should not differ from the actual website hosted at `https://learn.onepayroll.com/`.
-
 1. Install the required tools.
 ```bash
 dotnet tool install -g docfx
