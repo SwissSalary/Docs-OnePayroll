@@ -21,16 +21,23 @@ CONTRIBUTING.md      Contributor guide
 3. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow — branching, editing, committing, and creating pull requests
 
 ## Local preview
-1. Install the required tools.
+1. Install docfx
 ```bash
-dotnet tool install -g docfx; winget install OpenJS.NodeJS.LTS;
+dotnet tool install -g docfx;
 ```
 
-2. Run the app locally
-```bash
-docfx docfx.json; npx @azure/static-web-apps-cli start _site --swa-config-location . --ssl --open;
-```
-One the site is built, it should automatically open up in your default browser.
+2. `Install NodeJS` *(optional)*
+- Windows: `winget install OpenJS.NodeJS.LTS;`
+- Linux: `sudo apt install nodejs`
+- MacOS: `brew install node`
+
+3. Build and serve the app
+- With NodeJS *(recommended)*: 
+  - Build: `docfx docfx.json`
+  - Run: `npx @azure/static-web-apps-cli start _site --swa-config-location . --ssl --open`
+  > The site should automatically get opened in your default browser.
+- With docfx: `docfx docfx.json --serve`
+  > The site will be available at `http://localhost:8080`
 
 ## Contributing
 
