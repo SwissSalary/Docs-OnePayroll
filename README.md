@@ -22,13 +22,17 @@ CONTRIBUTING.md      Contributor guide
 
 ## Local preview
 
+1. Install the required tools.
 ```bash
 dotnet tool install -g docfx
 dotnet tool install --global dotnet-serve
 dotnet dev-certs https --trust
-docfx docfx.json; dotnet serve -o -S -d _site
 ```
 
+2. Run the app locally
+```bash
+docfx docfx.json; dotnet serve -o -S -d _site
+```
 One the site is built, it should automatically open up in your default browser.
 
 ## Contributing
