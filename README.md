@@ -23,8 +23,7 @@ CONTRIBUTING.md      Contributor guide
 ## Local preview
 1. Install the required tools.
 ```bash
-dotnet tool install -g docfx
-winget install OpenJS.NodeJS.LTS
+dotnet tool install -g docfx; winget install OpenJS.NodeJS.LTS;
 ```
 
 2. Run the app locally
