@@ -33,7 +33,7 @@ CONTRIBUTING.md      Contributor guide
      > ```
    - Linux: 
      > ```
-     > sudo apt install nodejs
+     > sudo apt install nodejs npm
      > ```
    - MacOS:
      > ```
