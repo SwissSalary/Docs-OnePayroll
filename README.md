@@ -41,7 +41,7 @@ CONTRIBUTING.md      Contributor guide
      > ```
 
 3. Build and serve the app
-   - With NodeJS *(recommended)*: 
+   - With Node.js *(recommended)*: 
      - Build: 
        > ```
        > docfx docfx.json
