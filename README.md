@@ -29,7 +29,7 @@ CONTRIBUTING.md      Contributor guide
 2. `Install NodeJS` *(optional)*
    - Windows:
      > ```
-     > winget install OpenJS.NodeJS.LTS;
+     > winget install OpenJS.NodeJS.LTS
      > ```
    - Linux: 
      > ```
