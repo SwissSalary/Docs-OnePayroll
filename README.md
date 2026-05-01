@@ -23,7 +23,7 @@ CONTRIBUTING.md      Contributor guide
 ## Local preview
 1. Install docfx
    > ```
-   > dotnet tool install -g docfx;
+   > dotnet tool install -g docfx
    > ```
 
 2. `Install NodeJS` *(optional)*
