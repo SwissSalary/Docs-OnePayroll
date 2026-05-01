@@ -1,6 +1,6 @@
 {
   "globalHeaders": {
-    "Cache-Control": "max-age=300, private",
+    "Cache-Control": "max-age=300",
     "Permissions-Policy": "geolocation=(), camera=(), display-capture=()",
     "Referrer-Policy": "no-referrer",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
