@@ -26,7 +26,7 @@ CONTRIBUTING.md      Contributor guide
    > dotnet tool install -g docfx
    > ```
 
-2. `Install NodeJS` *(optional)*
+2. `Install Node.js` *(optional)*
    - Windows:
      > ```
      > winget install OpenJS.NodeJS.LTS
@@ -35,7 +35,7 @@ CONTRIBUTING.md      Contributor guide
      > ```
      > sudo apt install nodejs npm
      > ```
-   - MacOS:
+   - macOS:
      > ```
      > brew install node
      > ```
