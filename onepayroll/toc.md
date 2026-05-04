@@ -82,14 +82,12 @@
 ### [Copilot features](copilot-features.md)
 
 # Employee Self-Service Portal
-## [Overview](employee-self-service-portal/overview.md)
-## [Get started](employee-self-service-portal/get-started.md)
-## [Register an employee](employee-self-service-portal/register-employee.md)
-## [Security](employee-self-service-portal/security.md)
-## Troubleshooting
-### [Overview](employee-self-service-portal/troubleshooting/overview.md)
-### [Sign-In](employee-self-service-portal/troubleshooting/sign-in.md)
-### [Documents](employee-self-service-portal/troubleshooting/documents.md)
+## [Self-Service Portal overview](self-service-overview.md)
+## [Set up the Self-Service Portal](self-service-setup.md)
+## [Register an employee](self-service-register-employee.md)
+## [Security](self-service-security.md)
+## [Troubleshoot sign-in issues](self-service-troubleshooting-sign-in.md)
+## [Troubleshoot document issues](self-service-troubleshooting-documents.md)
 
 # Help and reference
 ## [FAQ](faq.md)
