@@ -60,7 +60,7 @@ Hierarchies enable:
 **To assign an employee to a department:**
 
 1. Open the **Employee** record.
-2. In the **Job & Compensation** tab, set the **Department** field.
+2. In the **Job & Compensation** FastTab, set the **Department** field.
 
 Employees automatically inherit department settings:
 - Department hierarchy level
@@ -96,7 +96,7 @@ OnePayroll supports two work location types:
 **To assign an employee to a work location:**
 
 1. Open the **Employee** record.
-2. In the **Employment** tab, set the **Work Location** field.
+2. In the **Employment** FastTab, set the **Work Location** field.
 
 Employees can be assigned to a primary work location on the **Employee Card**.
 
