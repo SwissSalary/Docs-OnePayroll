@@ -25,7 +25,7 @@ Before employees can sign in, you must grant admin consent in your Microsoft Ent
 1. Set the **State** field to **Enabled**.
 
    > [!NOTE]
-   > The **Payroll - Self-Service** permission set should already be assigned to the application automatically. If it is not there, then add it now.
+   > The **Self-Service Portal** permission set should already be assigned to the application automatically. If it is not there, then add it now.
 
 ## Enable the Self-Service Portal
 
