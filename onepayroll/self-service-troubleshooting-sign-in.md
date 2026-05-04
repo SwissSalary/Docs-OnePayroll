@@ -65,7 +65,7 @@ The account was successfully linked to an employee in Business Central, but an e
       > If this application is not in the list, set it up by following the steps in [Set up the Self-Service Portal](self-service-setup.md).
 
    1. Verify that the **State** field is set to **Enabled**.
-   1. Verify that the **D365 BUS FULL ACCESS** and **PAYROLL ADMIN** permission sets are still assigned.
+   1. Verify that the **Payroll - Self-Service** permission set is still assigned to the application.
 1. Verify that the Self-Service Portal is enabled in Business Central:
    1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **OnePayroll Self-Service Setup**, and then choose the related link.
    1. Verify that the **Enabled** toggle is turned on.

@@ -18,7 +18,7 @@ Security is a core part of the Self-Service Portal. Employees access sensitive p
 If you discover a vulnerability in the Self-Service Portal, report it responsibly by contacting us directly rather than disclosing it publicly.
 
 > [!NOTE]
-> The Self-Service Portal does not store any data — it only connects to external data sources.
+> The Self-Service Portal does not persist employee or payroll business data of its own; it connects to external data sources and only stores short-lived operational state, such as server-side session data.
 
 ## Third-party verification tools
 
