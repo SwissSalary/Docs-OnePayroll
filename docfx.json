@@ -18,7 +18,8 @@
           "images/**",
           "**/media/**",
           "favicon.ico",
-          "logo.svg"
+          "logo.svg",
+          "staticwebapp.config.json"
         ]
       }
     ],
