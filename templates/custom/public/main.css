@@ -46,7 +46,7 @@
 /* Dark mode overrides */
 [data-bs-theme="dark"] {
     --onepayroll-primary-red: #ff3b3b;
-    --onepayroll-primary-red-rgb: 219, 0, 0;
+    --onepayroll-primary-red-rgb: 255, 59, 59;
     --onepayroll-font-color: #ffffff;
     --onepayroll-bg-color: #0B1215;
     --onepayroll-primary-gray: #e0e0e0;
