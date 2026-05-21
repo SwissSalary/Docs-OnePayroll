@@ -13,7 +13,8 @@
    ------------------------------------------------------------------------- */
 :root {
     /* Brand colours (from onepayroll.com/styles/variables.css) */
-    --onepayroll-primary-red: #db0000;
+    --onepayroll-logo-red: #db0000;
+        --onepayroll-primary-red: var(--onepayroll-logo-red);
     --onepayroll-primary-red-rgb: 219, 0, 0;
     --onepayroll-secondary-red: #aa0000;
     --onepayroll-tertiary-red: #990000;
