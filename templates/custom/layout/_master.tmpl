@@ -46,7 +46,7 @@
         
         const favicon = document.querySelector('link[rel="icon"]');
         const rel = '{{_rel}}';
-        favicon.setAttribute('href', rel + (theme === 'light' ? 'favicon.light-mode.ico' : theme === 'dark' ? 'favicon.dark-mode.ico' : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'favicon.dark-mode.ico' : 'favicon.light-mode.ico'));
+        favicon.setAttribute('href', rel + window.matchMedia('(prefers-color-scheme: dark)').matches ? 'favicon.dark-mode.ico' : 'favicon.light-mode.ico');
       </script>
 
       {{#_googleAnalyticsTagId}}
