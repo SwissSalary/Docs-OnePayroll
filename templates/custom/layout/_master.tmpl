@@ -41,8 +41,11 @@
       <script type="module" src="./{{_rel}}public/docfx.min.js"></script>
 
       <script>
-        const theme = localStorage.getItem('theme') || 'auto'
-        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+        const theme = localStorage.getItem('theme') || 'auto';
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme);
+        
+        const favicon = document.querySelector('link[rel="icon"]');
+        favicon.setAttribute('href', theme === 'light' ? 'favicon.light-mode.ico' : theme === 'dark' ? 'favicon.dark-mode.ico' : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'favicon.dark-mode.ico' : 'favicon.light-mode.ico');
       </script>
 
       {{#_googleAnalyticsTagId}}
