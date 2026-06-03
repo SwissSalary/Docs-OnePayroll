@@ -17,6 +17,7 @@
         "files": [
           "images/**",
           "**/media/**",
+          "favicon.*.ico",
           "favicon.ico",
           "logo.svg",
           "staticwebapp.config.json"
