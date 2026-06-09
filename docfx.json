@@ -20,6 +20,9 @@
           "favicon.*.ico",
           "favicon.ico",
           "logo.svg",
+          "500-InternalServerError.html",
+          "502-BadGateway.html",
+          "503-ServiceUnavailable.html",
           "staticwebapp.config.json"
         ]
       }

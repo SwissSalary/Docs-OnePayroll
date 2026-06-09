@@ -11,5 +11,19 @@
     "Cross-Origin-Embedder-Policy": "unsafe-none",
     "Cross-Origin-Resource-Policy": "cross-origin",
     "Content-Security-Policy": "upgrade-insecure-requests;"
+  },
+  "responseOverrides": {
+    "500": {
+      "rewrite": "/500-InternalServerError.html",
+      "statusCode": 500
+    },
+    "502": {
+      "rewrite": "/502-BadGateway.html",
+      "statusCode": 502
+    },
+    "503": {
+      "rewrite": "/503-ServiceUnavailable.html",
+      "statusCode": 503
+    }
   }
 }
