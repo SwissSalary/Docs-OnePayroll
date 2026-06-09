@@ -6,8 +6,8 @@
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' https://onepayroll.com; require-trusted-types-for 'script';">
-    <link rel="icon" href="https://onepayroll.com/onepayroll.ico">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'sha256-S9v8mQ0Xba2sG+AEXC4IpdFUM2EX/oRNADEeJ5MpV3s=';">
+    <link rel="icon" href="/favicon.ico">
     <title>{{pageTitle}}</title>
     <style>
         :root {
@@ -113,6 +113,10 @@
             background: var(--mud-palette-black);
         }
     </style>
+    <script integrity="sha256-S9v8mQ0Xba2sG+AEXC4IpdFUM2EX/oRNADEeJ5MpV3s=">
+        const favicon = document.querySelector('link[rel="icon"]');
+        favicon.setAttribute('href', `${window.matchMedia('(prefers-color-scheme: dark)').matches ? 'favicon.dark-mode.ico' : 'favicon.light-mode.ico'}`);
+    </script>
 </head>
 <body>
     <main class="card" role="main">
@@ -145,6 +149,7 @@
         </div>
 
         <div class="actions">
+            HALLOOOOOOO
             <a class="btn" href="{{action.href}}">{{action.text}}</a>
             <a class="btn" href="https://onepayroll.com/" target="_blank" rel="noopener noreferrer">OnePayroll.com</a>
         </div>
