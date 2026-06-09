@@ -16,9 +16,6 @@
     "404": {
       "rewrite": "/404-NotFound.html"
     },
-    "502": {
-      "rewrite": "/502-BadGateway.html"
-    },
     "503": {
       "rewrite": "/503-ServiceUnavailable.html"
     }
