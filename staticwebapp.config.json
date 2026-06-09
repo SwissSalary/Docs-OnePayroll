@@ -15,9 +15,6 @@
   "responseOverrides": {
     "404": {
       "rewrite": "/404-NotFound.html"
-    },
-    "503": {
-      "rewrite": "/503-ServiceUnavailable.html"
     }
   }
 }
