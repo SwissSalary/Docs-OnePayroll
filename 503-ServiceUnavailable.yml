@@ -1,3 +1,4 @@
+### YamlMime:ErrorPage
 statusCode: "503"
-title: "Service Unavailable"
-description: "The server is temporarily unavailable due to maintenance or high load. This is usually temporary. Please refresh in a few seconds."
+title: Service Unavailable
+description: The server is temporarily unavailable due to maintenance or high load. This is usually temporary. Please refresh in a few seconds.
