@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' https://onepayroll.com; require-trusted-types-for 'script';">
     <link rel="icon" href="https://onepayroll.com/onepayroll.ico">
-    <title>502 | Bad Gateway</title>
+    <title>{{pageTitle}}</title>
     <style>
         :root {
             --onepayroll-font-color: black;
@@ -78,7 +78,6 @@
             margin: 0.5rem 0 0;
             font-size: clamp(1.4rem, 2.8vw, 2.1rem);
             letter-spacing: 0.04em;
-            text-transform: uppercase;
             font-weight: 700;
         }
 
@@ -139,18 +138,14 @@
 
         <div class="content">
             <div class="status-section">
-                <h1 class="status">502</h1>
-                <h2 class="title">Bad Gateway</h2>
+                <h1 class="status">{{statusCode}}</h1>
+                <h2 class="title">{{title}}</h2>
             </div>
-            <p class="description">
-                
-                The server received an invalid response from an upstream service. This is usually temporary.
-                Please refresh in a few seconds.
-            </p>
+            <p class="description">{{description}}</p>
         </div>
 
         <div class="actions">
-            <a class="btn" href="">Try Again</a>
+            <a class="btn" href="{{action.href}}">{{action.text}}</a>
             <a class="btn" href="https://onepayroll.com/" target="_blank" rel="noopener noreferrer">OnePayroll.com</a>
         </div>
     </main>
