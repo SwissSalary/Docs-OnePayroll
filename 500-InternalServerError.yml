@@ -1,4 +1,3 @@
-### YamlMime:ErrorPage
 statusCode: "500"
-title: Internal Server Error
-description: This can usually be resolved by clearing the cache and/or the cookies in your browser. If the problem persists, please contact the support team.
+title: "Internal Server Error"
+description: "This can usually be resolved by clearing the cache and/or the cookies in your browser. If the problem persists, please contact the support team."
