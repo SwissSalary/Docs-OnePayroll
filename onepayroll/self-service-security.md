@@ -18,7 +18,7 @@ Security is a core part of the Self-Service Portal. Employees access sensitive p
 If you discover a vulnerability in the Self-Service Portal, report it responsibly by contacting us directly rather than disclosing it publicly.
 
 > [!NOTE]
-> The Self-Service Portal does not persist employee or payroll business data of its own; it connects to external data sources and only stores short-lived operational state, such as server-side session data.
+> The Self-Service Portal does not persist employee or payroll business data of its own; it connects to external data sources and only stores a short-lived operational state, such as server-side session data.
 
 ## Third-party verification tools
 
@@ -39,7 +39,6 @@ Sessions have the following properties:
 
 - Sessions are stored server-side and accessed through secure, HTTP-only cookies.
 - Sessions expire after 10 hours.
-- Sessions are bound to the user's IP address at the time of sign-in. If a request arrives from a different IP address, the portal treats it as unauthenticated.
 
 ## See also
 
