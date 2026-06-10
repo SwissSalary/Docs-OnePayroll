@@ -71,26 +71,6 @@ The account was successfully linked to an employee in Business Central, but an e
    1. Verify that the **Enabled** toggle is turned on.
 1. If the company, environment, or tenant was deleted, the employee connection may not have been cleaned up automatically. In this case, contact the OnePayroll team for manual deactivation.
 
-## Employee keeps getting signed out
-
-### When
-
-The employee is unexpectedly signed out while using the Self-Service Portal and must sign in again.
-
-### Why
-
-Sessions are bound to the user's IP address at sign-in. If a request arrives from a different IP address using the same session, the portal rejects it and treats the request as unauthenticated.
-
-This can occur when:
-
-- Switching between Wi-Fi and mobile data
-- The internet provider assigns a new IP address
-- Connecting to or disconnecting from a VPN
-
-### Steps
-
-This is expected behavior. There is nothing to configure or fix.
-
 ## See also
 
 - [Self-Service Portal overview](self-service-overview.md)
