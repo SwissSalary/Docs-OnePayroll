@@ -54,11 +54,6 @@ Each employee type references a pay unit. The pay unit defines:
 
 When you assign an employee type to an employee, the employee inherits the pay unit from that type. The pay unit appears on the employee card as a read-only field.
 
-### To view an employee's pay unit
-
-1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Employees**, and then choose the related link.
-2. On the **OnePayroll** section, the **Pay Unit** field shows which pay unit applies, inherited from the employee's type.
-3. The **Pay Factor** field shows the conversion factor from the linked pay unit.
 
 > [!TIP]
 > The pay unit is inherited from the employee type and cannot be changed directly on the employee card. To change an employee's pay unit, change their employee type or update the pay unit assigned to that employee type.
