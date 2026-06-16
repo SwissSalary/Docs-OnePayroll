@@ -1,0 +1,40 @@
+{
+  "$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+  "version": "1.0.0",
+  "id": "https://learn.onepayroll.com/schemas/ErrorPage.schema.json",
+  "title": "ErrorPage",
+  "description": "Schema for standalone OnePayroll error pages.",
+  "type": "object",
+  "properties": {
+    "statusCode": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "tags": [
+        "localizable"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "tags": [
+        "localizable"
+      ]
+    },
+    "action": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "tags": [
+            "localizable"
+          ]
+        },
+        "href": {
+          "type": "string",
+          "contentType": "href"
+        }
+      }
+    }
+  }
+}

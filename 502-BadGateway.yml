@@ -1,0 +1,4 @@
+### YamlMime:ErrorPage
+statusCode: "502"
+title: Bad Gateway
+description: The server received an invalid response from an upstream service. This is usually temporary. Please refresh in a few seconds.

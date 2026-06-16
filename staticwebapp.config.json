@@ -11,5 +11,10 @@
     "Cross-Origin-Embedder-Policy": "unsafe-none",
     "Cross-Origin-Resource-Policy": "cross-origin",
     "Content-Security-Policy": "upgrade-insecure-requests;"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404-NotFound.html"
+    }
   }
 }

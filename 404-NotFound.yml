@@ -1,0 +1,7 @@
+### YamlMime:ErrorPage
+statusCode: "404"
+title: "Not Found"
+description: "We couldn’t find the requested page. Please check the URL and try again."
+action:
+  text: "Home"
+  href: "/"
