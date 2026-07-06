@@ -40,7 +40,7 @@ jobs:
 
       - name: Get Id Token
         if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6.4.1
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         id: idtoken
         with:
           script: |
@@ -75,7 +75,7 @@ jobs:
         run: npm install @actions/core@1.6.0 @actions/http-client
 
       - name: Get Id Token
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6.4.1
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         id: idtoken
         with:
           script: |
