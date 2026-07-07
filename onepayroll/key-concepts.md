@@ -22,6 +22,9 @@ The total estimated compensation for an employee for a full year, used in salary
 **Approval Workflow**
 An optional workflow that requires payroll to be approved by a manager before posting to the general ledger.
 
+**Active Employee (billing)**
+An employee who is paid in a given calendar month, generating one charge for that month. An employee paid across multiple months generates one charge per month. An employee paid more than once within the same month still generates only one charge for that month. Cancelled runs do not generate charges.
+
 ## B
 
 **Benefit**
@@ -344,6 +347,9 @@ A deduction required by law, such as FICA or income tax withholding.
 **Strain on Resources**
 Performance issues that occur when payroll history grows large.
 
+**Subscription (Microsoft Commercial Marketplace)**
+A SaaS subscription to OnePayroll purchased through Microsoft Commercial Marketplace. The subscription is linked to your organization's Entra ID tenant and determines whether full payroll functionality is available or trial limits apply. See [Subscription and licensing overview](subscription-overview.md).
+
 ## T
 
 **Tax Calculation Method**
@@ -393,6 +399,9 @@ Links to learning materials about OnePayroll features.
 
 **Transaction**
 An individual payroll entry or journal posting.
+
+**Trial Period**
+The period during which OnePayroll can be used without an active Microsoft Commercial Marketplace subscription. Trial mode allows up to 2 payroll runs (1 posted, 1 unposted) and up to 2 Self-Service employee registrations. After these limits are reached, a subscription is required to continue. See [Subscription and licensing overview](subscription-overview.md).
 
 ## U
 

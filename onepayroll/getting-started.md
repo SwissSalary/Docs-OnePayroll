@@ -18,6 +18,7 @@ Before you begin, ensure you have:
 - **Business Central subscription** — OnePayroll requires Dynamics 365 Business Central, version 26 or later
 - **Admin access** — You need administrator permissions to perform setup tasks
 - **Chart of Accounts configured** — Standard GL accounts for payroll expenses (Salary Expense, Tax Payable, etc.)
+- **OnePayroll subscription** — A free trial allows limited payroll runs and employee registrations. To process payroll without restrictions, subscribe through Microsoft Commercial Marketplace. See [Subscription and licensing overview](subscription-overview.md).
 
 ## Onboarding checklist
 

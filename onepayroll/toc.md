@@ -81,6 +81,11 @@
 ### [Validation rules](validation-rules.md)
 ### [Copilot features](copilot-features.md)
 
+### Subscription and licensing
+#### [Subscription and licensing overview](subscription-overview.md)
+#### [Subscribe on Microsoft Commercial Marketplace](subscription-marketplace.md)
+#### [View subscription usage](subscription-usage.md)
+
 # Employee Self-Service Portal
 ## [Self-Service Portal overview](self-service-overview.md)
 ## [Set up the Self-Service Portal](self-service-setup.md)
