@@ -83,7 +83,7 @@
 
 ### Subscription and licensing
 #### [Subscription and licensing overview](subscription-overview.md)
-#### [Subscribe on Microsoft Commercial Marketplace](subscription-marketplace.md)
+#### [Subscribe to OnePayroll](subscription-marketplace.md)
 #### [View subscription usage](subscription-usage.md)
 
 # Employee Self-Service Portal

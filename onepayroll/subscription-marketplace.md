@@ -1,6 +1,6 @@
 ---
 title: Subscribe to OnePayroll on Microsoft Commercial Marketplace
-description: Learn how to purchase an OnePayroll subscription on Microsoft Commercial Marketplace, activate it, change plans, and manage your subscription lifecycle.
+description: Learn how to purchase a OnePayroll subscription on Microsoft Commercial Marketplace, activate it, change plans, and manage your subscription lifecycle.
 author: zeande
 sws.service: onepayroll
 sws.topic: how-to
@@ -17,9 +17,9 @@ OnePayroll subscriptions are purchased and managed through Microsoft Commercial 
 > To purchase a subscription, you need an Azure account with permission to purchase Marketplace offers (typically a subscription owner or contributor role).
 
 1. Go to [Microsoft Commercial Marketplace](https://marketplace.microsoft.com/) and find the **OnePayroll Subscription** offer.
-2. Choose **Get it now**.
-3. Select the plan that fits your organization.
-3. Complete the purchase in the Azure portal — choose the Azure subscription and resource group to associate the billing with, and confirm the order.
+1. Choose **Get it now**.
+1. Select the plan that fits your organization.
+1. Complete the purchase in the Azure portal — choose the Azure subscription and resource group to associate the billing with, and confirm the order.
 
 ## Activate your subscription
 
@@ -32,7 +32,7 @@ No action is required on this page. Activation happens automatically. Close the 
 After activation, the subscription is available in Business Central. To confirm it is active:
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **OnePayroll Usage**, and then choose the related link.
-2. Check the **Status** field at the top of the page. It should show **Subscribed**.
+1. Check the **Status** field at the top of the page. It should show **Subscribed**.
 
 > [!TIP]
 > If Status shows **NotFound** shortly after purchasing, wait a few minutes and reload the page. Subscription activation can take a moment to propagate.
@@ -42,8 +42,8 @@ After activation, the subscription is available in Business Central. To confirm 
 To change to a different subscription plan:
 
 1. Sign in to the [Azure portal](https://portal.azure.com) and navigate to your OnePayroll Subscription resource.
-2. Choose **Change plan** and select the new plan.
-3. Confirm the change.
+1. Choose **Change plan** and select the new plan.
+1. Confirm the change.
 
 The new plan takes effect immediately and is applied from the next posted payroll run. The updated plan ID is reflected on the **OnePayroll Usage** page in Business Central once the change is processed.
 

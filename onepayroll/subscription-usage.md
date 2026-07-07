@@ -56,8 +56,8 @@ The middle section shows a hierarchical breakdown of all billable employee activ
 ### To view usage for a specific month
 
 1. On the **OnePayroll Usage** page, locate the year you want to review.
-2. Choose the expand arrow next to the year to show monthly rows.
-3. Choose the expand arrow next to a month to see individual employee entries.
+1. Choose the expand arrow next to the year to show monthly rows.
+1. Choose the expand arrow next to a month to see individual employee entries.
 
 ## Usage per Period chart
 

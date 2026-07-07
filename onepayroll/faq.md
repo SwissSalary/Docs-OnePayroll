@@ -310,6 +310,8 @@ A: No. Licensing checks and usage metering are automatically disabled in Busines
 ## Troubleshooting
 
 ### Q: Paycheck amount doesn't match my calculation
+
+A: Verify:
 1. Employee **pay rate** and **pay unit** correct
 2. **Hours worked** entered correctly (for work-based employees)
 3. **Deductions and taxes** calculated properly
