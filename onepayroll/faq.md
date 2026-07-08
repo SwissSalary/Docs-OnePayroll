@@ -297,7 +297,7 @@ See [View subscription usage](subscription-usage.md) to view your full usage his
 
 ### Q: What happens if my subscription is suspended?
 
-A: If your subscription is suspended in Microsoft Commercial Marketplace, OnePayroll blocks payroll run posting and stops reporting usage until the the subscription is reactivated through the Azure portal.
+A: If your subscription is suspended in Microsoft Commercial Marketplace, OnePayroll blocks payroll run posting and stops reporting usage until the subscription is reactivated through the Azure portal.
 
 ### Q: Do sandbox environments require a subscription?
 
