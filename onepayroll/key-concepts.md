@@ -348,7 +348,11 @@ A deduction required by law, such as FICA or income tax withholding.
 Performance issues that occur when payroll history grows large.
 
 **Subscription (Microsoft Commercial Marketplace)**
-A SaaS subscription to OnePayroll purchased through Microsoft Commercial Marketplace. The subscription is linked to your organization's Entra ID tenant and determines whether full payroll functionality is available or trial limits apply. See [Subscription and licensing overview](subscription-overview.md).
+A SaaS subscription to OnePayroll purchased through Microsoft Commercial Marketplace.
+
+The subscription is linked to your organization's Entra ID tenant and determines whether full payroll functionality is available or trial limits apply.
+
+See [Subscription and licensing overview](subscription-overview.md).
 
 ## T
 
@@ -401,7 +405,11 @@ Links to learning materials about OnePayroll features.
 An individual payroll entry or journal posting.
 
 **Trial Period**
-The period during which OnePayroll can be used without an active Microsoft Commercial Marketplace subscription. Trial mode allows up to 2 payroll runs (1 posted, 1 unposted) and up to 2 Self-Service employee registrations. After these limits are reached, a subscription is required to continue. See [Subscription and licensing overview](subscription-overview.md).
+The period during which OnePayroll can be used without an active Microsoft Commercial Marketplace subscription.
+
+Trial mode allows up to 2 payroll runs (1 posted, 1 unposted) and up to 2 Self-Service employee registrations. After these limits are reached, a subscription is required to continue. 
+
+See [Subscription and licensing overview](subscription-overview.md).
 
 ## U
 

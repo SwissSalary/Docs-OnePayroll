@@ -285,27 +285,23 @@ Once you reach a trial limit, a subscription is required to continue. See [Subsc
 
 ### Q: How do I subscribe?
 
-A: Purchase a subscription through Microsoft Commercial Marketplace. After completing the purchase, Microsoft Commercial Marketplace redirects you to the OnePayroll activation page to confirm your subscription details. No manual activation in Business Central is required — the subscription is automatically linked to your organization's Microsoft Entra ID tenant.
+A: Purchase a subscription through Microsoft Commercial Marketplace. After completing the purchase, Microsoft Commercial Marketplace redirects you to the OnePayroll activation page to confirm your subscription details.
 
 See [Subscribe to OnePayroll on Microsoft Commercial Marketplace](subscription-marketplace.md).
 
 ### Q: How is usage billed?
 
-A: You are charged once per employee, per calendar month they are paid. An employee paid in both January and February generates two charges — one for each month.
-
-Charges are submitted when the payroll run is **posted**. If a January run is not posted until February, the January charge is submitted in February alongside any February charges. In that case, both appear in February's billing submission: the January charge as **Billed late** and the February charge as **Billed on time** in the usage chart.
-
-Unposted or cancelled runs do not generate charges.
+A: You are charged once per employee per calendar month they are paid. Charges are submitted when the payroll run is posted. Cancelled or unposted runs do not generate charges.
 
 See [View subscription usage](subscription-usage.md) to view your full usage history.
 
 ### Q: What happens if my subscription is suspended?
 
-A: If your subscription is suspended in Microsoft Commercial Marketplace, OnePayroll blocks payroll run posting and stops reporting usage. Existing payroll data is not affected. To restore full access, reinstate the subscription through the Azure portal.
+A: If your subscription is suspended in Microsoft Commercial Marketplace, OnePayroll blocks payroll run posting and stops reporting usage until the the subscription is reactivated through the Azure portal.
 
 ### Q: Do sandbox environments require a subscription?
 
-A: No. Licensing checks and usage metering are automatically disabled in Business Central sandbox environments. You can use all features without restriction and no usage data is sent to Microsoft Commercial Marketplace.
+A: No. Sandbox environments skip all licensing checks and usage metering automatically. See [Subscription and licensing overview](subscription-overview.md).
 
 ## Troubleshooting
 

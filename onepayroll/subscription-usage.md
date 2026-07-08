@@ -21,19 +21,19 @@ The top section of the page shows your current subscription details:
 
 | Field | Description |
 |-------|-------------|
-| **Offer ID** | The Microsoft Commercial Marketplace offer identifier for your OnePayroll subscription |
-| **Plan ID** | The identifier of your active subscription plan |
-| **Status** | Current subscription status, color-coded for quick review |
-| **Company** | The Business Central company the data applies to |
+| Offer ID | The Microsoft Commercial Marketplace offer identifier for your OnePayroll subscription |
+| Plan ID | The identifier of your active subscription plan |
+| Status | Current subscription status, color-coded for quick review |
+| Company | The Business Central company the data applies to |
 
 **Status values:**
 
 | Status | Meaning |
 |--------|---------|
-| **Subscribed** | Your subscription is active. Full payroll functionality is available. |
-| **Suspended** | The subscription has been suspended in Microsoft Commercial Marketplace. Payroll posting is blocked until reinstated. |
-| **Unsubscribed** | The subscription has been cancelled. Contact your Azure administrator to resubscribe. |
-| **NotFound** | No subscription is linked to this tenant and offer. This is expected in sandbox environments. In production, it means a subscription has not been purchased or is not activated yet. |
+| Subscribed | Your subscription is active. Full payroll functionality is available. |
+| Suspended | The subscription has been suspended in Microsoft Commercial Marketplace. Payroll posting is blocked until reinstated. |
+| Unsubscribed | The subscription has been cancelled. Contact your Azure administrator to resubscribe. |
+| NotFound | No subscription is linked to this tenant and offer. This is expected in sandbox environments. In production, it means a subscription has not been purchased or is not activated yet. |
 
 ## Usage list
 
@@ -47,11 +47,11 @@ The middle section shows a hierarchical breakdown of all billable employee activ
 
 | Column | Description |
 |--------|-------------|
-| **Description** | Year, month name, or employee number depending on the level |
-| **Count** | Number of employees at the year or month level |
-| **Employee No.** | The employee identifier (visible at the employee level) |
-| **Reported** | Ticked when the entry has been successfully submitted to Microsoft Commercial Marketplace for billing |
-| **Counted At** | When the employee was recorded for this billing period |
+| Description | Year, month name, or employee number depending on the level |
+| Count | Number of employees at the year or month level |
+| Employee No. | The employee identifier (visible at the employee level) |
+| Reported | Ticked when the entry has been successfully submitted to Microsoft Commercial Marketplace for billing |
+| Counted At | When the employee was recorded for this billing period |
 
 ### To view usage for a specific month
 
@@ -65,8 +65,8 @@ The **Usage per Period** chart at the bottom of the page shows employee counts b
 
 | Series | Description |
 |--------|-------------|
-| **Billed on time** | Charges for employees paid in a month, submitted in that same month |
-| **Billed late** | Charges for employees paid in a month but submitted later because the payroll run was posted after the month closed. |
+| Billed on time | Charges for employees paid in a month, submitted in that same month |
+| Billed late | Charges for employees paid in a month but submitted later because the payroll run was posted after the month closed. |
 
 Use this chart to:
 - Verify that employee counts align with your expectations for each month

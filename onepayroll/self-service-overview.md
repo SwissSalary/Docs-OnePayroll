@@ -27,7 +27,7 @@ Authentication is handled exclusively through Microsoft Entra External ID. The p
 Registration is triggered automatically from within Business Central. When you enter a private email address on an employee card and the Self-Service Portal is enabled, the portal sends an invitation email to that address. The employee follows the link in the email to set up their account.
 
 > [!NOTE]
-> Without an active OnePayroll subscription, employee registration is limited to 2 employees. Subscribe through Microsoft Commercial Marketplace to register employees without restriction. See [Subscription and licensing overview](subscription-overview.md).
+> Without an active OnePayroll subscription, employee registration is limited to 2 employees. See [Subscription and licensing overview](subscription-overview.md).
 
 You can monitor registration status for all employees from the **OnePayroll Self-Service Setup** page:
 

@@ -57,24 +57,9 @@ Charges are submitted when a payroll run is **posted**. If a January payroll run
 
 Cancelled payroll runs do not generate charges.
 
-## What's available without a subscription
-
-| | Trial (no subscription) | Active subscription |
-|---|---|---|
-| Create and post payroll runs | Up to 2 total | Unlimited |
-| Self-Service employee registration | Up to 2 employees | Unlimited |
-| View payroll data | Yes | Yes |
-
-> [!NOTE]
-> Plan-specific features — such as Time Tracking, Accounting integrations, and advanced support — require an active subscription with a plan that includes those features. See [Subscription plans](#subscription-plans).
-
 ## Sandbox environments
 
 Licensing checks and usage metering are automatically disabled in Business Central sandbox environments. You can use all features without restriction and no usage data is sent to Microsoft Commercial Marketplace.
-
-## Service availability
-
-If OnePayroll cannot reach the licensing service, it treats your tenant as licensed rather than blocking your work. This fail-open behavior ensures a temporary service outage does not disrupt payroll processing.
 
 ## Related information
 

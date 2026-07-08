@@ -23,7 +23,7 @@ OnePayroll subscriptions are purchased and managed through Microsoft Commercial 
 
 ## Activate your subscription
 
-After purchase, Microsoft Commercial Marketplace redirects your browser to the OnePayroll activation page. This page confirms your subscription details — offer ID, plan, and the Microsoft Entra ID tenant that will be licensed.
+After purchase, Microsoft Commercial Marketplace redirects your browser to the OnePayroll activation page. This page confirms your subscription details.
 
 No action is required on this page. Activation happens automatically. Close the page once you have confirmed the details.
 
@@ -35,7 +35,7 @@ After activation, the subscription is available in Business Central. To confirm 
 1. Check the **Status** field at the top of the page. It should show **Subscribed**.
 
 > [!TIP]
-> If Status shows **NotFound** shortly after purchasing, wait a few minutes and reload the page. Subscription activation can take a moment to propagate.
+> If Status shows **NotFound** shortly after purchasing, wait a few minutes and reload the page. It may take a moment for the subscription to become active in Business Central.
 
 ## Change your plan
 
