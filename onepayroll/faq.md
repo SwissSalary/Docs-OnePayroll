@@ -285,7 +285,7 @@ Once you reach a trial limit, a subscription is required to continue. See [Subsc
 
 ### Q: How do I subscribe?
 
-A: Purchase a subscription through Microsoft Commercial Marketplace. After completing the purchase, Microsoft Commercial Marketplace redirects you to the OnePayroll activation page to confirm your subscription details. No manual activation in Business Central is required — the subscription is automatically linked to your organization's Entra ID tenant.
+A: Purchase a subscription through Microsoft Commercial Marketplace. After completing the purchase, Microsoft Commercial Marketplace redirects you to the OnePayroll activation page to confirm your subscription details. No manual activation in Business Central is required — the subscription is automatically linked to your organization's Microsoft Entra ID tenant.
 
 See [Subscribe to OnePayroll on Microsoft Commercial Marketplace](subscription-marketplace.md).
 

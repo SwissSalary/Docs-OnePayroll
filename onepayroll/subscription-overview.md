@@ -26,7 +26,7 @@ Once you reach a trial limit, attempting to post an additional payroll run or re
 
 ## Subscribing
 
-Subscriptions are purchased through Microsoft Commercial Marketplace. After purchase, the subscription is automatically linked to your organization's Entra ID tenant — no manual activation is required in Business Central. See [Subscribe to OnePayroll on Microsoft Commercial Marketplace](subscription-marketplace.md).
+Subscriptions are purchased through Microsoft Commercial Marketplace. After purchase, the subscription is automatically linked to your organization's Microsoft Entra ID tenant — no manual activation is required in Business Central. See [Subscribe to OnePayroll on Microsoft Commercial Marketplace](subscription-marketplace.md).
 
 ## Subscription plans
 

@@ -13,6 +13,9 @@ This glossary defines key terms and concepts used throughout OnePayroll.
 
 ## A
 
+**Active Employee (billing)**
+An employee who is paid in a given calendar month, generating one charge for that month. An employee paid across multiple months generates one charge per month. An employee paid more than once within the same month still generates only one charge for that month. Cancelled runs do not generate charges.
+
 **Allocation Method**
 The way an employee's net pay is distributed to different bank accounts or payment methods. Common allocation methods are Primary (all pay to first account), Fixed Amount (specific dollar amount to each account), and Percentage (percentage of pay to each account).
 
@@ -21,9 +24,6 @@ The total estimated compensation for an employee for a full year, used in salary
 
 **Approval Workflow**
 An optional workflow that requires payroll to be approved by a manager before posting to the general ledger.
-
-**Active Employee (billing)**
-An employee who is paid in a given calendar month, generating one charge for that month. An employee paid across multiple months generates one charge per month. An employee paid more than once within the same month still generates only one charge for that month. Cancelled runs do not generate charges.
 
 ## B
 

@@ -9,7 +9,7 @@ sws.date: 07/07/2026
 
 # Subscribe to OnePayroll on Microsoft Commercial Marketplace
 
-OnePayroll subscriptions are purchased and managed through Microsoft Commercial Marketplace. The subscription is linked to your organization's Entra ID tenant, so all Business Central users in your organization benefit from the same subscription.
+OnePayroll subscriptions are purchased and managed through Microsoft Commercial Marketplace. The subscription is linked to your organization's Microsoft Entra ID tenant, so all Business Central users in your organization benefit from the same subscription.
 
 ## Purchase a subscription
 
@@ -23,7 +23,7 @@ OnePayroll subscriptions are purchased and managed through Microsoft Commercial 
 
 ## Activate your subscription
 
-After purchase, Microsoft Commercial Marketplace redirects your browser to the OnePayroll activation page. This page confirms your subscription details — offer ID, plan, and the Entra ID tenant that will be licensed.
+After purchase, Microsoft Commercial Marketplace redirects your browser to the OnePayroll activation page. This page confirms your subscription details — offer ID, plan, and the Microsoft Entra ID tenant that will be licensed.
 
 No action is required on this page. Activation happens automatically. Close the page once you have confirmed the details.
 

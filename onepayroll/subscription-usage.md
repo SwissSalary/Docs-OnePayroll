@@ -33,7 +33,7 @@ The top section of the page shows your current subscription details:
 | **Subscribed** | Your subscription is active. Full payroll functionality is available. |
 | **Suspended** | The subscription has been suspended in Microsoft Commercial Marketplace. Payroll posting is blocked until reinstated. |
 | **Unsubscribed** | The subscription has been cancelled. Contact your Azure administrator to resubscribe. |
-| **NotFound** | No subscription is linked to this tenant and offer. This is expected in sandbox environments. In production, it means a subscription has not been purchased or has not yet activated. |
+| **NotFound** | No subscription is linked to this tenant and offer. This is expected in sandbox environments. In production, it means a subscription has not been purchased or is not activated yet. |
 
 ## Usage list
 
