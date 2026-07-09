@@ -272,6 +272,37 @@ A: Yes. Most reports include:
 
 Department and pay type breakdowns available.
 
+## Subscription and licensing
+
+### Q: What can I do without a subscription?
+
+A: Without an active Microsoft Commercial Marketplace subscription, OnePayroll operates in trial mode. You can:
+- Create and post up to 2 payroll runs total (1 posted, 1 unposted)
+- Register up to 2 employees in the Self-Service Portal
+- Use most other payroll features without restriction
+
+Once you reach a trial limit, a subscription is required to continue. See [Subscription and licensing overview](subscription-overview.md).
+
+### Q: How do I subscribe?
+
+A: Purchase a subscription through Microsoft Commercial Marketplace. After completing the purchase, Microsoft Commercial Marketplace redirects you to the OnePayroll activation page to confirm your subscription details.
+
+See [Subscribe to OnePayroll on Microsoft Commercial Marketplace](subscription-marketplace.md).
+
+### Q: How is usage billed?
+
+A: You are charged once per employee per calendar month they are paid. Charges are submitted when the payroll run is posted. Cancelled or unposted runs do not generate charges.
+
+See [View subscription usage](subscription-usage.md) to view your full usage history.
+
+### Q: What happens if my subscription is suspended?
+
+A: If your subscription is suspended in Microsoft Commercial Marketplace, OnePayroll blocks payroll run posting and stops reporting usage until the subscription is reactivated through the Azure portal.
+
+### Q: Do sandbox environments require a subscription?
+
+A: No. Sandbox environments skip all licensing checks and usage metering automatically. See [Subscription and licensing overview](subscription-overview.md).
+
 ## Troubleshooting
 
 ### Q: Paycheck amount doesn't match my calculation

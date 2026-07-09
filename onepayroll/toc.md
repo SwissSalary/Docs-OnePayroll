@@ -5,6 +5,10 @@
 ## [Set up employees and process your first payroll](setup-first-payroll.md)
 ## [Key concepts and terminology](key-concepts.md)
 ## [Payroll Manager Role Center](role-center.md)
+## Subscription and licensing
+### [Subscription and licensing overview](subscription-overview.md)
+### [Subscribe to OnePayroll](subscription-marketplace.md)
+### [View subscription usage](subscription-usage.md)
 
 # Business functionality
 ## Core payroll processing
