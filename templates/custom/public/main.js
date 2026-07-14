@@ -23,6 +23,21 @@ export default {
     },
     start: () => {
 
+    // ===== Interactive task list checkboxes =====
+    const checkboxes = document.querySelectorAll('.task-list-item > input[type="checkbox"]');
+    if (checkboxes.length > 0) {
+        const storageKey = 'task-list:' + window.location.pathname;
+        const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+        checkboxes.forEach((cb, i) => {
+            cb.removeAttribute('disabled');
+            if (saved[i]) cb.checked = true;
+            cb.addEventListener('change', () => {
+                saved[i] = cb.checked;
+                localStorage.setItem(storageKey, JSON.stringify(saved));
+            });
+        });
+    }
+
     // ===== Footer slogans =====
     const target = document.getElementById('sws-slogans');
     if (!target) return; // Footer not present, nothing to do
