@@ -34,6 +34,11 @@ export default {
         return cb;
     }
 
+    function saveTaskState(storageKey, saved, index, checked) {
+        saved[index] = checked;
+        localStorage.setItem(storageKey, JSON.stringify(saved));
+    }
+
     function upgradeTaskItem(li, index, saved, storageKey) {
         const CHECKED_RE = /^\[x\] /i;
         const UNCHECKED_RE = /^\[ \] /i;
@@ -47,10 +52,7 @@ export default {
         if (!isChecked && !UNCHECKED_RE.test(text)) return false;
 
         const cb = createCheckbox(index in saved ? saved[index] : isChecked);
-        cb.addEventListener('change', () => {
-            saved[index] = cb.checked;
-            localStorage.setItem(storageKey, JSON.stringify(saved));
-        });
+        cb.addEventListener('change', () => saveTaskState(storageKey, saved, index, cb.checked));
 
         firstNode.nodeValue = text.slice(TASK_PREFIX_LEN);
         li.insertBefore(cb, firstNode);
