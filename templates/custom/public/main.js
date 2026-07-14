@@ -24,17 +24,32 @@ export default {
     start: () => {
 
     // ===== Interactive task list checkboxes =====
-    const checkboxes = document.querySelectorAll('.task-list-item > input[type="checkbox"]');
-    if (checkboxes.length > 0) {
+    // DocFX renders `- [ ]` as literal text, not <input> elements.
+    // Transform matching list items into interactive checkboxes backed by localStorage.
+    {
         const storageKey = 'task-list:' + window.location.pathname;
         const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
-        checkboxes.forEach((cb, i) => {
-            cb.removeAttribute('disabled');
-            if (saved[i]) cb.checked = true;
+        let cbIndex = 0;
+        document.querySelectorAll('li').forEach(li => {
+            const firstNode = li.firstChild;
+            if (!firstNode || firstNode.nodeType !== Node.TEXT_NODE) return;
+            const text = firstNode.nodeValue;
+            const isUnchecked = text.startsWith('[ ] ');
+            const isChecked = text.startsWith('[x] ') || text.startsWith('[X] ');
+            if (!isUnchecked && !isChecked) return;
+
+            const i = cbIndex++;
+            const cb = document.createElement('input');
+            cb.type = 'checkbox';
+            cb.className = 'task-list-item-checkbox';
+            cb.checked = (i in saved) ? saved[i] : isChecked;
             cb.addEventListener('change', () => {
                 saved[i] = cb.checked;
                 localStorage.setItem(storageKey, JSON.stringify(saved));
             });
+            firstNode.nodeValue = text.slice(4);
+            li.insertBefore(cb, firstNode);
+            li.classList.add('task-list-item');
         });
     }
 
