@@ -34,12 +34,7 @@ export default {
         return cb;
     }
 
-    function toHash(str) {
-        const crypto = require('crypto'),
-            hash = crypto.getHashes();
-
-        return crypto.createHash('sha1').update(str).digest('hex');
-    }
+    const toHash = s => [...s].reduce((h, c) => (h * 33 ^ c.charCodeAt(0)) >>> 0, 5381).toString(36);
 
     function saveTaskState(storageKey, saved, key, checked) {
         saved[key] = checked;
@@ -62,12 +57,13 @@ export default {
         const isChecked = CHECKED_RE.test(text);
         if (!isChecked && !UNCHECKED_RE.test(text)) return false;
 
-        const key = toHash(text.slice(TASK_PREFIX_LEN).trim());
+        const textValue = text.slice(TASK_PREFIX_LEN).trim();
+        const key = toHash(textValue);
         const cb = createCheckbox(key in saved ? saved[key] : isChecked);
         cb.addEventListener('change', () => saveTaskState(storageKey, saved, key, cb.checked));
-        cb.setAttribute('aria-label', li.textContent.trim() || 'Task item');
+        cb.setAttribute('aria-label', textValue || 'Task item');
 
-        firstNode.nodeValue = text.slice(TASK_PREFIX_LEN);
+        firstNode.nodeValue = textValue;
         li.insertBefore(cb, firstNode);
         li.classList.add('task-list-item');
         return true;
