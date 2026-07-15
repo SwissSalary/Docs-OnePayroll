@@ -34,6 +34,13 @@ export default {
         return cb;
     }
 
+    function toHash(str) {
+        const crypto = require('crypto'),
+            hash = crypto.getHashes();
+
+        return crypto.createHash('sha1').update(str).digest('hex');
+    }
+
     function saveTaskState(storageKey, saved, key, checked) {
         saved[key] = checked;
         localStorage.setItem(storageKey, JSON.stringify(saved));
@@ -51,7 +58,7 @@ export default {
         const isChecked = CHECKED_RE.test(text);
         if (!isChecked && !UNCHECKED_RE.test(text)) return false;
 
-        const key = text.slice(TASK_PREFIX_LEN).trim();
+        const key = toHash(text.slice(TASK_PREFIX_LEN).trim());
         const cb = createCheckbox(key in saved ? saved[key] : isChecked);
         cb.addEventListener('change', () => saveTaskState(storageKey, saved, key, cb.checked));
 
