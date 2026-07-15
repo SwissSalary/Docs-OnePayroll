@@ -34,7 +34,16 @@ export default {
         return cb;
     }
 
-    const toHash = s => [...s].reduce((h, c) => (h * 33 ^ c.charCodeAt(0)) >>> 0, 5381).toString(36);
+    function hash(str) {
+        let hash = 2166136261;
+
+        for (let i = 0; i < str.length; i++) {
+            hash ^= str.charCodeAt(i);
+            hash = Math.imul(hash, 16777619);
+        }
+
+        return (hash >>> 0).toString(16);
+    }
 
     function saveTaskState(storageKey, saved, key, checked) {
         saved[key] = checked;
@@ -58,7 +67,7 @@ export default {
         if (!isChecked && !UNCHECKED_RE.test(text)) return false;
 
         const textValue = text.slice(TASK_PREFIX_LEN).trim();
-        const key = toHash(textValue);
+        const key = hash(textValue);
         const cb = createCheckbox(key in saved ? saved[key] : isChecked);
         cb.addEventListener('change', () => saveTaskState(storageKey, saved, key, cb.checked));
         cb.setAttribute('aria-label', textValue || 'Task item');
