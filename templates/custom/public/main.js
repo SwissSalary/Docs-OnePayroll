@@ -43,7 +43,11 @@ export default {
 
     function saveTaskState(storageKey, saved, key, checked) {
         saved[key] = checked;
-        localStorage.setItem(storageKey, JSON.stringify(saved));
+        try {
+            localStorage.setItem(storageKey, JSON.stringify(saved));
+        } catch {
+            // Ignore storage errors
+        }
     }
 
     function upgradeTaskItem(li, saved, storageKey) {
@@ -61,6 +65,7 @@ export default {
         const key = toHash(text.slice(TASK_PREFIX_LEN).trim());
         const cb = createCheckbox(key in saved ? saved[key] : isChecked);
         cb.addEventListener('change', () => saveTaskState(storageKey, saved, key, cb.checked));
+        cb.setAttribute('aria-label', li.textContent.trim() || 'Task item');
 
         firstNode.nodeValue = text.slice(TASK_PREFIX_LEN);
         li.insertBefore(cb, firstNode);
@@ -70,7 +75,12 @@ export default {
 
     function initTaskListCheckboxes() {
         const storageKey = 'task-list:' + window.location.pathname;
-        const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+        let saved = {};
+        try {
+            saved = JSON.parse(localStorage.getItem(storageKey) || '{}') || {};
+        } catch {
+            // Nothing to do here
+        }
         document.querySelectorAll('li').forEach(li => upgradeTaskItem(li, saved, storageKey));
     }
     initTaskListCheckboxes();
