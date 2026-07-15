@@ -434,3 +434,17 @@ body[data-layout="landing"] article>hr:last-of-type+p {
     color: var(--onepayroll-primary-red);
     border-color: var(--onepayroll-primary-red);
 }
+
+/* -------------------------------------------------------------------------
+   19. Task list checkboxes
+   ------------------------------------------------------------------------- */
+li.task-list-item {
+    list-style: none;
+    margin-left: -1.5em;
+}
+
+li.task-list-item .task-list-item-checkbox {
+    margin-right: 0.5em;
+    cursor: pointer;
+    accent-color: var(--onepayroll-primary-red);
+}

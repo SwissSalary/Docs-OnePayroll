@@ -23,6 +23,73 @@ export default {
     },
     start: () => {
 
+    // ===== Interactive task list checkboxes =====
+    // DocFX renders `- [ ]` as literal text, not <input> elements.
+    // Transform matching list items into interactive checkboxes backed by localStorage.
+    function createCheckbox(checked) {
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.className = 'task-list-item-checkbox';
+        cb.checked = checked;
+        return cb;
+    }
+
+    function hash(str) {
+        let hash = 2166136261;
+
+        for (let i = 0; i < str.length; i++) {
+            hash ^= str.charCodeAt(i);
+            hash = Math.imul(hash, 16777619);
+        }
+
+        return (hash >>> 0).toString(16);
+    }
+
+    function saveTaskState(storageKey, saved, key, checked) {
+        saved[key] = checked;
+        try {
+            localStorage.setItem(storageKey, JSON.stringify(saved));
+        } catch {
+            // Ignore storage errors
+        }
+    }
+
+    function upgradeTaskItem(li, saved, storageKey) {
+        const CHECKED_RE = /^\[x\] /i;
+        const UNCHECKED_RE = /^\[ \] /i;
+        const TASK_PREFIX_LEN = 4;
+
+        const firstNode = li.firstChild;
+        if (!firstNode || firstNode.nodeType !== Node.TEXT_NODE) return false;
+
+        const text = firstNode.nodeValue;
+        const isChecked = CHECKED_RE.test(text);
+        if (!isChecked && !UNCHECKED_RE.test(text)) return false;
+
+        const textValue = text.slice(TASK_PREFIX_LEN).trim();
+        const key = hash(li.textContent.slice(TASK_PREFIX_LEN).trim());
+        const cb = createCheckbox(key in saved ? saved[key] : isChecked);
+        cb.addEventListener('change', () => saveTaskState(storageKey, saved, key, cb.checked));
+        cb.setAttribute('aria-label', li.textContent.slice(TASK_PREFIX_LEN).trim() || 'Task item');
+
+        firstNode.nodeValue = textValue;
+        li.insertBefore(cb, firstNode);
+        li.classList.add('task-list-item');
+        return true;
+    }
+
+    function initTaskListCheckboxes() {
+        const storageKey = 'task-list:' + window.location.pathname;
+        let saved = {};
+        try {
+            saved = JSON.parse(localStorage.getItem(storageKey) || '{}') || {};
+        } catch {
+            // Nothing to do here
+        }
+        document.querySelectorAll('li').forEach(li => upgradeTaskItem(li, saved, storageKey));
+    }
+    initTaskListCheckboxes();
+
     // ===== Footer slogans =====
     const target = document.getElementById('sws-slogans');
     if (!target) return; // Footer not present, nothing to do
