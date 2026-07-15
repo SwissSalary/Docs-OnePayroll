@@ -67,10 +67,10 @@ export default {
         if (!isChecked && !UNCHECKED_RE.test(text)) return false;
 
         const textValue = text.slice(TASK_PREFIX_LEN).trim();
-        const key = hash(textValue);
+        const key = hash(li.textContent.slice(TASK_PREFIX_LEN).trim());
         const cb = createCheckbox(key in saved ? saved[key] : isChecked);
         cb.addEventListener('change', () => saveTaskState(storageKey, saved, key, cb.checked));
-        cb.setAttribute('aria-label', textValue || 'Task item');
+        cb.setAttribute('aria-label', li.textContent.slice(TASK_PREFIX_LEN).trim() || 'Task item');
 
         firstNode.nodeValue = textValue;
         li.insertBefore(cb, firstNode);
