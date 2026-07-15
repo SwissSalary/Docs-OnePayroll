@@ -34,12 +34,12 @@ export default {
         return cb;
     }
 
-    function saveTaskState(storageKey, saved, index, checked) {
-        saved[index] = checked;
+    function saveTaskState(storageKey, saved, key, checked) {
+        saved[key] = checked;
         localStorage.setItem(storageKey, JSON.stringify(saved));
     }
 
-    function upgradeTaskItem(li, index, saved, storageKey) {
+    function upgradeTaskItem(li, saved, storageKey) {
         const CHECKED_RE = /^\[x\] /i;
         const UNCHECKED_RE = /^\[ \] /i;
         const TASK_PREFIX_LEN = 4;
@@ -51,8 +51,9 @@ export default {
         const isChecked = CHECKED_RE.test(text);
         if (!isChecked && !UNCHECKED_RE.test(text)) return false;
 
-        const cb = createCheckbox(index in saved ? saved[index] : isChecked);
-        cb.addEventListener('change', () => saveTaskState(storageKey, saved, index, cb.checked));
+        const key = text.slice(TASK_PREFIX_LEN).trim();
+        const cb = createCheckbox(key in saved ? saved[key] : isChecked);
+        cb.addEventListener('change', () => saveTaskState(storageKey, saved, key, cb.checked));
 
         firstNode.nodeValue = text.slice(TASK_PREFIX_LEN);
         li.insertBefore(cb, firstNode);
@@ -63,10 +64,7 @@ export default {
     function initTaskListCheckboxes() {
         const storageKey = 'task-list:' + window.location.pathname;
         const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
-        let index = 0;
-        document.querySelectorAll('li').forEach(li => {
-            if (upgradeTaskItem(li, index, saved, storageKey)) index++;
-        });
+        document.querySelectorAll('li').forEach(li => upgradeTaskItem(li, saved, storageKey));
     }
     initTaskListCheckboxes();
 
