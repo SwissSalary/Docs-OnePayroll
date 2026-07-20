@@ -1,0 +1,5 @@
+# Global owners
+* @SwissSalary/OnePayroll
+
+# GitHub actions and workflows
+/.github/workflows/ @SwissSalary/Actions
