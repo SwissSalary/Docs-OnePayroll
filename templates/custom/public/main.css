@@ -13,7 +13,8 @@
    ------------------------------------------------------------------------- */
 :root {
     /* Brand colours (from onepayroll.com/styles/variables.css) */
-    --onepayroll-primary-red: #db0000;
+    --onepayroll-logo-red: #db0000;
+    --onepayroll-primary-red: var(--onepayroll-logo-red);
     --onepayroll-primary-red-rgb: 219, 0, 0;
     --onepayroll-secondary-red: #aa0000;
     --onepayroll-tertiary-red: #990000;
@@ -45,14 +46,15 @@
 
 /* Dark mode overrides */
 [data-bs-theme="dark"] {
-    --onepayroll-primary-red: #db0000;
-    --onepayroll-primary-red-rgb: 219, 0, 0;
+    --onepayroll-primary-red: #ff3b3b;
+    --onepayroll-primary-red-rgb: 255, 59, 59;
     --onepayroll-font-color: #ffffff;
     --onepayroll-bg-color: #0B1215;
     --onepayroll-primary-gray: #e0e0e0;
 
-    --bs-primary: #db0000 !important;
-    --bs-primary-rgb: 219, 0, 0 !important;
+    /* ---- Bootstrap overrides ---- */
+    --bs-primary: var(--onepayroll-primary-red) !important;
+    --bs-primary-rgb: var(--onepayroll-primary-red-rgb) !important;
     --bs-link-color: #ff4d4d !important;
     --bs-link-color-rgb: 255, 77, 77 !important;
     --bs-link-hover-color: #ff6666 !important;
@@ -97,13 +99,13 @@ article h3 {
    4. Links
    ------------------------------------------------------------------------- */
 a {
-    color: var(--onepayroll-primary-red);
+    color: var(--bs-link-color);
     text-decoration: none;
     transition: color 0.15s ease-in-out;
 }
 
 a:hover {
-    color: var(--onepayroll-secondary-red);
+    color: var(--bs-link-hover-color);
     text-decoration: underline;
 }
 
