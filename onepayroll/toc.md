@@ -30,6 +30,7 @@
 ### [Employee pay units](employee-pay-units.md)
 ### [Pay unit conversions](pay-units-conversions.md)
 ### [Employee types and pay units](pay-units-employee-types.md)
+### [Employee job titles](employee-job-titles.md)
 ### [Departments and work locations](departments-work-locations.md)
 ### [Employee dimensions](employee-dimensions.md)
 ### [Employee bank account information](employee-bank-accounts.md)
