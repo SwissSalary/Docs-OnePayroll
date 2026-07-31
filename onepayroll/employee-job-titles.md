@@ -24,7 +24,7 @@ Job titles identify a person's role or position within an organization. In OnePa
 | `Job Category` | Select the EEO job category that best represents the position. |
 | `Detailed Description` | Enter additional information about the position's duties and responsibilities. |
 
-The `Employees` column on the `Job Titles` page shows the number of employees assigned to each job title.
+The `Employees` field on the list page shows the number of employees assigned to each job title.
 
 ## Assign an EEO job category
 
@@ -33,121 +33,82 @@ The `Job Category` field groups job titles into the occupational categories used
 The available job categories are:
 
 ### Executive/Senior-Level Officials and Managers
-
 Employees who establish organizational strategy, direct major business functions, or exercise broad decision-making authority.
-
 Examples include:
-
 - Chief Executive Officer
 - Chief Financial Officer
 - President
 - Executive Vice President
 - Managing Director
-
 ### First/Mid-Level Officials and Managers
-
 Employees who manage departments, teams, locations, or operational functions but are not part of the organization's highest executive level.
-
 Examples include:
-
 - Payroll Manager
 - Accounting Manager
 - Operations Manager
 - Department Manager
 - Production Manager
-
 ### Professionals
-
 Employees whose positions require specialized knowledge, professional judgment, or education in a recognized field.
-
 Examples include:
-
 - Accountant
 - Attorney
 - Data Analyst
 - Engineer
 - Human Resources Specialist
 - Software Developer
-
 ### Technicians
-
 Employees who apply technical knowledge, procedures, or specialized training to support professional, scientific, or operational work.
-
 Examples include:
-
 - Engineering Technician
 - IT Support Technician
 - Laboratory Technician
 - Computer Support Specialist
 - Drafter
-
 ### Sales Workers
-
 Employees whose primary responsibility is selling products, services, property, or investments.
-
 Examples include:
-
 - Sales Representative
 - Account Executive
 - Retail Sales Associate
 - Insurance Sales Agent
 - Real Estate Sales Agent
-
 ### Administrative Support Workers
-
 Employees who provide clerical, administrative, scheduling, communication, records, or office support.
-
 Examples include:
-
 - Administrative Assistant
 - Payroll Clerk
 - Receptionist
 - Data Entry Clerk
 - Office Coordinator
-
 ### Craft Workers
-
 Employees in skilled trades that typically require substantial training, experience, or apprenticeship.
-
 Examples include:
-
 - Carpenter
 - Electrician
 - Plumber
 - Mechanic
 - Welder
 - HVAC Technician
-
 ### Operatives
-
 Employees who operate machinery, vehicles, production equipment, or processing systems.
-
 Examples include:
-
 - Machine Operator
 - Production Operator
 - Truck Driver
 - Forklift Operator
 - Assembly Worker
-
 ### Laborers and Helpers
-
 Employees who perform manual labor or assist skilled workers and generally require limited specialized training.
-
 Examples include:
-
 - Construction Laborer
 - Warehouse Laborer
 - Material Handler
 - Freight Handler
 - Trade Helper
-
 ### Service Workers
-
 Employees who provide protective, food, cleaning, personal-care, healthcare-support, or similar services.
-
 Examples include:
-
 - Security Officer
 - Cook
 - Janitor
