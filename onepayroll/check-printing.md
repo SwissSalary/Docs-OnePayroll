@@ -7,7 +7,7 @@ sws.topic: how-to
 sws.date: 02/23/2026
 ---
 
-# Check printing and management
+# Check printing and management (test)
 
 OnePayroll prints employee paychecks by delegating to the standard Business Central check printing process. When a payroll run is created, payment batches are automatically created for employees, grouped by payment method. Batches for employees with a check payment method are processed from the **Payroll Payments** page.
 
