@@ -13,7 +13,7 @@ The Benefits module in OnePayroll allows you to configure and manage employee be
 
 ## Key Concepts
 
-Understanding the structure of the Benefits module helps you configure and maintain benefit programs effectively:
+Understanding from structure of the Benefits module helps you configure and maintain benefit programs effectively:
 
 ### Benefit Types
 
