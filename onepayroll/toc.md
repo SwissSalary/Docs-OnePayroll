@@ -95,6 +95,7 @@
 ## [Troubleshoot document issues](self-service-troubleshooting-documents.md)
 
 # OnePayroll API
+## [REST API](REST-API.md)
 
 
 # Help and reference
