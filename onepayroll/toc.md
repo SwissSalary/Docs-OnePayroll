@@ -94,6 +94,8 @@
 ## [Troubleshoot sign-in issues](self-service-troubleshooting-sign-in.md)
 ## [Troubleshoot document issues](self-service-troubleshooting-documents.md)
 
+### OnePayroll API
+
 # Help and reference
 ## [FAQ](faq.md)
 ## [Troubleshooting and errors](errors-troubleshooting.md)
