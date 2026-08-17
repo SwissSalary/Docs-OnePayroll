@@ -6,7 +6,7 @@ The **OnePayroll REST API** enables external applications and services to secure
 
 Using the API, approved systems can exchange payroll and related data directly with OnePayroll without relying on manual file transfers.
 
-This allows organizations to connect OnePayroll with systems such as:
+This allows organizations to connect other systems with OnePayroll, for example:
 
 - HR and HRIS platforms
 - Finance and ERP systems
@@ -122,30 +122,6 @@ OData should be used where specifically supported or where the required informat
 
 ---
 
-## API Reference
-
-The **OnePayroll API Reference** contains the technical documentation required to integrate with OnePayroll.
-
-The API documentation includes:
-
-- Authentication
-- Base URL
-- API versions
-- Companies
-- Employees
-- Available API resources
-- Supported HTTP methods
-- Request parameters
-- Response fields
-- Filtering
-- Pagination
-- Error responses
-- Code examples
-
-Refer to the appropriate resource within the API Reference for endpoint-specific requirements.
-
----
-
 ## API Structure
 
 The OnePayroll REST API is organized into logical resources.
@@ -243,38 +219,4 @@ Examples may include:
 - Employer taxes
 - Payroll compliance data
 
----
 
-## HTTP Response Codes
-
-The OnePayroll API uses standard HTTP response codes.
-
-| Status Code | Description |
-|---|---|
-| `200 OK` | Request completed successfully |
-| `201 Created` | Resource created successfully |
-| `204 No Content` | Request completed successfully with no response body |
-| `400 Bad Request` | The request is invalid |
-| `401 Unauthorized` | Authentication is required or invalid |
-| `403 Forbidden` | The application does not have permission to access the resource |
-| `404 Not Found` | The requested resource could not be found |
-| `409 Conflict` | The request conflicts with the current state of the resource |
-| `429 Too Many Requests` | Too many API requests were submitted |
-| `500 Internal Server Error` | An unexpected server error occurred |
-
----
-
-## Data Format
-
-OnePayroll REST API requests and responses use **JSON**.
-
-Example response:
-
-```json
-{
-  "id": "12345",
-  "employeeNumber": "10001",
-  "firstName": "Jane",
-  "lastName": "Smith",
-  "status": "Active"
-}
