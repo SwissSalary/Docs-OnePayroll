@@ -97,7 +97,6 @@
 # OnePayroll API
 ## [REST API](REST-API.md)
 
-
 # Help and reference
 ## [FAQ](faq.md)
 ## [Troubleshooting and errors](errors-troubleshooting.md)
