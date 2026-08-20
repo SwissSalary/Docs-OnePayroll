@@ -1,3 +1,12 @@
+---
+title: OnePayroll REST API
+description: Learn about the OnePayroll REST API and how to integrate with OnePayroll services.
+author: keresse1
+sws.service: onepayroll
+sws.topic: overview
+sws.date: 08/19/2026
+---
+
 # OnePayroll REST API
 
 ## Introduction
@@ -55,7 +64,7 @@ OAuth helps ensure that integrations are authenticated and that access can be co
 
 OnePayroll integrations should use the supported OAuth authentication method when connecting to the REST API.
 
-Detailed authentication and configuration instructions are provided in the [Authentication](./authentication.md) section of the OnePayroll API documentation.
+For guidance on configuring OAuth for the OnePayroll REST API, watch the [OnePayroll OAuth setup video](https://www.youtube.com/watch?v=b7t3hnelLy0).
 
 ---
 
@@ -82,7 +91,7 @@ Although REST APIs and OData both allow external applications to access data ove
 
 Please see [Azure REST API Documentation](https://learn.microsoft.com/en-us/rest/api/azure/) for more details
 
-For most new OnePayroll integrations, the **OnePayroll REST API should be the preferred integration method when an appropriate endpoint is available**.
+For most new OnePayroll integrations, the **OnePayroll REST API** should be the preferred integration method when an appropriate endpoint is available.
 
 ### OData
 
