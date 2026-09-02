@@ -9,8 +9,6 @@ sws.date: 08/19/2026
 
 # OnePayroll REST API
 
-## Introduction
-
 The **OnePayroll REST API** enables external applications and services to securely integrate with OnePayroll.
 
 Using the API, approved systems can exchange payroll and related data directly with OnePayroll without relying on manual file transfers.
@@ -28,8 +26,6 @@ This allows organizations to connect other systems with OnePayroll, for example:
 The REST API provides a standardized integration layer for retrieving and, where supported, creating or updating OnePayroll data.
 
 Detailed information about available resources, endpoints, request parameters, and response structures is provided in the **OnePayroll API Reference**.
-
----
 
 ## What is a REST API?
 
@@ -89,7 +85,7 @@ Although REST APIs and OData both allow external applications to access data ove
 
 ### REST API
 
-Please see [Azure REST API Documentation](https://learn.microsoft.com/en-us/rest/api/azure/) for more details
+Please see [Azure REST API Documentation](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/) for more details
 
 For most new OnePayroll integrations, the **OnePayroll REST API** should be the preferred integration method when an appropriate endpoint is available.
 
