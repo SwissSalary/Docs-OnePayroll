@@ -80,6 +80,8 @@ Rates are configured by effective date, jurisdiction, and income tax profile. Th
 
 For category-specific flat rates on bonuses, commissions, and other supplemental earnings, see [Set up supplemental withholding](supplemental-withholding-setup.md).
 
+For local jurisdictions that are selected from employee district codes, see [Set up local tax withholding (US)](local-tax-withholding-setup.md).
+
 ## Set up Income Tax Setup
 
 Income Tax Setup stores supplementary calculation parameters per jurisdiction and filing profile.
@@ -143,6 +145,7 @@ Before processing payroll with income tax withholding:
 ## Next steps
 
 - [Set up supplemental withholding](supplemental-withholding-setup.md) — category-specific aggregate and flat-rate withholding
+- [Set up local tax withholding (US)](local-tax-withholding-setup.md) — district code types and local jurisdictions
 - [Set up income tax withholding](income-tax-setup.md) — employee W-4 and filing information
 - [Tax statements and reporting](tax-statements.md) — W-2 preparation
 - [About tax calculations](tax-calculation-overview.md) — tax calculation concepts
