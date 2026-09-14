@@ -4,7 +4,7 @@ description: Learn how to configure Income Tax Jurisdictions, calculation method
 author: zeande
 sws.service: onepayroll
 sws.topic: how-to
-sws.date: 02/23/2026
+sws.date: 09/14/2026
 ---
 
 # Set up tax calculations
@@ -60,23 +60,25 @@ A typical US configuration includes:
 | CA | Regional | Standard | Standard form | DE-4 |
 | ND | Regional | Simplified | Inherited from parent | — |
 
-## Set up Income Tax Rates
+## Set up withholding rates
 
 Tax rate brackets determine how withholding amounts are calculated for each jurisdiction and filing profile.
 
 **To configure tax rates:**
 
-1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Income Tax Rates**, and then choose the related link.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Withholding Rates**, and then choose the related link.
 2. Create entries with:
-   - **Tax Year** — the calendar year
-   - **Jurisdiction ID** — the jurisdiction these rates apply to
+   - **Valid From** — the date when the rate becomes effective
+   - **Jurisdiction Code** — the jurisdiction these rates apply to
    - **Income Tax Profile** — the filing profile (matches employee filing status)
    - **Income From** — the lower bound of the bracket
-   - **Tax Rate** — the marginal rate for income in this bracket
-   - **Base Tax Amount** — the cumulative tax from lower brackets
+   - **Rate** — the marginal rate for income in this bracket
+   - **Base Amount** — the cumulative tax from lower brackets
 3. Close the page.
 
-Rates are typically configured per tax year, per jurisdiction, and per Income Tax Profile. The Standard and Simplified calculators both use these rate tables.
+Rates are configured by effective date, jurisdiction, and income tax profile. The Standard and Simplified calculators use these rate tables.
+
+For category-specific flat rates on bonuses, commissions, and other supplemental earnings, see [Set up supplemental withholding](supplemental-withholding-setup.md).
 
 ## Set up Income Tax Setup
 
@@ -140,6 +142,7 @@ Before processing payroll with income tax withholding:
 
 ## Next steps
 
+- [Set up supplemental withholding](supplemental-withholding-setup.md) — category-specific aggregate and flat-rate withholding
 - [Set up income tax withholding](income-tax-setup.md) — employee W-4 and filing information
 - [Tax statements and reporting](tax-statements.md) — W-2 preparation
 - [About tax calculations](tax-calculation-overview.md) — tax calculation concepts

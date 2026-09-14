@@ -66,6 +66,7 @@
 ## Tax and compliance
 ### [Tax calculations overview](tax-calculation-overview.md)
 ### [Set up tax calculations](tax-calculation-setup.md)
+### [Set up supplemental withholding](supplemental-withholding-setup.md)
 ### [Income tax setup](income-tax-setup.md)
 ### [Tax statements and W-2 reporting](tax-statements.md)
 ### [Tax compliance](tax-reports.md)
