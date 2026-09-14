@@ -4,7 +4,7 @@ description: Learn how to configure pay units and conversion factors for differe
 author: zeande
 sws.service: onepayroll
 sws.topic: how-to
-sws.date: 02/23/2026
+sws.date: 08/06/2026
 ---
 
 # Pay units and conversions
@@ -190,7 +190,7 @@ Overtime compensation:
 
 ## Pay unit changes
 
-If an employee's compensation structure changes, the change is recorded through the [snapshot system](employee-snapshots.md). Snapshots capture the pay unit and compensation details effective for each payroll period, ensuring that payroll is calculated with the correct conversion factors and maintaining a historical record for audit purposes.
+If an employee's compensation structure changes on a known future date, schedule the change with an [employee snapshot](employee-snapshots.md). Enter the new values with the correct **Valid From** date so payroll uses the right conversion factors when the change takes effect.
 
 ## Verification and testing
 

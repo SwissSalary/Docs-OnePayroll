@@ -4,7 +4,7 @@ description: Learn about the Payroll Manager Role Center in OnePayroll, includin
 author: zeande
 sws.service: onepayroll
 sws.topic: concept
-sws.date: 02/23/2026
+sws.date: 08/06/2026
 ---
 
 # Payroll Manager Role Center
@@ -89,7 +89,7 @@ The following reports are available directly from the Role Center:
 - **Payroll Runs** — all payroll runs
 - **Payroll History** — historical payroll entries
 - **Payment Entries** — payment distribution records
-- **Snapshots** — employee data snapshots
+- **Snapshots** — scheduled and applied employee changes
 
 ## Additional parts
 

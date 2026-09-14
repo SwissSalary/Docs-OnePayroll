@@ -205,7 +205,7 @@ OnePayroll tracks when changes take effect:
 
 **Scheduled changes with snapshots:**
 - Use **Edit Snapshot** when a change should take effect on a future date
-- Enter the **Valid From** date and the new values; OnePayroll applies them automatically when due
+- Enter the **Valid From** date and the new values; approved changes can be applied through a scheduled task, manually, or during payroll
 - For more information, see [Work with employee snapshots](employee-snapshots.md)
 
 ## Testing employee setup

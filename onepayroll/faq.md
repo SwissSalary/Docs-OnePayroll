@@ -4,7 +4,7 @@ description: Learn about common OnePayroll questions covering setup, processing,
 author: zeande
 sws.service: onepayroll
 sws.topic: article
-sws.date: 02/23/2026
+sws.date: 08/06/2026
 ---
 
 # Frequently asked questions
@@ -152,7 +152,7 @@ A: OnePayroll typically assumes one position per employee. For multiple position
 A: Yes. OnePayroll tracks:
 - **Hire Date** - When employee started
 - **Termination Date** - When employee left (if applicable)
-- **Service History** - Snapshots capture tenure at each period
+- **Scheduled employee changes** - Use [snapshots](employee-snapshots.md) to record future effective-dated updates
 
 Use for benefits eligibility, vesting, reporting.
 

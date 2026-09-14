@@ -84,7 +84,7 @@
 
 ## Administration
 ### [Permissions and security](permissions.md)
-### [Employee snapshots and history](employee-snapshots.md)
+### [Work with employee snapshots](employee-snapshots.md)
 ### [Validation rules](validation-rules.md)
 ### [Copilot features](copilot-features.md)
 
