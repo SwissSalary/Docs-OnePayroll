@@ -152,7 +152,7 @@ The compensation amount per hour worked, used for calculating pay for hourly emp
 
 ## I
 
-**Income Tax Setup**
+**Withholding Setup**
 Configuration for income tax withholding, including tax tables, brackets, and employee tax settings.
 
 **Interface (AL Language)**

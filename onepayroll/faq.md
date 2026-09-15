@@ -152,9 +152,8 @@ A: OnePayroll typically assumes one position per employee. For multiple position
 A: Yes. OnePayroll tracks:
 - **Hire Date** - When employee started
 - **Termination Date** - When employee left (if applicable)
-- **Scheduled employee changes** - Use [snapshots](employee-snapshots.md) to record future effective-dated updates
 
-Use for benefits eligibility, vesting, reporting.
+Use these dates to calculate years of service for benefits eligibility, vesting, and reporting.
 
 ## Deductions and benefits
 

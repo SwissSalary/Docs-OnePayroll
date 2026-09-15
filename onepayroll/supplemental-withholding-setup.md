@@ -70,7 +70,7 @@ For a flat-rate rule, the **Rate** field summarizes the withholding-rate rows th
 
 For flat-rate withholding, OnePayroll calculates the withholding amount as follows:
 
-`Category earnings × Rate + Base Amount`
+`Category earnings × (Rate ÷ 100) + Base Amount`
 
 ## Assign the category to a pay type
 

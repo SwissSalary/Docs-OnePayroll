@@ -88,7 +88,7 @@ If you're using the US localization, configure tax withholding for each employee
 > [!NOTE]
 > Tax configuration is part of the US country-specific extension. Other localizations may have different tax setup requirements.
 
-For more information, see [Set up tax calculations](tax-calculation-setup.md) and [Income tax setup](income-tax-setup.md).
+For more information, see [Set up tax calculations](tax-calculation-setup.md) and [Set up income tax withholding](income-tax-setup.md).
 
 ## Process your first payroll
 

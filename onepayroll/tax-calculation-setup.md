@@ -82,13 +82,13 @@ For category-specific flat rates on bonuses, commissions, and other supplemental
 
 For local jurisdictions that are selected from employee district codes, see [Set up local tax withholding (US)](local-tax-withholding-setup.md).
 
-## Set up Income Tax Setup
+## Set up withholding setup
 
-Income Tax Setup stores supplementary calculation parameters per jurisdiction and filing profile.
+Withholding Setup stores supplementary calculation parameters per jurisdiction and filing profile.
 
 **To configure:**
 
-1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Income Tax Setup**, and then choose the related link.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Withholding Setup**, and then choose the related link.
 2. Create entries with:
    - **Tax Year** — the calendar year
    - **Jurisdiction ID** — the jurisdiction
@@ -117,7 +117,7 @@ For the full list of W-2 box options, see [Tax statements and reporting](tax-sta
 Before processing payroll with income tax withholding:
 
 1. Confirm each jurisdiction has the correct **Calculation Method** and **Pay Type No.** assigned.
-2. Verify that **Income Tax Rates** and **Income Tax Setup** entries exist for the current tax year and all applicable filing profiles.
+2. Verify that **Withholding Rates** entries exist with a **Valid From** date on or before the payroll payment date, and that **Withholding Setup** entries exist for the current tax year and all applicable filing profiles.
 3. Open an employee's **Withholding Information** to confirm that withholding records were created for the expected jurisdictions.
 4. Process a sample payroll run to verify that the withholding amounts are reasonable.
 
@@ -127,14 +127,14 @@ Before processing payroll with income tax withholding:
 
 - Verify the jurisdiction's **Calculation Method** is not set to **None**.
 - Confirm the jurisdiction has a **Pay Type No.** assigned.
-- Check that **Income Tax Rates** exist for the current tax year and the employee's resolved Income Tax Profile.
+- Check that **Withholding Rates** include a row with a **Valid From** date on or before the payroll payment date and the employee's resolved Income Tax Profile.
 - Open the employee's **Withholding Information** and confirm the record is not marked as exempt.
 
 ### Withholding amount seems incorrect
 
 - Review the employee's Filing Status, Withholding Credits, Other Income, and Deductions on the Withholding Information page.
-- Confirm the correct **Standard Deduction** and **Per-Allowance Amount** are configured in Income Tax Setup.
-- Verify that the correct tax brackets are entered in Income Tax Rates.
+- Confirm the correct **Standard Deduction** and **Per-Allowance Amount** are configured in **Withholding Setup**.
+- Verify that the correct tax brackets are entered in **Withholding Rates** for the applicable **Valid From** date.
 
 ### State withholding not appearing
 

@@ -100,7 +100,7 @@ The setup data creates income tax jurisdictions for Federal and all 50 US states
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Income Tax Jurisdictions**, and then choose the related link.
 2. Review the existing jurisdictions and add any additional states.
 3. Configure the **Calculation Method** (Standard or Simplified) for each jurisdiction.
-4. Set up **Income Tax Rates** and **Income Tax Setup** for each tax year.
+4. Set up **Withholding Rates** with the required **Valid From** dates and **Withholding Setup** for each tax year.
 
 > [!NOTE]
 > Tax configuration is part of the US country-specific extension. Other localizations may have different tax setup requirements.

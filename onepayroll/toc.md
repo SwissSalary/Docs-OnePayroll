@@ -68,7 +68,7 @@
 ### [Set up tax calculations](tax-calculation-setup.md)
 ### [Set up supplemental withholding](supplemental-withholding-setup.md)
 ### [Set up local tax withholding (US)](local-tax-withholding-setup.md)
-### [Income tax setup](income-tax-setup.md)
+### [Set up income tax withholding](income-tax-setup.md)
 ### [Tax statements and W-2 reporting](tax-statements.md)
 ### [Tax compliance](tax-reports.md)
 ### [IRS Form 941 (US)](irs-form-941.md)
