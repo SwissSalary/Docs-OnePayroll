@@ -26,8 +26,8 @@ You can select either of these methods for each category and jurisdiction:
 
 | Method | How OnePayroll calculates withholding |
 |---|---|
-| **Aggregate** | Combines the category earnings with regular earnings for the payroll period. The jurisdiction's calculation method calculates withholding on the combined amount. |
-| **Flat-Rate** | Keeps the category earnings separate from regular earnings and applies a category-specific rate. Earnings in the same category are combined before the rate is applied. |
+| Aggregate | Combines the category earnings with regular earnings for the payroll period. The jurisdiction's calculation method calculates withholding on the combined amount. |
+| Flat-Rate | Keeps the category earnings separate from regular earnings and applies a category-specific rate. Earnings in the same category are combined before the rate is applied. |
 
 If a pay type has no withholding category, OnePayroll treats its earnings as regular earnings. If a category has no rule for an applicable jurisdiction, OnePayroll uses the **Aggregate** method for that jurisdiction.
 
@@ -58,13 +58,13 @@ For a flat-rate rule, the **Rate** field summarizes the withholding-rate rows th
 
    | Field | Description |
    |---|---|
-   | **Valid From** | Enter the date when the rate becomes effective. The date must be on or before the payroll payment date. |
-   | **Category** | Confirm the supplemental withholding category. |
-   | **Jurisdiction Code** | Confirm the jurisdiction for the rule. |
-   | **Income Tax Profile** | Leave this field blank for a supplemental withholding rate. |
-   | **Income From** | Enter the minimum current-period earnings in this category for the rate to apply. Enter `0` when the rate applies to all earnings in the category. |
-   | **Rate** | Enter the withholding percentage, such as `22` for 22 percent. |
-   | **Base Amount** | Enter any fixed withholding amount to add to the percentage calculation. Otherwise, enter `0`. |
+   | Valid From | Enter the date when the rate becomes effective. The date must be on or before the payroll payment date. |
+   | Category | Confirm the supplemental withholding category. |
+   | Jurisdiction Code | Confirm the jurisdiction for the rule. |
+   | Income Tax Profile | Leave this field blank for a supplemental withholding rate. |
+   | Income From | Enter the minimum current-period earnings in this category for the rate to apply. Enter `0` when the rate applies to all earnings in the category. |
+   | Rate | Enter the withholding percentage, such as `22` for 22 percent. |
+   | Base Amount | Enter any fixed withholding amount to add to the percentage calculation. Otherwise, enter `0`. |
 
 1. Close the page. If the rate is effective on the work date, confirm that **Rate** on the rule no longer shows **Unspecified**.
 

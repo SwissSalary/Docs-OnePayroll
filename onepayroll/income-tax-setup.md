@@ -35,8 +35,6 @@ The **Withholding Information** page shows federal and state withholding section
 - **Home State Withholding** (only visible when the home state differs from the work state)
 - **Local Withholding** (local jurisdictions resolved from the employee's home address)
 
-You can also select the **Federal Filing Status** field on the Employee Card to open the Withholding Information page directly.
-
 ## Enter federal W-4 information
 
 On the **Federal Withholding** section (labeled with the form name, such as *Federal Withholding (W-4)*), fill in the following fields based on the employee's Form W-4:

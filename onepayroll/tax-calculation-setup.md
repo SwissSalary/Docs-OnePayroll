@@ -36,9 +36,9 @@ Income Tax Jurisdictions define the taxing authorities and their calculation rul
 
 | Method | Description | Typical use |
 |--------|-------------|-------------|
-| **Standard** | Full W-4 calculation with annualization, deductions, bracket tax, credits, and allowances | Federal (W-4), states with their own forms |
-| **Simplified** | Bracket-based lookup using annualized wages | States that inherit from federal and use simple rate tables |
-| **None** | No tax calculation | Jurisdictions without income tax |
+| Standard | Full W-4 calculation with annualization, deductions, bracket tax, credits, and allowances | Federal (W-4), states with their own forms |
+| Simplified | Bracket-based lookup using annualized wages | States that inherit from federal and use simple rate tables |
+| None | No tax calculation | Jurisdictions without income tax |
 
 ### Withholding definitions (US)
 
@@ -46,9 +46,9 @@ The **Withholding Definition** field controls which W-4 fields the employee sees
 
 | Definition | Behavior |
 |------------|----------|
-| **Standard form** | Employee fills in all applicable fields (Filing Status, Credits, Deductions, etc.) independently |
-| **Standard form with inherited filing status** | Same as Standard form, but Filing Status is inherited from the parent (federal) jurisdiction |
-| **Inherited from parent** | All withholding values are inherited from the parent jurisdiction; employee doesn't enter separate state W-4 data |
+| Standard form | Employee fills in all applicable fields (Filing Status, Credits, Deductions, etc.) independently |
+| Standard form with inherited filing status | Same as Standard form, but Filing Status is inherited from the parent (federal) jurisdiction |
+| Inherited from parent | All withholding values are inherited from the parent jurisdiction; employee doesn't enter separate state W-4 data |
 
 ### Example jurisdiction setup
 
@@ -90,8 +90,8 @@ Withholding Setup stores supplementary calculation parameters per jurisdiction a
 
 1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Withholding Setup**, and then choose the related link.
 2. Create entries with:
-   - **Tax Year** — the calendar year
-   - **Jurisdiction ID** — the jurisdiction
+   - **Valid From** — the date when the setup becomes effective
+   - **Jurisdiction Code** — the jurisdiction the setup apply to
    - **Income Tax Profile** — the filing profile
    - **Standard Deduction** — the annual standard deduction amount
    - **Per-Allowance Amount** — the reduction per allowance claimed

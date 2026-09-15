@@ -34,12 +34,12 @@ The OnePayroll US app provides these district code types:
 
 | District code type | Geographic identifier |
 |---|---|
-| **Ohio Municipality Code** | Ohio municipality code |
-| **Ohio School District** | Ohio school district code |
-| **Pennsylvania PSD Code** | Pennsylvania political subdivision code |
-| **County Tax Code** | US Census county code |
-| **City Tax Code** | US Census incorporated-place code |
-| **School District** | US Census elementary or unified school district code |
+| Ohio Municipality Code | Ohio municipality code |
+| Ohio School District | Ohio school district code |
+| Pennsylvania PSD Code | Pennsylvania political subdivision code |
+| County Tax Code | US Census county code |
+| City Tax Code | US Census incorporated-place code |
+| School District | US Census elementary or unified school district code |
 
 The Contoso Coffee Payroll Demo Dataset configures examples for Ohio, Pennsylvania, Maryland, Indiana, Michigan, New York, and Kentucky. Ohio has two entries because municipality and school district withholding use separate district codes.
 
@@ -62,9 +62,9 @@ Configure each district code type on the regional jurisdiction that uses it.
 
    | Field | Description |
    |---|---|
-   | **Type** | Select the provider that resolves the local district code. Available values depend on the installed country-specific app. |
-   | **Local Benefit** | Select the benefit to assign when OnePayroll creates a local jurisdiction. Leave this field blank to inherit the regional jurisdiction's benefit. |
-   | **Local Pay Type No.** | Select the withholding pay type to assign when OnePayroll creates a local jurisdiction. Leave this field blank to inherit the regional jurisdiction's pay type. |
+   | Type | Select the provider that resolves the local district code. Available values depend on the installed country-specific app. |
+   | Local Benefit | Select the benefit to assign when OnePayroll creates a local jurisdiction. Leave this field blank to inherit the regional jurisdiction's benefit. |
+   | Local Pay Type No. | Select the withholding pay type to assign when OnePayroll creates a local jurisdiction. Leave this field blank to inherit the regional jurisdiction's pay type. |
 
 1. Add another line if the jurisdiction uses more than one district code type. For example, add both **Ohio Municipality Code** and **Ohio School District** for Ohio when both are required.
 
@@ -73,9 +73,9 @@ Configure each district code type on the regional jurisdiction that uses it.
 OnePayroll resolves district codes from the employee's home address when you change the address. Opening the employee initializes any missing district-code rows for the configured types so that you can review or enter their values.
 
 1. Open the **Employee Card**.
-1. Confirm that **Address**, **City**, **ZIP Code**, **State**, and **Country/Region Code** contain the employee's complete home address.
+1. Confirm that Address, City, ZIP Code, State, and Country/Region Code contain the employee's complete home address.
 1. Review the district-code field below **State**. Its caption depends on the configured district code type.
-1. If more than one district code type applies, choose the field's assist-edit button to open **Employee District Codes** and review each **Type** and **Value**.
+1. If more than one district code type applies, choose the field's assist-edit button to open **Employee District Codes** and review each Type and Value.
 
 You can correct a district code value on the **Employee District Codes** page. If the provider can't resolve the entered value, OnePayroll creates a local jurisdiction with that value and notifies you to complete its setup manually.
 

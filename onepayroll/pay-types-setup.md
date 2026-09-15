@@ -30,10 +30,10 @@ Before creating pay types, make sure you have:
 
 | Field | Description |
 |---|---|
-| **No.** | Enter a unique code (up to 10 characters) for the pay type, such as `REG` for regular pay or `OT15` for overtime at 1.5x. |
-| **Description** | Enter a clear description, such as "Regular Pay" or "Overtime 1.5x". |
-| **Category** | Select the category: **Earnings**, **Employee Deductions**, **Employer Contributions**, **Hypothetical**, or **Heading**. The category determines how this pay type participates in payroll calculations. |
-| **Withholding Category** | For supplemental earnings, select the category that determines whether each income tax jurisdiction uses aggregate or flat-rate withholding. Leave this field blank for regular earnings. |
+| No. | Enter a unique code (up to 10 characters) for the pay type, such as `REG` for regular pay or `OT15` for overtime at 1.5x. |
+| Description | Enter a clear description, such as "Regular Pay" or "Overtime 1.5x". |
+| Category | Select the category: `Earnings`, `Employee Deductions`, `Employer Contributions`, `Hypothetical`, or `Heading`. The category determines how this pay type participates in payroll calculations. |
+| Withholding Category | For supplemental earnings, select the category that determines whether each income tax jurisdiction uses aggregate or flat-rate withholding. Leave this field blank for regular earnings. |
 
 For more information, see [Set up supplemental withholding](supplemental-withholding-setup.md).
 
