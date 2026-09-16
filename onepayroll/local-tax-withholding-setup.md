@@ -32,14 +32,12 @@ District codes select the local jurisdictions that apply to an employee. The loc
 
 The OnePayroll US app provides these district code types:
 
-| District code type | Geographic identifier |
-|---|---|
-| Ohio Municipality Code | Ohio municipality code |
-| Ohio School District | Ohio school district code |
-| Pennsylvania PSD Code | Pennsylvania political subdivision code |
-| County Tax Code | US Census county code |
-| City Tax Code | US Census incorporated-place code |
-| School District | US Census elementary or unified school district code |
+- **Ohio Municipality Code**
+- **Ohio School District**
+- **Pennsylvania PSD Code** (Pennsylvania political subdivision)
+- **County Tax Code** (US Census county)
+- **City Tax Code** (US Census incorporated-place)
+- **School District** (US Census elementary or unified school district)
 
 The Contoso Coffee Payroll Demo Dataset configures examples for Ohio, Pennsylvania, Maryland, Indiana, Michigan, New York, and Kentucky. Ohio has two entries because municipality and school district withholding use separate district codes.
 
