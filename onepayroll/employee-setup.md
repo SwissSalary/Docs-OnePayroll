@@ -4,7 +4,7 @@ description: Learn how to create employee records and configure payroll-specific
 author: zeande
 sws.service: onepayroll
 sws.topic: how-to
-sws.date: 02/23/2026
+sws.date: 09/14/2026
 ---
 
 # Set up employees
@@ -100,7 +100,7 @@ To set an employee’s compensation:
    - **Federal Allowances** - Number of exemptions
    - **Additional Federal Withholding** - Extra withholds (if needed)
 
-**For state and local tax withholding** (if applicable):
+**For state tax withholding** (if applicable):
 
 On the **Withholding Information** page, configure:
 
@@ -108,8 +108,8 @@ On the **Withholding Information** page, configure:
 - **State Filing Status** - Single, Married, etc.
 - **State Allowances** - Number of exemptions
 - **Additional State Withholding** - Extra amount (if needed)
-- **Local Tax Jurisdiction** - City/county with payroll tax (if applicable)
-- **Local Withholding** - Amount or percentage (if applicable)
+
+OnePayroll resolves local tax jurisdictions from the employee's home address and the district code types configured for the state. Review the results in the **Local Withholding** section. For more information, see [Set up local tax withholding (US)](local-tax-withholding-setup.md).
 
 ### Social Security / Tax ID
 
@@ -203,10 +203,10 @@ OnePayroll tracks when changes take effect:
 - Pay group change effective 4/15/2026
 - Benefits change effective 1/1/2027 (plan year)
 
-**Historical tracking:**
-- When you change employee data, snapshot is created
-- Previous values retained for historical payroll
-- Enables audit trail of all changes
+**Scheduled changes with snapshots:**
+- Use **Edit Snapshot** when a change should take effect on a future date
+- Enter the **Valid From** date and the new values; approved changes can be applied through a scheduled task, manually, or during payroll
+- For more information, see [Work with employee snapshots](employee-snapshots.md)
 
 ## Testing employee setup
 
@@ -260,7 +260,7 @@ See your administrator for import templates and procedures.
 
 - **Consistent numbering** - Use logical employee number sequences
 - **Complete setup** - Ensure all required fields are filled before payroll
-- **Effective dates** - Use effective dates to track when changes apply
+- **Effective dates** - Use snapshots with a **Valid From** date for future changes instead of editing the live record early
 - **Bank account validation** - Verify bank account information before processing direct deposit
 - **Test first** - Always test new employee setup with test payroll
 - **Tax accuracy** - Double-check tax withholding settings to avoid withholding errors

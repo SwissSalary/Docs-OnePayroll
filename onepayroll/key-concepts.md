@@ -4,7 +4,7 @@ description: Learn about key OnePayroll terms and concepts, including payroll co
 author: zeande
 sws.service: onepayroll
 sws.topic: reference
-sws.date: 02/23/2026
+sws.date: 08/06/2026
 ---
 
 # Key concepts and terminology
@@ -94,7 +94,7 @@ The date that a change (to pay type, pay group, benefit enrollment, etc.) become
 A record that defines how an employee's net pay is allocated and where it is deposited. Each Employee Payment Method stores allocation settings (Primary, Fixed Amount, or Percentage) and bank details (Bank Account No., Bank Identifier Code) directly on the same record.
 
 **Employee Snapshot**
-A historical record of an employee's key payroll information (pay group, pay types, tax settings) captured at a point in time for audit and historical reference.
+A scheduled or historical set of employee-related field values with a **Valid From** date. Use snapshots to enter future changes before they take effect and to review employee data used during payroll. Approved changes can be applied through a scheduled task, manually, or during payroll. See [Work with employee snapshots](employee-snapshots.md).
 
 **Employee Type**
 A user-defined classification for employees. Each employee type specifies a pay unit and a compensation method (Regular or Work-Based). Regular employees receive recurring pay regardless of reported work, while work-based employees are paid only based on reported work.
@@ -152,7 +152,7 @@ The compensation amount per hour worked, used for calculating pay for hourly emp
 
 ## I
 
-**Income Tax Setup**
+**Withholding Setup**
 Configuration for income tax withholding, including tax tables, brackets, and employee tax settings.
 
 **Interface (AL Language)**

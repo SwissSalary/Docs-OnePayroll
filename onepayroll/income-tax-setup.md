@@ -4,7 +4,7 @@ description: Learn how to configure employee income tax withholding information 
 author: zeande
 sws.service: onepayroll
 sws.topic: how-to
-sws.date: 02/23/2026
+sws.date: 09/14/2026
 ---
 
 # Set up income tax withholding
@@ -28,13 +28,12 @@ When you change an employee's country/region, state, or work location, OnePayrol
 1. Open the **Employee Card**.
 2. Choose the **Withholding Information** action.
 
-The Withholding Information page shows up to three sections:
+The **Withholding Information** page shows federal and state withholding sections, plus local withholding when applicable:
 
 - **Federal Withholding** (the national jurisdiction, such as W-4)
 - **Work State Withholding** (the regional jurisdiction for the work location)
 - **Home State Withholding** (only visible when the home state differs from the work state)
-
-You can also select the **Federal Filing Status** field on the Employee Card to open the Withholding Information page directly.
+- **Local Withholding** (local jurisdictions resolved from the employee's home address)
 
 ## Enter federal W-4 information
 
@@ -93,6 +92,12 @@ Same as Standard form, but the Filing Status is automatically inherited from the
 
 All withholding values are inherited from the parent (federal) jurisdiction. No separate state W-4 entry is needed. When the federal withholding record changes, values automatically propagate to these state jurisdictions.
 
+## Review local withholding
+
+When district code types are configured for the employee's home state, OnePayroll resolves the employee's home address to local jurisdictions. The **Local Withholding** section shows the district code type, jurisdiction code, jurisdiction, and whether withholding is inactive.
+
+For information about configuring district code types, resolving employee district codes, and reviewing local jurisdictions, see [Set up local tax withholding (US)](local-tax-withholding-setup.md).
+
 ## Income Tax Profiles
 
 When you save a withholding record, OnePayroll automatically resolves the **Income Tax Profile** based on the employee's filing attributes (such as filing status). The profile determines which standard deduction, per-allowance amount, and tax rate brackets apply during calculation.
@@ -135,5 +140,6 @@ The state jurisdiction likely uses the **Standard form with inherited filing sta
 ## Next steps
 
 - [Set up tax calculations](tax-calculation-setup.md) — jurisdiction and rate configuration
+- [Set up local tax withholding (US)](local-tax-withholding-setup.md) — district code types and local jurisdictions
 - [About tax calculations](tax-calculation-overview.md) — tax calculation concepts
 - [Employee setup](employee-setup.md) — employee configuration overview

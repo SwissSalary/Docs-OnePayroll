@@ -4,7 +4,7 @@ description: Learn how to configure Income Tax Jurisdictions, calculation method
 author: zeande
 sws.service: onepayroll
 sws.topic: how-to
-sws.date: 02/23/2026
+sws.date: 09/14/2026
 ---
 
 # Set up tax calculations
@@ -36,9 +36,9 @@ Income Tax Jurisdictions define the taxing authorities and their calculation rul
 
 | Method | Description | Typical use |
 |--------|-------------|-------------|
-| **Standard** | Full W-4 calculation with annualization, deductions, bracket tax, credits, and allowances | Federal (W-4), states with their own forms |
-| **Simplified** | Bracket-based lookup using annualized wages | States that inherit from federal and use simple rate tables |
-| **None** | No tax calculation | Jurisdictions without income tax |
+| Standard | Full W-4 calculation with annualization, deductions, bracket tax, credits, and allowances | Federal (W-4), states with their own forms |
+| Simplified | Bracket-based lookup using annualized wages | States that inherit from federal and use simple rate tables |
+| None | No tax calculation | Jurisdictions without income tax |
 
 ### Withholding definitions (US)
 
@@ -46,9 +46,9 @@ The **Withholding Definition** field controls which W-4 fields the employee sees
 
 | Definition | Behavior |
 |------------|----------|
-| **Standard form** | Employee fills in all applicable fields (Filing Status, Credits, Deductions, etc.) independently |
-| **Standard form with inherited filing status** | Same as Standard form, but Filing Status is inherited from the parent (federal) jurisdiction |
-| **Inherited from parent** | All withholding values are inherited from the parent jurisdiction; employee doesn't enter separate state W-4 data |
+| Standard form | Employee fills in all applicable fields (Filing Status, Credits, Deductions, etc.) independently |
+| Standard form with inherited filing status | Same as Standard form, but Filing Status is inherited from the parent (federal) jurisdiction |
+| Inherited from parent | All withholding values are inherited from the parent jurisdiction; employee doesn't enter separate state W-4 data |
 
 ### Example jurisdiction setup
 
@@ -60,34 +60,38 @@ A typical US configuration includes:
 | CA | Regional | Standard | Standard form | DE-4 |
 | ND | Regional | Simplified | Inherited from parent | — |
 
-## Set up Income Tax Rates
+## Set up withholding rates
 
 Tax rate brackets determine how withholding amounts are calculated for each jurisdiction and filing profile.
 
 **To configure tax rates:**
 
-1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Income Tax Rates**, and then choose the related link.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Withholding Rates**, and then choose the related link.
 2. Create entries with:
-   - **Tax Year** — the calendar year
-   - **Jurisdiction ID** — the jurisdiction these rates apply to
+   - **Valid From** — the date when the rate becomes effective
+   - **Jurisdiction Code** — the jurisdiction these rates apply to
    - **Income Tax Profile** — the filing profile (matches employee filing status)
    - **Income From** — the lower bound of the bracket
-   - **Tax Rate** — the marginal rate for income in this bracket
-   - **Base Tax Amount** — the cumulative tax from lower brackets
+   - **Rate** — the marginal rate for income in this bracket
+   - **Base Amount** — the cumulative tax from lower brackets
 3. Close the page.
 
-Rates are typically configured per tax year, per jurisdiction, and per Income Tax Profile. The Standard and Simplified calculators both use these rate tables.
+Rates are configured by effective date, jurisdiction, and income tax profile. The Standard and Simplified calculators use these rate tables.
 
-## Set up Income Tax Setup
+For category-specific flat rates on bonuses, commissions, and other supplemental earnings, see [Set up supplemental withholding](supplemental-withholding-setup.md).
 
-Income Tax Setup stores supplementary calculation parameters per jurisdiction and filing profile.
+For local jurisdictions that are selected from employee district codes, see [Set up local tax withholding (US)](local-tax-withholding-setup.md).
+
+## Set up withholding setup
+
+Withholding Setup stores supplementary calculation parameters per jurisdiction and filing profile.
 
 **To configure:**
 
-1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Income Tax Setup**, and then choose the related link.
+1. Choose the ![Lightbulb that opens the Tell Me feature.](media/ui-search/search_small.png "Tell me what you want to do") icon, enter **Withholding Setup**, and then choose the related link.
 2. Create entries with:
-   - **Tax Year** — the calendar year
-   - **Jurisdiction ID** — the jurisdiction
+   - **Valid From** — the date when the setup becomes effective
+   - **Jurisdiction Code** — the jurisdiction the setup apply to
    - **Income Tax Profile** — the filing profile
    - **Standard Deduction** — the annual standard deduction amount
    - **Per-Allowance Amount** — the reduction per allowance claimed
@@ -113,7 +117,7 @@ For the full list of W-2 box options, see [Tax statements and reporting](tax-sta
 Before processing payroll with income tax withholding:
 
 1. Confirm each jurisdiction has the correct **Calculation Method** and **Pay Type No.** assigned.
-2. Verify that **Income Tax Rates** and **Income Tax Setup** entries exist for the current tax year and all applicable filing profiles.
+2. Verify that **Withholding Rates** entries exist with a **Valid From** date on or before the payroll payment date, and that **Withholding Setup** entries exist for the current tax year and all applicable filing profiles.
 3. Open an employee's **Withholding Information** to confirm that withholding records were created for the expected jurisdictions.
 4. Process a sample payroll run to verify that the withholding amounts are reasonable.
 
@@ -123,14 +127,14 @@ Before processing payroll with income tax withholding:
 
 - Verify the jurisdiction's **Calculation Method** is not set to **None**.
 - Confirm the jurisdiction has a **Pay Type No.** assigned.
-- Check that **Income Tax Rates** exist for the current tax year and the employee's resolved Income Tax Profile.
+- Check that **Withholding Rates** include a row with a **Valid From** date on or before the payroll payment date and the employee's resolved Income Tax Profile.
 - Open the employee's **Withholding Information** and confirm the record is not marked as exempt.
 
 ### Withholding amount seems incorrect
 
 - Review the employee's Filing Status, Withholding Credits, Other Income, and Deductions on the Withholding Information page.
-- Confirm the correct **Standard Deduction** and **Per-Allowance Amount** are configured in Income Tax Setup.
-- Verify that the correct tax brackets are entered in Income Tax Rates.
+- Confirm the correct **Standard Deduction** and **Per-Allowance Amount** are configured in **Withholding Setup**.
+- Verify that the correct tax brackets are entered in **Withholding Rates** for the applicable **Valid From** date.
 
 ### State withholding not appearing
 
@@ -140,6 +144,8 @@ Before processing payroll with income tax withholding:
 
 ## Next steps
 
+- [Set up supplemental withholding](supplemental-withholding-setup.md) — category-specific aggregate and flat-rate withholding
+- [Set up local tax withholding (US)](local-tax-withholding-setup.md) — district code types and local jurisdictions
 - [Set up income tax withholding](income-tax-setup.md) — employee W-4 and filing information
 - [Tax statements and reporting](tax-statements.md) — W-2 preparation
 - [About tax calculations](tax-calculation-overview.md) — tax calculation concepts

@@ -4,7 +4,7 @@ description: Learn about US-specific OnePayroll features, tax treatment, and com
 author: zeande
 sws.service: onepayroll
 sws.topic: reference
-sws.date: 02/23/2026
+sws.date: 08/06/2026
 ---
 
 # US localization and compliance
@@ -398,7 +398,7 @@ See [IRS Form 941](irs-form-941.md) for detailed instructions.
 - IRS examines payroll records
 - State audits timekeeping (overtime)
 - Department of Labor (DOL) investigates misclassification
-- Snapshots and historical records critical
+- Keep employee changes effective-dated with snapshots; retain payroll history for audits
 
 ## Best practices for US compliance
 

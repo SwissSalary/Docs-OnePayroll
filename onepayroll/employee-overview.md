@@ -4,7 +4,7 @@ description: Learn about employee records in OnePayroll, payroll-specific extens
 author: zeande
 sws.service: onepayroll
 sws.topic: overview
-sws.date: 02/23/2026
+sws.date: 08/06/2026
 ---
 
 # Employees in payroll overview
@@ -165,14 +165,16 @@ Employees have tax details controlling withholding (US localization):
 - Local tax jurisdiction
 - Any special local tax rules
 
-## Historical tracking
+## Scheduled changes and history
 
-OnePayroll maintains complete employee history:
+OnePayroll helps you manage both upcoming changes and past payroll activity:
 
 **Snapshots**
-- Historical record of employee payroll configuration
-- When did pay change? When did employee move departments? etc.
-- Enables audit trail of all changes
+- Schedule future employee changes with a **Valid From** date (for example, address, withholding, or pay group)
+- OnePayroll can apply approved changes through a scheduled task, manually, or when payroll processes a period that includes the date
+- Review scheduled and applied changes on the **Snapshots** page
+
+For more information, see [Work with employee snapshots](employee-snapshots.md).
 
 **Payroll entries**
 - All historical payroll for the employee
@@ -203,6 +205,7 @@ OnePayroll's payroll-specific data integrates with BC's employee master data.
 Learn how to work with employees:
 
 - **[Set up employees](employee-setup.md)** - Create and configure employee records
+- **[Work with employee snapshots](employee-snapshots.md)** - Schedule future employee changes
 - **[Employee pay units](employee-pay-units.md)** - Compensation rate setup
 - **[Departments and work locations](departments-work-locations.md)** - Organizational hierarchy
 - **[Employee bank account information](employee-bank-accounts.md)** - Bank details on payment methods

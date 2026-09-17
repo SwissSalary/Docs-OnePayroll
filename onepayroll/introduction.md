@@ -4,7 +4,7 @@ description: Learn about OnePayroll, a comprehensive payroll solution built nati
 author: zeande
 sws.service: onepayroll
 sws.topic: overview
-sws.date: 02/23/2026
+sws.date: 08/06/2026
 ---
 
 # Welcome to OnePayroll
@@ -27,7 +27,7 @@ OnePayroll is a comprehensive payroll management extension for Microsoft Dynamic
 - Check printing and payment processing
 - Year-end tax statement generation (W-2 and regional forms)
 - General ledger integration and automatic journal posting
-- Historical tracking and audit trails
+- Scheduled employee changes with snapshots
 
 **Localized for your region.** OnePayroll Core provides the foundation. Add a country-specific extension to process payroll for your region. Currently supported:
 
@@ -88,7 +88,8 @@ OnePayroll is organized into functional modules:
 | **Tax & Compliance** | Calculate tax withholdings and generate tax statements |
 | **Financial Integration** | Post payroll entries to the general ledger |
 | **Reporting** | Generate payroll reports and tax documents |
-| **Advanced Features** | Employee snapshots, validation rules |
+| **Employee snapshots** | Schedule future employee changes with effective dates |
+| **Validation rules** | Enforce payroll data quality |
 
 ## What's next
 

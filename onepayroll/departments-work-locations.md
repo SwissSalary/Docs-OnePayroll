@@ -4,7 +4,7 @@ description: Learn how to set up organizational structure with departments and w
 author: zeande
 sws.service: onepayroll
 sws.topic: how-to
-sws.date: 02/23/2026
+sws.date: 08/06/2026
 ---
 
 # Departments and work locations
@@ -159,7 +159,7 @@ Mark remote employees with the **Remote** work location type:
 1. Open the employee card.
 2. Update the **Department** or **Work Location** field.
 
-OnePayroll's snapshot system tracks changes to employee records over time for audit purposes.
+To schedule a future department or work location change, use [employee snapshots](employee-snapshots.md) with the appropriate **Valid From** date instead of updating the live employee record early.
 
 ## Verification and testing
 

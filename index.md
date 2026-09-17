@@ -16,7 +16,7 @@ Discover how to set up, run, and manage payroll with OnePayroll — the next-gen
 | Installation | Pay cycles | Tax and compliance |
 |---|---|---|
 | [Install OnePayroll](onepayroll/setup-install.md) | [Pay cycles overview](onepayroll/pay-cycles-overview.md) | [Tax calculation setup](onepayroll/tax-calculation-setup.md) |
-| [Configure settings](onepayroll/setup-configure.md) | [Set up pay cycles](onepayroll/pay-cycles-setup.md) | [Income tax setup](onepayroll/income-tax-setup.md) |
+| [Configure settings](onepayroll/setup-configure.md) | [Set up pay cycles](onepayroll/pay-cycles-setup.md) | [Set up income tax withholding](onepayroll/income-tax-setup.md) |
 | [Payroll setup](onepayroll/payroll-setup.md) | [Set up your first payroll](onepayroll/setup-first-payroll.md) | [Validation rules](onepayroll/validation-rules.md) |
 | [Permissions](onepayroll/permissions.md) | | |
 

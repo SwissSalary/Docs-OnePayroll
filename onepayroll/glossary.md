@@ -4,7 +4,7 @@ description: Learn the terminology used in OnePayroll, including payroll concept
 author: zeande
 sws.service: onepayroll
 sws.topic: reference
-sws.date: 02/23/2026
+sws.date: 08/06/2026
 ---
 
 # OnePayroll glossary
@@ -76,7 +76,7 @@ Date when a change (pay rate, tax status, etc.) takes effect in payroll.
 A record on the Employee Card that stores allocation settings and bank details for direct deposit. There is no separate bank account entity — bank information is stored directly on the payment method.
 
 **Employee Snapshot**
-Point-in-time record of employee data on a specific date; captures historical information.
+Scheduled or applied employee-related field values with a **Valid From** date. Used primarily to enter future changes before they take effect.
 
 **Employee Type**
 User-defined classification with a pay unit and compensation method (Regular or Work-Based).
@@ -258,7 +258,7 @@ Employee paid fixed annual amount; typically exempt from overtime.
 Fixed annual compensation for salaried employee.
 
 **Snapshot (Employee)**
-Point-in-time record of employee data; captures historical state for audit trail.
+See **Employee Snapshot**. A scheduled change or historical view of employee-related field values with a **Valid From** date.
 
 **Social Security**
 Federal retirement/disability insurance; payroll contribution 6.2% employee, 6.2% employer.

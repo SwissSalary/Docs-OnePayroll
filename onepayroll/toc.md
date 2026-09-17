@@ -66,7 +66,9 @@
 ## Tax and compliance
 ### [Tax calculations overview](tax-calculation-overview.md)
 ### [Set up tax calculations](tax-calculation-setup.md)
-### [Income tax setup](income-tax-setup.md)
+### [Set up supplemental withholding](supplemental-withholding-setup.md)
+### [Set up local tax withholding (US)](local-tax-withholding-setup.md)
+### [Set up income tax withholding](income-tax-setup.md)
 ### [Tax statements and W-2 reporting](tax-statements.md)
 ### [Tax compliance](tax-reports.md)
 ### [IRS Form 941 (US)](irs-form-941.md)
@@ -82,7 +84,7 @@
 
 ## Administration
 ### [Permissions and security](permissions.md)
-### [Employee snapshots and history](employee-snapshots.md)
+### [Work with employee snapshots](employee-snapshots.md)
 ### [Validation rules](validation-rules.md)
 ### [Copilot features](copilot-features.md)
 
