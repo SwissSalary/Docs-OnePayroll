@@ -90,6 +90,40 @@ export default {
     }
     initTaskListCheckboxes();
 
+    function initApiReferenceFrame() {
+        const frame = document.querySelector('.api-reference-frame');
+        if (!frame) return;
+
+        const apiOrigin = new URL(frame.src).origin;
+        const sendTheme = () => {
+            const theme = document.documentElement.getAttribute('data-bs-theme');
+            if (theme !== 'light' && theme !== 'dark') return;
+
+            frame.contentWindow?.postMessage({
+                type: 'onepayroll-theme',
+                theme
+            }, apiOrigin);
+        };
+
+        frame.addEventListener('load', sendTheme);
+        new MutationObserver(sendTheme).observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-bs-theme']
+        });
+        sendTheme();
+
+        window.addEventListener('message', event => {
+            if (event.source !== frame.contentWindow || event.origin !== apiOrigin) return;
+            if (event.data?.type !== 'onepayroll-api-resize') return;
+
+            const height = Number(event.data.height);
+            if (!Number.isFinite(height) || height < 1) return;
+
+            frame.style.height = `${Math.max(720, height)}px`;
+        });
+    }
+    initApiReferenceFrame();
+
     // ===== Footer slogans =====
     const target = document.getElementById('sws-slogans');
     if (!target) return; // Footer not present, nothing to do

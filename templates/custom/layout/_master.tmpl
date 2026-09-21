@@ -142,6 +142,21 @@
 
         <article data-uid="{{uid}}">
           {{!body}}
+
+          {{#_apiReference}}
+          <div class="api-reference">
+            <iframe
+              class="api-reference-frame"
+              src="{{{_apiDocsUrl}}}"
+              title="OnePayroll API reference"
+              referrerpolicy="no-referrer"
+            ></iframe>
+            <p class="api-reference-fallback">
+              Having trouble viewing the embedded reference?
+              <a href="{{{_apiDocsUrl}}}" target="_blank" rel="noopener noreferrer">Open the API reference in a new tab</a>.
+            </p>
+          </div>
+          {{/_apiReference}}
         </article>
 
         {{^_disableContribution}}

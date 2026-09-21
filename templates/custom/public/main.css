@@ -8,6 +8,22 @@
    ------------------------------------------------------------------------- */
 @import url("https://use.typekit.net/ixp6ptv.css");
 
+/* Embedded API reference */
+body[data-layout] article:has(.api-reference) {
+    max-width: none;
+}
+
+.api-reference-frame {
+    display: block;
+    width: 100%;
+    height: max(720px, calc(100vh - 230px));
+    border: 0;
+}
+
+.api-reference-fallback {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+}
 /* -------------------------------------------------------------------------
    2. Bootstrap / DocFx CSS Variable Overrides
    ------------------------------------------------------------------------- */
