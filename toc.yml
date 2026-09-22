@@ -1,2 +1,4 @@
 - name: Documentation
   href: onepayroll/
+- name: API reference
+  href: api-reference.md
