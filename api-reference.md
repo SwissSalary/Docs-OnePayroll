@@ -1,5 +1,5 @@
 ---
-title: API reference
+title: API Reference
 description: Interactive reference documentation for the OnePayroll API.
 _apiReference: true
 _disableToc: true
