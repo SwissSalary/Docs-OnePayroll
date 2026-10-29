@@ -44,6 +44,8 @@ Key differences from standard payroll runs:
 4. Add additional lines as needed for other pay types or deductions
 5. Choose the **Run Payroll** action to create and calculate the manual payroll run
 
+Don't forget to choose the "Calculate Gross-up" action on the page.
+
 ### What happens when you run the journal
 
 1. A new payroll run is created with **Type = Manual**
