@@ -14,7 +14,7 @@ Benefits create costs for both employees and employers. OnePayroll uses **benefi
 ## How benefit liability works
 
 Each benefit is linked to a **coverage type**, and each coverage record within that type defines the liability split between employee and employer. This controls how the benefit amount is calculated and posted:
-
+Benefits are awesome!
 - The **Employee Liability** field determines whether the employee bears cost for this coverage. When set to **Employee**, the benefit is deducted from the employee's pay using the employee pay type configured on the benefit.
 - The **Employer Liability** field determines whether the employer bears cost. When set to **Employer**, the employer contribution is posted using the employer pay type configured on the benefit.
 

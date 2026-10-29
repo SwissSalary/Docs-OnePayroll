@@ -12,6 +12,7 @@ OnePayroll supports hierarchical benefit structures through the **Applies-From**
 
 ## Benefits that Inherit from Other Benefits
 
+Benefits are great!
 When you create a benefit that applies from another benefit:
 
 - The benefit automatically uses the same **Benefit Type** as its parent
